@@ -1,0 +1,13 @@
+#menu {
+  background-color: #7575ff;
+  height: 40px;
+}
+#menu ul {
+  list-style-type: none;
+  padding: 10px 0 0 0;
+}
+#menu ul li {
+  display: inline-block;
+  color: #ffffff;
+  margin: 0 10px 0 10px;
+}
