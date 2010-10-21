@@ -49,8 +49,6 @@ var autoPlay = function() {
 	autoplaytimer = setTimeout(autoPlay, 5000);
 }
 
-
-
 $(document).ready(function () {
 	var slideWidth = $("div#carousel_panel").outerWidth(); 
 	// change all but the first slide

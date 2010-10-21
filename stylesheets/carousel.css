@@ -13,7 +13,7 @@ p {
 	padding: 0 80px 0 80px;
 }
 #carouselnav {
-	text-align:center;
+	text-align: center;
 	width:100%;
 }
 #carousel {
@@ -29,5 +29,24 @@ p {
 	border: 1px solid #b3b3c4;
 	position: absolute;
 	background-color: #d7d8ff;
+	display: inline;
+}
+.step {
+  width: 275px;
+  height: 250px;
+  float: left;
+  padding: 0 0 0 25px;
+}
+.slide img {
+  float: left;
+}
+#carousel .placeholder {
+  width: 25px;
+  height: 250px;
+  float: left;
+}
+
+.step h4 {
+  padding: 50px 0px 20px;
 }
 
