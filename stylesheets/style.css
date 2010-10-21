@@ -1,0 +1,35 @@
+@CHARSET "ISO-8859-1";
+
+P {
+	font-family:sans-serif;
+}
+
+.c6470 {
+	font-family:"Lucida Console", monospace;
+}
+
+/* Carousel stuff */
+#carousel {
+	position: relative;
+	overflow:hidden;
+	
+}
+#carousel, #carousel > div.slide {
+	height: 300px;
+	width: 500px;
+	z-index:0;
+	border: 1px solid black;
+}
+#carousel > div.carouselnav {
+	position:absolute;
+	text-align:center;
+	width:100%;
+	bottom:0px;
+	z-index:1;	
+}
+#carousel > div.slide {
+	position:absolute;
+	background-color:red;
+	z-index:-1;
+}
+
