@@ -101,7 +101,6 @@ html, body {
   margin: 0;
   padding: 0;
 }
-
 #carousel_panel {
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
@@ -111,8 +110,7 @@ html, body {
   
   margin: 0;
 }
-
-#main_content {
+#rigtht_panel {
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
   box-flex: 0;

@@ -52,14 +52,13 @@ var autoPlay = function() {
 $(document).ready(function () {
 	var slideWidth = $("div#carousel_panel").outerWidth(); 
 	// change all but the first slide
-	console.log($("div.slide+div.slide"));
-	$("div.slide+div.slide").css({"left":slideWidth+"px"});
-	$("div.slide_1").css({"left":"0px"});
+	$("div.slide + div.slide").css({ "left" : slideWidth + "px" });
+	$("div.slide_1").css({ "left" : "0px" });
 	currentSlide = 1;
 	//changeSlide(2);
 	
 	for(var i = 1; i <= 4; i++)
-		$("a.slide_"+i).click(slideChanger(i));
+		$("a.slide_" + i).click(slideChanger(i));
 	
 	autoplaytimer = setTimeout(autoPlay, 5000);
 });
