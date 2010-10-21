@@ -102,15 +102,14 @@ html, body {
   padding: 0;
 }
 
-#carousel {
+#carousel_panel {
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
   box-flex: 0;
     
   width: 660px;
   
-  margin: 0 5px 0 5px;
-  padding: 0 5px 0 5px;
+  margin: 0;
 }
 
 #main_content {

@@ -1,5 +1,3 @@
-
-
 var currentSlide = 1;
 var numslides;
 
@@ -12,7 +10,7 @@ var slideChanger = function(slideNumber) {
 
 var changeSlide = function(slideNumber) {
 	// get the outer width without margin
-	var slideWidth = $("div#carousel").outerWidth(); 
+	var slideWidth = $("div#carousel_panel").outerWidth(); 
 	numslides = $("div.slide").length;
 	// where to start the slide
 	var startx = slideWidth;
@@ -54,7 +52,7 @@ var autoPlay = function() {
 
 
 $(document).ready(function () {
-	var slideWidth = $("div#carousel").outerWidth(); 
+	var slideWidth = $("div#carousel_panel").outerWidth(); 
 	// change all but the first slide
 	console.log($("div.slide+div.slide"));
 	$("div.slide+div.slide").css({"left":slideWidth+"px"});

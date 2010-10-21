@@ -9,25 +9,25 @@ p {
 }
 
 /* Carousel stuff */
-#carousel {
-	overflow: hidden;
+#carousel_panel {
+	padding: 0 80px 0 80px;
 }
-#carousel > div.carouselnav {
+#carouselnav {
 	text-align:center;
 	width:100%;
-	z-index:1;	
 }
-#slides {
-  padding: 5px;
-  z-index: 1;
+#carousel {
+  height: 302px;
+  width: 502px;
   position: relative;
+  overflow: hidden;
+  margin: 50px 0 0 0;
 }
-#slides > div.slide {
+#carousel > div.slide {
 	height: 300px;
 	width: 500px;
-	border: 1px solid black;
+	border: 1px solid #b3b3c4;
 	position: absolute;
-	background-color:red;
-	z-index: -1;
+	background-color: #d7d8ff;
 }
 
