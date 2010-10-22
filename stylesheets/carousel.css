@@ -1,6 +1,6 @@
 @CHARSET "ISO-8859-1";
 
-p {
+body {
 	font-family:sans-serif;
 }
 
@@ -48,12 +48,15 @@ p {
 .step h4 {
   padding: 50px 0px 20px;
 }
-a {
+#carouselnav a {
   color: #5858BF;
   font-weight: bold;
 }
-a:hover {
+#carouselnav a:hover {
   text-decoration: underline;
+}
+#carousel a:active {
+  color: #060D05;
 }
 #carouselnav a {
   margin: 0 5px 0 5px;

@@ -8,6 +8,8 @@ html, body {
   border: none;
   width: 100%;
   height: 100%;  
+  
+  color: #1D1D40;
 }
 #page_wrapper {
   box-flex: 0;
@@ -52,7 +54,8 @@ html, body {
   -moz-box-pack: center;
   box-pack: center;  
 
-  margin: 0;
+  padding: 15px 0 15px 0;
+  
 }
 #menu {
   -webkit-box-flex: 0;
@@ -119,4 +122,31 @@ html, body {
 
   margin: 0 5px 0 5px;
   padding: 0;
+}
+#footer {
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  box-flex: 0;
+
+  display: -webkit-box;
+  -webkit-box-align: stretch;
+  -webkit-box-orient: horizontal;
+
+  display: -moz-box;
+  -moz-box-align: stretch;
+  -moz-box-orient: horizontal;
+
+  display: box;
+  box-align: stretch;
+  box-orient: horizontal;
+  
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;  
+
+  padding: 5px 0 5px 0;
+  background-color: #1D1D40;
+  color: #CCCCCC;
+  font-size: 10pt;
+  padding: 1em 0 1em 0;
 }
