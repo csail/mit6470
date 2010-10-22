@@ -52,9 +52,6 @@ body {
   color: #5858BF;
   font-weight: bold;
 }
-#carouselnav a:hover {
-  text-decoration: underline;
-}
 #carousel a:active {
   color: #060D05;
 }

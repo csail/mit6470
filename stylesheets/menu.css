@@ -19,6 +19,7 @@
   background-color: #d7d8ff;
   opacity: 1;;
   color: #060D05;
+  text-decoration: none;
 }
 #menu .current {
   font-weight: bold;

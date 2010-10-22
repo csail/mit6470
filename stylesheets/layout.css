@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 html, body {  
   margin: 0;
@@ -10,6 +11,9 @@ html, body {
   height: 100%;  
   
   color: #1D1D40;
+}
+a:hover {
+  text-decoration: underline;
 }
 #page_wrapper {
   box-flex: 0;
@@ -55,7 +59,6 @@ html, body {
   box-pack: center;  
 
   padding: 15px 0 15px 0;
-  
 }
 #menu {
   -webkit-box-flex: 0;
@@ -149,4 +152,8 @@ html, body {
   color: #CCCCCC;
   font-size: 10pt;
   padding: 1em 0 1em 0;
+}
+
+#footer a {
+  color: #7575FF;
 }

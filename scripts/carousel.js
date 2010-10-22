@@ -20,15 +20,19 @@ var changeSlide = function(slideNumber) {
 		startx = -slideWidth; // start it on the left
 		endx = slideWidth;
 	}
-	$("div.slide_"+slideNumber).animate({
-		left:startx
+	$("div.slide_" + slideNumber).animate({
+		left : startx
 	}, 0);
-	$("div.slide_"+slideNumber).animate({
-		left:0
+	$("div.slide_" + slideNumber).animate({
+		left : 0
 	}, 500);
-	$("div.slide_"+currentSlide).animate({
-		left:endx
-	}, 500);
+	
+	if (currentSlide != slideNumber) {
+	  // Hide current slide.
+  	$("div.slide_" + currentSlide).animate({
+  		left : endx
+  	}, 500);
+  }
 	
 	currentSlide = slideNumber;
 };
