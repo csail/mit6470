@@ -52,7 +52,7 @@ body {
   color: #5858BF;
   font-weight: bold;
 }
-#carousel a:active {
+#carouselnav a:active {
   color: #060D05;
 }
 #carouselnav a {
