@@ -10,7 +10,6 @@ body {
 
 /* Carousel stuff */
 #carousel_panel {
-	padding: 0 80px 0 80px;
 }
 #carouselnav {
 	text-align: center;
@@ -21,7 +20,7 @@ body {
   width: 502px;
   position: relative;
   overflow: hidden;
-  margin: 30px 0 0 0;
+  margin: 30px auto 0 auto;
 }
 #carousel > div.slide {
 	height: 300px;
