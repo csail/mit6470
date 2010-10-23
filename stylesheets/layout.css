@@ -105,7 +105,7 @@ a:hover {
   box-pack: center;  
   
   margin: 0;
-  padding: 0;
+  padding: 30px 0 0 0;
 }
 #carousel_panel {
   -webkit-box-flex: 0;
