@@ -12,6 +12,13 @@ html, body {
   
   color: #1D1D40;
 }
+body {
+	font-family:sans-serif;
+}
+
+.c6470 {
+	font-family:"Lucida Console", monospace;
+}
 a:hover {
   text-decoration: underline;
 }

@@ -1,13 +1,5 @@
 @CHARSET "ISO-8859-1";
 
-body {
-	font-family:sans-serif;
-}
-
-.c6470 {
-	font-family:"Lucida Console", monospace;
-}
-
 /* Carousel stuff */
 #carousel_panel {
 }

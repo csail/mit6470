@@ -10,12 +10,12 @@
   list-style-type: none inside none;
   padding: 0;
 }
-#menu a {
+#menu a, #menu div {
   display: inline-block;
   color: #ffffff;
   padding: 0.5em 0.5em 0.5em 0.5em;
 }
-#menu .current, #menu a:hover {
+#menu .current, #menu a:hover, #menu div a:hover {
   background-color: #d7d8ff;
   opacity: 1;;
   color: #060D05;
@@ -23,4 +23,19 @@
 }
 #menu .current {
   font-weight: bold;
+	cursor: default;
+}
+#menu div ul, #menu div ul a {
+	display: none;
+}
+#menu div:hover ul {
+	display: inline;
+	list-style-type: none;
+	overflow: visible
+	height: 0px;
+}
+#menu div:hover ul a {
+	display: inline;
+	overflow: visible;
+	height: 0px;
 }
