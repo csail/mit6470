@@ -1,0 +1,104 @@
+body {
+    margin:         0;
+    padding:        0;
+    font-family:    "Trebuchet MS", "Helvetica", "Arial", "monotype";
+    font-size:      10pt;
+    background:     #aaa;
+}
+table {
+    font-size:      100%;
+}
+tr {
+    vertical-align: top;
+}
+h1 {
+    font-size:  170%;
+    margin:     1.5em 0 0.7em 0;
+    clear:      both;
+}
+h2 {
+    font-size:  120%;
+    margin:     1.5em 0 0.5em 0;
+    clear:      both;
+}
+h3 {
+    font-size:      100%;
+    font-weight:    bold;
+    font-style:     italic;
+    margin:         1.5em 0 0.5em 0;
+}
+
+a img {
+    border: none;
+}
+.note {
+    width:          37em;
+    line-height:    120%;
+}
+
+
+#sidebar {
+    position:   absolute;
+    left:       0px;
+    top:        0px;
+    width:      300px;
+}
+#sidebar-title {
+    background:     url(../images/sidebar-repeat.png) right repeat-y;
+    padding:        40px;
+    font-weight:    bold;
+    font-size:      24pt;
+    text-align:     right;
+}
+#sidebar-link-container {
+    font-size:  10pt;
+}
+div.sidebar-break {
+    background:     url(../images/sidebar-repeat.png) right repeat-y;
+    height:         10px;
+}
+a.sidebar-link {
+    display:            block;
+    background:         url(../images/sidebar-repeat.png) right repeat-y;
+    padding:            5px 40px;
+    text-align:         right;
+    color:              #888;
+    text-decoration:    none;
+}
+a.sidebar-link:hover {
+    display:        block;
+    background:     url(../images/sidebar-select.png) right no-repeat;
+    padding:        5px 40px;
+    text-align:     right;
+    color:          black;
+    font-weight:    bold;
+}
+.sidebar-link-selected {
+    display:        block;
+    background:     url(../images/sidebar-select.png) right no-repeat;
+    padding:        5px 40px;
+    text-align:     right;
+    font-weight:    bold;
+}
+
+#content {
+    padding:         40px 40px 100px 350px;
+    background:     white;
+    min-height:     400px;
+}
+#course-title {
+    font-weight:    bold;
+    font-size:      24pt;
+    margin-bottom:  1em;
+    color:          #c00;
+}
+
+#footer {
+    text-align:     center;
+    padding:        20px 0px;
+}
+
+span.highlight {
+    padding:    2px;
+    background: #faa;
+}

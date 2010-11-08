@@ -1,0 +1,63 @@
+#sponsor-info {
+    width:  500px;
+    color:  #aaa;
+    font-style: italic;
+}
+#sponsor-info td {
+    vertical-align:     middle;
+    text-align:         center;
+    border:             1px solid #ddd;
+    padding:            10px;
+}
+
+.sponsor-logos img {
+    margin:        0px 20px;
+}
+
+#calendar {
+    font-size:  9pt;
+}
+div.calendar-head {
+    width:          224px;
+    text-align:     center;
+    padding:        5px 0px;
+    clear:          both;
+    font-size:      120%;
+    font-weight:    bold;
+}
+div.calendar-row {
+    padding-top: 2px;
+    clear:       both;
+}
+div.calendar-cell {
+    float:          left;
+    width:          2em;
+    padding:        2px;
+    margin-left:    2px;
+    text-align:     center;
+}
+.free-day {
+    background: #eee;
+}
+.weekday {
+    font-weight: bold;
+}
+.lecture-day {
+    background: #ffffa0;
+}
+.hacking-day {
+    background: #aaf;
+}
+.final-day {
+    background: black;
+    color:      white;
+}
+.milestone-day {
+    background: #aaf;
+}
+.advanced-silverlight{
+    background: #99ff33;
+}
+.advanced-flex{
+    background: #00ffff;
+}
