@@ -1,3 +1,10 @@
 #right_panel p {
   margin: 0;
+  display:none; // hide the text
+}
+#right_panel{
+  padding-top:70px;
+  margin-left:auto;
+  margin-right:auto;
+  width:500px;	
 }

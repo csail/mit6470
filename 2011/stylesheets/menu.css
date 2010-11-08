@@ -1,10 +1,11 @@
 #menu {
-  background-color: #7575ff;
+/*  background-color: #7575ff;
   box-shadow: 0px 0px 10px #6969E5;
   -webkit-box-shadow: 0px 0px 10px #6969E5;
   -moz-box-shadow: 0px 0px 10px #6969E5;
   border-top: 1px solid #6969E5;
   border-bottom: 1px solid #6969E5;
+  */
 }
 #menu ul {
   list-style-type: none inside none;
@@ -12,14 +13,14 @@
 }
 #menu a, #menu div {
   display: inline-block;
-  color: #ffffff;
-  padding: 0.5em 0.5em 0.5em 0.5em;
+  color: #000022;
+  padding: 0.2em 0.5em 0.2em 0.5em;
 }
-#menu .current, #menu a:hover, #menu div a:hover {
-  background-color: #d7d8ff;
-  opacity: 1;;
+#menu .current, #menu a:hover, #menu div a:hover, #menu div:hover ul a:hover {
+  //background-color: #d7d8ff;
+  text-decoration:underline;
+  opacity: 1;
   color: #060D05;
-  text-decoration: none;
 }
 #menu .current {
   font-weight: bold;
@@ -31,11 +32,27 @@
 #menu div:hover ul {
 	display: inline;
 	list-style-type: none;
-	overflow: visible
-	height: 0px;
+	overflow: visible;
+	position:absolute;
+}
+#menu div ul li {
+	padding:0.2em 0.5em 0.2em 0.5em;
 }
 #menu div:hover ul a {
 	display: inline;
 	overflow: visible;
-	height: 0px;
+	//background-color: #7575ff;
+}
+
+
+#header {
+	position:relative;
+	height:45px;
+	background-image:url('../images/logo.png');
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+#header h1 {
+	display:none
 }

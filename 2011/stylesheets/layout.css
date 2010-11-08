@@ -14,6 +14,10 @@ html, body {
 }
 body {
 	font-family:sans-serif;
+	
+	background-image:url('../images/panorama.png');
+	background-repeat:no-repeat;
+	background-position:center top;
 }
 
 .c6470 {
@@ -23,7 +27,7 @@ a:hover {
   text-decoration: underline;
 }
 #page_wrapper {
-  box-flex: 0;
+  /*box-flex: 0;
   min-width: 1020px;
 
   display: -webkit-box;
@@ -42,10 +46,10 @@ a:hover {
   height: 100%;
   
   margin: 0;
-  padding: 0; 
+  padding: 0;*/ 
 }
 #header {
-  -webkit-box-flex: 0;
+/*  -webkit-box-flex: 0;
   -moz-box-flex: 0;
   box-flex: 0;
 
@@ -64,11 +68,11 @@ a:hover {
   -webkit-box-pack: center;
   -moz-box-pack: center;
   box-pack: center;  
-
+*/
   padding: 15px 0 15px 0;
 }
 #menu {
-  -webkit-box-flex: 0;
+/*  -webkit-box-flex: 0;
   -moz-box-flex: 0;
   box-flex: 0;
   
@@ -87,10 +91,12 @@ a:hover {
   -webkit-box-pack: center;
   -moz-box-pack: center;
   box-pack: center;  
-  
+*/  
   padding: 0;
+  text-align:center;
 }
 #content_wrapper {
+	/*
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   box-flex: 1;
@@ -113,27 +119,35 @@ a:hover {
   
   margin: 0;
   padding: 30px 0 0 0;
+  */
+  margin-left: auto;
+  margin-right:auto;
+  width:700px;
+  padding:20px;
+  margin-top:20px;
+  min-height:300px;
 }
 #carousel_panel {
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
   box-flex: 0;
-    
-  width: 660px;
+
   
-  margin: 0;
+  margin-left: auto;
+  margin-right:auto;
 }
-#rigtht_panel {
-  -webkit-box-flex: 0;
+#right_panel {
+/*  -webkit-box-flex: 0;
   -moz-box-flex: 0;
   box-flex: 0;
   
   width: 360px;
 
   margin: 0 5px 0 5px;
-  padding: 0;
+  padding: 0;*/
 }
 #footer {
+	/*
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
   box-flex: 0;
@@ -155,12 +169,22 @@ a:hover {
   box-pack: center;  
 
   padding: 5px 0 5px 0;
-  background-color: #1D1D40;
-  color: #CCCCCC;
+  //background-color: #1D1D40;
+  //color: #CCCCCC;
+  */
   font-size: 10pt;
   padding: 1em 0 1em 0;
+  
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
 }
 
 #footer a {
   color: #7575FF;
+}
+
+
+#content_wrapper {
+	background-color:rgba(230, 230, 255, .8);	
 }

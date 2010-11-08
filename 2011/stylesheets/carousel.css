@@ -1,4 +1,24 @@
-@CHARSET "ISO-8859-1";
+/* Sponsor stuff */
+a.sponsorlogo {
+	display:block;
+	width:100px;
+	float:left;
+}
+
+
+/*Finicky carousel stuff*/
+#carousel div.slide.slide_1 img:first-child, #carousel div.slide img:last-child,
+#carousel div.slide.slide_4 div.step + img{
+	display:none;
+}
+#carousel div.slide img:first-child,
+#carousel div.slide div.step + img{
+	margin-top:70px;
+}
+
+#content_wrapper {
+	background-color:transparent;	
+}
 
 /* Carousel stuff */
 #carousel_panel {
@@ -6,24 +26,30 @@
 #carouselnav {
 	text-align: center;
 	margin: 0;
+	color:transparent;
+}
+#carousel, #carousel_panel,#carousel > div.slide {
+  height: 270px;
+  width:600px;
 }
 #carousel {
-  height: 302px;
-  width: 502px;
   position: relative;
   overflow: hidden;
-  margin: 30px auto 0 auto;
+  margin: 0px auto 0 auto;
 }
 #carousel > div.slide {
-	height: 300px;
-	width: 500px;
-	border: 1px solid #b3b3c4;
+	border: 0px solid #b3b3c4;
 	position: absolute;
-	background-color: #d7d8ff;
+	//background-color: #d7d8ff;
+	background-color: transparent;
 	display: inline;
+	padding-left:20px;
+}
+#carousel > div.slide.slide_1 {
+	padding-left:70px;	
 }
 .step {
-  width: 275px;
+  width: 245px;
   height: 250px;
   float: left;
   padding: 0 0 0 25px;
@@ -40,17 +66,18 @@
   padding: 50px 0px 20px;
 }
 #carouselnav a {
-  color: #5858BF;
+  color: #060D05;
   font-weight: bold;
 }
-#carouselnav a:active {
-  color: #060D05;
+#carouselnav a:hover {
+  color: #28289F;
+  cursor:pointer;
 }
 #carouselnav a {
   margin: 0 5px 0 5px;
 }
 #carouselnav {
-  color: #62B249;
+  //color: #62B249;
 }
 
 
