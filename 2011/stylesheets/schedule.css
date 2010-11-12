@@ -1,0 +1,10 @@
+h2 {
+  margin: 0.25em 0 0 0;
+}
+ul.schedule {
+  list-style: none;
+  padding: 0;
+}
+ul.schedule li {
+  line-height: 1.5em;
+}
