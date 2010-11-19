@@ -1,0 +1,117 @@
+/* Sponsor stuff */
+
+#slideshow {
+	margin: auto;
+	width:600px;
+	font-family:Verdana, Geneva, sans-serif;
+}
+/*Finicky carousel stuff*/
+#carousel div.slide.slide_1 img:first-child, #carousel div.slide img:last-child,
+#carousel div.slide.slide_4 div.step + img{
+	display:none;
+}
+#carousel div.slide img:first-child,
+#carousel div.slide div.step + img{
+	margin-top:70px;
+}
+
+#content_wrapper {
+	background-color:transparent;
+	margin: auto;
+	text-align: center;
+	width:522px;
+	height:270;
+	background-image: url(../images/Slide/SlideShow_BG.gif);
+	background-position: left top;
+}
+
+/* Carousel stuff */
+#carousel_panel {
+}
+#carouselnav {
+	text-align: center;
+	color:#FFF;
+	height: 34px;
+	width: 522px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	/* padding-top: 8px;
+	padding-bottom: 12px; */
+}
+#carousel, #carousel_panel,#carousel > div.slide {
+  height: 220px;
+  width:500px;
+}
+#carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 0px auto 0 auto;
+}
+#carousel > div.slide {
+	position: absolute;
+	//background-color: #d7d8ff;
+	background-color: transparent;
+	display: inline;
+	padding-left:10px;
+	margin-top:10px;
+}
+#carousel > div.slide.slide_1 {
+	padding-left:70px;
+}
+.step {
+  width: 400px;
+  height: 150px;
+  float: left;
+  padding: 0px;
+  text-align:left;
+  color:#838282;
+  font-size:12px;
+  
+}
+.slide img {
+	float: left;
+	margin-right: 0px;
+}
+#carousel .placeholder {
+  width: 25px;
+  height: 250px;
+  float: left;
+}
+.step h4 {
+	padding: 30px 0px 20px 0px;
+	font-size:18px;
+	text-transform: uppercase;
+	color: #666;
+	letter-spacing: 0.1em;
+	word-spacing: 0.3em;
+}
+.step h5 {
+	padding: 0px;
+	font-size:0.1px;
+	text-transform: uppercase;
+	color: #666;
+	margin: 0px;
+}
+#carouselnav a {
+  color: #ffffff;
+  font-weight: bold;
+}
+#carouselnav a:hover {
+  color: #d0fbff;
+  cursor:pointer;
+}
+#carouselnav a {
+  margin: 0 35px 0 35px;
+}
+#carouselnav {
+  //color: #62B249;
+}
+
+.slide1_img {
+	margin-top:70px;
+	margin-left:0px;
+}
+
+#carouselnav div {
+    margin-bottom: 0px;
+}

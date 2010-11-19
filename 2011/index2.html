@@ -6,20 +6,18 @@
 
 <link href="stylesheets/base.css" rel="stylesheet" type="text/css" />
 <link href="stylesheets/SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-<link href="stylesheets/SpryAssets/SpryStackedContainers.css" rel="stylesheet" type="text/css" />
-
+<link href="stylesheets/nivo-slider.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="stylesheets/style.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="javascripts/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="javascripts/jquery.nivo.slider.pack.js" type="text/javascript"></script>
 <script src="javascripts/SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
 <script src="javascripts/SpryAssets/SpryData.js" type="text/javascript"></script>
-<script src="javascripts/SpryAssets/SpryHTMLDataSet.js" type="text/javascript"></script>
-<script type="text/javascript">
-var LectureS = new Spry.Data.HTMLDataSet("Schedule_Data.html", "LectureS");
-</script>
-</head>
+
 
 <body>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" id="base">
   <tr>
-     <td align="right" valign="top" id="Menu">
+    <td align="right" valign="top" id="Menu">
     
     <!-- MENU END -->
     
@@ -29,7 +27,7 @@ var LectureS = new Spry.Data.HTMLDataSet("Schedule_Data.html", "LectureS");
       <tr>
         <td align="right" valign="middle" width="300">
         
-        <a href="index.html">Home</a> <a href="schedule.html">Schedule</a> <a href="lectures.html" style="background: url(images/Menu_Arrow.jpg) no-repeat center top;">Lectures</a> <a href="competition.html">Competition</a>&nbsp;
+        <a href="index.html">Home</a> <a href="schedule.html">Schedule</a> <a href="lectures.html">Lectures</a> <a href="competition.html">Competition</a>&nbsp;
         
         </td>
       </tr>
@@ -54,7 +52,9 @@ var LectureS = new Spry.Data.HTMLDataSet("Schedule_Data.html", "LectureS");
   </tr>
 </table>
 
-<!-- MENU END --></td>
+<!-- MENU END -->
+    
+    </td>
   </tr>
   <tr>
     <td valign="top" id="Body_Shade_Top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -62,56 +62,49 @@ var LectureS = new Spry.Data.HTMLDataSet("Schedule_Data.html", "LectureS");
         <td align="left" valign="top"><img src="images/Logo.gif" name="logo" width="400" height="60" id="logo" /></td>
       </tr>
       <tr>
-        <td align="center" valign="top"><table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+        <td align="center" valign="bottom">
+        
+        <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
           <tr>
-            <td height="12" background="images/Content2_Top_BG.jpg">&nbsp;</td>
+            <td align="center" valign="top" id="SlideShow" height="254">
+            <!-- SLIDE SHOW -->
+            
+            
+            <div id="wrapper">
+    
+       <div id="slider-wrapper">
+        
+            <div id="slider" class="nivoSlider">
+                <img src="images/Step1.jpg" alt="" rel="images/Step_thumb.gif" />
+                <img src="images/Step2.jpg" alt="" rel="images/Step_thumb.gif" />
+                <img src="images/Step3.jpg" alt="" rel="images/Step_thumb.gif" />
+                <img src="images/Step4.jpg" alt="" rel="images/Step_thumb.gif" />
+            </div>
+        
+        </div>
+
+    </div>
+  
+  <!-- SLIDE SHOW -->
+            </td>
           </tr>
           <tr>
-            <td align="left" valign="top" background="images/Content2_BG.jpg" id="content"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td align="left" valign="top" style="font-size:12px">We are currently in the process of deciding the curriculum for this year. Please check back in at a later time</td>
-              </tr>
-              <tr>
-                <td align="left" valign="top">&nbsp;</td>
-              </tr>
-              <tr>
-                <td align="left" valign="top"><div spry:region="LectureS">
-                  <table>
-                    <tr>
-                      <th class="Headingz" spry:sort="Day">Day</th>
-                      <th class="Headingz" spry:sort="Date">Date</th>
-                      <th class="Headingz" spry:sort="Time">Time</th>
-                      <th class="Headingz" spry:sort="Room">Room</th>
-                      <th class="Headingz" spry:sort="Type">Type</th>
-                    </tr>
-                    <tr spry:repeat="LectureS" spry:odd="Odd_Row" spry:even="Even_Row" spry:hover="Hov_Row">
-                      <td width="65">{Day}</td>
-                      <td>{Date}</td>
-                      <td width="120">{Time}</td>
-                      <td>{Room}</td>
-                      <td>{Type}</td>
-                    </tr>
-                  </table>
-                </div></td>
-              </tr>
-              <tr>
-                <td align="left" valign="top">&nbsp;</td>
-              </tr>
-              <tr>
-                <td align="left" valign="top" style="font-size:12px">Take a look at <a href="http://6.470.scripts.mit.edu/lectures/index.php" target="_blank">last year's lectures, slides, example code, etc.</a></td>
-              </tr>
-            </table></td>
-          </tr>
-          <tr>
-            <td height="11" background="images/Content2_Bot_BG.jpg">&nbsp;</td>
+            <td height="11">&nbsp;</td>
           </tr>
         </table></td>
       </tr>
-      <tr>
-        <td align="center" valign="top">&nbsp;</td>
-      </tr>
     </table></td>
   </tr>
+  <tr>
+        <td height="118" align="center" valign="top" background="images/Sponser_BG.jpg" id="Sponsor"><table width="610" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td height="30" align="left" valign="middle"><img src="images/Sponsors_Heading.gif" width="110" height="16" /></td>
+          </tr>
+          <tr>
+            <td align="left" valign="middle"><img src="images/Sponsors.gif" width="600" height="70" border="0" usemap="#Map" /></td>
+          </tr>
+        </table></td>
+      </tr>
   <tr>
     <td align="center" valign="top" id="Footer">
     <table border="0" align="center" cellpadding="0" cellspacing="0" id="CopyRights">
@@ -132,6 +125,22 @@ var LectureS = new Spry.Data.HTMLDataSet("Schedule_Data.html", "LectureS");
     </td>
   </tr>
 </table>
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider({
+			effect:'sliceDown', //Specify sets like: 'fold,fade,sliceDown'
+		controlNavThumbs:true,
+		controlNavThumbsFromRel:true
+    });
+	});
+    </script>
+<map name="Map" id="Map">
+  <area shape="rect" coords="1,1,109,75" href="http://www.nextjump.com" target="_blank" />
+  <area shape="rect" coords="122,-9,223,72" href="http://www.microsoft.com" target="_blank" />
+  <area shape="rect" coords="245,-10,349,76" href="http://www.yahoo.com" target="_blank" />
+  <area shape="rect" coords="372,-8,472,69" href="http://www.facebook.com" target="_blank" />
+  <area shape="rect" coords="492,-8,600,68" href="http://www.tripadvisor.com" target="_blank" />
+</map>
 <script type="text/javascript">
 var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"images/SpryAssets/SpryMenuBarDownHover.gif", imgRight:"images/SpryAssets/SpryMenuBarRightHover.gif"});
 </script>

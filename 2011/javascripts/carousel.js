@@ -65,8 +65,20 @@ var changeSlide = function(slideNumber) {
 	}
 	
 	currentSlide = slideNumber;
+    
+    // adjust words
+    adjustWords()
 };
 
+function adjustWords() {
+    for (var i = 1; i <= 4; i++) {
+        if (i == currentSlide) {
+            $("a.slide_" + i).children(":first").css("background", "url('images/words.png') no-repeat scroll -100px -" + ((i - 1) * 34) + "px")
+        } else {
+            $("a.slide_" + i).children(":first").css("background", "url('images/words.png') no-repeat scroll 0px -" + ((i - 1) * 34) + "px")
+        }
+    }
+}
 
 /**
  *  pauses the carousel's auto sliding function
@@ -110,4 +122,6 @@ $(document).ready(function () {
 	$("img[src=images\\/left_arrow\\.png]").click(prevSlide);
 	
 	autoplaytimer = setTimeout(autoPlay, 5000);
+    
+    adjustWords()
 });

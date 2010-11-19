@@ -1,117 +1,192 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:spry="http://ns.adobe.com/spry">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title>6.470 Web Programming Competition</title>
-  <link rel="stylesheet" type="text/css" href="stylesheets/layout.css" />
-  <link rel="stylesheet" type="text/css" href="stylesheets/menu.css" />
-  <link rel="stylesheet" type="text/css" href="stylesheets/right_panel.css" />
-  <link rel="stylesheet" type="text/css" href="stylesheets/carousel.css" />
-  <script type="text/javascript" src="javascripts/jquery-1.4.3.min.js"></script>
-  <script type="text/javascript" src="javascripts/carousel.js"></script>
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-19600078-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-</head>
-<body>
-<div id="page_wrapper">
-  <div id="header">
-    <h1 class="c6470">&lt;6.470&gt;</h1>
-    <h1>MIT Web Programming Competition</h1>
-  </div>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MIT 6.470 IAP Web Design Competition</title>
 
-  <div id="menu">
-  	<a class="current">Home</a>
-    <a href="schedule.html">Schedule</a>
-    <a href="lectures.html">Lectures</a>
-  	<a href="competition.html">Competition</a>
-  	<div>Previous Years
-			<ul>
-				<li><a href="../2010/index.html">2010</a></li>
-				<li><a href="../2009/index.html">2009</a></li>
-			</ul>
-		</div>
-  </div>
+<link href="stylesheets/base.css" rel="stylesheet" type="text/css" />
+<link href="stylesheets/SlideShow_IE.css" rel="stylesheet" type="text/css" />
+<link href="stylesheets/SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+
+<script src="javascripts/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="javascripts/carousel.js" type="text/javascript"></script>
+<script src="javascripts/SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<script src="javascripts/SpryAssets/SpryData.js" type="text/javascript"></script>
+
+
+<!--[if !IE]><!-->
+	<link href="stylesheets/SlideShow_IE.css" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" id="base">
+  <tr>
+      <td align="right" valign="top" id="Menu">
     
-  <div id="content_wrapper">
+    <!-- MENU END -->
+    
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="right" valign="middle"><table width="100%" border="0" cellpadding="0" cellspacing="0" id="MenuBar2">
+      <tr>
+        <td align="right" valign="middle" width="300">
+        
+        <a href="index.html">Home</a> <a href="schedule.html">Schedule</a> <a href="lectures.html">Lectures</a> <a href="competition.html">Competition</a>&nbsp;
+        
+        </td>
+      </tr>
+    </table></td>
+    <td align="right" valign="middle" width="115">
+    <table width="115" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="right" valign="middle" width="115">
+        
+        <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a class="MenuBarItemSubmenu" href="#">Previous Years</a>
+        <ul>
+          <li><a href="http://6.470.scripts.mit.edu/2010/index.html" target="_blank">2010</a></li>
+          <li><a href="http://6.470.scripts.mit.edu/2009/index.html" target="_blank">2009</a></li>
+</ul>
+      </li>
+</ul>
+        
+        </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+<!-- MENU END --></td>
+  
+    
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" id="Body_Shade_Top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="left" valign="top"><img src="images/Logo.gif" name="logo" width="400" height="60" id="logo" /></td>
+      </tr>
+      <tr>
+        <td align="center" valign="bottom"><table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td height="12">&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="center" valign="top" id="SlideShow" height="270">
+            <!-- SLIDE SHOW -->
+            <div id="content_wrapper">
     <div id="carousel_panel">
-      <div id="carouselnav">
-        <a class="slide_1">Register</a> >>
-        <a class="slide_2">Learn</a> >>
-        <a class="slide_3">Build</a> >>
-        <a class="slide_4">Win</a> 
-      </div>
+      
       <div id="carousel">
-        <div class="slide slide_1">
-          <img src="images/left_arrow.png" />
-          <img src="images/register.png" />
-          <div class="step">
+        <div class="slide slide_1" style="left: 0px;">
+          
+          <div class="step"><h5>&nbsp;</h5>
+          <img src="images/Slide/Register.png" width="75" height="110" class="slide1_img" />
             <h4>Step 1</h4>
-            <p>Register with your friends for 
-              <span class="c6470">6.470</span> this IAP.
-            </p>
+            <p>Register with your friends for 6.470 this IAP.</p>
           </div>
-          <img src="images/right_arrow.png" />
-          <img src="images/dots1.png" />
+          
         </div>
-        <div class="slide slide_2">
-          <img src="images/left_arrow.png" />
-          <img src="images/learn.png" />
+        <div class="slide slide_2" style="left: -600px;">
+          
           <div class="step">
+          <img src="images/Slide/Learn.jpg" width="100" height="89" style="margin-left:50px" />
             <h4>Step 2</h4>
             <p>Learn how to build your own dynamic website.  Attend lectures on HTML5, CSS, 
 								JavaScript, AJAX, PHP, MySQL, Ruby on Rails, Silverlight, and Flash.</p>
           </div>
-          <img src="images/right_arrow.png" />
-          <img src="images/dots2.png" />
+          
         </div>
-        <div class="slide slide_3">
-          <img src="images/left_arrow.png" />
-          <img src="images/build.png" />
+        <div class="slide slide_3" style="left: -600px;">
+          
           <div class="step">
+            <img src="images/Slide/Build.jpg" width="100" height="89" style="margin-left:50px" />
             <h4>Step 3</h4>
             <p>Team up with two others and build an awesome website based on this year's challenge.</p>
           </div>
-          <img src="images/right_arrow.png" />
-          <img src="images/dots3.png" />
+          
         </div>
-        <div class="slide slide_4">
-          <img src="images/left_arrow.png" />
-          <img src="images/win.png" />
+        <div class="slide slide_4" style="left: 600px;">
+          
           <div class="step">
-            <h4>Step 4</h4>
+          <img src="images/Slide/money.jpg" width="100" height="89" style="margin-left:50px" />
+          <h4>Step 4</h4>
             <p>Win money from our $30,000 prize pool.  Start the next big thing!</p>
           </div>
-          <img src="images/right_arrow.png" />
-          <img src="images/dots4.png" />
+          
         </div>
       </div>
     </div>
   
-    <div id="right_panel">
-      <p>Take <span class="c6470">6.470</span> this IAP.</p>
-      <h3>Sponsored by</h3>
-      
-      <a href="http://www.nextjump.com" id="sponsor_nextjump" class="sponsorlogo">Next Jump</a>
-	    <a href="http://www.microsoft.com" id="sponsor_microsoft" class="sponsorlogo">Microsoft</a>
-	    <a href="http://www.yahoo.com" id="sponsor_yahoo" class="sponsorlogo">Yahoo</a>
-	    <a href="http://www.facebook.com" id="sponsor_facebook" class="sponsorlogo">Facebook</a>
-	    <a href="http://www.tripadvisor.com" id="sponsor_tripadvisor" class="sponsorlogo">Trip Advisor</a>
-    </div>
+  <!--
+  <div id="carouselnav">
+        <a class="slide_1">Register</a>
+        <a class="slide_2">Learn</a>
+        <a class="slide_3">Build</a>
+        <a class="slide_4">Win</a> 
+      </div>
+    -->
+  <div id="carouselnav">
+        <div style="position:relative;left:27px;top:0px;width:0px;height:34px;background:url('images/words.png') no-repeat scroll 0px 0px"></div>
+        <a class="slide_1" style=""><div style="position:relative;left:27px;top:-34px;width:100px;height:34px;background:url('images/words.png') no-repeat scroll 0px 0px"></div></a>
+        <a class="slide_2" style="height:34px"><div style="position:relative;left:147px;top:-68px;width:100px;height:34px;background:url('images/words.png') no-repeat scroll 0px -34px"></div></a>
+        <a class="slide_3" style="height:34px"><div style="position:relative;left:273px;top:-102px;width:100px;height:34px;background:url('images/words.png') no-repeat scroll 0px -68px"></div></a>
+        <a class="slide_4" style="height:34px"><div style="position:relative;left:393px;top:-136px;width:100px;height:34px;background:url('images/words.png') no-repeat scroll 0px -102px"></div></a> 
+      </div>
+
+    
   </div>
-  <div id="footer">
-    <p>Questions? Comments? Email us at: 
-      <a href="mailto:6470-staff@mit.edu">6470-staff@mit.edu</a>
-    </p>
-  </div>
-</div>
+  
+  <!-- SLIDE SHOW -->
+            </td>
+          </tr>
+          <tr>
+            <td height="11">&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+        <td height="118" align="center" valign="top" background="images/Sponser_BG.jpg" id="Sponsor"><table width="610" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td height="30" align="left" valign="middle"><img src="images/Sponsors_Heading.gif" width="110" height="16" /></td>
+          </tr>
+          <tr>
+            <td align="left" valign="middle"><img src="images/Sponsors.gif" width="600" height="70" border="0" usemap="#Map" /></td>
+          </tr>
+        </table></td>
+      </tr>
+  <tr>
+    <td align="center" valign="top" id="Footer">
+<table border="0" align="center" cellpadding="0" cellspacing="0" id="CopyRights">
+      <tr>
+        <td width="5" height="15" align="center" valign="top">&nbsp;</td>
+        <td align="center" valign="top"><a href="http://mit.edu" target="_blank"><img src="images/MITlogo.png" width="63" height="35" border="0" /></a></td>
+        <td width="5" align="center" valign="top">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="15" align="center" valign="top">&nbsp;</td>
+        <td height="25" align="center" valign="middle">Questions? Comments? Email us at: <a href="mailto:6470-staff@mit.edu">6470-staff@mit.edu</a></td>
+        <td align="center" valign="top">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="3" align="center" valign="middle"><img src="images/CopyRight_Bdr.jpg" width="100%" height="1" /></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+<script type="text/javascript">
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"images/SpryAssets/SpryMenuBarDownHover.gif", imgRight:"images/SpryAssets/SpryMenuBarRightHover.gif"});
+</script>
+<map name="Map" id="Map">
+  <area shape="rect" coords="1,1,109,75" href="http://www.nextjump.com" target="_blank" />
+  <area shape="rect" coords="122,-9,223,72" href="http://www.microsoft.com" target="_blank" />
+  <area shape="rect" coords="245,-10,349,76" href="http://www.yahoo.com" target="_blank" />
+  <area shape="rect" coords="372,-8,472,69" href="http://www.facebook.com" target="_blank" />
+  <area shape="rect" coords="492,-8,600,68" href="http://www.tripadvisor.com" target="_blank" />
+</map>
 </body>
 </html>

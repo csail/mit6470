@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+/* SpryStackedContainers.css */
+
+/* Copyright (c) 2007. Adobe Systems Incorporated. All rights reserved. */
+
+/* This is the selector for the main container of the Stacked Containers structure. 
+ *
+ * If you want to constrain the width of the Stacked Containers structure, set a width on
+ * the StackedContainers container. By default, our structure expands horizontally to fill
+ * up available space.
+ */
+.StackedContainers
+{
+	font: 100% Verdana, Geneva, sans-serif;
+	margin: 2px;
+}
+
+/* This is the selector for the Row Container element which houses all the column
+ * classes. 
+*/
+.StackedContainers .RowContainer
+{
+	margin-bottom: 5px;
+}
+
+/* This is the selector for a column element which holds the actual data. 
+ *
+*/
+.StackedContainers .RowColumn
+{
+	margin-bottom: 1px;
+}
+
+.Odd_Row td {
+	text-align:left;
+	padding-top: 1px;
+	padding-right: 40px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	text-align:left;
+	margin:0px;
+	color:#444;
+	}
+
+.Even_Row td {
+	text-align:left;
+	padding-top: 1px;
+	padding-right: 40px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	text-align:left;
+	margin:0px;
+	color:#444;
+	}
+	
+.Hov_Row td {
+	background-color:#f1f1f1;
+	color:#369;
+}
+
+.Headingz {
+	text-align:left;
+	padding-top: 0px;
+	padding-right: 40px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	text-align:left;
+	color:#03F;
+	font-size:11px;
+}
+
+.ScheduleHeading {
+	text-align:left;
+	padding: 0px 0px 3px 0px;
+	text-align:left;
+	color:#09F;
+	font-size:16px;
+	letter-spacing: 0.3em;
+}
