@@ -1,0 +1,29 @@
+= MIT 6.470 Web Site
+
+This is the source code for the MIT 6.470 IAP Web Programming Competition. It is
+open-sourced because any motivated person can use a spider to get all the pages
+anyway.
+
+
+== Layout
+
+Each year has its own distinct directory. This has the downside of duplicated 
+files, but it makes things easier to manage. Besides, git is good at detecting
+exact duplicates, and only stores them once.
+
+Each year's directory is organized as follows:
+    * the root has HTML files
+    * /images - PNG, JPEG, GIF images
+    * /javascripts - JS files
+    * /stylesheets - CSS files
+
+
+== Deployment
+
+The root of this repository is deployed in AFS at
+    /afs/athena.mit.edu/course/6/6.470/web_scripts
+
+The www directory contains an index.html which redirects to the site's root. It
+is deployed in AFS at
+    /afs/athena.mit.edu/course/6/6.470/index.html
+    /afs/athena.mit.edu/course/6/6.470/www/index.html
