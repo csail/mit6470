@@ -1,0 +1,465 @@
+<html>
+<head>
+<title> 6.470 DB Design</title>
+<script type="text/javascript">
+
+function displayHTML(id){
+	src= document.getElementById(id+"_src").value;
+	document.getElementById(id).contentWindow.document.body.innerHTML = src;
+}
+
+
+
+</script>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+}
+#container{
+	position:absolute;
+	width: 800px;
+	left: 20px;
+}
+.header{
+	position: absolute;
+	left: 230px;
+	top: 30px;
+	font-size:26pt;
+	font-family: "Trebuchet MS", "Helvetica", "Arial", "monotype";
+}
+
+.big-picture{
+	width: 600px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px black;
+	background-color: ddd;
+}
+
+.topic{
+    margin-top: 10px;
+	font-size:18pt;
+	font-weight: bold;
+	font-family: "Trebuchet MS", "Helvetica", "Arial", "monotype";
+}
+.code-trial{
+	width: 800px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px black;
+	background-color: 33ccff;
+}
+.code_area{
+	width: 100%; 
+	border: 0;
+	cellpadding: 3px; 	
+	cellspacing: 3px;
+}
+.code_input, .result_output {
+	background-color:#FFFFFF;
+	border:1px solid gray;
+	height:300px;
+	width:100%;
+}
+
+.section{
+    margin-left: 30px
+}
+.tables, .actors, .movies, .table-example, .explanation{
+	display: inline-table;
+}
+
+.explanation{
+	margin-left: 30px;
+	color: red;
+}
+.actors, .movies{
+	margin: 10px;
+}
+</style>
+</head>
+<body>
+
+<img src="../images/small-smoking-laptop.png" />
+<table class= "header">
+	<tr><td> <div id="day-number"> <b>6.470</b> Day 2</div> </td></tr>
+	<tr><td> <div id="topic-set">Database Design </div></td></tr>
+</table>
+<div id="container">
+	<div class = "big-picture">
+	<div>The Big Picture:</div>
+		<ul>
+			<li>
+				Databases store data in <b>tables</b>
+				<ul>
+				  <li>row-oriented</li>
+				  <li>use of primary keys: the field or set of fields for the table that make each row unique</li>
+				  <li>you need a <b>schema</b>: the formal structure and relationships contained within your tables</li>
+				</ul>
+			</li>
+			<li>
+			       Databases store <b>relationships</b>
+			       <ul>
+				 <li>one-to-one: everyone has a social security number and each social security number is had by only one person</li>
+				 <li>one-to-many: you can own several pets, but each pet is owned by one person</li>
+				 <li>many-to-many: everyone can have several hobbies, and hobbies can be had by multiple people</li>
+			       </ul>
+			</li>
+
+		</ul>
+	</div>
+<br>
+
+<div class= "intro">This lecture will talk about the theory behind how to organize a database.  The
+lecture on SQL will talk about a particular syntax for creating and querying a database.
+</div>
+
+<div class="topic">Data Tables</div>
+<div class="section">
+<p>
+Databases force you to store all of your data in tables.  When you
+define a table, you give it the names of all the columns you want to
+use and what type of data that field will contain (integer, text, time,
+etc.)
+</p>
+
+Some databases are simple enough to fit in one table.  For example,
+the NameTrends uses one table whose columns are
+<br><br>
+<table border="1px" cellpadding="4px">
+	<tr>
+		<td> <b>unique id</b> </td>
+		<td> <b>year</b> </td>
+		<td> <b>name</b> </td>
+		<td> <b>gender</b> </td>
+		<td> <b>percentage</b> </td>
+		<td> <b>rank</b> </td>
+	</tr>
+</table>
+<p>
+Let's consider a more complicated case.  Two years ago, the challenge
+for 6.470 was to display movie data.  Movie data encompassed actors'
+names and biographical data, as well as the names of movies and trivia
+about them, including: year of release, MPAA rating (G, PG, R, etc.),
+cast and parts.  The cast included the names of actors that we had
+data for.
+</p>
+<p>
+
+<p>
+What's the wrong way of design a part of this database?  I'll give you
+two tempting but losing strategies.
+</p>
+<p>
+<b>The "One Big Table" Strategy</b><br><br>
+<div class="table-example">
+	<table  border="1px" cellpadding="4px">
+		<tr>
+			<th>  name </th>
+			<th> m/f </th>
+			<th> title </th>
+			<th> year </th>
+		</tr>
+		<tr>
+			<td> Carrie Fisher </td>
+			<td> f </td>
+			<td> Star Wars: A New Hope </td>
+			<td> 1977 </td>
+		</tr>
+		<tr>
+			<td> Carrie Fisher </td>
+			<td> f </td>
+			<td> The Empire Strikes Back </td>
+			<td> 1980 </td>
+		</tr>
+		<tr>
+			<td> Carrie Fisher </td>
+			<td> f </td>
+			<td> Return of the Jedi </td>
+			<td> 1983 </td>
+		</tr>
+		<tr>
+			<td> Mark Hamill </td>
+			<td> m </td>
+			<td> Star Wars: A New Hope </td>
+			<td> 1977 </td>
+		</tr>
+		<tr>
+			<td> Mark Hamill </td>
+			<td> m </td>
+			<td> The Empire Strikes Back </td>
+			<td> 1980 </td>
+		</tr>
+		<tr>
+			<td> Mark Hamill </td>
+			<td> m </td>
+			<td> Return of the Jedi </td>
+			<td> 1983 </td>
+		</tr>
+		<tr>
+			<td> Harrison Ford </td>
+			<td> m </td>
+			<td> Star Wars: A New Hope </td>
+			<td> 1977 </td>
+		</tr>
+		<tr>
+			<td> Harrison Ford </td>
+			<td> m </td>
+			<td> The Empire Strikes Back </td>
+			<td> 1980 </td>
+		</tr>
+		<tr>
+			<td> Harrison Ford </td>
+			<td> m </td>
+			<td> Return of the Jedi </td>
+			<td> 1983 </td>
+		</tr>
+		<tr>
+			<td> Harrison Ford </td>
+			<td> m </td>
+			<td> Indiana Jones </td>
+			<td> 1981 </td>
+		</tr>
+	</table>
+</div>
+<div class="table-example explanation" style="width: 300px">
+This design repeats data, which is bad because a bigger database can
+mean longer query times and because repeated data always means an
+opportunity for corruption (what happens if Carrie Fischer marries
+Harrison Ford but you forget to update half of Ms. Fischer's last
+names?). Additionally, what if you wanted to store data about all
+kinds of actors, including television actors? How would you store a
+television actor that had never been in a movie in this table? Leave a
+bunch of nulls for all the movie fields? Yuck.
+</div>
+
+</p>
+
+
+<p>
+<b>The "List Abuse" Strategy</b><br><br>
+<div class="actors">
+<table  border="1px" cellpadding="4px">
+	<tr>
+		<th> name </th>
+		<th> m/f </th>
+		<th> movies </th>
+	</tr>
+	<tr>
+		<td> Carrie Fisher </td>
+		<td> f </td>
+		<td> 1, 2, 3 </td>
+	</tr>
+	<tr>
+		<td> Mark Hamill </td>
+		<td> m </td>
+		<td> 1, 2, 3 </td>
+	</tr>
+	<tr>
+		<td> Harrison Ford </td>
+		<td> m </td>
+		<td> 1, 2, 3, 4 </td>
+	</tr>
+</table>
+</div>
+<div class="movies">
+<table  border="1px" cellpadding="4px">
+	<tr>
+		<th> unique id </th>
+		<th> title </th>
+		<th> year </th>
+	</tr>
+	<tr>
+		<td> 1 </td>
+		<td> Star Wars: A New Hope </td>
+		<td> 1977 </td>
+	</tr>
+	<tr>
+		<td> 2 </td>
+		<td> The Empire Strikes Back </td>
+		<td> 1980 </td>
+	</tr>
+	<tr>
+		<td> 3 </td>
+		<td> Return of the Jedi </td>
+		<td> 1983 </td>
+	</tr>
+	<tr>
+		<td> 4 </td>
+		<td> Indiana Jones </td>
+		<td> 1981 </td>
+	</tr>
+</table>
+</div>
+<br>
+<div class="explanation" >
+Here we try to avoid making more tables (or avoid joins, which nobody
+should be scared of but some people are) by listing the movies each
+actor is in. This goes against the concept of table storage because
+we've lost the ability to do efficient searching and efficient
+insertion. For example, to find all the actors in movie id=3 we have
+to look at every actor, parse the list of movies and see and then
+search it. With databases, lists are never the answer.
+</div>
+</p>
+<br>
+
+<b>The "Normalization" Strategy</b><br><br>
+
+<P>
+Here's a better way to do this. We're going to do an informal
+"normalization" of the data by breaking it up into tables to get rid
+of repeated data. Normalization is a big part of database theory and
+there are algorithms that achieve different "Normal Forms" that have
+various desirable properties; fortunately, in most cases your
+intuition about what set of tables eliminates repeated data will
+produce a normalized schema; just don't be afraid of:
+<ol>
+<li>creating more tables when you need them</li>
+<li>creating <b>join tables</b> to provide a link between two tables
+and get rid of many-to-many relationships contained within one
+table</li>
+</ol>
+
+<p>With those ideas in mind, let's break actors and movies into their
+own tables. Each actor has one id, one name, and one gender, which is
+good because one-to-one relationships tend to mean we're not repeating
+data. Similarly, each movie has one id, one title, and one year.</p>
+
+<div class="actors">
+<b>actors</b>
+<table  border="1px" cellpadding="4px">
+	<tr>
+		<th> id </th>
+		<th> name </th>
+		<th> m/f </th>
+	</tr>
+	<tr>
+		<td> 1 </td>
+		<td> Carrie Fisher </td>
+		<td> f </td>
+	</tr>
+	<tr>
+		<td> 2 </td>
+		<td> Mark Hamill </td>
+		<td> m </td>
+	</tr>
+	<tr>
+		<td> 3 </td>
+		<td> Harrison Ford </td>
+		<td> m </td>
+	</tr>
+</table>
+</div>
+<div class="movies">
+<b>movies</b>
+<table  border="1px" cellpadding="4px">
+	<tr>
+		<th> id </th>
+		<th> title </th>
+		<th> year </th>
+	</tr>
+	<tr>
+		<td> 1 </td>
+		<td> Star Wars: A New Hope </td>
+		<td> 1977 </td>
+	</tr>
+	<tr>
+		<td> 2 </td>
+		<td> The Empire Strikes Back </td>
+		<td> 1980 </td>
+	</tr>
+	<tr>
+		<td> 3 </td>
+		<td> Return of the Jedi </td>
+		<td> 1983 </td>
+	</tr>
+	<tr>
+		<td> 4 </td>
+		<td> Indiana Jones </td>
+		<td> 1981 </td>
+	</tr>
+</table>
+</div>
+
+
+<p>
+The only thing missing is the information about which actors were in
+which films. To represent this we create a new join table that links
+the two tables.
+</p>
+<div class="table-example">
+<b>movies_actors</b>
+<table  border="1px" cellpadding="4px">
+	<tr>
+		<th> actorid </th>
+		<th> movieid </th>
+	</tr>
+	<tr>
+		<td> 1 </td>
+		<td> 1 </td>
+	</tr>
+	<tr>
+		<td> 1 </td>
+		<td> 2 </td>
+	</tr>
+	<tr>
+		<td> 1 </td>
+		<td> 3 </td>
+	</tr>
+	<tr>
+		<td> 2 </td>
+		<td> 1 </td>
+	</tr>
+	<tr>
+		<td> 2 </td>
+		<td> 2 </td>
+	</tr>
+	<tr>
+		<td> 2 </td>
+		<td> 3 </td>
+	</tr>
+		<tr>
+		<td> 3 </td>
+		<td> 1 </td>
+	</tr>
+	<tr>
+		<td> 3 </td>
+		<td> 2 </td>
+	</tr>
+	<tr>
+		<td> 3 </td>
+		<td> 3 </td>
+	</tr>
+	<tr>
+		<td> 3 </td>
+		<td> 4 </td>
+	</tr>
+</table>
+</div>
+
+<br><br>
+
+<div class="table-example explanation">
+Each movie has one or more actors and each actor has one or more movie
+- these many-to-one relationships create repetition. This join table
+gets rid of all the data repetition.
+</div>
+
+<p>
+Tada! A nice normalized schema with no repeated data.
+</p>
+
+</div>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

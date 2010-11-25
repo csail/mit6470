@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="Colorwheel.svg"
+   inkscape:version="0.41"
+   sodipodi:version="0.32"
+   height="540"
+   width="540">
+  <defs />
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>MarianSigler, mariansigler@gmail.com</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain" />
+        <dc:title></dc:title>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution" />
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+        <cc:requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <!-- From red at right, to yellow, green, blue, etc, following direct trigonometric orientation -->
+  <path style="fill:#ff0000; fill-opacity:1; fill-rule:evenodd; stroke:none"
+        d="M 511.48146,205.29524 C 523.38713,249.72783 523.38713,290.27217 511.48146,334.70476 L 270.00000,270.00000 L 511.48146,205.29524 z " />
+  <path style="fill:#ff8000; fill-opacity:1; fill-rule:evenodd; stroke:none"
+        d="M 446.77669,93.223304 C 479.30361,125.75022 499.57578,160.86265 511.48146,205.29524 L 270.00000,270.00000 L 446.77669,93.223304 z " />
+  <path style="fill:#ffff00; fill-opacity:1; fill-rule:evenodd; stroke:none"
+        d="M 334.70476,28.518543 C 379.13735,40.424219 414.24978,60.696393 446.77669,93.223304 L 270.00000,270.00000 L 334.70476,28.518543 z " />
+  <path style="fill:#80ff00; fill-opacity:1; fill-rule:evenodd; stroke:none"
+        d="M 205.29524,28.518543 C 249.72783,16.612867 290.27217,16.612867 334.70476,28.518543 L 270.00000,270.00000 L 205.29524,28.518543 z " />
+  <path style="fill:#00ff00; fill-opacity:1; fill-rule:evenodd; stroke:none"
+        d="M 93.223305,93.223305 C 125.75022,60.696393 160.86265,40.424220 205.29524,28.518543 L 270.00000,270.00000 L 93.223305,93.223305 z " />
+  <path style="fill:#00ff80; fill-opacity:1; fill-rule:evenodd; stroke:none"
+        d="M 28.518543,205.29524 C 40.424219,160.86265 60.696393,125.75022 93.223305,93.223305 L 270.00000,270.00000 L 28.518543,205.29524 z " />
+  <path style="fill:#00ffff; fill-opacity:1; fill-rule:evenodd; stroke:none"
+        d="M 28.518543,334.70476 C 16.612867,290.27217 16.612867,249.72783 28.518543,205.29524 L 270.00000,270.00000 L 28.518543,334.70476 z " />
+  <path style="fill:#0080ff; fill-opacity:1; fill-rule:evenodd; stroke:none"
+        d="M 93.223305,446.77670 C 60.696393,414.24978 40.424220,379.13735 28.518543,334.70476 L 270.00000,270.00000 L 93.223305,446.77670 z " />
+  <path style="fill:#0000ff; fill-opacity:1; fill-rule:evenodd; stroke:none"
+        d="M 205.29524,511.48146 C 160.86265,499.57578 125.75022,479.30361 93.223305,446.77670 L 270.00000,270.00000 L 205.29524,511.48146 z " />
+  <path style="fill:#8000ff; fill-opacity:1; fill-rule:evenodd; stroke:none"
+        d="M 334.70476,511.48146 C 290.27217,523.38713 249.72783,523.38713 205.29524,511.48146 L 270.00000,270.00000 L 334.70476,511.48146 z " />
+  <path style="fill:#ff00ff; fill-opacity:1; fill-rule:evenodd; stroke:none"
+        d="M 446.77670,446.77670 C 414.24978,479.30361 379.13735,499.57578 334.70476,511.48146 L 270.00000,270.00000 L 446.77670,446.77670 z " />
+  <path style="fill:#ff0080; fill-opacity:1; fill-rule:evenodd; stroke:none"
+        d="M 511.48146,334.70476 C 499.57578,379.13735 479.30361,414.24978 446.77670,446.77670 L 270.00000,270.00000 L 511.48146,334.70476 z " />
+  <path style="fill:#FFFFFF; fill-opacity:1; fill-rule:evenodd; stroke:none"
+        d="M 423.79581,270.00000 C 423.79581,354.89529 354.89529,423.79581 270.00000,423.79581 C 185.10471,423.79581 116.20419,354.89529 116.20419,270.00000 C 116.20419,185.10471 185.10471,116.20419 270.00000,116.20419 C 354.89529,116.20419 423.79581,185.10471 423.79581,270.00000 z " />
+</svg>

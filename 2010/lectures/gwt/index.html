@@ -1,0 +1,315 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title> 6.470 GWT Lecture</title>
+<script type="text/javascript">
+
+</script>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+}
+#container{
+	position:absolute;
+	width: 800px;
+	left: 20px;
+}
+.header{
+	position: absolute;
+	left: 230px;
+	top: 30px;
+	font-size:26pt;
+	font-family: "Trebuchet MS", "Helvetica", "Arial", "monotype";
+}
+
+.big-picture{
+	width: 600px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px black;
+	background-color: ddd;
+}
+
+.topic{
+    margin-top: 10px;
+	font-size:18pt;
+	font-weight: bold;
+	font-family: "Trebuchet MS", "Helvetica", "Arial", "monotype";
+}
+.code-trial{
+	width: 800px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px black;
+	background-color: 33ccff;
+}
+.code_area{
+	width: 100%; 
+	border: 0;
+	cellpadding: 3px; 	
+	cellspacing: 3px;
+}
+.code_input, .result_output {
+	background-color:#FFFFFF;
+	border:1px solid gray;
+	height:300px;
+	width:100%;
+}
+
+.section{
+    margin-left: 30px
+}
+.tables, .actors, .movies, .table-example, .explanation{
+	display: inline-table;
+}
+
+.explanation{
+	margin-left: 30px;
+	color: red;
+}
+.actors, .movies{
+	margin: 10px;
+}
+.sql-example{
+	margin:5px;
+	padding: 5px;
+	background-color: #ffccff;
+	width: 400px;
+	margin-top: 20px;
+}
+</style>
+</head><body>
+
+<img src="../../images/small-smoking-laptop.png" />
+<table class="header">
+	<tbody><tr><td> <div id="day-number"> <b>6.470</b> Day 5</div> </td></tr>
+	<tr><td> <div id="topic-set">Google Web Toolkit (GWT) </div></td></tr>
+</tbody></table>
+<div id="container">
+  
+  <div class="big-picture">
+    <div>The Big Picture:</div>
+    <ul>
+      <li>
+	GWT is a <b>T</b>oolkit for the <b>W</b>eb that is, yes, made by <b>G</b>oogle.
+      </li>
+      <li>
+  It allows you to create AJAX-enabled web application, from the ground up, 
+  using <b>JAVA</b>. You may consider it as a compiler that turns your Java
+  applications into dynamic AJAX web apps.
+      </li>
+    </ul>
+  </div>
+
+<div class="topic">Why GWT?</div>
+
+<div class="section">
+<ul>
+  <li>
+    In my opinion, Java > JavaScript for big projects. 
+    If you like Java, you will probably like GWT.
+  </li>
+  <li>
+    Cross-browser compatibility: GWT makes sure your app works the same across
+    all browsers. (If you have written JavaScript before, you will probably 
+    remember hating the many random <i>*cough* IE *cough*</i> bugs that come up.)
+  </li>
+  <li>
+    AJAX calls to the server is as simple as one function call. Objects can be
+    passed as arguments without having to marshal them into strings first.
+  </li>
+</ul>
+</div>
+
+<div class="topic">Basics</div>
+
+<div class="section">
+  <p>
+    Similar to all web application frameworks, you can consider GWT apps in terms of
+    its client-side and server-side components: the UI components being on the client 
+    side, and the business logic on the server side.
+  </p>
+  <p>
+    GWT apps uses the <a href="http://en.wikipedia.org/wiki/Java_Servlet">Java Servlet API</a>
+    to provide server interactions. You do not need to know too much about Java Servlets for
+    this lecture, other than knowing that the servlets are where the server-side processing
+    happens.
+  </p>
+</div>
+
+<div class="topic">Getting started</div>
+
+<div class="section">
+  <p>
+    You may use any editor to work with GWT, but my personal choice is Eclipse, especially since
+    Google created a <a href="http://code.google.com/webtoolkit/usingeclipse.html">plugin</a> 
+    that makes working with GWT so much easier. 
+    <br/><i>(Optionally, for the emac/vim/etc hackers, you may download the command-line version 
+      <a href="http://code.google.com/webtoolkit/gettingstarted.html">here</a>.)</i>
+  </p>
+  <p>
+    After you are done installing the plugin, you may now create a new GWT application by going to 
+    <i>File -> New -> Project</i>; then <i>Google > Web Application Project</i>. Arbitrarily pick
+    a name for your project and a package name, make sure "Use Google Web Toolkit" is selected 
+    (optionally, you should enable "Use Google App Engine" if you anticipate deploying to
+    Google App Engine later.)
+  </p>
+  <p>
+    To run a project, right click on it in the Package Explorer and go to <i>Run as -> Web Application</i>.
+  </p>
+</div>
+
+<div class="topic">Basic architecture</div>
+
+<div class="section">
+  <p>
+    All the Java sources reside in "src/". In the package that you selected when you are creating
+    the app, you should find a "client" folder storing all the classes on the client side; and a
+    "server" folder containing all the classes for the server side code.
+  </p>
+  <p>
+    There should also be a "[name].gwt.xml" file in your package. This file specifies what 
+    class to load first (the app's "entry-point") when your app starts up; plus other
+    configurations we usually don't care about.
+  </p>
+  <p>
+    The "war/" folder contains files that get uploaded to the web server. See this 
+    <a href="http://en.wikipedia.org/wiki/WAR_%28Sun_file_format%29">wiki entry</a> for 
+    more info about what "war" stands for.
+  </p>
+  <p>
+    The "war/WEB-INF" folder contains configuration files (e.g. servlet mappings, logging, etc.).
+    The most interesting one is probably "web.xml", which we will talk about later.
+  </p>
+</div>
+
+<div class="topic">Creating a new Servlet/Service</div>
+
+<div class="section">
+  <p>
+    There are basically three things you need to make:
+  </p>
+  <ul>
+    <li>
+      An interface for the service: it will have to be under "client/" and extends "RemoteService".
+      Make sure you also specifies a path for the Service: e.g. "hello":
+      <pre style="background: #FCF; padding: 4px">
+@RemoteServiceRelativePath("hello")
+public interface HelloService extends RemoteService {
+  String hello(int number);
+  void world();
+  ...
+      </pre>
+    </li>
+    <li>
+      An asynchronous interface of the service: containing equivalent methods as the ones in the original
+      interface but with an AsyncCallback argument instead of returning values. This should also reside
+      in "client/" and take the same name as the service, appended by "Async".
+      <pre style="background: #FCF; padding: 4px">
+public interface HelloServiceAsync {
+  void hello(int number, AsyncCallback<String> callback);
+  void world(AsyncCallback<Void> callback);
+  ...
+      </pre>
+    </li>
+    <li>
+      The actual implementation of the service -- placed in "server/". It must extend
+      "RemoteServiceServlet" and implement the service.
+      <pre style="background: #FCF; padding: 4px">
+public class HelloServiceImpl extends RemoteServiceServlet implements HelloService {
+  ...
+      </pre>
+    </li>
+    
+  </ul>
+  <p>
+    Be sure to add a mapping to the servlet you implemented into "war/WEB-INF/web.xml".
+    Between the &lt;web-app&gt; tags add a declaration and mapping for the servlet -- 
+    it must take the same path as the one you picked for the service interface.
+    <pre style="background: #FCF; padding: 4px">
+&lt;servlet&gt;
+  &lt;servlet-name&gt;helloServlet&lt;/servlet-name&gt;
+  &lt;servlet-class&gt;[package-path].server.helloServiceImpl&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+  &lt;servlet-name&gt;helloServlet&lt;/servlet-name&gt;
+  &lt;url-pattern&gt;/[project-name]/hello&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+    </pre>
+  </p>
+</div>
+
+<div class="topic">Building your UI</div>
+
+<div class="section">
+  <p>
+    In the "src/[package-name]/[project-name].gwt.xml" file, the entry-point 
+    specifies which class in client/ to run. The method "onModuleLoad" will
+    be invoked when the page loads. You may declare UI widgets such as
+    panels like VerticalPanel, FlowPanel, Button, TextBox, etc. in that class
+    and add them to RootPanel when "onModuleLoad" is called.
+  </p>
+  <p>
+    The "war/[project-name].html" is the container for the gwt application.
+    RootPanel refers to this page. You may declare elements in the html page
+    like "&lt;div id='some-div'&gt;" and refer to it in your GWT app by calling 
+    "RootPanel.get" and add UI widgets to it by something like:
+  </p>
+  <pre style="background: #FCF; padding: 4px">
+RootPanel.get("some-div").add(someWidgetObject);
+  </pre>
+</div>
+
+<div class="topic">Talking to the server</div>
+
+<div class="section">
+  <p>
+    You may declare an object with the asynchronous interface by calling
+    "GWT.create([service-interface].class)". For example:
+  </p>
+  <pre style="background: #FCF; padding: 4px">
+HelloServiceAsync helloService = GWT.create(HelloService.class);
+  </pre>
+  <p>
+    You can then call any of the service's methods just like any method call.
+  </p>
+</div>
+
+<div class="topic">Creating a new UI module</div>
+
+<div class="section">
+  <p>
+    You may create new UI widgets by creating new classes in "client/" that 
+    extend "Composite". Make sure that, in your constructor, you call 
+    "initWidget(element)" to specify which element to set as the container.
+  </p>
+</div>
+
+<div class="topic">Adding CSS styles</div>
+
+<div class="section">
+  <p>
+    To specify a CSS style name for a widget, you can call its "addStyleName()" 
+    method, with the CSS class name as the argument. The stylesheet resides in
+    "war/[project-name].css".
+  </p>
+</div>
+
+<div class="topic">Using JavaScript</div>
+
+<div class="section">
+  <p>
+    You can also make native JavaScript calls (e.g. if you want to use a javascript library's methods).
+    You may do so by writing a method with the "native" tag and writing the code like this:
+  </p>
+  <pre style="background: #FCF; padding: 4px">
+public native String someFunction() /*-{
+  // this is JavaScript code!
+  var someString = "hello";
+  return someString;
+}-*/;
+  </pre>
+</div>
+
+</div></body></html>

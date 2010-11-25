@@ -1,0 +1,1570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>HTML, CSS and JavaScript</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 04, 2010" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2010 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1><span class="caps">HTML</span>, <span class="caps">CSS</span> and JavaScript</h1>
+<blockquote>
+<p>Victor Costan</p>
+</blockquote>
+</div>
+<div class="slide"><h1>Contents</h1>
+<div style="font-size: 70%">
+<ul>
+	<li>Introduction</li>
+</ul>
+<ul>
+	<li><span class="caps">HTML</span>: the HyperText Markup Language</li>
+</ul>
+<ul>
+	<li><span class="caps">HTML</span> Demo</li>
+</ul>
+<ul>
+	<li><span class="caps">HTML</span> Exercise</li>
+</ul>
+<ul>
+	<li><span class="caps">CSS</span>: Cascading Style Sheets</li>
+</ul>
+<ul>
+	<li><span class="caps">CSS</span> Layout</li>
+</ul>
+<ul>
+	<li><span class="caps">CSS</span> Demo</li>
+</ul>
+<ul>
+	<li><span class="caps">CSS</span> Exercise</li>
+</ul>
+<ul>
+	<li>JavaScript: the Web&#8217;s Programming Language</li>
+</ul>
+<ul>
+	<li>JavaScript Demo / Exercise</li>
+</ul>
+<ul>
+	<li>Wrap-Up</li>
+</ul>
+</div>
+</div>
+<div class="title slide">
+<h1>Introduction</h1>
+</div>
+<div class="slide"><h1>Your Instructors</h1>
+<ul>
+	<li>Victor Costan</li>
+</ul>
+</div>
+<div class="slide"><h1>Why are you here today?</h1>
+<ol>
+	<li>Build a great Web application</li>
+	<li>Impress the judges</li>
+	<li>Profit</li>
+</ol>
+</div>
+<div class="slide"><h1>Great Web User Interfaces</h1>
+<ol>
+	<li>Content</li>
+	<li>Presentation</li>
+	<li>Behavior</li>
+</ol>
+</div>
+<div class="slide"><h1>Great Web UI: Techniques</h1>
+<ol>
+	<li>Content: <strong><span class="caps">HTML</span></strong></li>
+	<li>Presentation: <strong><span class="caps">CSS</span></strong></li>
+	<li>Behavior: <strong>JavaScript</strong></li>
+</ol>
+</div>
+<div class="slide"><h1>Keep It <del>Simple</del> <ins>Separated</ins></h1>
+<ul>
+	<li>Accessibility (a11y)</li>
+	<li>Code &amp; design reuse</li>
+	<li>Decouple coders from designers</li>
+	<li>Decrease latency</li>
+	<li>Decrease hosting costs</li>
+</ul>
+</div>
+<div class="slide"><h1>The Evolution of Web Documents</h1>
+<table>
+	<tr>
+		<td>1997: </td>
+		<td> <span style="color: blue;">html</span> </td>
+		<td></td>
+		<td>2000: </td>
+		<td> <span style="color: green;">css</span> </td>
+		<td></td>
+		<td>2005: </td>
+		<td> <span style="color: red;">js</span>    </td>
+	</tr>
+	<tr>
+		<td>      </td>
+		<td> <span style="color: green;">css</span> </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: green;">css</span> </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: red;">js</span>    </td>
+	</tr>
+	<tr>
+		<td>      </td>
+		<td> <span style="color: red;">js</span>    </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: green;">css</span> </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: red;">js</span>    </td>
+	</tr>
+	<tr>
+		<td>      </td>
+		<td> <span style="color: blue;">html</span> </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: blue;">html</span> </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: green;">css</span> </td>
+	</tr>
+	<tr>
+		<td>      </td>
+		<td> <span style="color: green;">css</span> </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: red;">js</span>    </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: green;">css</span> </td>
+	</tr>
+	<tr>
+		<td>      </td>
+		<td> <span style="color: red;">js</span>    </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: blue;">html</span> </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: green;">css</span> </td>
+	</tr>
+	<tr>
+		<td>      </td>
+		<td> <span style="color: blue;">html</span> </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: red;">js</span>    </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: blue;">html</span> </td>
+	</tr>
+	<tr>
+		<td>      </td>
+		<td> <span style="color: green;">css</span> </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: blue;">html</span> </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: blue;">html</span> </td>
+	</tr>
+	<tr>
+		<td>      </td>
+		<td> <span style="color: red;">js</span>    </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: red;">js</span>    </td>
+		<td></td>
+		<td>      </td>
+		<td> <span style="color: blue;">html</span> </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1>The Browser Wars</h1>
+<ul>
+	<li>Internet Explorer 6</li>
+	<li>Browsers and standards</li>
+	<li>Plug-ins: Flash, Silverlight</li>
+	<li>The mobile Web</li>
+</ul>
+</div>
+<div class="slide"><h1>Development Strategy</h1>
+<ol>
+	<li>Develop with Firefox + Firebug</li>
+	<li>Test in Chrome</li>
+	<li>Test in Internet Explorer, perhaps via VirtualBox</li>
+	<li>Test in Safari</li>
+</ol>
+</div>
+<div class="title slide">
+<h1><span class="caps">HTML</span>: the HyperText Markup Language</h1>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span> is a Markup Language</h1>
+<ul>
+	<li>Semantic annotations for your data</li>
+	<li><span class="caps">NOT</span> for presentation</li>
+	<li><span class="caps">NOT</span> a programming language</li>
+</ul>
+</div>
+<div class="slide"><h1>This is <span class="caps">HTML</span></h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;An HTML document.&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p&gt;This is a paragraph.&lt;/p&gt;
+		&lt;p&gt;This is another paragraph with a link 
+		  &lt;a href="http://www.google.com"&gt;to Google&lt;/a&gt;
+		&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/Documents/workspace2/html_css_js_slides/code/html/sample.html">code/html/sample.html</a></div>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span> Anatomy: Tags</h1>
+<ul>
+	<li>Opening tag:</li>
+</ul>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p&gt;</pre></div>
+<ul>
+	<li>Closing tag:</li>
+</ul>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;/p&gt;</pre></div>
+<ul>
+	<li>Self-closing tag:</li>
+</ul>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;img /&gt;</pre></div>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span> Anatomy: Elements</h1>
+<ul>
+	<li>Start with an opening tag, end with a closing tag <strong>with the same name</strong>.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p&gt;This element is a paragraph of text&lt;/p&gt;</pre></div>
+<ul>
+	<li>A self-closing tag is an element.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span> Elements Must be Nested Correctly</h1>
+<table>
+<tr><th>Good</th><th>Bad</th></tr>
+<tr><td><br />
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p&gt;This is a paragraph &lt;em&gt;with emphasized text&lt;/em&gt;&lt;/p&gt;</pre></div>
+<p></td><td></p>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p&gt;This is a paragraph &lt;em&gt;with emphasized text&lt;/p&gt;&lt;/em&gt;</pre></div>
+<p></td></tr></p>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span> Anatomy: Attributes</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;a href="http://www.google.com"&gt;Google&lt;/a&gt;
+&lt;video src="funny.ogg" autoplay="autoplay" /&gt;</pre></div>
+<ul>
+	<li>Attributes go in the opening tag</li>
+	<li>Every attribute must have a value</li>
+	<li>No spaces before or after <code>=</code></li>
+	<li>Values must be wrapped in quotes (<code>"</code>)</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span> Anatomy: Entities</h1>
+<ul>
+	<li>How do you write <code>&lt;p&gt;</code> in a paragraph?</li>
+</ul>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p&gt;This is a paragraph about &amp;lt;p;&amp;gt;&lt;/p&gt;</pre></div>
+<ul>
+	<li>Entities start with <code>&amp;</code> and end with <code>;</code></li>
+</ul>
+<ul>
+	<li>Popular examples:</li>
+</ul>
+<table>
+	<tr>
+		<td> &amp;    </td>
+		<td> <code>&amp;amp;</code> </td>
+		<td> &copy;    </td>
+		<td> <code>&amp;quot;</code>  </td>
+	</tr>
+	<tr>
+		<td> &lt;    </td>
+		<td> <code>&amp;lt;</code>  </td>
+		<td> <span class="caps">ASCII</span> 127 </td>
+		<td> <code>&amp;#7F;</code>   </td>
+	</tr>
+	<tr>
+		<td> &gt;    </td>
+		<td> <code>&amp;gt;</code>  </td>
+		<td> &trade;   </td>
+		<td> <code>&amp;trade;</code> </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span> Anatomy: the Document</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;!DOCTYPE html&gt;
+&lt;!-- The top-level element is always html --&gt;
+&lt;html&gt;
+  &lt;head&gt;
+  	&lt;!-- The document's invisible contents (metadata) goes in the head. --&gt;
+    &lt;title&gt;This title is shown in the browser's title bar.&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Everything that the user can see goes in the body. --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/Documents/workspace2/html_css_js_slides/code/html/document.html">code/html/document.html</a></div>
+<ul>
+	<li><code>&lt;html&gt;</code> wraps everything. <code>&lt;head&gt;</code> always goes before <code>&lt;body&gt;</code>.</li>
+	<li>What&#8217;s the ugly thing at the top?</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span> Anatomy: the Document Type Declaration</h1>
+<ul>
+	<li>Old documents (pre-1998) have no doctype. Old documents don&#8217;t follow new standards.</li>
+</ul>
+<ul>
+	<li><span class="caps">HTML</span> 5 doctype (all you need to know):</li>
+</ul>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;!DOCTYPE html&gt;</pre></div>
+<ul>
+	<li>Latest fad before HTML5:</li>
+</ul>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</pre></div>
+<ul>
+	<li>Old documents with a doctype:</li>
+</ul>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</pre></div>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span> Anatomy: Wrap-Up</h1>
+<ol>
+	<li>An <span class="caps">HTML</span> page holds a <span class="caps">HTML</span> document.</li>
+	<li>A <span class="caps">HTML</span> document is a hierarchy of <span class="caps">HTML</span> elements.</li>
+	<li><span class="caps">HTML</span> elements are delimited by <span class="caps">HTML</span> tags.</li>
+	<li><span class="caps">HTML</span> elements can have attributes.</li>
+	<li>Special characters are encoded using <span class="caps">HTML</span> entities.</li>
+	<li>The <span class="caps">HTML</span> 5 doctype shows the document obeys standards.</li>
+</ol>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Paragraphs</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p&gt;This is a paragraph of text. It covers an idea.&lt;/p&gt;
+
+&lt;p&gt;This is another paragraph of text. It's a bit longer,
+so I had to break it up on three lines. That's OK, because
+HTML doesn't care about line breaks. &lt;/p&gt;</pre></div>
+<p>Always wrap text in some element. <code>&lt;p&gt;</code> is a good default if you don&#8217;t know where your text belongs.</p>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Headings</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;h1&gt;New York Times&lt;/h1&gt;
+
+&lt;h2&gt;Technology&lt;/h2&gt;
+
+&lt;h3&gt;HTML 5 Standard Slated for 2012&lt;/h3&gt;
+
+&lt;h3&gt;Firefox 3.6 Released Today&lt;/h3&gt;
+
+&lt;h2&gt;Sports&lt;/h2&gt;</pre></div>
+<p>Choose heading numbers to reflect semantics, not presentation.</p>
+<p>Example: <code>&lt;h3&gt;</code> should never follow <code>&lt;h1&gt;</code>.</p>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Emphasis</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p&gt;&lt;em&gt;Mary&lt;/em&gt; had a little lamb.&lt;/p&gt;
+
+&lt;p&gt;Mary &lt;em&gt;had&lt;/em&gt; a little lamb.&lt;/p&gt;
+
+&lt;p&gt;Mary had a &lt;em&gt;little&lt;/em&gt; lamb.&lt;/p&gt;</pre></div>
+<table>
+	<tr>
+		<td> Semantic (Good) </td>
+		<td> Presentation (Bad) </td>
+	</tr>
+	<tr>
+		<td> <code>&lt;em&gt;</code> </td>
+		<td> <code>&lt;i&gt;</code> </td>
+	</tr>
+	<tr>
+		<td> <code>&lt;strong&gt;</code> </td>
+		<td> <code>&lt;b&gt;</code> </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Links</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;a href="http://www.twitter.com/victor_costan"&gt;Follow me on Twitter&lt;/a&gt;
+
+&lt;a href="/logout.php"&gt;Log out&lt;/a&gt;
+
+&lt;a href="chapter1.html"&gt;Chapter 1 of the story&lt;/a&gt;</pre></div>
+<ul>
+	<li>Links are the hyper in <em>hyper</em>-text.</li>
+	<li><code>href</code> means <strong>hyper-reference</strong></li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Lists I</h1>
+<table>
+<tr>
+  <th>Unordered</th>  
+  <th>Ordered</th>
+</tr>
+<tr><td><br />
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p&gt;This is my shopping list:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;eggs&lt;/li&gt;
+  &lt;li&gt;bread&lt;/li&gt;
+  &lt;li&gt;milk&lt;/li&gt;
+&lt;/ul&gt;</pre></div>
+<p></td><td><br />
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p&gt;Top 3 programming languages:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Java&lt;/li&gt;
+  &lt;li&gt;C&lt;/li&gt;
+  &lt;li&gt;PHP&lt;/li&gt;
+&lt;/ol&gt;</pre></div></p>
+<p></td></tr></p>
+</table>
+<ul>
+	<li><code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code>: Ordered List, Unordered List</li>
+	<li><code>&lt;li&gt;</code>: List Item</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Lists II</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;the Web's markup language&lt;/dd&gt;
+  &lt;dt&gt;JavaScript&lt;/dt&gt;
+  &lt;dd&gt;the Web's programming language&lt;/dd&gt;
+&lt;/dl&gt;</pre></div>
+<ul>
+	<li><code>&lt;dl&gt;</code>: Definition List</li>
+	<li><code>&lt;dt&gt;</code>: Definition Term</li>
+	<li><code>&lt;dd&gt;</code>: Definition Description</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Images</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;img src="images/big_doll.png"
+     alt="Short description for visitors who can't see images" /&gt;</pre></div>
+<ul>
+	<li>The <code>&lt;img&gt;</code> tag should be empty.</li>
+	<li>Common mistake: using <code>href</code> instead of <code>src</code>.</li>
+	<li>The <code>alt</code> attribute is <strong>mandatory</strong>.</li>
+	<li>The <code>width</code> and <code>height</code> attributes are <strong>deprecated</strong>. Use <span class="caps">CSS</span> instead.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Audio and Video</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;video src="ads/annoying.ogg" autoplay="autoplay"
+       controls="controls" loop="loop"&gt;
+Display this text if the browser doesn't support video.
+&lt;/video&gt;
+
+&lt;audio src="boom_headshot.ogg" loop="loop" /&gt;</pre></div>
+<ul>
+	<li>Think twice if using <code>autoplay</code> with anything that makes sound.</li>
+	<li><code>controls</code> is browser-specific. Consider building your own controls using JavaScript.</li>
+	<li>No universally supported codecs yet. Firefox plays Ogg audio &amp; video.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Tables I</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Expenses&lt;/td&gt;&lt;td&gt;2008&lt;/td&gt;&lt;td&gt;2009&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;T-shirts&lt;/td&gt;&lt;td&gt;$1,000&lt;/td&gt;&lt;td&gt;$2,000&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Pizza&lt;/td&gt;&lt;td&gt;$350&lt;/td&gt;&lt;td&gt;$450&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Total&lt;/td&gt;&lt;td&gt;$1,350&lt;/td&gt;&lt;td&gt;$2,450&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/Documents/workspace2/html_css_js_slides/code/html/tables1.html">code/html/tables1.html</a></div>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Tables I Rendering</h1>
+<table>
+<tr>
+    <td>Expenses</td><td>2008</td><td>2009</td>
+</tr>
+<tr>
+    <td>T-shirts</td><td>$1,000</td><td>$2,000</td>
+</tr>
+<tr>
+    <td>Pizza</td><td>$350</td><td>$450</td>
+</tr>
+<tr>
+    <td>Total</td><td>$1,350</td><td>$2,450</td>
+</tr>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Tables II</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Expenses&lt;/th&gt;&lt;th&gt;2008&lt;/th&gt;&lt;th&gt;2009&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;T-shirts&lt;/td&gt;&lt;td&gt;$1,000&lt;/td&gt;&lt;td&gt;$2,000&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Pizza&lt;/td&gt;&lt;td&gt;$350&lt;/td&gt;&lt;td&gt;$450&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Total&lt;/th&gt;&lt;td&gt;$1,350&lt;/td&gt;&lt;td&gt;$2,450&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/Documents/workspace2/html_css_js_slides/code/html/tables2.html">code/html/tables2.html</a></div>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Tables II Rendering</h1>
+<table>
+<thead>
+<tr>
+      <th>Expenses</th><th>2008</th><th>2009</th>
+</tr>
+</thead>
+<tbody>
+    <tr><td>T-shirts</td><td>$1,000</td><td>$2,000</td></tr>
+    <tr><td>Pizza</td><td>$350</td><td>$450</td></tr>
+</tbody>
+<tfoot>
+<tr>
+      <th>Total</th><td>$1,350</td><td>$2,450</td>
+</tr>
+</tfoot>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Bad Use of Tables</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td colspan="2"&gt;Header&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      Navigation
+    &lt;/td&gt;
+    &lt;td&gt;
+      Main
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td colspan="2"&gt;Footer&lt;/td&gt;  
+  &lt;/tr&gt;
+&lt;/table&gt;</pre></div>
+<p>Don&#8217;t use tables for layout. <span class="caps">HTML</span> is for markup, <span class="caps">CSS</span> is for presentation.</p>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Forms I</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;form action="http://www.google.com/search" method="POST"&gt;
+&lt;dl&gt;
+  &lt;dt&gt;Query&lt;/dt&gt;
+  &lt;dd&gt;&lt;input type="text" name="q" /&gt;&lt;/dd&gt;
+  &lt;dt&gt;Language&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;select name="lang"&gt;
+      &lt;option value="en"&gt;English&lt;/option&gt;
+      &lt;option value="fr"&gt;French&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;&lt;input type="submit" value="Search" /&gt;&lt;/p&gt;
+&lt;/form&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/Documents/workspace2/html_css_js_slides/code/html/forms1.html">code/html/forms1.html</a></div>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Forms I Rendering</h1>
+<form action="http://www.google.com/search" method="POST">
+<dl>
+  <dt>Query</dt>
+  <dd><input type="text" name="q" /></dd>
+  <dt>Language</dt>
+<dd>
+<select name="lang">
+      <option value="en">English</option>
+      <option value="fr">French</option>
+</select>
+</dd>
+</dl>
+<p><input type="submit" value="Search" /></p>
+</form>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Forms I Submission</h1>
+<div class="code-normal"><pre name="code" class="ruby:nogutter:nocontrols">POST /search HTTP/1.1
+Content-Encoding: application/x-www-form-urlencoded
+Host: www.google.com
+
+q=unicorns&amp;lang=en
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/Documents/workspace2/html_css_js_slides/code/html/forms1.http">code/html/forms1.http</a></div>
+<table>
+	<tr>
+		<td> Action </td>
+		<td> <code>/search</code>  </td>
+	</tr>
+	<tr>
+		<td> <code>q</code>    </td>
+		<td> <code>unicorns</code> </td>
+	</tr>
+	<tr>
+		<td> <code>lang</code> </td>
+		<td> <code>en</code>       </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Forms II</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;form action="http://www.google.com/search" method="GET"&gt;
+&lt;dl&gt;
+  &lt;dt&gt;&lt;label for="goog_query"&gt;Query&lt;/label&gt;&lt;/dt&gt;
+  &lt;dd&gt;&lt;input type="text" name="q" id="goog_query" /&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;fieldset&gt;
+	&lt;legend&gt;Query Details&lt;/legend&gt;
+	&lt;dl&gt;
+	  &lt;dt&gt;&lt;label for="goog_language"&gt;Language&lt;/label&gt;&lt;/dt&gt;
+	  &lt;dd&gt;&lt;input type="text" name="lang" value="en" id="goog_language" /&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;label for="goog_encoding"&gt;Query encoding&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="text" name="ie" value="utf-8" id="goog_encoding" /&gt;&lt;/dd&gt;
+  &lt;/dl&gt;  
+&lt;/fieldset&gt;
+	
+&lt;p&gt;&lt;input type="submit" value="Search" /&gt;&lt;/p&gt;
+&lt;/form&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/Documents/workspace2/html_css_js_slides/code/html/forms2.html">code/html/forms2.html</a></div>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: Forms II Rendering</h1>
+<form action="http://www.google.com/search" method="GET">
+<dl>
+  <dt><label for="goog_query">Query</label></dt>
+  <dd><input type="text" name="q" id="goog_query" /></dd>
+</dl>
+<fieldset>
+	<legend>Query Details</legend>
+<dl>
+	  <dt><label for="goog_language">Language</label></dt>
+	  <dd><input type="text" name="lang" value="en" id="goog_language" /></dd>
+    <dt><label for="goog_encoding">Query encoding</label></dt>
+    <dd><input type="text" name="ie" value="utf-8" id="goog_encoding" /></dd>
+</dl>
+</fieldset>
+<p><p><input type="submit" value="Search" /></p></p>
+</form>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span>: More Tags</h1>
+<p>Which tags are semantic (good), and which tags are purely for presentation (bad, forbidden, and deprecated).</p>
+<table>
+	<tr>
+		<td> <code>&lt;b&gt;</code>     </td>
+		<td> <code>&lt;big&gt;</code>     </td>
+		<td> <code>&lt;blockquote&gt;</code> </td>
+	</tr>
+	<tr>
+		<td> <code>&lt;blink&gt;</code> </td>
+		<td> <code>&lt;br&gt;</code>      </td>
+		<td> <code>&lt;center&gt;</code>     </td>
+	</tr>
+	<tr>
+		<td> <code>&lt;cite&gt;</code>  </td>
+		<td> <code>&lt;del&gt;</code>     </td>
+		<td> <code>&lt;ins&gt;</code>        </td>
+	</tr>
+	<tr>
+		<td> <code>&lt;i&gt;</code>     </td>
+		<td> <code>&lt;marquee&gt;</code> </td>
+		<td> <code>&lt;pre&gt;</code>        </td>
+	</tr>
+	<tr>
+		<td> <code>&lt;q&gt;</code>     </td>
+		<td> <code>&lt;small&gt;</code>   </td>
+		<td> <code>&lt;sub&gt;</code>        </td>
+	</tr>
+	<tr>
+		<td> <code>&lt;sup&gt;</code>   </td>
+		<td> <code>&lt;tt&gt;</code>      </td>
+		<td> <code>&lt;u&gt;</code>          </td>
+	</tr>
+</table>
+</div>
+<div class="title slide">
+<h1><span class="caps">HTML</span> Demo</h1>
+<p>Demo code available at:</p>
+<p><strong style="font-size: 3em; ;">http://bit.ly/6Gantb</strong></p>
+<p>http://github.com/costan/html_css_js_slides/ raw/master/exercises/html_start.html</p>
+</div>
+<div class="title slide">
+<h1><span class="caps">HTML</span> Exercise</h1>
+<p>Scaffold code available at:</p>
+<p><strong style="font-size: 3em; ;">http://bit.ly/813OjF</strong></p>
+<p>http://github.com/costan/html_css_js_slides/ raw/master/exercises/html_partial.html</p>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span> Exercise: Solution</h1>
+<p>Solution available at:</p>
+<p><strong style="font-size: 3em; ;">http://bit.ly/84UNOb</strong></p>
+<p>http://github.com/costan/html_css_js_slides/ raw/master/exercises/html_finish.html</p>
+</div>
+<div class="title slide">
+<h1><span class="caps">CSS</span>: Cascading Style Sheets</h1>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> is for Presentation</h1>
+<p>Change <span style="color: red;">color</span>, <span style="font-size: 2em;">size</span>, <span style="font-family: monospace;">font</span>, and <span style="display: inline-block; position: relative; left: 20%; top: 4em;">position</div></p>
+</div>
+<div class="slide"><h1>Adding <span class="caps">CSS</span>: Very Bad</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p style="color: red;"/&gt;This is a red paragraph.&lt;/a&gt;</pre></div>
+<ul>
+	<li>Used for debugging or quick experimentation.</li>
+	<li>Bad: mixes presentation with markup.</li>
+	<li>Bad: instructions here cannot be overridden by external files.</li>
+</ul>
+</div>
+<div class="slide"><h1>Adding <span class="caps">CSS</span>: Somewhat Bad</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;style type="text/css"&gt;
+  p { color: red; }
+&lt;/style&gt;
+&lt;p&gt;This is a red paragraph.&lt;/p&gt;</pre></div>
+<ul>
+	<li><code>&lt;style&gt;</code> tags are allowed in <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>.</li>
+	<li>Bad: presentation embedded in markup.</li>
+	<li>Only <em>one</em> good reason to use this: your resume in a self-contained file.</li>
+</ul>
+</div>
+<div class="slide"><h1>Adding <span class="caps">CSS</span>: Good</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="code/css/red.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;This paragraph will be red.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/Documents/workspace2/html_css_js_slides/code/css/include_good.html">code/css/include_good.html</a></div>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p { color: red; }
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/Documents/workspace2/html_css_js_slides/code/css/red.css">code/css/red.css</a></div>
+<p><code>&lt;link&gt;</code> tags are only allowed in <code>&lt;head&gt;</code>.</p>
+</div>
+<div class="slide"><h1>Adding <span class="caps">CSS</span>: If You Can&#8217;t Access <code>&lt;head&gt;</code></h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="code/css/red.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;style type="text/css"&gt;
+      @include url("more_red.css");
+    &lt;/style&gt;
+    &lt;p&gt;This paragraph will be red.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/Documents/workspace2/html_css_js_slides/code/css/include_no_head.html">code/css/include_no_head.html</a></div>
+</div>
+<div class="slide"><h1>What <span class="caps">CSS</span> Looks Like</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">h1 { color: blue; }
+
+p em {
+  font-size: 12pt;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2em;
+}</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/Documents/workspace2/html_css_js_slides/code/css/sample.css">code/css/sample.css</a></div>
+<ul>
+	<li>A <span class="caps">CSS</span> file is a sequence of rules.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Anatomy: Rules, Selectors, Declarations</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">h1 { color: blue; }
+
+p em {
+  font-size: 12pt;
+  line-height: 1.2em;
+}</pre></div>
+<table>
+	<tr>
+		<td>        </td>
+		<td> Selector </td>
+		<td> Declarations </td>
+	</tr>
+	<tr>
+		<td> Rule 1 </td>
+		<td> <code>h1</code>     </td>
+		<td> <code>color: red;</code>  </td>
+	</tr>
+	<tr>
+		<td> Rule 2 </td>
+		<td> <code>p em</code>   </td>
+		<td> <code>font-size: 12pt; line-height: 1.2em;</code>  </td>
+	</tr>
+</table>
+<p>The selector comes first, then the declarations are enclosed by brackets.</p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Anatomy: Properties and Values</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">h1 { color: blue; }
+
+p em {
+  font-size: 12pt;
+  font-family: Arial, Helvetica, sans-serif;
+}</pre></div>
+<table>
+	<tr>
+		<td> Property      </td>
+		<td> Value                          </td>
+	</tr>
+	<tr>
+		<td> <code>color</code>       </td>
+		<td> <code>red</code>                          </td>
+	</tr>
+	<tr>
+		<td> <code>font-size</code>   </td>
+		<td> <code>12pt</code>                         </td>
+	</tr>
+	<tr>
+		<td> <code>line-height</code> </td>
+		<td> <code>Arial, Helvetica, sans-serif</code> </td>
+	</tr>
+</table>
+<p>Each declaration in a rule specifies a value for a property.</p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Anatomy: Directives</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">@include url("code/css/red.css");
+
+@font-face {
+  font-family: Myriad Pro;
+  src: url("fonts/Myriad_Pro.otf");
+} </pre></div>
+<ul>
+	<li>Directives start with <code>@</code>.</li>
+	<li>Presentation information that doesn&#8217;t fall under the selector/declaration model.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: Primitives</h1>
+<ul>
+	<li>All <code>p</code> elements.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p { color: red; }</pre></div>
+<ul>
+	<li>The element with <code>id="summary"</code>.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">#summary { color: blue; }</pre></div>
+<ul>
+	<li>All elements whose <code>class</code> attribute contains <code>highlight</code>.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">.highlight { color: red; }</pre></div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: Classes</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">.small { font-size: 10pt; }
+.highlight { color: red; }</pre></div>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p class="highlight"&gt;This is highlighted.&lt;/p&gt;
+&lt;p class="highlight small"&gt;This is small and highlighted.&lt;/p&gt;
+&lt;p class="small"&gt;This is small.&lt;/p&gt;</pre></div>
+<p>The <code>class</code> attribute can contain multiple class names, separated by spaces.</p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: Compositions</h1>
+<ul>
+	<li><span class="caps">AND</span>: concatenate selectors</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">/* &lt;p&gt; elements whose class contains highlight and small */
+p.highlight.small { color: red; }</pre></div>
+<ul>
+	<li>OR: separate by <code>,</code></li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">/* &lt;h1&gt; &lt;h2&gt; and &lt;h3&gt; elements */
+h1, h2, h3 { color: red; }</pre></div>
+<ul>
+	<li>Descendant of: separate by space</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">/* &lt;p&gt; elements inside &lt;form&gt; elements */
+form p { color: blue; }</pre></div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: Advanced Compositions</h1>
+<ul>
+	<li>Child of: separate by <code>&gt;</code></li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">/* &lt;p&gt; elements who are direct children of &lt;form&gt; elements */
+form &gt; p { color: blue; }</pre></div>
+<ul>
+	<li>Immediately after (next sibling): separate by <code>+</code></li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">/* &lt;p&gt; elements coming right after &lt;ul&gt; elements */
+ul + p { color: gray; }</pre></div>
+<ul>
+	<li>Immediately after (sibling): separate by <code>~</code></li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">/* &lt;p&gt; elements whose parents have &lt;ul&gt; children, and
+   who come after the &lt;ul&gt; children in the document */
+ul ~ p { color: gray; }</pre></div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: Pseudo-Classes</h1>
+<table>
+	<tr>
+		<td> <code>:hover</code>   </td>
+		<td> The user&#8217;s mouse is over the element                           </td>
+	</tr>
+	<tr>
+		<td> <code>:focus</code>   </td>
+		<td> The control has the input focus                                </td>
+	</tr>
+	<tr>
+		<td> <code>:active</code>  </td>
+		<td> The user is about to activate the element (e.g. follow a link) </td>
+	</tr>
+	<tr>
+		<td> <code>:link</code>    </td>
+		<td> The element is a link that the user has not visited            </td>
+	</tr>
+	<tr>
+		<td> <code>:visited</code> </td>
+		<td> The element is a link that the user has visited                </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: Pseudo-Class Example</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">a:link { color: blue; }
+a:visited { color: gray; }
+a:hover { color: red; }
+a:active { color: black; }</pre></div>
+<p>What does this do?</p>
+<ul>
+	<li class="incremental">Unvisited links are blue. Visited links are gray.</li>
+	<li class="incremental">When the user&#8217;s mouse hovers over a link, it turns red.</li>
+	<li class="incremental">When the user clicks on a link, it becomes black.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: Advanced Pseudo-Classes</h1>
+<table>
+	<tr>
+		<td> <code>:first</code> </td>
+		<td> The first child (e.g. the first paragraph in the body) </td>
+	</tr>
+	<tr>
+		<td> <code>:last</code>  </td>
+		<td> The last child </td>
+	</tr>
+	<tr>
+		<td> <code>:nth-child(even)</code> </td>
+		<td> All even children (2nd, 4th, &#8230;) </td>
+	</tr>
+	<tr>
+		<td> <code>:nth-child(2n)</code> </td>
+		<td> All even children (2nd, 4th, &#8230;) </td>
+	</tr>
+	<tr>
+		<td> <code>:nth-child(odd)</code> </td>
+		<td> All odd children </td>
+	</tr>
+	<tr>
+		<td> <code>:nth-child(2n+1)</code> </td>
+		<td> All odd children </td>
+	</tr>
+</table>
+<p>Very useful for improving readability by alternating font colors in lists and tables.</p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: the Selectoracle</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">ul#master-index &gt; li:nth-child(even).small p.highlighted.twisted.legal a:hover</pre></div>
+<div class="incremental">
+<p>A hovered link inside<br />
+a paragraph (<code>&lt;p&gt;</code>) with classes <code>highlighted</code> and <code>twisted</code> inside<br />
+a list item (<code>&lt;li&gt;</code>) with class <code>small</code> which is an even child of<br />
+an unordered list (<code>&lt;ul&gt;</code>) with <code>id="master-index"</code></p>
+</div>
+</div>
+<div class="slide"><h1>The Cascade: The C in <span class="caps">CSS</span></h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p { color: red; }
+p { color: blue; }</pre></div>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p&gt;What color is this paragraph?&lt;/p&gt;</pre></div>
+<ul>
+	<li class="incremental">The paragraph is blue, so the last declaration wins.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p.highlight { color: red; }
+p { color: blue; }</pre></div>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p class="highlight"&gt;What color is this paragraph?&lt;/p&gt;</pre></div>
+<ul>
+	<li class="incremental">The paragraph is red, because the first declaration is more specific.</li>
+</ul>
+</div>
+<div class="slide"><h1>The Cascade: How It Works</h1>
+<p>Declarations have the following priority:</p>
+<ol>
+	<li>Declarations in <code>style</code> attributes always win.</li>
+	<li>Browser declarations marked <code>!important</code>, ordered by specificity.</li>
+	<li>Page declarations marked <code>!important</code>, ordered by specificity.</li>
+	<li>Page declarations not marked <code>!important</code>, ordered by specificity.</li>
+	<li>Browser declarations not marked <code>!important</code>, ordered by specificity.</li>
+</ol>
+</div>
+<div class="slide"><h1>The Cascade: Specificity Point System</h1>
+<p>A declaration&#8217;s specifity is determined by its selector.</p>
+<p>To compute a selector&#8217;s specificity:</p>
+<ol>
+	<li>Write the number of IDs in the selector</li>
+	<li>Write the number of classes and pseudo-classes in the selector</li>
+	<li>Write the number of elements in the selector</li>
+</ol>
+</div>
+<div class="slide"><h1>The Cascade: Specificity Examples</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p#header { color: red; }</pre></div>
+<ul>
+	<li class="incremental">Specificity: 1, 0, 1</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p li.highlight { color: red; }</pre></div>
+<ul>
+	<li class="incremental">Specificity: 0, 1, 2</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">#header p.small a:hover { color: red; }</pre></div>
+<ul>
+	<li class="incremental">Specificity: 1, 2, 2</li>
+</ul>
+</div>
+<div class="slide"><h1>The Cascade: Ordering Specificities</h1>
+<p>Specificities are ordered lexicographically:</p>
+<ul>
+	<li>0, 0, 2 is more specific than 0, 0, 1</li>
+	<li>0, 1, 0 is more specific than 0, 0, 99</li>
+	<li>2, 0, 0 is more specific than 1, 99, 99</li>
+	<li>2, 1, 2 is more specific than 2, 0, 2</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Declarations</h1>
+<p>Declarations cover these major areas</p>
+<ol>
+	<li>Color</li>
+	<li>Size</li>
+	<li>Font</li>
+	<li>Position</li>
+</ol>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Colors: Properties</h1>
+<ul>
+	<li><code>color</code> &#8211; the foreground color (text, list bullets)</li>
+	<li><code>background-color</code></li>
+	<li><code>border-color</code></li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Colors: <span class="caps">RGB</span> Color Model</h1>
+<ul>
+	<li>Components: red, green, blue</li>
+	<li>Additive: red + green + blue = white</li>
+	<li><span class="caps">NOT</span> Subtractive: in painting, red + yellow + blue = black</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Colors: <span class="caps">RGB</span> Color Wheel</h1>
+<div style="text-align: center;">
+<p><img src="images/rgb_colorwheel.svg" style="width:50%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Colors: Values</h1>
+<ul>
+	<li>Keywords for a few colors:</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p { color: red; }</pre></div>
+<ul>
+	<li><span class="caps">RGB</span> notation:</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p { color: rgb(255, 0, 0); }</pre></div>
+<ul>
+	<li>Hex-<span class="caps">RGB</span> notation:</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p { color: #FF0000; }</pre></div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Dimensions: Properties</h1>
+<ul>
+	<li><code>width</code>, <code>height</code>, <code>min-height</code>, <code>max-height</code>, <code>min-width</code>, <code>max-width</code> &#8211; the size of an element&#8217;s box</li>
+	<li><code>font-size</code>, <code>text-indent</code>, <code>line-height</code> &#8211; typography</li>
+	<li><code>border-width</code>, <code>padding</code>, <code>margin</code> &#8211; layout stuff</li>
+	<li><code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> &#8211; more layout stuff</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Dimensions: Values</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p {
+  border-width: 2px;
+  font-size: 12pt;
+  width: 80%;
+  min-height: 8em;
+  margin: 1cm;
+}</pre></div>
+<ul>
+	<li>Size values have a number and a unit of measurement.</li>
+	<li>Only 0 does not nead a unit of measurement.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Dimensions: Absolute Units</h1>
+<ul>
+	<li><code>px</code> &#8211; pixels; defined by the screen&#8217;s resolution</li>
+	<li><code>cm</code>, <code>mm</code>, <code>in</code> &#8211; physical units, size changes with screen resolution</li>
+	<li><code>pt</code> &#8211; points; usually used for fonts; 1 pt = 1/72 in</li>
+</ul>
+<p>The absolute units don&#8217;t need a context to be interpreted.</p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Dimensions: Relative Units</h1>
+<ul>
+	<li><code>%</code> &#8211; percentage of some other size</li>
+	<li><code>em</code> &#8211; the <code>font-size</code> of the parent element</li>
+</ul>
+<p>For <code>%</code>, the size is usually the same size in the parent element.</p>
+<ul>
+	<li><code>width</code>, <code>min-width</code>, <code>max-width</code> refer to the <code>width</code> of the parent element.</li>
+	<li><code>font-size</code> refers to the <code>font-size</code> of the parent element.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Serif vs. Sans Serif Fonts</h1>
+<ul>
+	<li>Serif font vs sans-serif font</li>
+</ul>
+<div style="text-align: center;">
+<p><img src="images/serif_vs_sans_serif_s.svg" style="width:40%;" alt="" /> <span style="display:inline-block; width:10%;">&nbsp;</span> <img src="images/serif_vs_sans_serif_ss.svg" style="width:40%;" alt="" /></p>
+</div>
+<ul>
+	<li>Serif font with red serifs</li>
+</ul>
+<div style="text-align: center;">
+<p><img src="images/serif_vs_sans_serif_rs.svg" style="width:50%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Monospaced Fonts</h1>
+<ul>
+	<li>The difference between monospaced fonts and proportional fonts.</li>
+</ul>
+<div style="text-align: center;">
+<p><img src="images/proportional_vs_monospaced.svg" style="width:50%;" alt="" /></p>
+</div>
+<ul>
+	<li>Proportional fonts are easier to read, and are used in most places.</li>
+	<li>Monospaced fonts make it easy to line up text vertically. Useful for: coding, representing tables (e.g. receipts, accounting stuff), retro looks.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Fonts: Font Families</h1>
+<p>Generic families: <span style="font-family: serif;">serif</span>, <span style="font-family: sans-serif;">sans-serif</span>, <span style="font-family: monospace;">monospace</span>, <span style="font-family: cursive;">cursive</span>, <span style="font-family: fantasy;">fantasy</span></p>
+<p>Fonts available on most computers:</p>
+<table>
+	<tr>
+		<td> <span style="font-family: serif;">serif</span> </td>
+		<td> <span style="font-family: sans-serif;">sans-serif</span> </td>
+		<td> <span style="font-family: monospace;">monospace</span> </td>
+	</tr>
+	<tr>
+		<td> <span style="font-family: Garamond;">Garamond</span> </td>
+		<td> <span style="font-family: Georgia;">Georgia</span> </td>
+		<td> <span style="font-family: Courier New;">Courier New</span> </td>
+	</tr>
+	<tr>
+		<td> <span style="font-family: Times New Roman;">Times New Roman</span> </td>
+		<td> <span style="font-family: Helvetica;">Helvetica</span> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> <span style="font-family: Tahoma;">Tahoma</span> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> <span style="font-family: Tahoma;">Verdana</span> </td>
+		<td> </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Choosing a Font</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p {
+  font-family: Myriad Pro, Verdana, Tahoma, sans-serif;
+}</pre></div>
+<ul>
+	<li>The browser looks for each font, in the specified order. Once a font is found, that font is used.</li>
+	<li>Always use a generic font family as the last fall-back option.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Downloadable Fonts</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">@font-face {
+  font-family: Myriad Pro;
+  src: url("fonts/Myriad_Pro.otf") format("otf");
+}</pre></div>
+<ul>
+	<li><span class="caps">SVG</span> fonts: supported by all recent browsers.</li>
+	<li><span class="caps">OTF</span> fonts: supported by Firefox, Chrome, Safari.</li>
+	<li><span class="caps">WOFF</span> fonts: supported by IE, Firefox 3.6+</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Font Styles</h1>
+<ul>
+	<li>A single font-family can have many styles of glyphs.</li>
+	<li>Well-known styles: bold, italic, and underline.</li>
+	<li><span class="caps">CSS</span> properties: <code>font-style</code>, <code>font-variant</code>, <code>text-decoration</code></li>
+</ul>
+<table>
+	<tr>
+		<td> <code>font-style</code> </td>
+		<td> <code>font-variant</code> </td>
+		<td> <code>text-decoration</code> </td>
+	</tr>
+	<tr>
+		<td> <span style="font-style:italic;">italic</span> </td>
+		<td> <span style="font-variant:small-caps;">small-caps</span> </td>
+		<td> <span style="text-decoration:underline;">underline</span> </td>
+	</tr>
+	<tr>
+		<td> <span style="font-style:oblique;">oblique</span> </td>
+		<td> <span style="font-variant:normal;">normal</span> </td>
+		<td> <span style="text-decoration:overline;">overline</span> </td>
+	</tr>
+	<tr>
+		<td> <span style="font-style:normal;">normal</span> </td>
+		<td> </td>
+		<td> <span style="text-decoration:line-through;">line-through</span> </td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td> <span style="text-decoration:none;">none</span> </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Font Weights</h1>
+<p><span style="font-weight:ligther;">100 &#8211; lighter</span><br />
+<span style="font-weight:normal;">400 &#8211; normal</span><br />
+<span style="font-weight:bold;">700 &#8211; bold</span><br />
+<span style="font-weight:bolder;">800 &#8211; bolder</span></p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: The Em Box</h1>
+<ul>
+	<li>Each font glyph is designed inside a square box, called the em box.</li>
+</ul>
+<div style="text-align: center;">
+<p><img src="images/the_em_box.svg" style="width:50%;" alt="" /></p>
+</div>
+<ul>
+	<li><code>font-size</code> sets the size of the em box.</li>
+	<li><code>1 em</code> is the size of the current font&#8217;s em box, not the size of capital M.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Important Lines</h1>
+<div style="text-align: center;">
+<p><img src="images/typography_line_terms.svg" style="width:90%;" alt="" /></p>
+</div>
+<ul>
+	<li>The median line is used for <code>line-height</code>, discussed next.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Line Height</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p {
+  font-size: 12pt;
+  line-height: 2em;
+}</pre></div>
+<ul>
+	<li>The rule above is equivalent to double spacing in word processors.</li>
+	<li><code>line-height</code> &gt; <code>font-size</code>: the difference is divided by two, added to the top and bottom of the em boxes</li>
+	<li><code>line-height</code> &lt; <code>font-size</code>: <code>line-height</code> is divided by two, the halves go above and below the font&#8217;s median line</li>
+</ul>
+</div>
+<div class="title slide">
+<h1><span class="caps">CSS</span> Layout</h1>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Layout: The Box Model</h1>
+<ul>
+	<li>Each element is a box.</li>
+	<li>Default width: maximum that fits into the parent element.</li>
+	<li>Default height: minimum that fits in all the children elements.</li>
+	<li>Layout is done by putting rectangular boxes together.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Layout: The Box Model<br />
+<div style="text-align: center;"><br />
+<img src="images/css_box_model.svg" style="width:90%;" alt="" /></h1>
+</div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Layout: Padding</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">h1 {
+  padding-top: 20px;
+  padding-right: 0;
+  padding-bottom: 40px;
+  padding-left: 10px;
+}
+
+/* Same as above, using shorthand. */
+h2 { padding: 20px 0 40px 10px; } 
+
+/* 5px top and bottom, 10px left and right. */
+h3 { padding: 5px 10px; }
+
+/* 0 padding all around. */
+p { padding: 0; }</pre></div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Layout: Margins</h1>
+<ul>
+	<li>Works exactly like padding.</li>
+</ul>
+<ul>
+	<li>Shorthand review: <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code></li>
+	<li>Shorthand mnemonic: like the clock &#8211; 12, 3, 6, 9</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Layout: Borders I</h1>
+<p>The following properties need to be set:</p>
+<ul>
+	<li><code>border-width</code> &#8211; the thickness of the border (a <span class="caps">CSS</span> size)</li>
+	<li><code>border-style</code> &#8211; <span style="border: 5px solid;">solid</span>, <span style="border: 5px dashed;">dashed</span>, <span style="border: 5px dotted;">dotted</span>, <span style="border: 10px inset;">inset</span>, <span style="border: 10px outset;">outset</span>, <span style="border: 10px groove;">groove</span></li>
+</ul>
+<p><code>border-color</code> is optional, defaults to the foreground color.</p>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">h1 {
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+}
+
+/* Same as above, using shorthand. */
+p { border: 2px solid black; }</pre></div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Layout: Borders II</h1>
+<p>Each of the border&#8217;s sides can be set individually using both normal properties and short-hand.</p>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">h1 {
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: black;
+  border-right: 2px solid black;
+}</pre></div>
+
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Layout: Inline Elements</h1>
+<p>Inline elements can share a line. Examples: <code>&lt;em&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;img&gt;</code>.</p>
+<div>
+<em style="border:1px solid blue;">emphasized element</em>
+<strong style="border:1px solid blue;">strongly emphasized element</strong>
+<em style="border:1px solid blue;">another emphasized element</em>
+<strong style="border:1px solid blue;">another strongly emphasized element</strong>
+<em style="border:1px solid blue;">yet another emphasized element</em>
+</div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Layout: Block Elements</h1>
+<p>Block elements take the entire line for themselves. Examples: <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;h1&gt;</code> &#8211; <code>&lt;h6&gt;</code>.</p>
+<div>
+<p style="border:1px solid blue;">A paragraph.</p>
+<ol style="border:1px solid blue;">
+  <li style="border:1px solid blue; list-style: none;">A list item</li>
+  <li style="border:1px solid blue; list-style: none;">Another list item</li>
+</ol>
+<p style="border:1px solid blue;">Another paragraph.</p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Layout: Flow Rules</h1>
+<ul>
+	<li>Block elements can contain exclusively block elements, or exclusively inline elements.</li>
+	<li>Inline elements can only contain other inline elements.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Layout: The Flow</h1>
+<p>Unless specified otherwise, <span class="caps">HTML</span> elements are laid out according to the flow.</p>
+<ul>
+	<li>Inline elements are laid out horizontally adjacent to each other, left-to-right.</li>
+	<li>Inline elements have no margins or padding.</li>
+	<li>Block elements are laid out vertically adjacent to each other, top-to-bottom.</li>
+	<li>Adjacent block elements have their margins collapsed.</li>
+</ul>
+</div>
+<div class="slide"><h1>Meaningless <span class="caps">HTML</span> Elements</h1>
+<ul>
+	<li><code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> have no intrinsic meaning. They exist solely as hooks for <span class="caps">CSS</span> and JavaScript.</li>
+	<li><code>&lt;div&gt;</code> is a block element.</li>
+	<li><code>&lt;span&gt;</code> is an inline element.</li>
+	<li>Each <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code> <em>should</em> have a <code>class</code> or <code>id</code> attribute.</li>
+	<li>Beware of <em>divitis</em> (using <code>&lt;div&gt;</code> tags instead of tags with semantic meaning).</li>
+</ul>
+</div>
+<div class="slide"><h1>Good use of divs.</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;body&gt;
+  &lt;div id="intro"&gt;
+    &lt;p&gt;The thesis of this essay is...&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id="contents"&gt;
+    &lt;p&gt;The first supporting point is...&lt;/p&gt;
+    &lt;p&gt;The second supporting point is...&lt;/p&gt;
+    &lt;p&gt;The third supporting point is...&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id="conclusion"&gt;
+    &lt;p&gt;In conclusion, ...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/body&gt;</pre></div>
+<p>The divs convey semantic information that is not reflected by the collection of paragraphs.</p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Layout: Positioning</h1>
+<ul>
+	<li>Position an element by setting <code>position</code> to something other than <code>static</code>.</li>
+	<li>Use <code>left</code>, <code>right</code>, <code>top</code> and <code>bottom</code> to change the default position.</li>
+</ul>
+<table>
+	<tr>
+		<td> <code>position</code> </td>
+		<td> In flow </td>
+		<td> Positioning                   </td>
+	</tr>
+	<tr>
+		<td> <code>static</code>   </td>
+		<td> yes     </td>
+		<td> according to the flow         </td>
+	</tr>
+	<tr>
+		<td> <code>relative</code> </td>
+		<td> ghost   </td>
+		<td> relative to the flow position </td>
+	</tr>
+	<tr>
+		<td> <code>absolute</code> </td>
+		<td> no      </td>
+		<td> document coordinate space     </td>
+	</tr>
+	<tr>
+		<td> <code>fixed</code>    </td>
+		<td> no      </td>
+		<td> screen coordinate space       </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Layout: Floats</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p:first { float: right; }</pre></div>
+<p style="float: right; border: 1px solid black; width: 30%; margin-bottom: 0;">
+The text in this paragraph is floated to the right. The text in this paragraph is floated to the right.
+</p>
+<p>
+This is a normal paragraph. It will flow around the float.  This is a normal paragraph. It will flow around the float. This is a normal paragraph. It will flow around the float.
+</p>
+<p>
+This is another normal paragraph. It will flow around the float.  This is another normal paragraph. It will flow around the float. This is another normal paragraph. It will flow around the float.
+</p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Layout: Floats and Clears</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p:first { float: right; }
+p:last { clear: both; }</pre></div>
+<p style="float: right; border: 1px solid black; width: 30%; margin-bottom: 0;">
+The text in this paragraph is floated to the right. The text in this paragraph is floated to the right.
+</p>
+<p>
+This is a normal paragraph. It will flow around the float.  This is a normal paragraph. It will flow around the float. This is a normal paragraph. It will flow around the float.
+</p>
+<p style="clear: both;">
+This is a cleared paragraph. It will not flow around the float.  This is a cleared paragraph. It will not flow around the float. This is a cleared paragraph. It will not flow around the float.
+</p>
+</div>
+<div class="title slide">
+<h1><span class="caps">CSS</span> Demo</h1>
+<p>Demo code available at:</p>
+<p><strong style="font-size: 3em; ;">http://bit.ly/4AJXqz</strong></p>
+<p>http://github.com/costan/html_css_js_slides/ raw/master/exercises/css_demo.html</p>
+</div>
+<div class="title slide">
+<h1><span class="caps">CSS</span> Exercise</h1>
+<p>Scaffold code available at:</p>
+<p><strong style="font-size: 3em; ;">http://bit.ly/5ORxcN</strong></p>
+<p>http://github.com/costan/html_css_js_slides/ raw/master/exercises/css_start.html</p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Exercise: Solution</h1>
+<p>Solution available at:</p>
+<p><strong style="font-size: 3em; ;">http://bit.ly/84UNOb</strong></p>
+<p>http://github.com/costan/html_css_js_slides/ raw/master/exercises/css_finish.html</p>
+</div>
+<div class="title slide">
+<h1>JavaScript: the Web&#8217;s Programming Language</h1>
+</div>
+<div class="slide"><h1>Adding JavaScript: Horrible</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;a href="javascript:alert('Lame script!');"/&gt;Click me&lt;/a&gt;
+
+&lt;form action="#"&gt;
+  &lt;input type="submit" onclick="alert('Lame script!');"
+         value="Click me"&gt;
+&lt;/form&gt;</pre></div>
+<p>Forget you saw this.</p>
+</div>
+<div class="slide"><h1>Adding JavaScript: Bad</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;script type="text/javascript"&gt;
+alert("I'm alive!");
+&lt;/script&gt;</pre></div>
+<p><code>&lt;script&gt;</code> tags can be added in <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code>. There is a subtle difference that we&#8217;ll discuss later.</p>
+</div>
+<div class="slide"><h1>Adding JavaScript: Good</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Annoying page.&lt;/title&gt;
+		&lt;script type="text/javascript" src="code/js/alert.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;		
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/Documents/workspace2/html_css_js_slides/code/js/include_good.html">code/js/include_good.html</a></div>
+<div class="code-normal"><pre name="code" class="js:nogutter:nocontrols">alert("I'm alive!");
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/Documents/workspace2/html_css_js_slides/code/js/alert.js">code/js/alert.js</a></div>
+</div>
+<div class="slide"><h1>JavaScript is a Programming Language</h1>
+<ul>
+	<li>Dynamic typing</li>
+	<li>Mostly static scoping</li>
+	<li>Supports closures</li>
+	<li>Object-oriented</li>
+	<li>Prototypical inheritance (no classes)</li>
+</ul>
+</div>
+<div class="slide"><h1>Let&#8217;s Roll</h1>
+</div>
+<div class="title slide">
+<h1>JavaScript Demo / Exercise</h1>
+<p>Demo code available at:</p>
+<p><strong style="font-size: 3em; ;">http://bit.ly/5XoTyi</strong></p>
+<p>http://github.com/costan/html_css_js_slides/ raw/master/exercises/js_start.html</p>
+</div>
+<div class="title slide">
+<h1>Wrap-Up</h1>
+</div>
+<div class="slide"><h1>Contact Information</h1>
+<p>Victor Costan</p>
+<ul>
+	<li>Web: <a href="http://www.costan.us">www.costan.us</a></li>
+	<li>E-mail: victor@costan.us</li>
+	<li>Facebook: <a href="http://www.facebook.com/overmind">overmind</a></li>
+	<li>Twitter: <a href="http://twitter.com/victor_costan">victor_costan</a></li>
+</ul>
+<p>This Presentation</p>
+<ul>
+	<li>Source code: http://github.com/costan/html_css_js_slides/</li>
+	<li>Pull requests (patches) are welcome!</li>
+</ul></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>

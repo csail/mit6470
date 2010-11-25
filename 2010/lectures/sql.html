@@ -1,0 +1,303 @@
+<html>
+<head>
+<title> 6.470 SQL</title>
+<script type="text/javascript">
+
+</script>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+}
+#container{
+	position:absolute;
+	width: 800px;
+	left: 20px;
+}
+.header{
+	position: absolute;
+	left: 230px;
+	top: 30px;
+	font-size:26pt;
+	font-family: "Trebuchet MS", "Helvetica", "Arial", "monotype";
+}
+
+.big-picture{
+	width: 600px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px black;
+	background-color: ddd;
+}
+
+.topic{
+    margin-top: 10px;
+	font-size:18pt;
+	font-weight: bold;
+	font-family: "Trebuchet MS", "Helvetica", "Arial", "monotype";
+}
+.code-trial{
+	width: 800px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px black;
+	background-color: 33ccff;
+}
+.code_area{
+	width: 100%; 
+	border: 0;
+	cellpadding: 3px; 	
+	cellspacing: 3px;
+}
+.code_input, .result_output {
+	background-color:#FFFFFF;
+	border:1px solid gray;
+	height:300px;
+	width:100%;
+}
+
+.section{
+    margin-left: 30px
+}
+.tables, .actors, .movies, .table-example, .explanation{
+	display: inline-table;
+}
+
+.explanation{
+	margin-left: 30px;
+	color: red;
+}
+.actors, .movies{
+	margin: 10px;
+}
+.sql-example{
+	margin:5px;
+	padding: 5px;
+	background-color: #ffccff;
+	width: 400px;
+	margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<img src="../images/small-smoking-laptop.png" />
+<table class= "header">
+	<tr><td> <div id="day-number"> <b>6.470</b> Day 2</div> </td></tr>
+	<tr><td> <div id="topic-set">SQL </div></td></tr>
+</table>
+<div id="container">
+  <div class = "big-picture">
+    <div>The Big Picture:</div>
+    <ul>
+      <li>
+	SQL is a <b>declarative</b> language (cf. imperative). You say what information you <b>want</b> instead of scripting <b>how</b> to get it.
+      </li>
+      <li>
+	Queries are on tables and queries return tables. This means you use the output of one query as the input to another to easily create complex queries.
+      </li>
+      <li>
+	Common SQL in a Nutshell:
+	<ul>
+	  <li>querying data: SELECT, WHERE, =/IN, ORDER BY, ASC/DESC, LIMIT, <b>joins</b></li>
+	  <li>changing data: INSERT, UPDATE</li>
+	  <li>aggregation: COUNT, AVG, MIN, MAX, SUM, GROUP BY</li>
+	</ul>
+      </li>
+      
+    </ul>
+  </div>
+
+<div class="topic">Example: Supervisors and Grants</div>
+<br>
+<div class="section">
+Properties of our dataset:<br>
+<ul>
+  <li>A supervisor has a name and belongs to exactly 1 research group</li>
+  <li>A grants has a name and an amount</li>
+  <li>Supervisors can have 0-many grants</li>
+</ul>
+
+Our schema:<br>
+<pre>
+supervisors
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| id         | int(11)      | NO   | PRI | NULL    |       | 
+| supervisor | varchar(100) | YES  |     | NULL    |       | 
+| groupname  | varchar(25)  | YES  |     | NULL    |       | 
++------------+--------------+------+-----+---------+-------+
+
+grants
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| id     | int(11)      | NO   | PRI | NULL    |       | 
+| name   | varchar(100) | YES  |     | NULL    |       | 
+| amount | int(11)      | YES  |     | NULL    |       | 
++--------+--------------+------+-----+---------+-------+
+
+supervisors_grants
++---------------+---------+------+-----+---------+-------+
+| Field         | Type    | Null | Key | Default | Extra |
++---------------+---------+------+-----+---------+-------+
+| supervisor_id | int(11) | NO   | PRI | 0       |       | 
+| grant_id      | int(11) | NO   | PRI | 0       |       | 
++---------------+---------+------+-----+---------+-------+
+</pre>
+</div>
+
+The dataset from this toy database can be found <a href="grants.html">here</a>.
+
+<div class="topic">Querying Data</div>
+<div class="section">
+<br>
+
+Give us all the information on every supervisor whose name ends in 'Miller':
+<div class="sql-example">
+SELECT * FROM supervisors WHERE supervisor LIKE '%Miller';
+</div>
+<br>
+
+Give us a table containing only the name and amount for grants bigger than $10,000;
+<div class="sql-example">
+SELECT name, amount FROM grants WHERE amount>1000;
+</div>
+<br>
+
+Give us all the information on supervisors in the EECS group with an ID under 50
+<div class="sql-example">
+SELECT * FROM supervisors WHERE groupname='EECS' AND id<50;
+</div>
+
+<br>
+Give us the names of the 10 largest grants
+<div class="sql-example">
+SELECT name FROM grants ORDER BY amount DESC LIMIT 10;
+</div>
+
+</div>
+<div class="topic">Modifying Data</div>
+<div class="section">
+
+<div class="sql-example">
+INSERT INTO table_name (column1, column2, column3,...)<br>
+VALUES (value1, value2, value3,...)
+</div>
+<br>
+INSERT INTO supervisors VALUES (1, 'Rob Miller');
+
+<div class="sql-example">
+UPDATE table_name<br>
+SET column1=value, column2=value2,...<br>
+WHERE some_column=some_value
+</div>
+<br>
+UPDATE grants SET value=5000 WHERE id=12;
+<div class="sql-example">
+DELETE FROM table_name<br>
+WHERE some_column=some_value
+</div>
+<br>
+DELETE FROM supervisors WHERE name LIKE '%Miller';
+
+</div>
+
+
+<div class="topic">Aggregation</div>
+<div class="section">
+<br>
+
+Give us the average grant size and the total grant money in the grants table:
+<div class="sql-example">
+SELECT AVG(amount) FROM grants;
+SELECT SUM(amount) FROM grants;
+</div>
+<br>
+
+Give us the names and values of the largest and smallest grants:
+<div class="sql-example">
+SELECT name, MAX(amount) FROM grants;
+SELECT name, MIN(amount) FROM grants;
+</div>
+<br>
+
+Give us the number of supervisors in our table:
+<div class="sql-example">
+SELECT COUNT(*) FROM supervisors;
+</div>
+
+</div>
+
+<div class="topic">Joins</div>
+<br>
+<div class="section">
+Use joins to connect tables so you can query across them. Without a
+predicate on the join you get the Cartesian product of two
+tables. With a predicate, some column value in the first table must
+match a column value in the second table for that set of rows to make
+it into the resulting temporary join table.<br>
+
+Joins have very efficient implementations in modern database
+management systems and are much faster than correlated subqueries (a
+SELECT nested inside a SELECT). Use them!<br>
+<br>
+
+Without a qualifier you get the Cartesian product of two tables. You
+can give tables temporary short names to make your query shorter and
+facilitate unambiguous references to columns from a particular table:
+<div class="sql-example">
+SELECT * from supervisors, grants;
+or
+SELECT * from supervisors s, grants g;
+</div>
+
+<br>
+Give us the name and amount for every grant on which Rob Miller was
+the supervisor. Note how a predicate is used to link supervisors to
+supervisor_grants, and then another predicate is used to link
+supervisor_grants to grants so that queries can now go across all
+three tables:
+<div class="sql-example">
+SELECT g.name, g.amount FROM supervisors s, supervisors_grants sg, grants g WHERE s.id=sg.supervisor_id AND sg.grant_id=g.id AND s.supervisor='Rob Miller';
+</div>
+
+<br>
+Give us the name of every supervisor that has worked on a grant whose name includes the word 'wireless':
+<div class="sql-example">
+SELECT s.supervisor from supervisors s, supervisors_grants sg, grants g WHERE s.id=sg.supervisor_id AND sg.grant_id=g.id AND g.name LIKE '%wireless%';
+</div>
+
+<br>
+Give us the name of every supervisor that has worked on a grant whose name includes the word 'wireless':
+<div class="sql-example">
+SELECT s.supervisor from supervisors s, supervisors_grants sg, grants g WHERE s.id=sg.supervisor_id AND sg.grant_id=g.id AND g.name LIKE '%wireless%';
+</div>
+
+<br>
+Give us the total of the grants Rob Miller has:
+<div class="sql-example">
+SELECT SUM(g.amount) from supervisors s, supervisors_grants sg, grants g WHERE s.id=sg.supervisor_id AND sg.grant_id=g.id AND s.supervisor='Rob Miller';
+</div>
+
+<br>
+Give us the total of the grants Rob Miller has. This query uses GROUP
+BY, which is typically used in conjunction with an aggregation
+function to combine data:
+<div class="sql-example">
+SELECT s.supervisor, SUM(g.amount) from supervisors s, supervisors_grants sg, grants g WHERE s.id=sg.supervisor_id AND sg.grant_id=g.id GROUP BY s.supervisor;
+</div>
+
+<br>
+Give us the total of the grants for every supervisor, ordered by that
+total. We give 'SUM(g.amount)' the name 'fatcash' so we can reference
+it in the ORDER BY clause:
+<div class="sql-example">
+SELECT s.supervisor, SUM(g.amount) as fatcash from supervisors s, supervisors_grants sg, grants g WHERE s.id=sg.supervisor_id AND sg.grant_id=g.id GROUP BY s.supervisor ORDER by fatcash DESC;
+</div>
+
+</div>
+
+</body>
+</html>

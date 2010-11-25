@@ -1,0 +1,213 @@
+<html>
+<head>
+<title> 6.470 DB Design</title>
+<script type="text/javascript">
+
+function displayHTML(id){
+	src= document.getElementById(id+"_src").value;
+	document.getElementById(id).contentWindow.document.body.innerHTML = src;
+}
+
+
+
+</script>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+}
+#container{
+	position:absolute;
+	width: 800px;
+	left: 20px;
+}
+.header{
+	position: absolute;
+	left: 230px;
+	top: 30px;
+	font-size:26pt;
+	font-family: "Trebuchet MS", "Helvetica", "Arial", "monotype";
+}
+
+.big-picture{
+	width: 600px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px black;
+	background-color: ddd;
+}
+
+.topic{
+    margin-top: 10px;
+	font-size:18pt;
+	font-weight: bold;
+	font-family: "Trebuchet MS", "Helvetica", "Arial", "monotype";
+}
+.code-trial{
+	width: 800px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px black;
+	background-color: 33ccff;
+}
+.code_area{
+	width: 100%; 
+	border: 0;
+	cellpadding: 3px; 	
+	cellspacing: 3px;
+}
+.code_input, .result_output {
+	background-color:#FFFFFF;
+	border:1px solid gray;
+	height:300px;
+	width:100%;
+}
+
+.section{
+    margin-left: 30px
+}
+.tables, .actors, .movies, .table-example, .explanation{
+	display: inline-table;
+}
+
+.explanation{
+	margin-left: 30px;
+	color: red;
+}
+.actors, .movies{
+	margin: 10px;
+}
+</style>
+</head>
+<body>
+
+<img src="../images/small-smoking-laptop.png" />
+<table class= "header">
+	<tr><td> <div id="day-number"> <b>6.470</b> Day 2</div> </td></tr>
+	<tr><td> <div id="topic-set">Setting Up Your Database</div></td></tr>
+</table>
+<div id="container">
+	<div class = "big-picture">
+	<div>The Big Picture:</div>
+		<ul>
+			<li>
+			  Create an account on <a href="http://sql.mit.edu">sql.mit.edu</a>.
+			</li>
+			<li>
+			  Add a database.
+			</li>
+			<li>
+			  Create tables using the phpMyAdmin
+			  interface, at a mysql prompt, or through a
+			  script (a
+			  la <a href="../FreebaseTutorial/index.html">scripting
+			  insertion of Freebase data</a> into your
+			  database).
+			</li>
+		</ul>
+	</div>
+<br>
+
+<div class= "intro">
+This lecture goes through the mechanics of setting up and manipulating
+a database using <a href="http://sql.mit.edu">sql.mit.edu</a>.
+</div>
+
+<div class="topic">Create an Account and an Empty Database</div>
+<div class="section">
+<p>
+  <ol>
+    <li>
+      Go to <a href="http://sql.mit.edu">sql.mit.edu</a>, peruse the
+      site as well as the SQL questions in
+      the <a href="http://scripts.mit.edu/faq/">scripts FAQ</a>, then
+      click on the sign-up link.
+    </li>
+    <li>
+      Login in via your SQL password or your MIT certs.
+    </li>
+    <li>
+      Create a database. The interface will force it to be of the form
+      <code>&lt;username&gt;+&lt;database name&gt;</code>. Note that
+      you are limited to 5 databases and 100 MB of data. If you find
+      yourself running out of room, contact the 6.470 staff so we can
+      work something out.
+    </li>
+  </ol>
+</p>
+</div>
+
+<div class="topic">Manipulating Your Database</div>
+<div class="section">
+
+<p>
+You have at least two choices for interacting with your database:
+<ul>
+  <li>
+    Use
+    the <a href="https://scripts.mit.edu/~sql/phpMyAdmin/">phpMyAdmin</a>
+    interface. Log in with your username and SQL password. You can
+    examine, add, change, and drop tables from this interface as well
+    as add and delete rows in your tables.
+  </li>
+  <li>
+    Get yourself to a mysql prompt and make changes from the command line.
+  </li>
+</ul>
+
+The latter suggestion may require more work but is generally more
+efficient for users comfortable with the technology because you're not
+navigating a clunky web interface.
+</p>
+
+<p>
+To get yourself to a mysql prompt, do one of the following:
+<ul>
+  <li>Sit down at an Athena terminal.
+    <ol>
+      <li>Enter <code>add mysql</code> to add the mysql locker so you can use the mysql software</li>
+      <li>Connect to the sql.mit.edu server with<br>
+	<code>mysql -h sql.mit.edu -u &lt;username&gt; -p</code>
+	<br>You'll be prompted for your SQL password.</li>
+      </ol>
+    </li>
+  <li> Be on a machine that has some kind of terminal. Linux has a
+  terminal, Mac OS X has Terminal.app which you can find with
+  Spotlight or in <code>Applications &gt; Utilities</code>, and on
+  Windows you may have to download an SSH client
+  like <a href="http://www.putty.org/">Putty</a>.
+    <ol>
+      <li>
+      SSH to some public Athena machine, like <code>linerva.mit.edu</code>, which is a public Linux dialup maintained by <a href="http://sipb.mit.edu/">SIPB</a>. From a terminal enter:<br>
+      <code>ssh &lt;username&gt;@linerva.mit.edu</code><br>
+      and supply your Athena password when prompted. If you're using Putty or another SSH client supply your username and <code>linerva.mit.edu</code> as the remote host.
+      </li>
+      <li>
+	You're now looking at an Athena prompt as if you were sitting physically at an Athena terminal. Go through steps 1 and 2 for the "Sit down at an Athena terminal" case.
+      </li>
+    </ol>
+  </li>
+</ul>
+</p>
+<p>
+Once you're at the mysql prompt you need to switch to the database that you are using:<br>
+<code>mysql&gt; use &lt;username&gt;+&lt;database name&gt;</code><br>
+You're now read to manipulate your database.
+<ul>
+  <li><code>mysql&gt; show tables;</code> will give you a list of the tables in this databse</li>
+  <li><code>mysql&gt; desc &lt;tablename&gt; will give the schema for a particular table</li>
+  <li><code>CREATE TABLE</code>, <code>ALTER TABLE</code>, and <code>DELETE TABLE</code></li>
+  <li><code>mysql&gt; SELECT * FROM &lt;tablename&gt; LIMIT 10</code> is a quick way to see and sanity check some of the rows in a table</li>
+  <li><code>mysql&gt; SELECT COUNT(*) FROM &lt;tablename&gt;</code> is a quick way to get the number of rows in a table</li>
+</ul>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

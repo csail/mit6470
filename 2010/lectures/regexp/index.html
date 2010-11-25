@@ -1,0 +1,198 @@
+<html>
+<head>
+<title> 6.470 Regular Expressions </title>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+}
+#container{
+	position:absolute;
+	width: 800px;
+	left: 20px;
+}
+.header{
+	position: absolute;
+	left: 230px;
+	top: 30px;
+	font-size:26pt;
+	font-family: "Trebuchet MS", "Helvetica", "Arial", "monotype";
+}
+
+.big-picture{
+	width: 600px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px black;
+	background-color: ddd;
+}
+
+.topic{
+    margin-top: 10px;
+	font-size:18pt;
+	font-weight: bold;
+	font-family: "Trebuchet MS", "Helvetica", "Arial", "monotype";
+}
+.code-trial{
+	width: 800px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px black;
+	background-color: 33ccff;
+}
+.code_area{
+	width: 100%; 
+	border: 0;
+	cellpadding: 3px; 	
+	cellspacing: 3px;
+}
+.code_input, .result_output {
+	background-color:#FFFFFF;
+	border:1px solid gray;
+	height:300px;
+	width:100%;
+}
+
+.section{
+    margin-left: 30px
+}
+</style>
+</head>
+<body>
+
+<script src="jquery.js"></script>
+<script src="myutil.js"></script>
+<script src="tab.js"></script>
+
+<img src="../../images/small-smoking-laptop.png" />
+<table class= "header">
+	<tr><td> <div id="day-number"> <b>6.470</b></div> </td></tr>
+
+	<tr><td> <div id="topic-set"> Regular Expressions</div></td></tr>
+</table>
+<div id="container">
+<div class= "intro">This lesson will teach regular expressions.</div>
+
+<div class = "big-picture">
+<div>The Big Picture:</div>
+	<ul>
+		<li>
+
+            Regular expressions are good for parsing and validating strings.
+		</li>
+		<li>
+            Regular expressions are supported in most programming languages.
+		</li>
+        <li>
+            Reference
+            <ul>
+                <li><a href="https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Regular_Expressions">JavaScript Regular Expressions</a></li>
+                <li><a href="http://php.net/manual/en/function.preg-match.php">PHP Regular Expressions</a></li>
+            </ul>
+        </li>
+	</ul>
+
+</div>
+<br>
+<br>
+<br>
+<div class="topic"></div>
+
+<div class="topic">JavaScript Syntax</div>
+<ul>
+    <li><a href="http://glittle.org/jsRegex">Tool One</a></li>
+    <li><a href="http://glittle.org/StringProcessor">Tool Two</a></li>
+</ul>
+<div class="section">
+<p>Here's an example of the JavaScript syntax for regular expressions:
+</p>
+<script>
+function go(__input, __output) {
+    var __s = []
+    var print = function(ss) {
+        __s.push(ss)
+    }
+    eval(__input.val())
+    __output.val(__s.join('\n'))
+}
+</script>
+<div class="code-trial">
+<table class="code_area" >
+	<tbody>
+		<tr>
+			<td width="50%">
+			
+				<textarea class="code_input" id="code1_src" wrap="logical" orows="21" ocols="42" onkeydown="checkTab(event)">
+var a = "hello@mit.edu"
+
+var re = /(\w+)@(\w+)\.edu/
+
+var m = a.match(re)
+if (m) {
+    print("username: " + m[1])
+    print("school: " + m[2])
+} else {
+    print("didn't match")
+}
+                </textarea>
+				<br>
+
+				<input type="submit" value="Show Result" onclick="go($('#code1_src'), $('#code1'))">				
+			</td>
+
+			<td valign="top">
+				<textarea class="result_output" id="code1" wrap="logical" orows="21" ocols="42"></textarea>
+			</td>
+
+
+		</tr>
+	<tbody>
+
+</table>
+</div>
+
+</div>
+
+
+
+
+<div class="topic">Regex Example</div>
+<ul>
+    <li><b>input</b>: <a href="http://www.databasebasketball.com/players/playerlist.htm">http://www.databasebasketball.com/players/playerlist.htm</a></li>
+    
+    <li><b>regex</b>:<br>
+<pre>
+var a = input.match(/&lt;td&gt;&lt;a href=&quot;playerpage\.htm\?ilkid=\w+ &quot;&gt;[^&lt;]+&lt;\/a&gt;&lt;br&gt;/g)
+for (var i = 0; i &lt; a.length; i++) {
+    var b = a[i]
+    b = b.match(/&lt;td&gt;&lt;a href=&quot;playerpage\.htm\?ilkid=\w+ &quot;&gt;([^&lt;]+)&lt;\/a&gt;&lt;br&gt;/)
+    b = b[1]
+    b = b.replace(/&amp;nbsp;/, &quot; &quot;)
+    b = b.match(/([^,]+), (.*)/)
+    print(b[2] + &quot; &quot; + b[1])
+}
+</pre>
+    </li>
+
+    <li><b>output</b>:<br>
+<pre>
+Alaa Abdelnaby
+Mahmo Abdul-rauf
+Tariq Abdul-wahad
+Tom Abernethy
+John Abramovic
+Alex Acker
+Donald Ackerman
+...
+</pre>
+    </li>
+
+</ul>
+</div>
+
+
+
+
+</body>
+</html>
+

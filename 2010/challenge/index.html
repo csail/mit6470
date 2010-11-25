@@ -1,0 +1,413 @@
+<html>
+<head>
+    <title>6.470 - Challenge Statement</title>
+    <link rel="stylesheet" href="../styles/common.css" />
+    <script src="../scripts/main.js"></script>
+    <style>
+    
+.indent {
+   padding-left: 50pt;
+}
+.change_author {
+   color: #ccc;
+}
+
+    </style>
+</head>
+<body onload="onLoad('../');">
+    <div id="sidebar">
+        <div id="sidebar-title">6.470 IAP</div>
+        <div id="sidebar-link-container"></div>
+        <div style="text-align: right;"><img src="../images/sidebar-bottom.png" /></div>
+    </div>
+
+    <div id="content">
+        <div id="course-title">Web Programming Competition</div>
+            
+        <h1>Challenge Statement</h1>
+        
+        <!--
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+        -->
+
+<h1>
+1. Overview
+</h1>
+<p>
+Your challenge is to build a publicly available interactive web application that displays dynamic content relating to one or more of this year's topic categories: Food, Health, and Sports. To receive course credit and be eligible for prizes, your site must fulfill the requirements outlined in this document, and your team must demonstrate satisfactory progress at each of the scheduled milestones.
+</p>
+<p>
+Your site is due at <strong>7 pm on Wednesday, January 27th</strong>. No late submissions will be accepted. More specific instructions about how to submit your site will be available later in January.
+</p>
+
+<h1>
+2. Requirements
+</h1>
+<h2>
+2.1 Store Data in a Database
+</h2>
+<p>
+Your web application must have access to a database containing records about one (or more) of three topic categories:  Food, Health, or Sports. These are meant to be flexible categories; each can be interpreted several ways to create a wide range of useful sites. For instance, a "Health" site could involve counting calories or tracking the spread of diseases, sharing workout plans or comparison-shopping for medicine.
+</p>
+<h3>
+How Much Data?
+</h3>
+<p>
+You don't have to have millions of rows, but the size should warrant using a database.  In previous years most teams have had tens of thousands or hundreds of thousands of rows in their databases; database performance has rarely been a limiting factor. If you think you'll have less than 1000 rows (across all your tables), please talk to a staff member first.
+</p>
+<p>
+Note that for the scope of this challenge, large datasets are often no harder to build or access than small ones.
+</p>
+<h3>
+Getting the Data
+</h3>
+<p>
+You won't be provided with an official dataset. You will instead be free to download data from anywhere you like. We'll have a lecture to discuss how to do this and where to look in detail (on Tuesday 1/5).
+<p>
+ 
+<p>
+One common resource is Freebase (freebase.com), an open, online database with an API that is built from user contributions and seeded with other open sources of online data such as Wikipedia.  Freebase has an interface for browsing data that can help you get familiar with the information that is available. 
+</p>
+ 
+<p>
+For instance, at <a href="http://www.freebase.com/view/food">http://www.freebase.com/view/food</a>, you can find lists of entries for Restaurants (103,771), nutrition facts (49,692), and so on.
+</p>
+ 
+<p>
+If you have too large a dataset, feel free to focus on a specific subset that would make an interesting website. For instance, foods that are kosher, athletes who have changed sports, or diseases that are genetic.
+</p>
+
+<p>
+If you're not sure if you're allowed to use a dataset or if it satisfies the requirements of this course, ask a staff member. 
+</p>
+
+<h2>
+2.2 Display Data from a Database
+</h2>
+<p>
+Your web application must incorporate food, health and/or sports data stored in a database. You may tailor your site around a particular subset of the data if you prefer.
+</p>
+<p>
+The pages you display must be created dynamically. You cannot have a static HTML file for every food or athlete; instead, you must use a database to house all the data, and design your web site to query the database and display the information dynamically.
+</p>
+ 
+<p>
+An example solution to this requirement would be to implement a simple search feature and link results to dynamically generated details page for each {vegetable, disease, rugby player}. This type of solution satisfies the requirement, but there are many other designs you might try. (Don't underestimate the difficulty of producing even a simple solution, however.)
+</p>
+
+<h2>
+2.3 Integrate Third Party Data <u>OR</u> A Data Visualization.
+</h2>
+<p>
+Your web application must do at least one of the following:
+</p>
+<h3>
+Third Party Data
+</h3>
+<p>
+Integrate data from a third party into your site. This must be done dynamically, that is, your site should fetch information on the fly, as users need it.
+</p>
+<p>
+If you're familiar with the concept of a mash-up (displaying the combination of two sources of data on the web), then think of this as a mash-up with your static food, health or sports data. A mash-up can display data in many different ways: as text, on a graph, on a chart, on a map, on a timeline, as embedded media and much more. Be creative! There are numerous mash-up sources available; each one will probably require you to learn an API.  Lectures won't cover any particular APIs, but if you're having trouble with a particular API, feel free to ask a staff member.
+</p>
+ 
+<p>
+Note that this is a different kind of data than the sort that you will store in your database. Information that changes rarely because it is factual or historic (calorie information, disease outbreak statistics) should probably be gathered once, formatted and "warehoused" in a database. "Live" data that changes hour to hour (traffic data, weather, sports paraphernalia auctions on eBay) is more valuable when it is fresh.
+</p>
+<p>
+We'd prefer you get this information through a documented API or RSS feed; if you plan to use other means (like scraping web pages) please talk with a staff member first.
+</p>
+<h3>
+Data Visualization
+</h3>
+<p>
+Create a compelling visualization of data that is created dynamically. Your visualization should illuminate some feature of the data that isn't obvious or trivial. Ways to visualize data include graphs and plots, tag clouds, timelines, a web describing relationships between objects, and heatmaps.
+</p>
+<p>
+The user should be able to specify some inputs to the visualization, such as a zip code or athlete name.
+</p>
+<p>
+We recommend that you make it easy to see some visualization by showing a default visualization, suggesting default input values, or showing recent visualizations.
+</p>
+<p>
+We encourage you to use existing tools to display data; we will discuss some possibilities in class.
+</p>
+<h2>
+2.4 Technologies
+</h2>
+<p>
+There are no limits on the technologies you may use in your site. In lecture, we will work through examples using:
+</p>
+ 
+<ol>
+<li>HTML and CSS for layout and content</li>
+
+<li>JavaScript for client-side scripting</li>
+
+<li>JQuery as a JavaScript toolkit for AJAX and widgets</li>
+
+<li>PHP for server-side serving</li>
+
+<li>MySQL for database queries</li>
+
+<li>JSON for data transfer</li>
+</ol>
+ 
+<p>
+Instruction will also be provided for a couple more advanced technologies from two of our sponsors: Adobe Flex and Microsoft Silverlight. Both technologies can do much more than an HTML/JavaScript/PHP web site could and are part of mainstream best practice web programming as well as being highly marketable skills. We recommend going to both the Flex and Silverlight training.
+</p>
+ 
+<p>
+There are many ways to get a web site up for the public. We will support hosting the site on your scripts.mit.edu account using their phpMyAdmin database interface.
+</p>
+ 
+<p>
+Although you are welcome to use any web technologies, staff will not necessarily be able to support them all.  All 6.470 staff can answer questions regarding 1-6. Our staff will do its best to support Silverlight and Flex as well.
+</p>
+ 
+<p>
+What can't you do?
+</p>
+<ul>
+<li>You can't use images, code, or other intellectual property that you don't have permission to use.</li>
+
+<li>You can't just configure an existing system to satisfy the contest requirements. You can use existing tools or systems as a component of your website, but if you do, substantial programming of your own needs to be involved in your solution. If you're not sure if something satisfies this requirement, please ask us!</li>
+</ul>
+<h1>
+3. Milestones
+</h1>
+<p>
+We don't want you to underestimate the difficulty of any step in this competition.  To help you avoid procrastination, we have set three mandatory milestones. In each, you will meet with a member of the course staff to demonstrate that your site can competently fulfill certain goals.  If you have scheduling conflicts with any of the milestones please let the staff know at least 3 days ahead of time.
+</p>
+<p>
+You are not necessarily committed to any of the decisions you make while completing the milestones -- for example your main site idea, database schema, API usage, or user interface.  However, if you decide to make changes after a milestone, your final site needs to fulfill the milestone requirements.
+</p>
+
+<p>
+<strong>Milestone 1</strong>. Sunday, January 10th 12-6pm<br>
+Pitch the idea for your site and have your database ready.
+</p>
+<p class="indent">
+Show the staff that you have a live database populated with the data that you will be using.  The staff should be able to see your tables and make SQL queries on your database. Your database must have at least 1000 rows of data, and you must be able to execute a query that demonstrates this.
+</p>
+<p class="indent">
+You will have to have the idea for your site already (because your database design will have to support your idea). The staff will keep your idea secret from other teams. It would be beneficial (though not required) for the staff to see preliminary sketches of what your site will look like.
+</p>
+<p>
+<strong>Milestone 2</strong>. Sunday, January 17th, 12-6pm<br>
+Generate one page dynamically. 
+<p>
+<p class="indent">
+Show us that you can generate a page from data in your database.  The more this page looks like your finished product the better. If you want to integrate data from an API you may do this, but you must use data from your database.
+</p>
+<p>
+<strong>Milestone 3</strong>. Friday, January 22rd, 12-6pm<br>
+Demonstrate a dynamic data visualization of data OR dynamic use of a 3rd party data source.
+<p>
+
+<p class="indent">
+For a dynamic data visualization: The staff should be able to modify parameters and display a new visualization. This interaction should be done through the site (ie, no changing SQL parameters or a config file on the backend).
+</p>
+<p class="indent">
+For a 3rd party data source: Show the staff a successful query to the API that retrieves a set of records. The staff should be should be able to modify this query to retrieve different records. If your queries take more than a second to execute or if the site you are using is "flaky", be prepared to discuss how your site will be resilient to these problems.
+</p>
+<p class="indent">
+Your site should be nearing completion by this milestone.
+</p>
+<p>
+<strong>Final Submission</strong>. Wednesday, January 27th, 7pm.
+</p>
+<p class="indent">
+This is when your site is due. There will be no check-in with the staff for this deadline. No late submissions will be accepted. More specific instructions about how to submit your site will be available later in January.
+</p>
+<h1>
+4. Evaluation
+</h1>
+<h2>
+4.1 Course completion
+</h2>
+<p>
+To pass the class and thus receive the 6 units and 6 EDPs, you must demonstrate a functioning site open to the public that fulfills the requirements, even if it is in a straightforward manner. Your site will be tested for functionality in Firefox 3 with the latest version of Flash and Silverlight installed.
+</p>
+ 
+<p>
+Attendance at lecture is strongly recommended if you are not an experienced web programmer. In lab hours, staff will give priority to students who have been to lecture. However, lecture attendance will not affect your grade for the class.
+</p>
+ 
+<h2>
+4.2 Competition criteria
+</h2>
+<p>
+Sites will be judged by four criteria:
+</p>
+<ul>
+<li>Usability: how well it is designed for users;</li>
+
+<li>Functionality: does it achieve its stated goals;</li>
+
+<li>Originality: does the site do something interesting and new;</li>
+
+<li>Aesthetics: how attractive is its look and feel.</li>
+</ul>
+<p>
+More details about each category are below.<br>
+Judges will weight the four criteria roughly equally when assigning an overall score to a site.
+</p>
+
+<h3>
+Usability
+</h3>
+<p>
+Factors to consider in judging usability:
+</p>
+<ul>
+<li><strong>Ease of learning</strong>: can a user encountering this web site for the first time easily discover what the web site does and how to make it work? Is its design consistent, both internally (among different web pages of the site) and externally (with other web sites)? Common failures of learnability include: buttons that aren't recognizable as buttons; navigation controls that appear in different places on different pages; menus that are hard to find; using technical jargon instead of common words.</li>
+
+<li><strong>Visibility</strong>: is important information and system state readily visible on the site? Failures of visibility include: not showing when the user is logged in; not displaying the number of results of a search; omitting crucial fields from a search</li>
+
+<li><strong>Error handling</strong>: is it hard to make errors and easy to recover from them? Failures of error handling include: not supporting Back or Undo; not allowing user to edit data they entered; inscrutable error messages.</li>
+
+<li><strong>Efficiency</strong>: is the site efficient to operate? This generally does not refer to response time, but to speed of user input. Failures of efficiency include: tiny buttons that are hard to hit; use of cascading menus that create "steering tasks", which are much slower than pointing tasks.</li>
+</ul>
+
+<h3>
+Functionality
+</h3>
+<p>
+Factors to consider in judging functionality:
+</p>
+<ul>
+<li><strong>Broken links or buttons</strong>: important features that are not implemented or that generate error messages.</li>
+
+<li><strong>Wrong answers</strong>: if a search produces the wrong results, or sorting doesn't sort right, or posting a message to a database doesn't seem to store it.</li>
+
+<li><strong>Missing features</strong>: functions that seem essential to the site that weren't included in the design at all. For example, if a comparison-shopping site doesn't offer any way to sort by price, that's a pretty serious deficiency in functionality.</li>
+</ul>
+
+<h3>
+Originality
+</h3>
+<p>
+Factors to consider in judging originality:
+</p>
+<ul>
+<li><strong>Novelty to 6.470</strong>: is the idea of this site rare or unique among the 6.470 contestants? Or is it yet another site that does X?</li>
+
+<li><strong>Novelty in the Web</strong>: is the idea of this site rare or unique on the Web at large?</li>
+
+<li><strong>Interest</strong>: is it a cool idea? Would you or people you know want to use it? Is the problem it is addressing important?</li>
+</ul>
+
+<h3>
+Aesthetics
+</h3>
+<p>
+Aesthetics largely concerns the graphic design of the site:
+</p>
+<ul>
+<li><strong>Simplicity</strong>: does the site have a minimalist design that nevertheless packs a lot of information or functionality? Common failures of simplicity include dense, cluttered layouts with unnecessary information; unnecessary labels on data fields that would otherwise label themselves (e.g. "Date: January 30"); using too many colors, fonts, or alignment positions.</li>
+
+<li><strong>Color design</strong>: does the site have an attractive color scheme, or does it clash? Does it use only a small number of colors, and exploit color to draw attention where needed?</li>
+
+<li><strong>Balance, symmetry, and whitespace</strong>: are the pages unbalanced, heavy with ink on one side but not the other? Is the content lost in a sea of whitespace, or is there an appropriate relationship between figure and ground?</li>
+</ul>
+<h2>
+4.3 Judging Process
+</h2>
+<p>
+Students will submit the URLs for their web sites by <strong>7 pm, Wednesday, January 27th</strong>.
+</p>
+ 
+<p>
+6.470 staff will review all the submissions and filter out sites which will not be competitive. The result of this first round of review will be a list of <strong>semifinalists</strong>.  The list will be made available before midnight on Thursday night.
+</p>
+ 
+<p>
+In the morning on <strong>Thursday, January 28th</strong>, semifinalist teams will make short presentations about their websites to the judges, and judges will ask questions.  Semifinalists must sign up for presentation slots on the 6.470 web site.
+</p>
+ 
+
+<p>
+Thursday evening will be the final awards show.  The finalist websites selected by the judges will be demonstrated, and prizes will be awarded.
+</p>
+
+<br>
+
+<h1>
+5. Changes to this document since Jan 5th
+</h1>
+<ul>
+  <li>Changed the milestone 2 date from January 15th to January 17th 
+<span 
+class="change_author">(landa)</span></li>
+</ul>
+
+        <!--
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+            ///////////////////////////////////////////////////
+        -->
+        
+    </div>
+    
+    <div id="footer">
+        <a href="http://web.mit.edu/"><img src="http://web.mit.edu/graphicidentity/logo/logolab/img/interface/mit-redgrey-footer1.gif" alt="MIT" width="334" height="36" border="0"></a>
+        <br/>
+        <i>Comments and questions to <a href="mailto:6.470-staff@mit.edu">6.470-staff@mit.edu</a></i>
+    </div>
+</body>
+</html>

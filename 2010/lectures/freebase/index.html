@@ -1,0 +1,623 @@
+<html>
+<head>
+<title> 6.470 Freebase </title>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+}
+#container{
+	position:absolute;
+	width: 800px;
+	left: 20px;
+}
+.header{
+	position: absolute;
+	left: 230px;
+	top: 30px;
+	font-size:26pt;
+	font-family: "Trebuchet MS", "Helvetica", "Arial", "monotype";
+}
+
+.big-picture{
+	width: 600px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px black;
+	background-color: ddd;
+}
+
+.topic{
+    margin-top: 10px;
+	font-size:18pt;
+	font-weight: bold;
+	font-family: "Trebuchet MS", "Helvetica", "Arial", "monotype";
+}
+.code-trial{
+	width: 800px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px black;
+	background-color: 33ccff;
+}
+.code_area{
+	width: 100%; 
+	border: 0;
+	cellpadding: 3px; 	
+	cellspacing: 3px;
+}
+.code_input, .result_output {
+	background-color:#FFFFFF;
+	border:1px solid gray;
+	height:300px;
+	width:100%;
+}
+
+.section{
+    margin-left: 30px
+}
+</style>
+</head>
+<body>
+
+<script src="jquery.js"></script>
+<script src="myutil.js"></script>
+<script src="tab.js"></script>
+
+<img src="../../images/small-smoking-laptop.png" />
+<table class= "header">
+	<tr><td> <div id="day-number"> <b>6.470</b></div> </td></tr>
+
+	<tr><td> <div id="topic-set"> Freebase</div></td></tr>
+</table>
+<div id="container">
+<div class= "intro">This lesson will teach you the basics of getting data from Freebase into a MySQL database.</div>
+
+<div class = "big-picture">
+<div>The Big Picture:</div>
+	<ul>
+		<li>
+
+            Freebase provides a simple REST interface for accessing data.
+            <ul>
+                <li><a href="http://www.freebase.com/view/en/documentation">big documentation</a>
+                </li>
+                <li><a href="http://download.freebase.com/MQLcheatsheet-080926.pdf">little documentation</a>
+                </li>
+            </ul>
+		</li>
+
+		<li>
+            Data is returned in JSON format.
+		</li>
+		<li>
+            We can iterate over the data in PHP and push the data into our MySQL tables.
+		</li>
+	</ul>
+</div>
+
+<div class = "big-picture">
+<ul>
+    <li><a href="php.js">Example PHP code</a>
+        <ul><li>NOTE: This is PHP code, even though the extension claims it is JavaScript.</li>
+    <li>To run on scripts.mit.edu, you need a file called "php.ini" in the same directory as the php file, with the following line:
+        <ul><li><pre>extension=json.so</pre></li></ul>
+    </li></li></ul>
+</div>
+
+<br>
+<br>
+<br>
+<div class="topic">Case Study: Music Artists and Albums</div>
+
+<div class="section">
+<p>Let's assume we want our database to contain musical artists and albums.
+For each artist, we want to store their name, a picture of the band,
+and when the band started.
+Our artist table will look like this:
+</p>
+<pre style="color:rgb(128,128,128)">
+CREATE TABLE `<b style="color:black">artists</b>` (
+    `<b style="color:black">id</b>` VARCHAR( 256 ) NOT NULL ,
+    `<b style="color:black">name</b>` VARCHAR( 256 ) NOT NULL ,
+    `<b style="color:black">image</b>` VARCHAR( 256 ) NOT NULL ,
+    `<b style="color:black">start</b>` VARCHAR( 256 ) NOT NULL ,
+    PRIMARY KEY ( `id` )
+)
+</pre></div>
+
+<div class="section">
+<p>For each ablum, we also want the name and picture, as well as the number of tracks.
+Our album table will look like this:
+</p>
+<pre style="color:rgb(128,128,128)">
+CREATE TABLE `<b style="color:black">albums</b>` (
+    `<b style="color:black">id</b>` VARCHAR( 256 ) NOT NULL ,
+    `<b style="color:black">name</b>` VARCHAR( 256 ) NOT NULL ,
+    `<b style="color:black">image</b>` VARCHAR( 256 ) NOT NULL ,
+    `<b style="color:black">track_count</b>` INT NOT NULL,
+    PRIMARY KEY ( `id` )
+)
+</pre></div>
+
+<div class="section">
+<p>Finally, we'd like a join table to associate artists with albums that they created.
+</p>
+<pre style="color:rgb(128,128,128)">
+CREATE TABLE `glittle+test_db`.`<b style="color:black">artist_to_album</b>` (
+    `<b style="color:black">artist</b>` VARCHAR( 256 ) NOT NULL ,
+    `<b style="color:black">album</b>` VARCHAR( 256 ) NOT NULL ,
+    PRIMARY KEY ( `artist` , `album` )
+)
+</pre></div>
+
+<div class="topic">Finding the Data on Freebase</div>
+<div class="section">
+
+<p>Let's begin by searching on Freebase for our favorite band, <a href="http://www.freebase.com/view/en/the_magnetic_fields">The Magnetic Fields</a>.</p>
+<p>Now what we really want is a list of all the musical artists on Freebase. We can get this by clicking "<a href="http://www.freebase.com/edit/topic/en/the_magnetic_fields">Edit and Show details</a>", and then finding the link for <a href="http://www.freebase.com/view/music/artist">Musical Artist</a>.</p>
+<p>Now find the text "404,837 Musical Artist topics". The words "Musical Artist" look like a link, but when you click it, a bubble opens with a link for the <a href="http://www.freebase.com/type/schema/music/artist?domain=%2Fmusic">type schema</a>.
+<p>What we are looking at is sortof like an SQL table definition. In Freebase, it is called a "type". The name of the type appears to be "Musical Artist", but it isn't really. The real name is "/music/artist", which appears as small grey text next to "Musical Artist Properties".
+</p>
+<p>Note that there is a property for "Active as Musical Artist (start)". Note also that the real name of this property is the small grey text beneath it, namely "active_start".
+</p>
+</div>
+
+<div class="topic">Getting the Data from Freebase</div>
+
+<div class="section">
+<p>Now we'll explore how to programmatically grab information from Freebase.
+Try pressing "Show Result" below.
+</p>
+
+<div class="code-trial">
+<table class="code_area" >
+	<tbody>
+		<tr>
+			<td width="50%">
+			
+				<textarea class="code_input" id="code1_src" wrap="logical" orows="21" ocols="42" onkeydown="checkTab(event)">{
+  "query":[
+    {
+      "type":"/music/artist",
+      "name":null,
+      "limit":1
+    }
+  ]
+}
+                </textarea>
+
+				<br>
+				<input type="submit" value="Show Result" onclick="$('#code1').attr('src', 'http://api.freebase.com/api/service/mqlread?query=' + escapeUrl($('#code1_src').val()))">
+				
+			</td>
+
+			<td valign="top">
+				<iframe id="code1" class="result_output" >
+				</iframe>
+			</td>
+
+
+		</tr>
+
+	<tbody>
+</table>
+</div>
+
+<h3>What Happend?</h3>
+<p>When you press "Show Result", the query in the left textbox is formatted into a special URL.
+This URL begins with http://api.freebase.com/api/service/mqlread?query=,
+and ends with the query string. In this example, the full URL will become:
+<a href="http://api.freebase.com/api/service/mqlread?query={&quot;query&quot;:[{&quot;type&quot;:&quot;/music/artist&quot;,&quot;name&quot;:null,&quot;limit&quot;:1}]}">http://api.freebase.com/api/service/mqlread?query={"query":[{"type":"/music/artist","name":null,"limit":1}]}</a>.
+The right textbox is really an "iframe" with it's "src" attribute set to the special URL.
+</p>
+<h3>What to notice:</h3>
+<ul>
+    <li>Both the query and the result are in JSON.</li>
+
+    <li>There is symetry between the "query" property on the left and "result" property on the right.</li>
+    <li>The property "name" on the left has been filled in on the right.</li>
+</ul>
+
+<h3>Getting the id</h3>
+<p>Every object in Freebase has a name, which we retrieved above.
+Every object also has a unique id.
+We can get the id by adding the following line to the query.
+<pre>"id":null</pre>
+Note that we can append the id to the URL http://www.freebase.com/view to get a link to the object. Try clicking <a href="http://www.freebase.com/view/en/blonde_redhead">http://www.freebase.com/view/en/blonde_redhead</a>.
+</p>
+
+<h3>Getting the Band's Start Time</h3>
+<p>We want to know when each musical group was created. In the schema, we saw the property "active_start". Let's try adding the following line to our query:
+<pre>"active_start":null</pre>
+</p>
+
+<h3>Getting a Picture of the Band</h3>
+<p>Now we want an image of the band. If we look at the bottom of the <a href="http://www.freebase.com/type/schema/music/artist">type schema</a>, we see "Topic Properties", followed by the small grey text "/common/topic". This may be viewed as a supertype of "/music/artist". It has the property "image". Let's try getting the image by adding:
+<pre>"image":null</pre>
+Unfortunately we get an error.
+The error has a message for us:
+"Type /music/artist does not have property image".
+So perhaps supertype wasn't the best word to describe the relationship between "/common/topic" and "/music/artist".
+We can get around this by qualifying the "image" property as follows:
+<pre>"/common/topic/image":null</pre>
+
+Unfortunately we get another error.
+This time it says: "Unique query may have at most one result. Got 2".
+The problem is that there are 2 images for this band.
+Apparently "null" means "find exactly one value for this property".
+We need something that says "find all the values for this property".
+Freebase uses the JSON array "[]" to mean this. Try:
+<pre>"/common/topic/image":[]</pre>
+Now that worked, sortof.
+Unfortunately we are just getting a textual description of each image.
+Where is the actual image?
+By default, the "[]" placeholder returns a list of names of objects.
+We can coax Freebase into giving us a list of the actual objects by using "[{}]".
+<pre>"/common/topic/image":[{}]</pre>
+This still doesn't tell us the URL of each image.
+In a way it does, since it gives us the "id" for each image,
+and this can be turned into a URL;
+however, maybe there is a property that has the URL explicitely.
+Freebase has a special query property that means "return every property for this object". It is written as "*":null.
+Let's try it:
+<pre>"/common/topic/image":[
+  {
+    "*":null
+  }
+]</pre>
+Apparently there is no such property,
+although "image_location" looked promissing
+(this property probably says where this image exists elsewere on the web).
+In any case, the special URL for accessing the image is created by appending the "id" to the URL http://www.freebase.com/api/trans/raw.
+This gives us http://www.freebase.com/api/trans/raw/guid/9202a8c04000641f80000000049f07ae.
+Putting that in an "img" tag gives us:
+<p>
+<img src="http://www.freebase.com/api/trans/raw/guid/9202a8c04000641f80000000049f07ae"></img>
+</p>
+If we just want the "id" for each image,
+we can change our query to:
+<pre>"/common/topic/image":[
+  {
+    "id":null
+  }
+]</pre>
+Since our database table only has space for one image per band,
+we may as well limit these images results as follows:
+
+<pre>"/common/topic/image":[
+  {
+    "id":null,
+    "limit":1
+  }
+]</pre>
+</p>
+
+<h3>Getting the Albums</h3>
+<p>We want a list of albums for each band. We can do this as follows:
+</p>
+
+<div class="code-trial">
+<table class="code_area" >
+	<tbody>
+		<tr>
+			<td width="50%">
+
+			
+				<textarea class="code_input" id="code2_src" wrap="logical" orows="21" ocols="42" onkeydown="checkTab(event)">{
+  "query":[
+    {
+      "type":"/music/artist",
+      "name":null,
+      "album":[{
+        "id":null,
+        "name":null
+      }],
+      "limit":1
+    }
+  ]
+}
+                </textarea>
+				<br>
+				<input type="submit" value="Show Result" onclick="$('#code2').attr('src', 'http://api.freebase.com/api/service/mqlread?query=' + escapeUrl($('#code2_src').val()))">
+				
+			</td>
+
+			<td valign="top">
+				<iframe id="code2" class="result_output" >
+				</iframe>
+			</td>
+
+
+		</tr>
+	<tbody>
+</table>
+</div>
+
+<p>Now we already know how to expand this query to give us an image for each album. The only thing we have left to get is the number of tracks on each album.
+We may start by adding the bold line below to our query:
+<pre style="color:#808080">
+      "album":[{
+        "id":null,
+        "name":null,
+        <b style="color:black">"track":[]</b>
+      }],
+
+</pre>
+This gives us the tracks,
+and we could just count them ourselves when we process the data.
+An alternative is to have Freebase count the tracks for us by doing:
+<pre>
+        "track":[{
+            "return":"count"
+        }]
+</pre>
+</p>
+</div>
+
+<div class="topic">Putting the Data into MySQL</div>
+<div class="section">
+<p>If we write the entire query suggested above, we'll get a result something like:
+<pre>
+  "result":[
+    {
+      "type":"/music/artist",
+      "id":"/en/led_zeppelin",
+      "name":"Led Zeppelin"
+      "/common/topic/image":[
+        {
+          "id":"/guid/9202a8c04000641f8000000001208c68"
+        }
+      ],
+      "active_start":"1968",      
+      "album":[
+        {
+          "track":[
+            10
+          ],
+          "/common/topic/image":[
+            {
+              "id":"/wikipedia/images/en_id/194757"
+            }
+          ],
+          "id":"/guid/9202a8c04000641f80000000000593d3",
+          "name":"Led Zeppelin"
+        },
+        ...
+      ],
+    },
+    ...
+  ]
+</pre>
+
+Conceptually, we want to iterate over each artist and add a row to the "artists" table of our database.
+While we're doing that,
+we want to iterate over each album within each artist and it to the "albums" table.
+We also want to add an entry to the "artists_to_albums" table for each album connecting it to the current artist.
+</p>
+<p>We'll walk through the following PHP code which should do the trick. First, we connect to our database.
+</p>
+<pre>
+&lt;?php
+
+$db_host = &quot;sql.mit.edu&quot;;
+$db_username = &quot;my_name&quot;;
+$db_password = &quot;jausfkwhytiu&quot;;
+$db_database = &quot;my_db&quot;;
+
+mysql_connect($db_host, $db_username, $db_password) or die(mysql_error());
+mysql_select_db($db_database) or die(mysql_error());
+</pre>
+<p>Here is a sample output to our query. We have just pasted the text directly into our PHP code. You'll probably want to have PHP download the query results directly, using a function like "file_get_contents".
+</p>
+
+<pre>
+$string_data = &lt;&lt;&lt;ASDF
+{
+  &quot;result&quot;:[
+    {
+      &quot;type&quot;:&quot;/music/artist&quot;,
+      &quot;id&quot;:&quot;/en/led_zeppelin&quot;,
+      &quot;name&quot;:&quot;Led Zeppelin&quot;,
+      &quot;/common/topic/image&quot;:[
+        {
+          &quot;id&quot;:&quot;/guid/9202a8c04000641f8000000001208c68&quot;
+
+        }
+      ],
+      &quot;active_start&quot;:&quot;1968&quot;,      
+      &quot;album&quot;:[
+        {
+          &quot;id&quot;:&quot;/guid/9202a8c04000641f80000000000593d3&quot;,
+          &quot;name&quot;:&quot;Led Zeppelin&quot;,
+          &quot;/common/topic/image&quot;:[
+            {
+              &quot;id&quot;:&quot;/wikipedia/images/en_id/194757&quot;
+
+            }
+          ],
+          &quot;track&quot;:[
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}
+ASDF;
+</pre>
+<p>This code includes our PHP-JSON library, and uses it to parse the JSON string into PHP objects.
+</p>
+<pre>
+require_once &apos;JSON.php&apos;;
+$json_service = new Services_JSON();
+$json_data = $json_service-&gt;decode($string_data);
+</pre>
+<p>Now that we have the result as a PHP object,
+we want to access the "result" property of the top level object.
+Note that "result" is an array,
+so we'll iterate over it.
+</p>
+<pre>
+$result = $json_data-&gt;result;
+for ($i = 0; $i &lt; sizeof($result); $i++) {
+
+</pre>
+<p>Each element of the "result" array represents an artist,
+so we'll grab all the information we want from the artist into a set of temporary variables. Note that hassle we go through to get the image--this has to do with the cumbersome nature of PHP syntax when dealing with objects.
+</p>
+<pre>
+    $artist = $result[$i];
+    
+    $id = $artist-&gt;id;
+    $name = $artist-&gt;name;
+    
+    $temp = &quot;/common/topic/image&quot;;    
+    $image = $artist-&gt;$temp;
+    $image = $image[0];
+    $image = $image-&gt;id;
+    $image = &quot;http://www.freebase.com/api/trans/raw&quot;.$image;
+    
+    $start = $artist-&gt;active_start;
+</pre>
+<p>Now we're ready to insert this artist into our database.
+We begin by escaping all of our variables (the main thing this will do is put a backslash in front of any apostrophes). Then we create the query string and send it to MySQL. Finally, we print the query string for debugging purposes.
+
+</p>
+<pre>
+    $id = mysql_real_escape_string($id);
+    $name = mysql_real_escape_string($name);
+    $image = mysql_real_escape_string($image);
+    $start = mysql_real_escape_string($start);
+    
+    $sql = &quot;INSERT INTO `artists` (id, name, image, start) VALUES (&apos;$id&apos;, &apos;$name&apos;, &apos;$image&apos;, &apos;$start&apos;)&quot;;
+    mysql_query($sql);
+    echo &quot;query: $sql\n&quot;;
+</pre>
+
+<p>The next thing we'll do is iterate over each album for this artist. Before we do, we'll save a copy of the artist's id for later use.
+</p>
+<pre>
+    $artist_id = $id;
+    $albums = $artist-&gt;album;
+    for ($ii = 0; $ii &lt; sizeof($albums); $ii++) {
+</pre>
+<p>For each album, we're going to grab all the information we want, just as we did for each artist.
+</p>
+<pre>
+        $album = $albums[$ii];
+        
+        $id = $album-&gt;id;
+        $name = $album-&gt;name;
+        
+        $temp = &quot;/common/topic/image&quot;;    
+        $image = $album-&gt;$temp;
+        $image = $image[0];
+        $image = $image-&gt;id;
+        $image = &quot;http://www.freebase.com/api/trans/raw&quot;.$image;
+        
+        $track_count = $album-&gt;track;
+        $track_count = $track_count[0];        
+
+</pre>
+<p>As before, we'll escape all of our variables before constructing the MySQL query string.
+</p>
+<pre>
+        $id = mysql_real_escape_string($id);
+        $name = mysql_real_escape_string($name);
+        $image = mysql_real_escape_string($image);
+        $track_count = mysql_real_escape_string($track_count);
+    
+        $sql = &quot;INSERT INTO `albums` (id, name, image, track_count) VALUES (&apos;$id&apos;, &apos;$name&apos;, &apos;$image&apos;, &apos;$track_count&apos;)&quot;;
+        mysql_query($sql);
+        echo &quot;query: $sql\n&quot;;
+
+</pre>
+<p>This final query will associate this album with the current artist, whose id we saved in $artist_id.
+</p>
+<pre>
+        $sql = &quot;INSERT INTO `artist_to_album` (artist, album) VALUES (&apos;$artist_id&apos;, &apos;$id&apos;)&quot;;
+        mysql_query($sql);
+        echo &quot;query: $sql\n&quot;;
+    }
+}
+
+echo &quot;done!\n&quot;;
+
+?&gt;
+
+</pre>
+</div>
+
+<div class="topic">Dealing with Large Results</div>
+<div class="section">
+<p>Try running the following query:
+</p>
+<div class="code-trial">
+<table class="code_area" >
+	<tbody>
+		<tr>
+			<td width="50%">
+			
+				<textarea class="code_input" id="code3_src" wrap="logical" orows="21" ocols="42" onkeydown="checkTab(event)">{
+  "query":[
+    {
+      "type":"/music/artist",
+      "name":null,
+      "limit":1000000
+    }
+  ]
+}
+                </textarea>
+
+				<br>
+				<input type="submit" value="Show Result" onclick="$('#code3').attr('src', 'http://api.freebase.com/api/service/mqlread?query=' + escapeUrl($('#code3_src').val()))">
+				
+			</td>
+
+			<td valign="top">
+				<iframe id="code3" class="result_output" >
+				</iframe>
+			</td>
+
+
+		</tr>
+
+	<tbody>
+</table>
+</div>
+<p>
+We get an error saying that the query timed out. It took too long to run on Freebase's server, and it gave up.
+The way to get around this problem is to use "cursors".
+Try the following query:
+<pre>
+{
+  "cursor":true,
+  "query":[
+    {
+      "type":"/music/artist",
+      "name":null,
+      "limit":10
+    }
+  ]
+}
+</pre>
+If we look at the result, we notice that the value of "cursor" has been changed from <i>true</i> to some long string of seemingly random characters.
+This string of characters is a placeholder.
+We can copy the string in place of "true" in our query and run it again.
+</p>
+<p>
+This time the result is different.
+We have accessed the <i>next</i> result.
+The value of cursor has also changed.
+We need to copy this new cursor value into our query in order to get the next set of results.
+The last set of results will have the value of cursor set to <i>false</i>.
+
+</p>
+</div>
+
+
+
+</body>
+</html>
+
