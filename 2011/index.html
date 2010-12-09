@@ -93,12 +93,20 @@
           <div class="step"><h5>&nbsp;</h5>
           <img src="images/Slide/Register.png" width="75" height="110" class="slide1_img" />
             <h4>Step 1</h4>
-            <p>
-              <a href="http://student.mit.edu/catalog/editcookie.cgi?add=6.188">
-                Register for 6.470
-              </a>
-              with your friends this IAP.
-            </p>
+            <form action="https://student.mit.edu/cgi-bin/sfprwpre.sh"
+                  method="POST" enctype="application/x-www-form-urlencoded">
+              <p>
+                <input type="hidden" name="TERM_CODE" value="2011JA" />
+                <input type="hidden" name="STATUS" value="Add" />
+                <input type="hidden" name="SUBJECT" value="6.188" />
+                <input type="hidden" name="UNIT" value="6" />
+                <input type="hidden" name="TITLE" value="Spec Lab Subj: EE & CS" />
+                <input type="hidden" name="LP" value="Regular" />
+                <input type="hidden" name="COMMAND" value="       OK       " />
+                <input type="submit" value="Register for 6.470" />
+                with your friends this IAP.
+              </p>
+            </form>
           </div>
           
         </div>
