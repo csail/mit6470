@@ -12,7 +12,7 @@
 <script src="javascripts/SpryAssets/SpryData.js" type="text/javascript"></script>
 <script src="javascripts/SpryAssets/SpryHTMLDataSet.js" type="text/javascript"></script>
 <script type="text/javascript">
-var LectureS = new Spry.Data.HTMLDataSet("Schedule_Data.html", "LectureS");
+var Lectures = new Spry.Data.HTMLDataSet("Schedule_Data.html", "Lectures");
 </script>
 
 <script type="text/javascript">
@@ -84,7 +84,7 @@ var LectureS = new Spry.Data.HTMLDataSet("Schedule_Data.html", "LectureS");
                 <td align="left" valign="top">&nbsp;</td>
               </tr>
               <tr>
-                <td align="left" valign="top"><div spry:region="LectureS">
+                <td align="left" valign="top"><div spry:region="Lectures">
                   <table>
                     <tr>
                       <th class="Headingz" spry:sort="Day">Day</th>
@@ -93,7 +93,7 @@ var LectureS = new Spry.Data.HTMLDataSet("Schedule_Data.html", "LectureS");
                       <th class="Headingz" spry:sort="Room">Room</th>
                       <th class="Headingz" spry:sort="Type">Type</th>
                     </tr>
-                    <tr spry:repeat="LectureS" spry:odd="Odd_Row" spry:even="Even_Row" spry:hover="Hov_Row">
+                    <tr spry:repeat="Lectures" spry:odd="Odd_Row" spry:even="Even_Row" spry:hover="Hov_Row">
                       <td width="65">{Day}</td>
                       <td>{Date}</td>
                       <td width="120">{Time}</td>
