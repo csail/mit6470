@@ -35,6 +35,7 @@
 	width: 522px;
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 14px;
+	position: relative;
 	/* padding-top: 8px;
 	padding-bottom: 12px; */
 }
@@ -92,19 +93,23 @@
 	color: #666;
 	margin: 0px;
 }
+
 #carouselnav a {
   color: #ffffff;
   font-weight: bold;
+  margin: 0;
+  position: absolute;
 }
+
 #carouselnav a:hover {
   color: #d0fbff;
-  cursor:pointer;
+  cursor: pointer;
 }
-#carouselnav a {
-  margin: 0 35px 0 35px;
-}
-#carouselnav {
-  //color: #62B249;
+
+#carouselnav div{
+  height: 34px;
+  width: 100px;
+  background:url('images/words.png') no-repeat scroll;
 }
 
 .slide1_img {
@@ -112,6 +117,23 @@
 	margin-left:0px;
 }
 
-#carouselnav div {
-    margin-bottom: 0px;
+.slide_1 {
+  left: 27px;
+  background-position: 0px 0px;
 }
+
+.slide_2 {
+  left: 147px;
+  background-position: 0px 0px;
+}
+
+.slide_3 {
+  left: 273px;
+  background-position: 0px 0px;
+}
+
+.slide_4 {
+  left: 393px;
+  background-position: 0px 0px;
+}
+
