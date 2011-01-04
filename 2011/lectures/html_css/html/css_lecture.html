@@ -1,0 +1,617 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>HTML, CSS and JavaScript</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 04, 2010" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2010 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1><span class="caps">CSS</span>: Cascading Style Sheets</h1>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> is for Presentation</h1>
+<p>Change <span style="color: red;">color</span>, <span style="font-size: 2em;">size</span>, <span style="font-family: monospace;">font</span>, and <span style="display: inline-block; position: relative; left: 20%; top: 4em;">position</div></p>
+</div>
+<div class="slide"><h1>Adding <span class="caps">CSS</span>: Very Bad</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p style="color: red;"/&gt;This is a red paragraph.&lt;/a&gt;</pre></div>
+<ul>
+	<li>Used for debugging or quick experimentation.</li>
+	<li>Bad: mixes presentation with markup.</li>
+	<li>Bad: instructions here cannot be overridden by external files.</li>
+</ul>
+</div>
+<div class="slide"><h1>Adding <span class="caps">CSS</span>: Somewhat Bad</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;style type="text/css"&gt;
+  p { color: red; }
+&lt;/style&gt;
+&lt;p&gt;This is a red paragraph.&lt;/p&gt;</pre></div>
+<ul>
+	<li><code>&lt;style&gt;</code> tags are allowed in <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>.</li>
+	<li>Bad: presentation embedded in markup.</li>
+	<li>Only <em>one</em> good reason to use this: your resume in a self-contained file.</li>
+</ul>
+</div>
+<div class="slide"><h1>Adding <span class="caps">CSS</span>: Good</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="code/css/red.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;This paragraph will be red.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///home/pwnall/workspace470/html_css_js_slides/code/css/include_good.html">code/css/include_good.html</a></div>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p { color: red; }
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///home/pwnall/workspace470/html_css_js_slides/code/css/red.css">code/css/red.css</a></div>
+<p><code>&lt;link&gt;</code> tags are only allowed in <code>&lt;head&gt;</code>.</p>
+</div>
+<div class="slide"><h1>Adding <span class="caps">CSS</span>: If You Can&#8217;t Access <code>&lt;head&gt;</code></h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="code/css/red.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;style type="text/css"&gt;
+      @include url("more_red.css");
+    &lt;/style&gt;
+    &lt;p&gt;This paragraph will be red.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///home/pwnall/workspace470/html_css_js_slides/code/css/include_no_head.html">code/css/include_no_head.html</a></div>
+</div>
+<div class="slide"><h1>What <span class="caps">CSS</span> Looks Like</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">h1 { color: blue; }
+
+p em {
+  font-size: 12pt;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2em;
+}</pre></div><div class="codeurl"><a href="txmt://open?url=file:///home/pwnall/workspace470/html_css_js_slides/code/css/sample.css">code/css/sample.css</a></div>
+<ul>
+	<li>A <span class="caps">CSS</span> file is a sequence of rules.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Anatomy: Rules, Selectors, Declarations</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">h1 { color: blue; }
+
+p em {
+  font-size: 12pt;
+  line-height: 1.2em;
+}</pre></div>
+<table>
+	<tr>
+		<td>        </td>
+		<td> Selector </td>
+		<td> Declarations </td>
+	</tr>
+	<tr>
+		<td> Rule 1 </td>
+		<td> <code>h1</code>     </td>
+		<td> <code>color: red;</code>  </td>
+	</tr>
+	<tr>
+		<td> Rule 2 </td>
+		<td> <code>p em</code>   </td>
+		<td> <code>font-size: 12pt; line-height: 1.2em;</code>  </td>
+	</tr>
+</table>
+<p>The selector comes first, then the declarations are enclosed by brackets.</p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Anatomy: Properties and Values</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">h1 { color: blue; }
+
+p em {
+  font-size: 12pt;
+  font-family: Arial, Helvetica, sans-serif;
+}</pre></div>
+<table>
+	<tr>
+		<td> Property      </td>
+		<td> Value                          </td>
+	</tr>
+	<tr>
+		<td> <code>color</code>       </td>
+		<td> <code>red</code>                          </td>
+	</tr>
+	<tr>
+		<td> <code>font-size</code>   </td>
+		<td> <code>12pt</code>                         </td>
+	</tr>
+	<tr>
+		<td> <code>line-height</code> </td>
+		<td> <code>Arial, Helvetica, sans-serif</code> </td>
+	</tr>
+</table>
+<p>Each declaration in a rule specifies a value for a property.</p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Anatomy: Directives</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">@include url("code/css/red.css");
+
+@font-face {
+  font-family: Myriad Pro;
+  src: url("fonts/Myriad_Pro.otf");
+} </pre></div>
+<ul>
+	<li>Directives start with <code>@</code>.</li>
+	<li>Presentation information that doesn&#8217;t fall under the selector/declaration model.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: Primitives</h1>
+<ul>
+	<li>All <code>p</code> elements.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p { color: red; }</pre></div>
+<ul>
+	<li>The element with <code>id="summary"</code>.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">#summary { color: blue; }</pre></div>
+<ul>
+	<li>All elements whose <code>class</code> attribute contains <code>highlight</code>.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">.highlight { color: red; }</pre></div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: Classes</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">.small { font-size: 10pt; }
+.highlight { color: red; }</pre></div>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p class="highlight"&gt;This is highlighted.&lt;/p&gt;
+&lt;p class="highlight small"&gt;This is small and highlighted.&lt;/p&gt;
+&lt;p class="small"&gt;This is small.&lt;/p&gt;</pre></div>
+<p>The <code>class</code> attribute can contain multiple class names, separated by spaces.</p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: Compositions</h1>
+<ul>
+	<li><span class="caps">AND</span>: concatenate selectors</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">/* &lt;p&gt; elements whose class contains highlight and small */
+p.highlight.small { color: red; }</pre></div>
+<ul>
+	<li>OR: separate by <code>,</code></li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">/* &lt;h1&gt; &lt;h2&gt; and &lt;h3&gt; elements */
+h1, h2, h3 { color: red; }</pre></div>
+<ul>
+	<li>Descendant of: separate by space</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">/* &lt;p&gt; elements inside &lt;form&gt; elements */
+form p { color: blue; }</pre></div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: Advanced Compositions</h1>
+<ul>
+	<li>Child of: separate by <code>&gt;</code></li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">/* &lt;p&gt; elements who are direct children of &lt;form&gt; elements */
+form &gt; p { color: blue; }</pre></div>
+<ul>
+	<li>Immediately after (next sibling): separate by <code>+</code></li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">/* &lt;p&gt; elements coming right after &lt;ul&gt; elements */
+ul + p { color: gray; }</pre></div>
+<ul>
+	<li>Immediately after (sibling): separate by <code>~</code></li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">/* &lt;p&gt; elements whose parents have &lt;ul&gt; children, and
+   who come after the &lt;ul&gt; children in the document */
+ul ~ p { color: gray; }</pre></div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: Pseudo-Classes</h1>
+<table>
+	<tr>
+		<td> <code>:hover</code>   </td>
+		<td> The user&#8217;s mouse is over the element                           </td>
+	</tr>
+	<tr>
+		<td> <code>:focus</code>   </td>
+		<td> The control has the input focus                                </td>
+	</tr>
+	<tr>
+		<td> <code>:active</code>  </td>
+		<td> The user is about to activate the element (e.g. follow a link) </td>
+	</tr>
+	<tr>
+		<td> <code>:link</code>    </td>
+		<td> The element is a link that the user has not visited            </td>
+	</tr>
+	<tr>
+		<td> <code>:visited</code> </td>
+		<td> The element is a link that the user has visited                </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: Pseudo-Class Example</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">a:link { color: blue; }
+a:visited { color: gray; }
+a:hover { color: red; }
+a:active { color: black; }</pre></div>
+<p>What does this do?</p>
+<ul>
+	<li class="incremental">Unvisited links are blue. Visited links are gray.</li>
+	<li class="incremental">When the user&#8217;s mouse hovers over a link, it turns red.</li>
+	<li class="incremental">When the user clicks on a link, it becomes black.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: Advanced Pseudo-Classes</h1>
+<table>
+	<tr>
+		<td> <code>:first</code> </td>
+		<td> The first child (e.g. the first paragraph in the body) </td>
+	</tr>
+	<tr>
+		<td> <code>:last</code>  </td>
+		<td> The last child </td>
+	</tr>
+	<tr>
+		<td> <code>:nth-child(even)</code> </td>
+		<td> All even children (2nd, 4th, &#8230;) </td>
+	</tr>
+	<tr>
+		<td> <code>:nth-child(2n)</code> </td>
+		<td> All even children (2nd, 4th, &#8230;) </td>
+	</tr>
+	<tr>
+		<td> <code>:nth-child(odd)</code> </td>
+		<td> All odd children </td>
+	</tr>
+	<tr>
+		<td> <code>:nth-child(2n+1)</code> </td>
+		<td> All odd children </td>
+	</tr>
+</table>
+<p>Very useful for improving readability by alternating font colors in lists and tables.</p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Selectors: the Selectoracle</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">ul#master-index &gt; li:nth-child(even).small p.highlighted.twisted.legal a:hover</pre></div>
+<div class="incremental">
+<p>A hovered link inside<br />
+a paragraph (<code>&lt;p&gt;</code>) with classes <code>highlighted</code> and <code>twisted</code> inside<br />
+a list item (<code>&lt;li&gt;</code>) with class <code>small</code> which is an even child of<br />
+an unordered list (<code>&lt;ul&gt;</code>) with <code>id="master-index"</code></p>
+</div>
+</div>
+<div class="slide"><h1>The Cascade: The C in <span class="caps">CSS</span></h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p { color: red; }
+p { color: blue; }</pre></div>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p&gt;What color is this paragraph?&lt;/p&gt;</pre></div>
+<ul>
+	<li class="incremental">The paragraph is blue, so the last declaration wins.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p.highlight { color: red; }
+p { color: blue; }</pre></div>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p class="highlight"&gt;What color is this paragraph?&lt;/p&gt;</pre></div>
+<ul>
+	<li class="incremental">The paragraph is red, because the first declaration is more specific.</li>
+</ul>
+</div>
+<div class="slide"><h1>The Cascade: How It Works</h1>
+<p>Declarations have the following priority:</p>
+<ol>
+	<li>Declarations in <code>style</code> attributes always win.</li>
+	<li>Browser declarations marked <code>!important</code>, ordered by specificity.</li>
+	<li>Page declarations marked <code>!important</code>, ordered by specificity.</li>
+	<li>Page declarations not marked <code>!important</code>, ordered by specificity.</li>
+	<li>Browser declarations not marked <code>!important</code>, ordered by specificity.</li>
+</ol>
+</div>
+<div class="slide"><h1>The Cascade: Specificity Point System</h1>
+<p>A declaration&#8217;s specifity is determined by its selector.</p>
+<p>To compute a selector&#8217;s specificity:</p>
+<ol>
+	<li>Write the number of IDs in the selector</li>
+	<li>Write the number of classes and pseudo-classes in the selector</li>
+	<li>Write the number of elements in the selector</li>
+</ol>
+</div>
+<div class="slide"><h1>The Cascade: Specificity Examples</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p#header { color: red; }</pre></div>
+<ul>
+	<li class="incremental">Specificity: 1, 0, 1</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p li.highlight { color: red; }</pre></div>
+<ul>
+	<li class="incremental">Specificity: 0, 1, 2</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">#header p.small a:hover { color: red; }</pre></div>
+<ul>
+	<li class="incremental">Specificity: 1, 2, 2</li>
+</ul>
+</div>
+<div class="slide"><h1>The Cascade: Ordering Specificities</h1>
+<p>Specificities are ordered lexicographically:</p>
+<ul>
+	<li>0, 0, 2 is more specific than 0, 0, 1</li>
+	<li>0, 1, 0 is more specific than 0, 0, 99</li>
+	<li>2, 0, 0 is more specific than 1, 99, 99</li>
+	<li>2, 1, 2 is more specific than 2, 0, 2</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Declarations</h1>
+<p>Declarations cover these major areas</p>
+<ol>
+	<li>Color</li>
+	<li>Size</li>
+	<li>Font</li>
+	<li>Position</li>
+</ol>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Colors: Properties</h1>
+<ul>
+	<li><code>color</code> &#8211; the foreground color (text, list bullets)</li>
+	<li><code>background-color</code></li>
+	<li><code>border-color</code></li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Colors: <span class="caps">RGB</span> Color Model</h1>
+<ul>
+	<li>Components: red, green, blue</li>
+	<li>Additive: red + green + blue = white</li>
+	<li><span class="caps">NOT</span> Subtractive: in painting, red + yellow + blue = black</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Colors: <span class="caps">RGB</span> Color Wheel</h1>
+<div style="text-align: center;">
+<p><img src="images/rgb_colorwheel.svg" style="width:50%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Colors: Values</h1>
+<ul>
+	<li>Keywords for a few colors:</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p { color: red; }</pre></div>
+<ul>
+	<li><span class="caps">RGB</span> notation:</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p { color: rgb(255, 0, 0); }</pre></div>
+<ul>
+	<li>Hex-<span class="caps">RGB</span> notation:</li>
+</ul>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p { color: #FF0000; }</pre></div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Dimensions: Properties</h1>
+<ul>
+	<li><code>width</code>, <code>height</code>, <code>min-height</code>, <code>max-height</code>, <code>min-width</code>, <code>max-width</code> &#8211; the size of an element&#8217;s box</li>
+	<li><code>font-size</code>, <code>text-indent</code>, <code>line-height</code> &#8211; typography</li>
+	<li><code>border-width</code>, <code>padding</code>, <code>margin</code> &#8211; layout stuff</li>
+	<li><code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> &#8211; more layout stuff</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Dimensions: Values</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p {
+  border-width: 2px;
+  font-size: 12pt;
+  width: 80%;
+  min-height: 8em;
+  margin: 1cm;
+}</pre></div>
+<ul>
+	<li>Size values have a number and a unit of measurement.</li>
+	<li>Only 0 does not nead a unit of measurement.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Dimensions: Absolute Units</h1>
+<ul>
+	<li><code>px</code> &#8211; pixels; defined by the screen&#8217;s resolution</li>
+	<li><code>cm</code>, <code>mm</code>, <code>in</code> &#8211; physical units, size changes with screen resolution</li>
+	<li><code>pt</code> &#8211; points; usually used for fonts; 1 pt = 1/72 in</li>
+</ul>
+<p>The absolute units don&#8217;t need a context to be interpreted.</p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Dimensions: Relative Units</h1>
+<ul>
+	<li><code>%</code> &#8211; percentage of some other size</li>
+	<li><code>em</code> &#8211; the <code>font-size</code> of the parent element</li>
+</ul>
+<p>For <code>%</code>, the size is usually the same size in the parent element.</p>
+<ul>
+	<li><code>width</code>, <code>min-width</code>, <code>max-width</code> refer to the <code>width</code> of the parent element.</li>
+	<li><code>font-size</code> refers to the <code>font-size</code> of the parent element.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Serif vs. Sans Serif Fonts</h1>
+<ul>
+	<li>Serif font vs sans-serif font</li>
+</ul>
+<div style="text-align: center;">
+<p><img src="images/serif_vs_sans_serif_s.svg" style="width:40%;" alt="" /> <span style="display:inline-block; width:10%;">&nbsp;</span> <img src="images/serif_vs_sans_serif_ss.svg" style="width:40%;" alt="" /></p>
+</div>
+<ul>
+	<li>Serif font with red serifs</li>
+</ul>
+<div style="text-align: center;">
+<p><img src="images/serif_vs_sans_serif_rs.svg" style="width:50%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Monospaced Fonts</h1>
+<ul>
+	<li>The difference between monospaced fonts and proportional fonts.</li>
+</ul>
+<div style="text-align: center;">
+<p><img src="images/proportional_vs_monospaced.svg" style="width:50%;" alt="" /></p>
+</div>
+<ul>
+	<li>Proportional fonts are easier to read, and are used in most places.</li>
+	<li>Monospaced fonts make it easy to line up text vertically. Useful for: coding, representing tables (e.g. receipts, accounting stuff), retro looks.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Fonts: Font Families</h1>
+<p>Generic families: <span style="font-family: serif;">serif</span>, <span style="font-family: sans-serif;">sans-serif</span>, <span style="font-family: monospace;">monospace</span>, <span style="font-family: cursive;">cursive</span>, <span style="font-family: fantasy;">fantasy</span></p>
+<p>Fonts available on most computers:</p>
+<table>
+	<tr>
+		<td> <span style="font-family: serif;">serif</span> </td>
+		<td> <span style="font-family: sans-serif;">sans-serif</span> </td>
+		<td> <span style="font-family: monospace;">monospace</span> </td>
+	</tr>
+	<tr>
+		<td> <span style="font-family: Garamond;">Garamond</span> </td>
+		<td> <span style="font-family: Georgia;">Georgia</span> </td>
+		<td> <span style="font-family: Courier New;">Courier New</span> </td>
+	</tr>
+	<tr>
+		<td> <span style="font-family: Times New Roman;">Times New Roman</span> </td>
+		<td> <span style="font-family: Helvetica;">Helvetica</span> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> <span style="font-family: Tahoma;">Tahoma</span> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> <span style="font-family: Tahoma;">Verdana</span> </td>
+		<td> </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Choosing a Font</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p {
+  font-family: Myriad Pro, Verdana, Tahoma, sans-serif;
+}</pre></div>
+<ul>
+	<li>The browser looks for each font, in the specified order. Once a font is found, that font is used.</li>
+	<li>Always use a generic font family as the last fall-back option.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Downloadable Fonts</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">@font-face {
+  font-family: Myriad Pro;
+  src: url("fonts/Myriad_Pro.otf") format("otf");
+}</pre></div>
+<ul>
+	<li><span class="caps">SVG</span> fonts: supported by all recent browsers.</li>
+	<li><span class="caps">OTF</span> fonts: supported by Firefox, Chrome, Safari.</li>
+	<li><span class="caps">WOFF</span> fonts: supported by IE, Firefox 3.6+</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Font Styles</h1>
+<ul>
+	<li>A single font-family can have many styles of glyphs.</li>
+	<li>Well-known styles: bold, italic, and underline.</li>
+	<li><span class="caps">CSS</span> properties: <code>font-style</code>, <code>font-variant</code>, <code>text-decoration</code></li>
+</ul>
+<table>
+	<tr>
+		<td> <code>font-style</code> </td>
+		<td> <code>font-variant</code> </td>
+		<td> <code>text-decoration</code> </td>
+	</tr>
+	<tr>
+		<td> <span style="font-style:italic;">italic</span> </td>
+		<td> <span style="font-variant:small-caps;">small-caps</span> </td>
+		<td> <span style="text-decoration:underline;">underline</span> </td>
+	</tr>
+	<tr>
+		<td> <span style="font-style:oblique;">oblique</span> </td>
+		<td> <span style="font-variant:normal;">normal</span> </td>
+		<td> <span style="text-decoration:overline;">overline</span> </td>
+	</tr>
+	<tr>
+		<td> <span style="font-style:normal;">normal</span> </td>
+		<td> </td>
+		<td> <span style="text-decoration:line-through;">line-through</span> </td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td> <span style="text-decoration:none;">none</span> </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Font Weights</h1>
+<p><span style="font-weight:ligther;">100 &#8211; lighter</span><br />
+<span style="font-weight:normal;">400 &#8211; normal</span><br />
+<span style="font-weight:bold;">700 &#8211; bold</span><br />
+<span style="font-weight:bolder;">800 &#8211; bolder</span></p>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: The Em Box</h1>
+<ul>
+	<li>Each font glyph is designed inside a square box, called the em box.</li>
+</ul>
+<div style="text-align: center;">
+<p><img src="images/the_em_box.svg" style="width:50%;" alt="" /></p>
+</div>
+<ul>
+	<li><code>font-size</code> sets the size of the em box.</li>
+	<li><code>1 em</code> is the size of the current font&#8217;s em box, not the size of capital M.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Important Lines</h1>
+<div style="text-align: center;">
+<p><img src="images/typography_line_terms.svg" style="width:90%;" alt="" /></p>
+</div>
+<ul>
+	<li>The median line is used for <code>line-height</code>, discussed next.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSS</span> Typography: Line Height</h1>
+<div class="code-normal"><pre name="code" class="css:nogutter:nocontrols">p {
+  font-size: 12pt;
+  line-height: 2em;
+}</pre></div>
+<ul>
+	<li>The rule above is equivalent to double spacing in word processors.</li>
+	<li><code>line-height</code> &gt; <code>font-size</code>: the difference is divided by two, added to the top and bottom of the em boxes</li>
+	<li><code>line-height</code> &lt; <code>font-size</code>: <code>line-height</code> is divided by two, the halves go above and below the font&#8217;s median line</li>
+</ul></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>

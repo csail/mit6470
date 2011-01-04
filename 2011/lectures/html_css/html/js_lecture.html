@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>HTML, CSS and JavaScript</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 04, 2010" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2010 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>JavaScript: the Web&#8217;s Programming Language</h1>
+</div>
+<div class="slide"><h1>Adding JavaScript: Horrible</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;a href="javascript:alert('Lame script!');"/&gt;Click me&lt;/a&gt;
+
+&lt;form action="#"&gt;
+  &lt;input type="submit" onclick="alert('Lame script!');"
+         value="Click me"&gt;
+&lt;/form&gt;</pre></div>
+<p>Forget you saw this.</p>
+</div>
+<div class="slide"><h1>Adding JavaScript: Bad</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;script type="text/javascript"&gt;
+alert("I'm alive!");
+&lt;/script&gt;</pre></div>
+<p><code>&lt;script&gt;</code> tags can be added in <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code>. There is a subtle difference that we&#8217;ll discuss later.</p>
+</div>
+<div class="slide"><h1>Adding JavaScript: Good</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Annoying page.&lt;/title&gt;
+		&lt;script type="text/javascript" src="code/js/alert.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;		
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///home/pwnall/workspace470/html_css_js_slides/code/js/include_good.html">code/js/include_good.html</a></div>
+<div class="code-normal"><pre name="code" class="js:nogutter:nocontrols">alert("I'm alive!");
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///home/pwnall/workspace470/html_css_js_slides/code/js/alert.js">code/js/alert.js</a></div>
+</div>
+<div class="slide"><h1>JavaScript is a Programming Language</h1>
+<ul>
+	<li>Dynamic typing</li>
+	<li>Mostly static scoping</li>
+	<li>Supports closures</li>
+	<li>Object-oriented</li>
+	<li>Prototypical inheritance (no classes)</li>
+</ul>
+</div>
+<div class="slide"><h1>Let&#8217;s Roll</h1></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>

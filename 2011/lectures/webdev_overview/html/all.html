@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Web Development Overview</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 03, 2011" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2011 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>Web Development Overview</h1>
+<blockquote>
+<p>Victor Costan</p>
+</blockquote>
+</div>
+<div class="slide"><h1>Contents</h1>
+<div style="font-size: 70%">
+<ul>
+	<li>Big Picture</li>
+</ul>
+<ul>
+	<li><span class="caps">HTTP</span>: HyperText Transfer Protocol</li>
+</ul>
+<ul>
+	<li>Client Side</li>
+</ul>
+<ul>
+	<li>Server Side</li>
+</ul>
+<ul>
+	<li>Wrap-Up</li>
+</ul>
+</div>
+</div>
+<div class="title slide">
+<h1>Big Picture</h1>
+</div>
+<div class="slide"><h1>Your Instructors</h1>
+<ul>
+	<li>Victor Costan</li>
+</ul>
+</div>
+<div class="slide"><h1>Brief Web History</h1>
+<ul>
+	<li>Developed by Tim Berners-Lee et al. in 1989-1991</li>
+	<li>Conceived to share papers and experimental data for Physics</li>
+	<li>Every major OS included Web access software by 1997</li>
+	<li>Grew organically into the most popular application platform</li>
+</ul>
+</div>
+<div class="slide"><h1>Lots of Terms and Acronyms</h1>
+<ul>
+	<li><span class="caps">DNS</span>, <span class="caps">FQDN</span>, <span class="caps">TLD</span>, <span class="caps">TCP</span>/IP, <span class="caps">ISP</span>, Ethernet, <span class="caps">LAN</span>, 802.11, <span class="caps">GSM</span>, <span class="caps">EDGE</span>, 3G, <span class="caps">EVDO</span>, domain, IP address</li>
+	<li><span class="caps">HTML</span>, <span class="caps">CSS</span>, JS, <span class="caps">JSON</span>, <span class="caps">XML</span>, <span class="caps">HTTP</span>, <span class="caps">HTTPS</span>, <span class="caps">WAP</span>, cookies, proxy, applets, plug-ins, extensions, Flash, Silverlight</li>
+	<li><span class="caps">ASP</span>, <span class="caps">JSP</span>, <span class="caps">PHP</span>, RoR, <span class="caps">API</span>, <span class="caps">SLA</span>, EC2, S3, DC, rack, server</li>
+	<li><span class="caps">SQL</span>, NoSQL, MySQL, Memcache, schema, tables, records, expiration policy</li>
+</ul>
+</div>
+<div class="slide"><h1>Everything Comes Down to This</h1>
+<ul>
+	<li>One usage scenario.</li>
+	<li>One protocol.</li>
+</ul>
+</div>
+<div class="slide"><h1>Usage Scenario</h1>
+<ol>
+	<li>Publisher (author) loads data on a server.</li>
+	<li>Consumer (user) points client software (browser) to the server.</li>
+	<li>Client requests main document (page) from server.</li>
+	<li>Client requests documents included by main document.</li>
+	<li>Consumer follows (clicks on) a link in main document to reach another document.</li>
+	<li>Rinse, repeat.</li>
+</ol>
+</div>
+<div class="slide"><h1>Big (Technical) Picture</h1>
+<ul>
+	<li>Client gets a document from server.</li>
+	<li><span class="caps">HTTP</span> (Hyper-Text Transfer Protocol)</li>
+</ul>
+</div>
+<div class="slide"><h1>Browsing Demo</h1>
+<ul>
+	<li>Firefox browser: <a href="http://getfirefox.com">getfirefox.com</a></li>
+	<li>Firebug plugin: <a href="http://getfirebug.com">getfirebug.com</a></li>
+</ul>
+</div>
+<div class="title slide">
+<h1><span class="caps">HTTP</span>: HyperText Transfer Protocol</h1>
+<p>1. <span class="caps">HTTP</span><br />
+2. Cookies<br />
+3. Content</p>
+</div>
+<div class="slide"><h1><span class="caps">HTTP</span> Protocol</h1>
+<p><span class="caps">HTTP</span> 1.0</p>
+<p>1. Client opens <span class="caps">TCP</span> connection to server<br />
+1. Client sends <span class="caps">HTTP</span> request<br />
+1. Server sends <span class="caps">HTTP</span> response<br />
+1. Server closes <span class="caps">TCP</span> connection<br />
+1. Client closes <span class="caps">TCP</span> connection</p>
+<p><span class="caps">HTTP</span> 1.1</p>
+<ul>
+	<li>Optimization: use the same <span class="caps">TCP</span> connection for subsequent requests-response pairs</li>
+	<li>Still stateless: response determined by last request</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">HTTP</span> Protocol: Request Example I</h1>
+<div class="code-normal"><pre name="code" class="ruby:nogutter:nocontrols">GET /_/session HTTP/1.1
+Host: git.pwnb.us
+User-Agent:   Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:2.0b8) Gecko/20100101 Firefox/4.0b8
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: plain
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 115
+Connection: keep-alive
+Cache-Control: max-age=0
+
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///home/pwnall/workspace470/webdev_overview_slides/code/http_request.http">code/http_request.http</a></div>
+</div>
+<div class="slide"><h1><span class="caps">HTTP</span> Protocol: Request</h1>
+<ol>
+	<li>Verb (<span class="caps">GET</span>, <span class="caps">POST</span>, <span class="caps">PUT</span>, <span class="caps">DELETE</span>)</li>
+	<li>Address (part of the <span class="caps">URL</span>)</li>
+	<li>Request Headers</li>
+	<li>Data</li>
+</ol>
+</div>
+<div class="slide"><h1><span class="caps">HTTP</span> Protocol: Request Example II</h1>
+<div class="code-normal"><pre name="code" class="ruby:nogutter:nocontrols">POST /_/repositories HTTP/1.1
+Host: git.pwnb.us
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:2.0b8) Gecko/20100101 Firefox/4.0b8
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: plain
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 115
+Connection: keep-alive
+Referer: http://git.pwnb.us/_/repositories/new
+Cookie: _gitty_login=pwnall
+
+profile_name=pwnall&amp;name=awesome&amp;description=I+am+awesome&amp;public=1
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///home/pwnall/workspace470/webdev_overview_slides/code/http_request_2.http">code/http_request_2.http</a></div>
+</div>
+<div class="slide"><h1><span class="caps">HTTP</span> Protocol: Response</h1>
+<ol>
+	<li>Status code and text (200 OK, 404 Not Found, &#8230;)</li>
+	<li>Response headers</li>
+	<li>Response data</li>
+</ol>
+</div>
+<div class="slide"><h1><span class="caps">HTTP</span> Protocol: Response Example</h1>
+<div class="code-normal"><pre name="code" class="ruby:nogutter:nocontrols">HTTP/1.1 200 OK
+Server: nginx/0.7.67
+Date: Mon, 03 Jan 2011 11:21:24 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+ETag: "3fed1f829c225eb0bf2f90d7835f369b"
+X-UA-Compatible: IE=Edge,chrome=1
+X-Runtime: 0.027500
+Set-Cookie: _gitty_login=pwnall; path=/; HttpOnly
+Cache-Control: max-age=0, private, must-revalidate
+
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;!-- truncated --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///home/pwnall/workspace470/webdev_overview_slides/code/http_response.http">code/http_response.http</a></div>
+</div>
+<div class="slide"><h1><span class="caps">HTTP</span> Demo 1</h1>
+<ul>
+	<li><code>telnet</code> is available on Windows, Mac <span class="caps">OSX</span>, and Linux</li>
+</ul>
+</div>
+<div class="slide"><h1>Cookies</h1>
+<p>Concepts</p>
+<ul>
+	<li>Add state to <span class="caps">HTTP</span>, which is stateless</li>
+	<li>Each site gets a cookie jar</li>
+	<li>Cookie jar: key-value pairs, max size 4kb</li>
+</ul>
+<p>Protocol</p>
+<ul>
+	<li><span class="caps">HTTP</span> response header <code>Set-Cookie</code> sets cookies</li>
+	<li>Future <span class="caps">HTTP</span> requests have cookie jar in <code>Cookie</code> header</li>
+</ul>
+<p>Find the cookie in the previous examples!</p>
+</div>
+<div class="slide"><h1><span class="caps">HTTP</span> Demo 2</h1>
+<ul>
+	<li>Firefox browser: <a href="http://getfirefox.com">getfirefox.com</a></li>
+	<li>Firebug plugin: <a href="http://getfirebug.com">getfirebug.com</a></li>
+</ul>
+</div>
+<div class="title slide">
+<h1>Client Side</h1>
+<ul>
+	<li>a.k.a. The Front-End</li>
+</ul>
+</div>
+<div class="slide"><h1>Client&#8217;s View of World</h1>
+<ul>
+	<li>Web page = <span class="caps">HTML</span> file + references</li>
+	<li>References
+	<ul>
+		<li>Presentation (style): <span class="caps">CSS</span></li>
+		<li>Multimedia: image, video, audio</li>
+		<li>Behavior (scripts): JavaScript</li>
+		<li>Behavior (plug-ins): Flash, Silverlight etc.</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">HTML</span> Example</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+&lt;head&gt; 
+  &lt;link href="/stylesheets/all.css" rel="stylesheet" type="text/css" /&gt; 
+  &lt;script src="/javascripts/all.js" type="text/javascript"&gt;&lt;/script&gt; 
+&lt;/head&gt; 
+&lt;body&gt; 
+  &lt;p&gt; 
+    Gitty is a free, open-source Web application for managing Git repositories. 
+  &lt;/p&gt; 
+  
+  &lt;p&gt; 
+    &lt;a href="/_/users/register"&gt;Sign up&lt;/a&gt; to collaborate with the other users! A gitty account lets you push and pull from Git repositories, send and receive comments on Git commits, and create your own repositories.
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///home/pwnall/workspace470/webdev_overview_slides/code/html_page.html">code/html_page.html</a></div>
+</div>
+<div class="title slide">
+<h1>Server Side</h1>
+<ul>
+	<li>a.k.a. The Back-End</li>
+</ul>
+</div>
+<div class="slide"><h1>10,000 Foot View</h1>
+<ol>
+	<li>Read <span class="caps">HTTP</span> request</li>
+	<li>Write <span class="caps">HTTP</span> response</li>
+</ol>
+</div>
+<div class="slide"><h1>1,000 Foot View</h1>
+<ul>
+	<li>Many server programs, possibly running on different machines.
+	<ul>
+		<li>Google has &#8220;hundreds of thousands&#8221; of servers.</li>
+		<li>Each Google query is processed by &#8220;hundreds&#8221; of machines.</li>
+	</ul></li>
+</ul>
+<ul>
+	<li><span class="caps">HTTP</span> request generally goes through the following.
+	<ol>
+		<li>Load balancer</li>
+		<li>Application server</li>
+		<li>Database server</li>
+	</ol></li>
+</ul>
+</div>
+<div class="slide"><h1>Load Balancer</h1>
+<ul>
+	<li>Primary mission
+	<ol>
+		<li>Receive <span class="caps">HTTP</span> request</li>
+		<li>Relay request to one of many application servers</li>
+		<li>Relay <span class="caps">HTTP</span> response to client</li>
+	</ol></li>
+	<li>Overloaded with many tasks
+	<ul>
+		<li>Protocol management: security (<span class="caps">HTTPS</span>), compression</li>
+		<li>Security: clean up <span class="caps">HTTP</span> requests, prevent against DoS</li>
+		<li>Optimization: serve files in response to <span class="caps">HTTP</span> requests</li>
+	</ul></li>
+	<li>Implementations
+	<ul>
+		<li><code>apache</code>, <code>haproxy</code>, <code>nginx</code></li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Load Balancer Configuration</h1>
+<div class="code-normal"><pre name="code" class="ruby:nogutter:nocontrols">upstream gitty_obsidian {
+  server 127.0.0.1:8008;
+  server 127.0.0.1:8009;
+}
+server {
+  listen 80;
+  charset utf-8;
+  server_name git.pwnb.us;
+  root /prod/apps/gitty.obsidian/public;
+  client_max_body_size 48M;
+  location / {
+    if (-f $request_filename) {
+      break;
+    }
+    # Truncated.
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    # Truncated.
+  }
+}    
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///home/pwnall/workspace470/webdev_overview_slides/code/nginx.conf">code/nginx.conf</a></div>
+</div>
+<div class="slide"><h1>Application Server</h1>
+<ul>
+	<li>Business logic
+	<ul>
+		<li>How does the homepage look like?</li>
+		<li>How do users sign in?</li>
+		<li>What happens when a user friends another user?</li>
+	</ul></li>
+</ul>
+<ul>
+	<li>Talks to other servers (e.g. Facebook) via APIs.</li>
+</ul>
+<ul>
+	<li>Usually in high-level languages
+	<ul>
+		<li><span class="caps">PHP</span>, Python, Ruby, Asp.Net</li>
+	</ul></li>
+</ul>
+<ul>
+	<li>Each <span class="caps">HTTP</span> request is its own world
+	<ul>
+		<li>Use database to remember things between <span class="caps">HTTP</span> requests</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Application Server Example: <span class="caps">PHP</span></h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Legit PHP page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;p&gt;
+    Today is &lt;? print(Date("m/j/y")); ?&gt;
+  &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///home/pwnall/workspace470/webdev_overview_slides/code/example.php">code/example.php</a></div>
+</div>
+<div class="slide"><h1>Database Server</h1>
+<ul>
+	<li>Stores data
+	<ul>
+		<li>Standard format: tables (like Excel spreadsheets)</li>
+		<li>Standard protocol: <span class="caps">SQL</span></li>
+	</ul></li>
+</ul>
+<ul>
+	<li>Solution to some very difficult problems
+	<ul>
+		<li>Concurrent requests (transactions)</li>
+		<li>Resiliency to failures (power outages, broken hard disks, etc.)</li>
+	</ul></li>
+</ul>
+<ul>
+	<li>Implementations
+	<ul>
+		<li>Very hard to get right.</li>
+		<li>Used to be very expensive.</li>
+		<li>Free: MySQL, PostgreSQL, SQLite</li>
+		<li>Paid: Microsoft <span class="caps">SQL</span> Server, Oracle</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Database Request Example</h1>
+<div class="code-normal"><pre name="code" class="sql:nogutter:nocontrols">SELECT isbn,
+       title,
+       price,
+       price * 0.06 AS sales_tax
+    FROM Books
+    WHERE price &gt; 100.00
+    ORDER BY title;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///home/pwnall/workspace470/webdev_overview_slides/code/queries.sql">code/queries.sql</a></div>
+</div>
+<div class="slide"><h1>1,000 Foot View Review</h1>
+<ul>
+	<li><span class="caps">HTTP</span> request generally goes through the following.
+	<ol>
+		<li>Load balancer</li>
+		<li>Application server</li>
+		<li>Database server</li>
+	</ol></li>
+</ul>
+</div>
+<div class="title slide">
+<h1>Wrap-Up</h1>
+</div>
+<div class="slide"><h1>Contact Information</h1>
+<p>Victor Costan</p>
+<ul>
+	<li>Web: <a href="http://www.costan.us">www.costan.us</a></li>
+	<li>E-mail: victor@costan.us</li>
+	<li>Facebook: <a href="http://www.facebook.com/pwnall">pwnall</a></li>
+	<li>Twitter: <a href="http://twitter.com/pwnall">pwnall</a></li>
+</ul>
+</div>
+<div class="slide"><h1>Presentation Resources</h1>
+<p>Slides and Code</p>
+<ul>
+	<li>Source code: http://github.com/costan/webdev_overview_slides/</li>
+	<li>Pull requests (patches) are welcome!</li>
+</ul></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>
