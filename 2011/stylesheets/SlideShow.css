@@ -1,47 +1,44 @@
-/* Sponsor stuff */
-
+/* Sponsors. */
 #slideshow {
 	margin: auto;
-	width:600px;
-	font-family:Verdana, Geneva, sans-serif;
+	width: 600px;
+	font-family: Verdana, Geneva, sans-serif;
 }
-/*Finicky carousel stuff*/
+
+/* Finicky carousel. */
 #carousel div.slide.slide_1 img:first-child, #carousel div.slide img:last-child,
-#carousel div.slide.slide_4 div.step + img{
-	display:none;
+    #carousel div.slide.slide_4 div.step + img{
+	display: none;
 }
-#carousel div.slide img:first-child,
-#carousel div.slide div.step + img{
-	margin-top:70px;
+#carousel div.slide img:first-child, #carousel div.slide div.step + img {
+	margin-top: 70px;
 }
 
 #content_wrapper {
-	background-color:transparent;
+	background-color: transparent;
 	margin: auto;
 	text-align: center;
-	width:522px;
-	height:270;
+	width: 522px;
+	height: 270;
 	background-image: url(../images/Slide/SlideShow_BG.gif);
 	background-position: left top;
 }
 
-/* Carousel stuff */
+/* Carousel. */
 #carousel_panel {
 }
 #carouselnav {
 	text-align: center;
-	color:#FFF;
+	color: #FFF;
 	height: 34px;
 	width: 522px;
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 14px;
 	position: relative;
-	/* padding-top: 8px;
-	padding-bottom: 12px; */
 }
-#carousel, #carousel_panel,#carousel > div.slide {
+#carousel, #carousel_panel, #carousel > div.slide {
   height: 220px;
-  width:500px;
+  width: 500px;
 }
 #carousel {
   position: relative;
@@ -50,23 +47,22 @@
 }
 #carousel > div.slide {
 	position: absolute;
-	//background-color: #d7d8ff;
 	background-color: transparent;
 	display: inline;
-	padding-left:10px;
-	margin-top:10px;
+	padding-left: 10px;
+	margin-top: 10px;
 }
 #carousel > div.slide.slide_1 {
-	padding-left:70px;
+	padding-left: 70px;
 }
 .step {
   width: 400px;
   height: 150px;
   float: left;
   padding: 0px;
-  text-align:left;
-  color:#838282;
-  font-size:12px;
+  text-align: left;
+  color: #838282;
+  font-size: 12px;
   
 }
 .slide img {
@@ -113,8 +109,8 @@
 }
 
 .slide1_img {
-	margin-top:70px;
-	margin-left:0px;
+	margin-top: 70px;
+	margin-left: 0px;
 }
 
 .slide_1 {
@@ -136,4 +132,3 @@
   left: 393px;
   background-position: 0px 0px;
 }
-

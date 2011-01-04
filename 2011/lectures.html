@@ -78,10 +78,10 @@ var Lectures = new Spry.Data.HTMLDataSet("Schedule_Data.html", "Lectures");
           <tr>
             <td align="left" valign="top" background="images/Content2_BG.jpg" id="content"><table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td align="left" valign="top" style="font-size:12px">We are currently in the process of deciding the curriculum for this year. Please check back in at a later time</td>
+                <td align="left" valign="top">&nbsp;</td>
               </tr>
               <tr>
-                <td align="left" valign="top">&nbsp;</td>
+                <td class="ScheduleHeading" align="left" valign="top">Lectures</td>
               </tr>
               <tr>
                 <td align="left" valign="top"><div spry:region="Lectures">
@@ -94,20 +94,27 @@ var Lectures = new Spry.Data.HTMLDataSet("Schedule_Data.html", "Lectures");
                       <th class="Headingz" spry:sort="Type">Type</th>
                     </tr>
                     <tr spry:repeat="Lectures" spry:odd="Odd_Row" spry:even="Even_Row" spry:hover="Hov_Row">
-                      <td width="65">{Day}</td>
-                      <td>{Date}</td>
-                      <td width="120">{Time}</td>
-                      <td>{Room}</td>
-                      <td>{Type}</td>
+                      <td valign="top" width="65">{Day}</td>
+                      <td valign="top">{Date}</td>
+                      <td valign="top" width="120">{Time}</td>
+                      <td valign="top" width="40">{Room}</td>
+                      <td valign="top">{Type}</td>
                     </tr>
                   </table>
-                </div></td>
+                </td>
               </tr>
               <tr>
                 <td align="left" valign="top">&nbsp;</td>
               </tr>
               <tr>
-                <td align="left" valign="top" style="font-size:12px">Take a look at <a href="../2010/lectures/index.html" target="_blank">last year's lectures, slides, example code, etc.</a></td>
+                <td>
+                    <table width="100%">
+                        <tr>
+                            <td align="left" valign="bottom" style="font-size:12px"><a href="../2010/lectures/index.html" target="_blank">last year's lectures</a></td>
+                            <td align="right" valign="bottom" style="font-size:12px"><i>books provided by</i> <a href="http://oreilly.com/"><img src="images/oreilly.png"></a></td>
+                        </tr>
+                    </table>
+                </td>
               </tr>
             </table></td>
           </tr>
