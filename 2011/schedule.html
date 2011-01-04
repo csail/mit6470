@@ -12,7 +12,7 @@
 <script src="javascripts/SpryAssets/SpryData.js" type="text/javascript"></script>
 <script src="javascripts/SpryAssets/SpryHTMLDataSet.js" type="text/javascript"></script>
 <script type="text/javascript">
-var Lectures = new Spry.Data.HTMLDataSet("Schedule_Data.html", "Lectures");
+var LecturesOverview = new Spry.Data.HTMLDataSet("Schedule_Data.html", "LecturesOverview");
 var Milestone = new Spry.Data.HTMLDataSet("Schedule_Data.html", "Miles");
 var awards = new Spry.Data.HTMLDataSet("Schedule_Data.html", "Awards");
 </script>
@@ -83,16 +83,16 @@ var awards = new Spry.Data.HTMLDataSet("Schedule_Data.html", "Awards");
                 <td class="ScheduleHeading" align="left" valign="top">Lectures</td>
               </tr>
               <tr>
-                <td align="left" valign="top"><div spry:region="Lectures">
+                <td align="left" valign="top"><div spry:region="LecturesOverview">
                   <table>
                     <tr>
-                      <th class="Headingz" spry:sort="Day">Day</th>
-                      <th class="Headingz" spry:sort="Date">Date</th>
+                      <th class="Headingz" spry:sort="Day">Days</th>
+                      <th class="Headingz" spry:sort="Date">Dates</th>
                       <th class="Headingz" spry:sort="Time">Time</th>
                       <th class="Headingz" spry:sort="Room">Room</th>
                       <th class="Headingz" spry:sort="Type">Type</th>
                     </tr>
-                    <tr spry:repeat="Lectures" spry:odd="Odd_Row" spry:even="Even_Row" spry:hover="Hov_Row">
+                    <tr spry:repeat="LecturesOverview" spry:odd="Odd_Row" spry:even="Even_Row" spry:hover="Hov_Row">
                       <td width="65">{Day}</td>
                       <td>{Date}</td>
                       <td width="120">{Time}</td>
