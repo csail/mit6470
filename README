@@ -5,6 +5,17 @@ open-sourced because any motivated person can use a spider to get all the pages
 anyway.
 
 
+== Testing
+
+The site uses AJAX to pull some data. Firefox currently supports AJAX requests
+in file:// URL, but Chrome doesn't. The easiest way to get past this, and to
+test the site in VMs, is to run a small HTTP server. If you install Ruby and
+rake, you'll be able to launch a test server by issuing the following command in
+the root directory of the site.
+
+    rake
+
+
 == Layout
 
 Each year has its own distinct directory. This has the downside of duplicated 

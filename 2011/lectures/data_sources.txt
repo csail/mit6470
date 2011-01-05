@@ -1,0 +1,157 @@
+
+Technologies
+
+    CSV
+name,sex,birth year
+Greg Little,M,1981
+        
+    TSV
+name	sex	birth year
+Greg Little	M	1981
+        Excel
+
+    JSON
+    
+{
+    "name" : "Greg Little",
+    "sex" : "M",
+    "birth year" : 1981
+}
+    
+    XML
+<blah>
+    <name>Greg Little</name>
+    <sex>M</sex>
+    <birthYear>1981</birthYear>
+</blah>
+
+
+
+    RDF
+{"title" : "Tony Benn",
+"publisher" : "Wikipedia"}
+http://en.wikipedia.org/wiki/Resource_Description_Framework
+
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<rdf:Description rdf:about="http://en.wikipedia.org/wiki/Tony_Benn">
+		<dc:title>Tony Benn</dc:title>
+		<dc:publisher>Wikipedia</dc:publisher>
+	</rdf:Description>
+</rdf:RDF>
+
+
+    REST
+        http://www.google.com/search?sourceid=chrome&ie=UTF-8&q=Laday+Gaga
+    SOAP
+        http://en.wikipedia.org/wiki/SOAP
+
+    RSS
+        https://glittle-music.appspot.com/gen/music.js
+    
+    API Key
+        http://api.elance.com/api/search/jobs?oauth_consumer_key=8dfd475b57fee5b7dc08cc0f1d5a0fcdab409b3c
+        
+    OAuth / OpenId
+        http://turkit-online.appspot.com/
+
+Games
+    
+    Wikipedia
+        http://en.wikipedia.org/wiki/List_of_Windows_games
+        http://en.wikipedia.org/wiki/List_of_board_games
+    
+    Freebase
+        http://6.470.scripts.mit.edu/2010/index.html
+        
+    More...
+        http://www.programmableweb.com/apitag/?q=games
+
+Jobs
+    
+    oDesk
+        http://developers.odesk.com/w/page/12363985/API-Documentation
+    
+    Elance
+        http://www.elance.com/p/api
+    
+    Freelancer
+        http://apidocs.getafreelancer.com/
+        
+    More...
+        http://www.programmableweb.com/apis/directory/1?apicat=Job%20Search
+
+    Government
+        http://www.usajobs.opm.gov/
+    
+    Job Statistics
+        http://www.bls.gov/home.htm
+    
+    Adobe
+        https://adobe.taleo.net/careersection/2/joblist.ftl
+    
+    Microsoft
+        https://careers.microsoft.com/Search.aspx#&&p4=all&p0=software&p5=all&p1=all&p2=all&p3=all
+
+Users
+
+    Facebook
+        http://developers.facebook.com/docs/
+    
+    LinkedIn
+        http://developer.linkedin.com/community/apis
+        OAuth
+
+Fake Users
+
+    10 x 10 x 10
+    
+    Names
+        http://www.programmableweb.com/apitag/?q=names
+
+    Last Names
+        http://names.mongabay.com/most_common_surnames.htm
+
+    Cities
+        http://en.wikipedia.org/wiki/List_of_United_States_cities_by_population
+        
+    Avatars
+        http://www.programmableweb.com/apitag/?q=avatar
+
+Fake Games
+        
+    Info
+        List out:
+            num players
+            average length
+            age range
+
+    Images
+        http://www.google.com/imghp
+
+Fake Jobs
+
+    Requirements
+        List out:
+            Programming
+            Graphic Design
+            Windows Skills
+            Chemistry Skills
+    
+        mix-and-match
+
+    Images
+        Google
+
+
+
+
+http://glittle.org/StringProcessor/
+
+foreach(lines(input), function (line) {
+    var name = line.match(/<td>(\w+)<\/td>/)[1]
+    print(name)
+
+})
+
