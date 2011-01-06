@@ -1,0 +1,757 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Version Control with Git and GitHub</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 05, 2011" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2011 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>Version Control with Git and GitHub</h1>
+<blockquote>
+<p>Victor Costan</p>
+</blockquote>
+</div>
+<div class="slide"><h1>Contents</h1>
+<div style="font-size: 70%">
+<ul>
+	<li>Introduction</li>
+</ul>
+<ul>
+	<li>Git Repositories</li>
+</ul>
+<ul>
+	<li>Development Workflow</li>
+</ul>
+<ul>
+	<li>Branches</li>
+</ul>
+<ul>
+	<li>Collaboration Workflow</li>
+</ul>
+<ul>
+	<li>Wrap-Up</li>
+</ul>
+</div>
+</div>
+<div class="title slide">
+<h1>Introduction</h1>
+</div>
+<div class="slide"><h1>Your Instructors</h1>
+<ul>
+	<li>Victor Costan</li>
+</ul>
+</div>
+<div class="slide"><h1>Version Control</h1>
+<pre><code>proposal v2 good revised NEW 11-15-06.doc</code></pre>
+<blockquote>
+<p>Revision control, also known as version control or source control [&#8230;], is the management of changes to documents, programs, and other information stored as computer files.</p>
+</blockquote>
+<p><a href="http://en.wikipedia.org/wiki/Revision_control">Wikipedia &#8211; Revision Control</a></p>
+</div>
+<div class="slide"><h1>Version Control</h1>
+<pre style="text-decoration:line-through;"><code style="text-decoration:line-through;">proposal v2 good revised NEW 11-15-06.doc</code></pre>
+<p>By the way, this is <span class="caps">NOT</span> the right way to do it.</p>
+</div>
+<div class="slide"><h1>Why Use Version Control</h1>
+<ul>
+	<li>Collaborate without painful coordination.
+	<ul>
+		<li>Merge two people&#8217;s changes on the same file.</li>
+		<li>Keep track of what your teammates are doing.</li>
+	</ul></li>
+	<li>Backup your code.</li>
+	<li>Quickly roll back bad changes.</li>
+	<li>Documentation for your code.</li>
+	<li>Contribute to open-source projects.</li>
+</ul>
+</div>
+<div class="slide"><h1>Why Not Use Version Control?</h1>
+<p><a href="http://stackoverflow.com/questions/132520/good-excuses-not-to-use-version-control">StackOverflow: Good excuses <span class="caps">NOT</span> to use Version Control</a></p>
+<ul>
+	<li>A delightful mix of laziness and incompetence.</li>
+	<li>The sense of danger gives my programming an edge.</li>
+	<li>My code is buggy, unstructured, and unreadable. It&#8217;s simply not worth trying to keep.</li>
+	<li>Management will understand if my project slips by six months because I accidentally deleted something I shouldn&#8217;t. They do it all the time.</li>
+	<li>If I delete my 5000 line source file by mistake, chances are the total rewrite may be better than the original. Eventually.</li>
+	<li>You hate your company and want to see them fail.</li>
+</ul>
+</div>
+<div class="slide"><h1>Why Use Git</h1>
+<ul>
+	<li>It is awesome.</li>
+	<li>Cheap branches (you&#8217;ll learn about them today).</li>
+	<li>Many open-source projects are on Git.</li>
+	<li>GitHub</li>
+</ul>
+</div>
+<div class="title slide">
+<h1>Git Repositories</h1>
+<p>Don&#8217;t worry if it doesn&#8217;t make sense right away! It&#8217;s awesome if it does,<br />
+though!</p>
+</div>
+<div class="slide"><h1>Objects</h1>
+<ul>
+	<li>Everything is an object.</li>
+	<li>Objects never change after they are created. (immutable)</li>
+	<li>An object has
+	<ol>
+		<li>type: blob (file), tree (directory), commit (revision), tag</li>
+		<li>size</li>
+		<li>contents</li>
+	</ol></li>
+	<li>Objects are named by <span class="caps">SHA</span>-1 hashes of contents
+	<ul>
+		<li>Full names are long and ugly: <code>435fcb11778c090e6b686d71361ecf30809694e6</code></li>
+		<li>Short names: <code>435fc</code> (any prefix, as long as it&#8217;s unique)</li>
+		<li>No duplicates!</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Blobs</h1>
+<div style="text-align: center;">
+<p><img src="images/object-blob.png" style="height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Trees</h1>
+<div style="text-align: center;">
+<p><img src="images/object-tree.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Commits</h1>
+<div style="text-align: center;">
+<p><img src="images/object-commit.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Trees vs Commits</h1>
+<ul>
+	<li>Top-level tree &#8211; snapshot of all files and dirs in projects.</li>
+	<li>Commit = version. Tree + metadata.
+	<ul>
+		<li>Who produced the tree. (author)</li>
+		<li>Author&#8217;s explanation of what is changed in the new version. (message)</li>
+		<li>Commits the author used to produce this commit. (parents)</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Trees vs Commits</h1>
+<div style="text-align: center;">
+<p><img src="images/commits_trees.png" style="text-align:center;width:95%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Tags</h1>
+<div style="text-align: center;">
+<p><img src="images/object-tag.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Trees vs Commits vs Tags</h1>
+<ul>
+	<li>Top-level tree = snapshot of all files and dirs in projects.</li>
+	<li>Commit = version. Tree + metadata.
+	<ul>
+		<li>Who produced the tree. (author)</li>
+		<li>Author&#8217;s explanation of what the version means. (message)</li>
+	</ul></li>
+	<li>Tag = release. Commit + more metadata.
+	<ul>
+		<li>Tag&#8217;s author (e.g., project&#8217;s release manager)</li>
+		<li>Author&#8217;s explanation of release. (message)</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Simplified View</h1>
+<ul>
+	<li>Commit = version.</li>
+	<li>Commit parents = versions immediately before this version.</li>
+	<li>Commits form a directed acyclic graph (<span class="caps">DAG</span>).</li>
+</ul>
+</div>
+<div class="slide"><h1>Demo I: Repository Structure</h1>
+<ol>
+	<li><code>git gui</code></li>
+	<li>select <code>Repository</code> &gt; <code>Visualize all branch history</code></li>
+</ol>
+</div>
+<div class="slide"><h1>Demo II: Commits as Documentation</h1>
+<p>History</p>
+<ul>
+	<li><a href="https://github.com/pwnall/gitty/commits">Commits</a></li>
+	<li>Big problem broken down in small steps.</li>
+	<li>Almost as good as a live demo, if commits are small.</li>
+</ul>
+<p>Commit</p>
+<ul>
+	<li><a href="https://github.com/pwnall/gitty/commit/3b1e2d68305353d8f7d22b62923b679387f385cb">Commit: follow / unfollow in newsfeed.</a></li>
+	<li>All the changes related to a feature.</li>
+	<li>Shows how files are related to each other.</li>
+</ul>
+</div>
+<div class="title slide">
+<h1>Development Workflow</h1>
+<p>Git has many ways to achieve a result. I teach the workflow that I use.</p>
+</div>
+<div class="slide"><h1>&#8220;In the Zone&#8221; Workflow</h1>
+<ol>
+	<li>Create project dir</li>
+	<li>Create repository</li>
+	<li>Code a feature</li>
+	<li>Commit the feature</li>
+	<li>Go to step 3</li>
+</ol>
+</div>
+<div class="slide"><h1>&#8220;In the Zone&#8221; Workflow</h1>
+<ol>
+	<li>Create project dir
+	<ul>
+		<li><code>mkdir project</code></li>
+		<li><code>cd project</code></li>
+	</ul></li>
+	<li>Create repository
+	<ul>
+		<li><code>git init</code></li>
+	</ul></li>
+	<li>Code a feature
+	<ul>
+		<li><em>magic</em></li>
+	</ul></li>
+	<li>Commit the feature</li>
+	<li>Go to step 3</li>
+</ol>
+</div>
+<div class="slide"><h1>&#8220;In the Zone&#8221; Workflow</h1>
+<ol>
+	<li>Create project dir</li>
+	<li>Create repository</li>
+	<li>Code a feature</li>
+	<li>Commit the feature
+	<ul>
+		<li><code>git add .</code></li>
+		<li><code>git status</code></li>
+		<li><code>git add -u .</code></li>
+		<li><code>git status</code></li>
+		<li><code>git commit -m "Initial homepage."</code></li>
+	</ul></li>
+	<li>Back to step 3.</li>
+</ol>
+</div>
+<div class="slide"><h1>Git Has 3 Worlds</h1>
+<div style="text-align: center;">
+<p><img src="images/staging_index.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Git Has 3 Worlds</h1>
+<ol>
+	<li>The repository
+	<ul>
+		<li>All the versions of your project</li>
+	</ul></li>
+	<li>The working copy
+	<ul>
+		<li>The version in the filesystem</li>
+		<li>Other programs (e.g. your text editor) can only see this one</li>
+	</ul></li>
+	<li>The staging area (a.k.a. the <em>index</em>)
+	<ul>
+		<li>A commit &#8220;under construction&#8221;</li>
+		<li>Committing: staging area &#8594; new commit</li>
+		<li>Staging: working copy &#8594; staging area</li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>File Lifecycle</h1>
+<div style="text-align: center;">
+<p><img src="images/file_lifecycle.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Paranoid Committing</h1>
+<ol>
+	<li>Stage all changes except for deletion
+	<ul>
+		<li><code>git add .</code></li>
+	</ul></li>
+	<li>Show me what&#8217;s about to happen
+	<ul>
+		<li><code>git status</code></li>
+	</ul></li>
+	<li>Stage modified and deleted files
+	<ul>
+		<li><code>git add -u .</code></li>
+	</ul></li>
+	<li>Make the commit
+	<ul>
+		<li><code>git commit -m "Initial homepage."</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Faster Committing</h1>
+<ol>
+	<li>Stage <strong>all</strong> changes
+	<ul>
+		<li><code>git add -A .</code></li>
+	</ul></li>
+	<li>Show me what&#8217;s about to happen
+	<ul>
+		<li><code>git status</code></li>
+	</ul></li>
+	<li>Make the commit
+	<ul>
+		<li><code>git commit -m "Initial homepage."</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Fastest Committing</h1>
+<ol>
+	<li>Only needed if you added new file
+	<ul>
+		<li><code>git add .</code></li>
+	</ul></li>
+	<li>Stage updates, make the commit
+	<ul>
+		<li><code>git commit -a -m "Initial homepage."</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>&#8220;Out of the Zone&#8221; Workflow</h1>
+<ul>
+	<li>Commits = documentation.</li>
+	<li>Must be able to fix commit errors.</li>
+</ul>
+</div>
+<div class="slide"><h1>What did I do recently?</h1>
+<ul>
+	<li><code>git log</code></li>
+	<li>Shows recent commits</li>
+</ul>
+</div>
+<div class="slide"><h1>Shouldn&#8217;t Have Committed That</h1>
+<ul>
+	<li><code>git reset HEAD^</code></li>
+	<li>Undoes your last <code>git commit</code></li>
+	<li>The commit contents is available in the working tree</li>
+</ul>
+<p>Oh man, I shouldn&#8217;t have committed that, or that, or that!</p>
+<ul>
+	<li><code>git reset HEAD^^^</code> does 3 commits</li>
+	<li><code>git reset HEAD~3</code> also does 3 commits</li>
+</ul>
+</div>
+<div class="slide"><h1>Shouldn&#8217;t Have Added That</h1>
+<p>I think I want this file in a different commit.</p>
+<ul>
+	<li><code>git reset HEAD -- file</code> unstages an update</li>
+	<li><code>git rm --cached file</code> unstages a newly added file</li>
+</ul>
+</div>
+<div class="slide"><h1>Gone Overboard on Commits</h1>
+<p>Those last two commits really are the same feature.</p>
+<ul>
+	<li><code>git rebase -i HEAD^^</code></li>
+	<li>Rebasing is the easiest way to screw up your repository</li>
+	<li>Rebasing is also the most powerful tool for history rewriting</li>
+</ul>
+</div>
+<div class="title slide">
+<h1>Branches</h1>
+<blockquote>
+<p>A set of files under version control may be <strong>branched</strong> or forked at a point in time so that, from that time forward, two copies of those files may develop at different speeds or in different ways independently of each other.</p>
+</blockquote>
+<p><a href="http://en.wikipedia.org/wiki/Revision_control">Wikipedia &#8211; Revision Control</a></p>
+</div>
+<div class="slide"><h1>Git Commits vs Trees</h1>
+<div style="text-align: center;">
+<p><img src="images/commits_trees.png" style="text-align:center;width:95%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Git Branches vs Commits, Trees</h1>
+<div style="text-align: center;">
+<p><img src="images/commits_trees_branches.png" style="text-align:center;width:95%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Git Branches</h1>
+<p>A branch is a named pointer to a commit.</p>
+<p>Branches have</p>
+<ul>
+	<li>a name, e.g. <code>master</code></li>
+	<li>a commit name, e.g. <code>7b3087613bee8487e11e9d8f832b70e2b025f3a1</code></li>
+</ul>
+</div>
+<div class="slide"><h1>Git Branch Lifecycle</h1>
+<div style="text-align: center;">
+<p><img src="images/more_branches.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Git Branch Lifecycle</h1>
+<div style="text-align: center;">
+<p><img src="images/branch_lifecycle.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1><span class="caps">HEAD</span>: Which Branch Am I Working On?</h1>
+<div style="text-align: center;">
+<p><img src="images/branch_head.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1><span class="caps">HEAD</span></h1>
+<ul>
+	<li><code>HEAD</code> is the name of the branch that you&#8217;re working on.</li>
+	<li>Now you have a complete understanding of the Git object model!</li>
+</ul>
+</div>
+<div class="slide"><h1>Git Object Model</h1>
+<div style="text-align: center;">
+<p><img src="images/git-full-model.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Branch Discipline</h1>
+<p>There is no single solution. I like this one.</p>
+<p>Integration vs feature branches</p>
+<ul>
+	<li>Integration branches &#8220;collect&#8221; topic branches</li>
+	<li>No commits on integration branches</li>
+	<li>A feature branches off an integration branch</li>
+	<li>Feature branches are merged back into integration branches</li>
+	<li>No merging into integration branches</li>
+</ul>
+</div>
+<div class="slide"><h1>Branch Discipline</h1>
+<p>Two special integration branches for Web development.</p>
+<ul>
+	<li><code>master</code>, a.k.a. <em>mainline</em>: all features are branched off and merged into it</li>
+	<li><code>prod</code>  is what&#8217;s running on production</li>
+</ul>
+</div>
+<div class="slide"><h1>Branching Workflow</h1>
+<ol>
+	<li>Create a feature branch</li>
+	<li>Work on the feature</li>
+	<li>A horrible bug shows up in prod, drop everything you&#8217;re doing</li>
+	<li>Fix the bug</li>
+	<li>Finish the feature</li>
+	<li>Merge the feature branch</li>
+</ol>
+</div>
+<div class="slide"><h1>Creating a Feature Branch</h1>
+<ol>
+	<li>Create a feature branch
+	<ul>
+		<li><code>git checkout -b awesomeness</code></li>
+	</ul></li>
+	<li>Work on the feature
+	<ul>
+		<li><em>magic</em> + <code>git commit -m "Awesome footer."</code></li>
+	</ul></li>
+	<li>A horrible bug shows up in prod, drop everything you&#8217;re doing
+	<ul>
+		<li><code>git commit -a -m "Saving work, must fix bug."</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Stop and Fix the Bug</h1>
+<ol>
+	<li>Get back on <code>master</code>, must branch off of it
+	<ul>
+		<li><code>git checkout master</code></li>
+	</ul></li>
+	<li>Create bug branch
+	<ul>
+		<li><code>git checkout -b bugfix</code></li>
+	</ul></li>
+	<li>Develop the bugfix
+	<ul>
+		<li><em>magic</em> + <code>git commit -m "Fixed bug. Whew."</code></li>
+	</ul></li>
+	<li>Merge the bugfix into <code>master</code></li>
+	<li>Delete the bugfix branch</li>
+</ol>
+</div>
+<div class="slide"><h1>Stop and Fix the Bug</h1>
+<ol>
+	<li>Get back on <code>master</code>, must branch off of it</li>
+	<li>Create bug branch</li>
+	<li>Develop the bugfix</li>
+	<li>Merge the bugfix into <code>master</code>
+	<ul>
+		<li><code>git checkout master</code></li>
+		<li><code>git merge bugfix</code></li>
+	</ul></li>
+	<li>Delete the bugfix branch
+	<ul>
+		<li><code>git branch -d bugfix</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Finish the Feature</h1>
+<ol>
+	<li>Get bach to feature branch</li>
+	<li>Do more developing</li>
+	<li>Merge the feature into <code>master</code></li>
+	<li>Delete the feature branch</li>
+</ol>
+<p>Can you write down the commands before seeing the next slide?</p>
+</div>
+<div class="slide"><h1>Finish the Feature</h1>
+<ol>
+	<li>Get back to feature branch
+	<ul>
+		<li><code>git checkout awesomeness</code></li>
+	</ul></li>
+	<li>Do more developing
+	<ul>
+		<li><em>magic</em> + <code>git commit -m "Prepare for awesomeness."</code></li>
+	</ul></li>
+	<li>Merge the feature into <code>master</code>
+	<ul>
+		<li><code>git checkout master</code></li>
+		<li><code>git merge awesomeness</code></li>
+	</ul></li>
+	<li>Delete the feature branch
+	<ul>
+		<li><code>git branch -d awesomeness</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="title slide">
+<h1>Collaboration Workflow</h1>
+</div>
+<div class="slide"><h1>Centralized Version Control</h1>
+<ul>
+	<li>Central server stores authoritative repository</li>
+	<li>Pro: linear history that everyone agrees on</li>
+	<li>Pro: revision numbers are short, sequential numbers &#8594; can be used for versioning</li>
+	<li>Con: server down &#8594; can&#8217;t collaborate</li>
+	<li>Examples: Subversion (<span class="caps">SVN</span>), <span class="caps">CVS</span>, Perforce</li>
+</ul>
+</div>
+<div class="slide"><h1>Distributed Version Control</h1>
+<ul>
+	<li>Everyone has a repository replica</li>
+	<li>Examples: Git, Mercurial (hg), <span class="caps">DARCS</span></li>
+	<li>Pro: no single point of failure</li>
+	<li>Pro: can work without Internet access</li>
+	<li>Con: history isn&#8217;t linear</li>
+	<li>Con: revision numbers are long monstruosities</li>
+</ul>
+</div>
+<div class="slide"><h1>Git is Distributed</h1>
+<ul>
+	<li>Everyone has a repository replica</li>
+	<li>The replicas that you talk to are named <code>remotes</code></li>
+	<li>The main &#8220;remote&#8221; is named <code>origin</code></li>
+</ul>
+</div>
+<div class="slide"><h1>Managing Remote Repositories</h1>
+<ol>
+	<li>Link up to a GitHub repository
+	<ul>
+		<li><code>git remote add origin git@github.com:pwnall/6470_lecture.git</code></li>
+	</ul></li>
+	<li>Look at all the remotes
+	<ul>
+		<li><code>git remote</code></li>
+	</ul></li>
+	<li>Remove a link
+	<ul>
+		<li><code>git remote rm origin</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Remote Repositories</h1>
+<p>2 ways to create a repository</p>
+<ol>
+	<li><code>git init</code>
+	<ul>
+		<li>Used this one before</li>
+	</ul></li>
+	<li><code>git clone git@github.com:pwnall/6470_lecture.git</code>
+	<ul>
+		<li>Copies a remote repository</li>
+		<li>Links the remote as <code>origin</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Exchanging Data with a Remote Repository</h1>
+<ul>
+	<li>Repositories exchange branches.</li>
+	<li>Branches take the rest of the object graph with them.</li>
+</ul>
+</div>
+<div class="slide"><h1>Exchanging Data with a Remote Repository</h1>
+<ul>
+	<li>Repositories exchange branches.</li>
+	<li>Branches take the rest of the object graph with them.</li>
+</ul>
+<ol>
+	<li>Send commits on all your local branches to a remote
+	<ul>
+		<li><code>git push</code>, which is a shortcut for</li>
+		<li><code>git push origin</code></li>
+	</ul></li>
+	<li>Sends commits on one of your local branches to a remote
+	<ul>
+		<li><code>git push origin master</code></li>
+		<li>You need this command if the branch doesn&#8217;t exist on the remote</li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Sidenote: GitHub Wants <span class="caps">SSH</span> Keys</h1>
+<ul>
+	<li>Go to <a href="http://help.github.com">help.github.com</a></li>
+	<li>Click on the <a href="http://help.github.com/key-setup-redirect">Generating <span class="caps">SSH</span> Keys</a> link</li>
+</ul>
+</div>
+<div class="slide"><h1>Exchanging Data with a Remote Repository</h1>
+<ul>
+	<li>Repositories exchange branches.</li>
+	<li>Branches take the rest of the object graph with them.</li>
+</ul>
+<ol>
+	<li>Receive commits from a remote branch to your branch
+	<ul>
+		<li><code>git pull origin master</code></li>
+	</ul></li>
+	<li>Receive commits from the remote branch matching your local branch
+	<ul>
+		<li><code>git pull origin</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Exchanging Data with a Remote Repository</h1>
+<ul>
+	<li>Repositories exchange branches.</li>
+	<li>Branches take the rest of the object graph with them.</li>
+</ul>
+<p>Creating a local copy of a remote branch (new <code>git</code>)</p>
+<ul>
+	<li><code>git checkout bugfix</code></li>
+</ul>
+<p>Creating a local copy of a remote branch (old <code>git</code>)</p>
+<ul>
+	<li><code>git checkout origin/bugfix</code></li>
+	<li><code>git checkout -b bugfix</code></li>
+</ul>
+</div>
+<div class="slide"><h1>Exchanging Data with a Remote Repository</h1>
+<ul>
+	<li>Repositories exchange branches.</li>
+	<li>Branches take the rest of the object graph with them.</li>
+</ul>
+<p>Every branch in a remote repository is available as</p>
+<pre><code>remote-name/branch-name</code></pre>
+</div>
+<div class="slide"><h1>Exchanging Data with a Remote Repository</h1>
+<ul>
+	<li>Repositories exchange branches.</li>
+	<li>Branches take the rest of the object graph with them.</li>
+</ul>
+<p>Every branch in a remote repository is available as</p>
+<pre><code>remote-name/branch-name</code></pre>
+<p><code>git pull origin master</code> is actually</p>
+<ul>
+	<li><code>git fetch origin</code> gets all branches in the <code>origin</code> remote</li>
+	<li><code>git merge origin/master</code></li>
+</ul>
+</div>
+<div class="slide"><h1>Github</h1>
+<p><a href="http://github.com">Github</a> is awesome.</p>
+<ul>
+	<li>Code review</li>
+	<li>Pull requests</li>
+	<li>Open-Source projects
+	<ul>
+		<li>Ruby on Rails</li>
+		<li>Android</li>
+	</ul></li>
+	<li>Many more things that make life easy</li>
+</ul>
+</div>
+<div class="slide"><h1>Github</h1>
+<p>If you want a private Github repository</p>
+<ol>
+	<li>Have all your team members make Github accounts</li>
+	<li>Send <strong>one</strong> e-mail to 6.470-staff@mit.edu with <strong>all</strong> your team members&#8217; Github usernames</li>
+</ol>
+</div>
+<div class="title slide">
+<h1>Wrap-Up</h1>
+</div>
+<div class="slide"><h1>Contact Information</h1>
+<p>Victor Costan</p>
+<ul>
+	<li>Web: <a href="http://www.costan.us">www.costan.us</a></li>
+	<li>E-mail: victor@costan.us</li>
+	<li>Facebook: <a href="http://www.facebook.com/pwnall">pwnall</a></li>
+	<li>Twitter: <a href="http://twitter.com/pwnall">pwnall</a></li>
+</ul>
+</div>
+<div class="slide"><h1>Presentation Resources</h1>
+<p>Slides and Code</p>
+<ul>
+	<li>Source code: http://github.com/costan/git_slides/</li>
+	<li>Git documentation collection: http://git-scm.com/documentation</li>
+	<li>Git community book: http://book.git-scm.com/</li>
+	<li>Pro Git book: http://progit.org/book/</li>
+	<li>GitHub: http://github.com</li>
+</ul>
+<ul>
+	<li>Pull requests (patches) are welcome!</li>
+</ul></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>

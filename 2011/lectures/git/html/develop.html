@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Version Control with Git and GitHub</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 05, 2011" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2011 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>Development Workflow</h1>
+<p>Git has many ways to achieve a result. I teach the workflow that I use.</p>
+</div>
+<div class="slide"><h1>&#8220;In the Zone&#8221; Workflow</h1>
+<ol>
+	<li>Create project dir</li>
+	<li>Create repository</li>
+	<li>Code a feature</li>
+	<li>Commit the feature</li>
+	<li>Go to step 3</li>
+</ol>
+</div>
+<div class="slide"><h1>&#8220;In the Zone&#8221; Workflow</h1>
+<ol>
+	<li>Create project dir
+	<ul>
+		<li><code>mkdir project</code></li>
+		<li><code>cd project</code></li>
+	</ul></li>
+	<li>Create repository
+	<ul>
+		<li><code>git init</code></li>
+	</ul></li>
+	<li>Code a feature
+	<ul>
+		<li><em>magic</em></li>
+	</ul></li>
+	<li>Commit the feature</li>
+	<li>Go to step 3</li>
+</ol>
+</div>
+<div class="slide"><h1>&#8220;In the Zone&#8221; Workflow</h1>
+<ol>
+	<li>Create project dir</li>
+	<li>Create repository</li>
+	<li>Code a feature</li>
+	<li>Commit the feature
+	<ul>
+		<li><code>git add .</code></li>
+		<li><code>git status</code></li>
+		<li><code>git add -u .</code></li>
+		<li><code>git status</code></li>
+		<li><code>git commit -m "Initial homepage."</code></li>
+	</ul></li>
+	<li>Back to step 3.</li>
+</ol>
+</div>
+<div class="slide"><h1>Git Has 3 Worlds</h1>
+<div style="text-align: center;">
+<p><img src="images/staging_index.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Git Has 3 Worlds</h1>
+<ol>
+	<li>The repository
+	<ul>
+		<li>All the versions of your project</li>
+	</ul></li>
+	<li>The working copy
+	<ul>
+		<li>The version in the filesystem</li>
+		<li>Other programs (e.g. your text editor) can only see this one</li>
+	</ul></li>
+	<li>The staging area (a.k.a. the <em>index</em>)
+	<ul>
+		<li>A commit &#8220;under construction&#8221;</li>
+		<li>Committing: staging area &#8594; new commit</li>
+		<li>Staging: working copy &#8594; staging area</li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>File Lifecycle</h1>
+<div style="text-align: center;">
+<p><img src="images/file_lifecycle.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Paranoid Committing</h1>
+<ol>
+	<li>Stage all changes except for deletion
+	<ul>
+		<li><code>git add .</code></li>
+	</ul></li>
+	<li>Show me what&#8217;s about to happen
+	<ul>
+		<li><code>git status</code></li>
+	</ul></li>
+	<li>Stage modified and deleted files
+	<ul>
+		<li><code>git add -u .</code></li>
+	</ul></li>
+	<li>Make the commit
+	<ul>
+		<li><code>git commit -m "Initial homepage."</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Faster Committing</h1>
+<ol>
+	<li>Stage <strong>all</strong> changes
+	<ul>
+		<li><code>git add -A .</code></li>
+	</ul></li>
+	<li>Show me what&#8217;s about to happen
+	<ul>
+		<li><code>git status</code></li>
+	</ul></li>
+	<li>Make the commit
+	<ul>
+		<li><code>git commit -m "Initial homepage."</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Fastest Committing</h1>
+<ol>
+	<li>Only needed if you added new file
+	<ul>
+		<li><code>git add .</code></li>
+	</ul></li>
+	<li>Stage updates, make the commit
+	<ul>
+		<li><code>git commit -a -m "Initial homepage."</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>&#8220;Out of the Zone&#8221; Workflow</h1>
+<ul>
+	<li>Commits = documentation.</li>
+	<li>Must be able to fix commit errors.</li>
+</ul>
+</div>
+<div class="slide"><h1>What did I do recently?</h1>
+<ul>
+	<li><code>git log</code></li>
+	<li>Shows recent commits</li>
+</ul>
+</div>
+<div class="slide"><h1>Shouldn&#8217;t Have Committed That</h1>
+<ul>
+	<li><code>git reset HEAD^</code></li>
+	<li>Undoes your last <code>git commit</code></li>
+	<li>The commit contents is available in the working tree</li>
+</ul>
+<p>Oh man, I shouldn&#8217;t have committed that, or that, or that!</p>
+<ul>
+	<li><code>git reset HEAD^^^</code> does 3 commits</li>
+	<li><code>git reset HEAD~3</code> also does 3 commits</li>
+</ul>
+</div>
+<div class="slide"><h1>Shouldn&#8217;t Have Added That</h1>
+<p>I think I want this file in a different commit.</p>
+<ul>
+	<li><code>git reset HEAD -- file</code> unstages an update</li>
+	<li><code>git rm --cached file</code> unstages a newly added file</li>
+</ul>
+</div>
+<div class="slide"><h1>Gone Overboard on Commits</h1>
+<p>Those last two commits really are the same feature.</p>
+<ul>
+	<li><code>git rebase -i HEAD^^</code></li>
+	<li>Rebasing is the easiest way to screw up your repository</li>
+	<li>Rebasing is also the most powerful tool for history rewriting</li>
+</ul></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>

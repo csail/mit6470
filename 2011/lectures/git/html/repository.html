@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Version Control with Git and GitHub</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 05, 2011" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2011 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>Git Repositories</h1>
+<p>Don&#8217;t worry if it doesn&#8217;t make sense right away! It&#8217;s awesome if it does,<br />
+though!</p>
+</div>
+<div class="slide"><h1>Objects</h1>
+<ul>
+	<li>Everything is an object.</li>
+	<li>Objects never change after they are created. (immutable)</li>
+	<li>An object has
+	<ol>
+		<li>type: blob (file), tree (directory), commit (revision), tag</li>
+		<li>size</li>
+		<li>contents</li>
+	</ol></li>
+	<li>Objects are named by <span class="caps">SHA</span>-1 hashes of contents
+	<ul>
+		<li>Full names are long and ugly: <code>435fcb11778c090e6b686d71361ecf30809694e6</code></li>
+		<li>Short names: <code>435fc</code> (any prefix, as long as it&#8217;s unique)</li>
+		<li>No duplicates!</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Blobs</h1>
+<div style="text-align: center;">
+<p><img src="images/object-blob.png" style="height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Trees</h1>
+<div style="text-align: center;">
+<p><img src="images/object-tree.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Commits</h1>
+<div style="text-align: center;">
+<p><img src="images/object-commit.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Trees vs Commits</h1>
+<ul>
+	<li>Top-level tree &#8211; snapshot of all files and dirs in projects.</li>
+	<li>Commit = version. Tree + metadata.
+	<ul>
+		<li>Who produced the tree. (author)</li>
+		<li>Author&#8217;s explanation of what is changed in the new version. (message)</li>
+		<li>Commits the author used to produce this commit. (parents)</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Trees vs Commits</h1>
+<div style="text-align: center;">
+<p><img src="images/commits_trees.png" style="text-align:center;width:95%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Tags</h1>
+<div style="text-align: center;">
+<p><img src="images/object-tag.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Trees vs Commits vs Tags</h1>
+<ul>
+	<li>Top-level tree = snapshot of all files and dirs in projects.</li>
+	<li>Commit = version. Tree + metadata.
+	<ul>
+		<li>Who produced the tree. (author)</li>
+		<li>Author&#8217;s explanation of what the version means. (message)</li>
+	</ul></li>
+	<li>Tag = release. Commit + more metadata.
+	<ul>
+		<li>Tag&#8217;s author (e.g., project&#8217;s release manager)</li>
+		<li>Author&#8217;s explanation of release. (message)</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Simplified View</h1>
+<ul>
+	<li>Commit = version.</li>
+	<li>Commit parents = versions immediately before this version.</li>
+	<li>Commits form a directed acyclic graph (<span class="caps">DAG</span>).</li>
+</ul>
+</div>
+<div class="slide"><h1>Demo I: Repository Structure</h1>
+<ol>
+	<li><code>git gui</code></li>
+	<li>select <code>Repository</code> &gt; <code>Visualize all branch history</code></li>
+</ol>
+</div>
+<div class="slide"><h1>Demo II: Commits as Documentation</h1>
+<p>History</p>
+<ul>
+	<li><a href="https://github.com/pwnall/gitty/commits">Commits</a></li>
+	<li>Big problem broken down in small steps.</li>
+	<li>Almost as good as a live demo, if commits are small.</li>
+</ul>
+<p>Commit</p>
+<ul>
+	<li><a href="https://github.com/pwnall/gitty/commit/3b1e2d68305353d8f7d22b62923b679387f385cb">Commit: follow / unfollow in newsfeed.</a></li>
+	<li>All the changes related to a feature.</li>
+	<li>Shows how files are related to each other.</li>
+</ul></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>
