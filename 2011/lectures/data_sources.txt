@@ -154,4 +154,3 @@ foreach(lines(input), function (line) {
     print(name)
 
 })
-
