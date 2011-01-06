@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Version Control with Git and GitHub</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 05, 2011" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2011 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>Branches</h1>
+<blockquote>
+<p>A set of files under version control may be <strong>branched</strong> or forked at a point in time so that, from that time forward, two copies of those files may develop at different speeds or in different ways independently of each other.</p>
+</blockquote>
+<p><a href="http://en.wikipedia.org/wiki/Revision_control">Wikipedia &#8211; Revision Control</a></p>
+</div>
+<div class="slide"><h1>Git Commits vs Trees</h1>
+<div style="text-align: center;">
+<p><img src="images/commits_trees.png" style="text-align:center;width:95%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Git Branches vs Commits, Trees</h1>
+<div style="text-align: center;">
+<p><img src="images/commits_trees_branches.png" style="text-align:center;width:95%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Git Branches</h1>
+<p>A branch is a named pointer to a commit.</p>
+<p>Branches have</p>
+<ul>
+	<li>a name, e.g. <code>master</code></li>
+	<li>a commit name, e.g. <code>7b3087613bee8487e11e9d8f832b70e2b025f3a1</code></li>
+</ul>
+</div>
+<div class="slide"><h1>Git Branch Lifecycle</h1>
+<div style="text-align: center;">
+<p><img src="images/more_branches.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Git Branch Lifecycle</h1>
+<div style="text-align: center;">
+<p><img src="images/branch_lifecycle.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1><span class="caps">HEAD</span>: Which Branch Am I Working On?</h1>
+<div style="text-align: center;">
+<p><img src="images/branch_head.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1><span class="caps">HEAD</span></h1>
+<ul>
+	<li><code>HEAD</code> is the name of the branch that you&#8217;re working on.</li>
+	<li>Now you have a complete understanding of the Git object model!</li>
+</ul>
+</div>
+<div class="slide"><h1>Git Object Model</h1>
+<div style="text-align: center;">
+<p><img src="images/git-full-model.png" style="text-align:center;height:70%;" alt="" /></p>
+</div>
+</div>
+<div class="slide"><h1>Branch Discipline</h1>
+<p>There is no single solution. I like this one.</p>
+<p>Integration vs feature branches</p>
+<ul>
+	<li>Integration branches &#8220;collect&#8221; topic branches</li>
+	<li>No commits on integration branches</li>
+	<li>A feature branches off an integration branch</li>
+	<li>Feature branches are merged back into integration branches</li>
+	<li>No merging into integration branches</li>
+</ul>
+</div>
+<div class="slide"><h1>Branch Discipline</h1>
+<p>Two special integration branches for Web development.</p>
+<ul>
+	<li><code>master</code>, a.k.a. <em>mainline</em>: all features are branched off and merged into it</li>
+	<li><code>prod</code>  is what&#8217;s running on production</li>
+</ul>
+</div>
+<div class="slide"><h1>Branching Workflow</h1>
+<ol>
+	<li>Create a feature branch</li>
+	<li>Work on the feature</li>
+	<li>A horrible bug shows up in prod, drop everything you&#8217;re doing</li>
+	<li>Fix the bug</li>
+	<li>Finish the feature</li>
+	<li>Merge the feature branch</li>
+</ol>
+</div>
+<div class="slide"><h1>Creating a Feature Branch</h1>
+<ol>
+	<li>Create a feature branch
+	<ul>
+		<li><code>git checkout -b awesomeness</code></li>
+	</ul></li>
+	<li>Work on the feature
+	<ul>
+		<li><em>magic</em> + <code>git commit -m "Awesome footer."</code></li>
+	</ul></li>
+	<li>A horrible bug shows up in prod, drop everything you&#8217;re doing
+	<ul>
+		<li><code>git commit -a -m "Saving work, must fix bug."</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Stop and Fix the Bug</h1>
+<ol>
+	<li>Get back on <code>master</code>, must branch off of it
+	<ul>
+		<li><code>git checkout master</code></li>
+	</ul></li>
+	<li>Create bug branch
+	<ul>
+		<li><code>git checkout -b bugfix</code></li>
+	</ul></li>
+	<li>Develop the bugfix
+	<ul>
+		<li><em>magic</em> + <code>git commit -m "Fixed bug. Whew."</code></li>
+	</ul></li>
+	<li>Merge the bugfix into <code>master</code></li>
+	<li>Delete the bugfix branch</li>
+</ol>
+</div>
+<div class="slide"><h1>Stop and Fix the Bug</h1>
+<ol>
+	<li>Get back on <code>master</code>, must branch off of it</li>
+	<li>Create bug branch</li>
+	<li>Develop the bugfix</li>
+	<li>Merge the bugfix into <code>master</code>
+	<ul>
+		<li><code>git checkout master</code></li>
+		<li><code>git merge bugfix</code></li>
+	</ul></li>
+	<li>Delete the bugfix branch
+	<ul>
+		<li><code>git branch -d bugfix</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Finish the Feature</h1>
+<ol>
+	<li>Get bach to feature branch</li>
+	<li>Do more developing</li>
+	<li>Merge the feature into <code>master</code></li>
+	<li>Delete the feature branch</li>
+</ol>
+<p>Can you write down the commands before seeing the next slide?</p>
+</div>
+<div class="slide"><h1>Finish the Feature</h1>
+<ol>
+	<li>Get back to feature branch
+	<ul>
+		<li><code>git checkout awesomeness</code></li>
+	</ul></li>
+	<li>Do more developing
+	<ul>
+		<li><em>magic</em> + <code>git commit -m "Prepare for awesomeness."</code></li>
+	</ul></li>
+	<li>Merge the feature into <code>master</code>
+	<ul>
+		<li><code>git checkout master</code></li>
+		<li><code>git merge awesomeness</code></li>
+	</ul></li>
+	<li>Delete the feature branch
+	<ul>
+		<li><code>git branch -d awesomeness</code></li>
+	</ul></li>
+</ol></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>

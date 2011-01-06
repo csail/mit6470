@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Version Control with Git and GitHub</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 05, 2011" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2011 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>Collaboration Workflow</h1>
+</div>
+<div class="slide"><h1>Centralized Version Control</h1>
+<ul>
+	<li>Central server stores authoritative repository</li>
+	<li>Pro: linear history that everyone agrees on</li>
+	<li>Pro: revision numbers are short, sequential numbers &#8594; can be used for versioning</li>
+	<li>Con: server down &#8594; can&#8217;t collaborate</li>
+	<li>Examples: Subversion (<span class="caps">SVN</span>), <span class="caps">CVS</span>, Perforce</li>
+</ul>
+</div>
+<div class="slide"><h1>Distributed Version Control</h1>
+<ul>
+	<li>Everyone has a repository replica</li>
+	<li>Examples: Git, Mercurial (hg), <span class="caps">DARCS</span></li>
+	<li>Pro: no single point of failure</li>
+	<li>Pro: can work without Internet access</li>
+	<li>Con: history isn&#8217;t linear</li>
+	<li>Con: revision numbers are long monstruosities</li>
+</ul>
+</div>
+<div class="slide"><h1>Git is Distributed</h1>
+<ul>
+	<li>Everyone has a repository replica</li>
+	<li>The replicas that you talk to are named <code>remotes</code></li>
+	<li>The main &#8220;remote&#8221; is named <code>origin</code></li>
+</ul>
+</div>
+<div class="slide"><h1>Managing Remote Repositories</h1>
+<ol>
+	<li>Link up to a GitHub repository
+	<ul>
+		<li><code>git remote add origin git@github.com:pwnall/6470_lecture.git</code></li>
+	</ul></li>
+	<li>Look at all the remotes
+	<ul>
+		<li><code>git remote</code></li>
+	</ul></li>
+	<li>Remove a link
+	<ul>
+		<li><code>git remote rm origin</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Remote Repositories</h1>
+<p>2 ways to create a repository</p>
+<ol>
+	<li><code>git init</code>
+	<ul>
+		<li>Used this one before</li>
+	</ul></li>
+	<li><code>git clone git@github.com:pwnall/6470_lecture.git</code>
+	<ul>
+		<li>Copies a remote repository</li>
+		<li>Links the remote as <code>origin</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Exchanging Data with a Remote Repository</h1>
+<ul>
+	<li>Repositories exchange branches.</li>
+	<li>Branches take the rest of the object graph with them.</li>
+</ul>
+</div>
+<div class="slide"><h1>Exchanging Data with a Remote Repository</h1>
+<ul>
+	<li>Repositories exchange branches.</li>
+	<li>Branches take the rest of the object graph with them.</li>
+</ul>
+<ol>
+	<li>Send commits on all your local branches to a remote
+	<ul>
+		<li><code>git push</code>, which is a shortcut for</li>
+		<li><code>git push origin</code></li>
+	</ul></li>
+	<li>Sends commits on one of your local branches to a remote
+	<ul>
+		<li><code>git push origin master</code></li>
+		<li>You need this command if the branch doesn&#8217;t exist on the remote</li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Sidenote: GitHub Wants <span class="caps">SSH</span> Keys</h1>
+<ul>
+	<li>Go to <a href="http://help.github.com">help.github.com</a></li>
+	<li>Click on the <a href="http://help.github.com/key-setup-redirect">Generating <span class="caps">SSH</span> Keys</a> link</li>
+</ul>
+</div>
+<div class="slide"><h1>Exchanging Data with a Remote Repository</h1>
+<ul>
+	<li>Repositories exchange branches.</li>
+	<li>Branches take the rest of the object graph with them.</li>
+</ul>
+<ol>
+	<li>Receive commits from a remote branch to your branch
+	<ul>
+		<li><code>git pull origin master</code></li>
+	</ul></li>
+	<li>Receive commits from the remote branch matching your local branch
+	<ul>
+		<li><code>git pull origin</code></li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Exchanging Data with a Remote Repository</h1>
+<ul>
+	<li>Repositories exchange branches.</li>
+	<li>Branches take the rest of the object graph with them.</li>
+</ul>
+<p>Creating a local copy of a remote branch (new <code>git</code>)</p>
+<ul>
+	<li><code>git checkout bugfix</code></li>
+</ul>
+<p>Creating a local copy of a remote branch (old <code>git</code>)</p>
+<ul>
+	<li><code>git checkout origin/bugfix</code></li>
+	<li><code>git checkout -b bugfix</code></li>
+</ul>
+</div>
+<div class="slide"><h1>Exchanging Data with a Remote Repository</h1>
+<ul>
+	<li>Repositories exchange branches.</li>
+	<li>Branches take the rest of the object graph with them.</li>
+</ul>
+<p>Every branch in a remote repository is available as</p>
+<pre><code>remote-name/branch-name</code></pre>
+</div>
+<div class="slide"><h1>Exchanging Data with a Remote Repository</h1>
+<ul>
+	<li>Repositories exchange branches.</li>
+	<li>Branches take the rest of the object graph with them.</li>
+</ul>
+<p>Every branch in a remote repository is available as</p>
+<pre><code>remote-name/branch-name</code></pre>
+<p><code>git pull origin master</code> is actually</p>
+<ul>
+	<li><code>git fetch origin</code> gets all branches in the <code>origin</code> remote</li>
+	<li><code>git merge origin/master</code></li>
+</ul>
+</div>
+<div class="slide"><h1>Github</h1>
+<p><a href="http://github.com">Github</a> is awesome.</p>
+<ul>
+	<li>Code review</li>
+	<li>Pull requests</li>
+	<li>Open-Source projects
+	<ul>
+		<li>Ruby on Rails</li>
+		<li>Android</li>
+	</ul></li>
+	<li>Many more things that make life easy</li>
+</ul>
+</div>
+<div class="slide"><h1>Github</h1>
+<p>If you want a private Github repository</p>
+<ol>
+	<li>Have all your team members make Github accounts</li>
+	<li>Send <strong>one</strong> e-mail to 6.470-staff@mit.edu with <strong>all</strong> your team members&#8217; Github usernames</li>
+</ol></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>
