@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Security in Web Applications</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 06, 2010" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2010 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>Application Vulnerabilities</h1>
+<p>Application vulnerabilities can be detected by examining your application&#8217;s code, without any regard to the other pieces of software that it interacts with.</p>
+<p><strong style="font-size: 3em; ;">http://bit.ly/h5kVdb</strong></p>
+</div>
+<div class="slide"><h1>Plaintext Passwords I</h1>
+<form action="/login.php" method="GET">
+User: <input name="username" type="text" value="1337" />
+Password: <input name="password" type="text" value="haxx0r"/>
+<input type="submit" value="Log in" />
+</form>
+<ul>
+	<li>Input Not Masked</li>
+	<li>Fix: always use <code>type="password"</code> for passwords, SSNs, etc</li>
+</ul>
+</div>
+<div class="slide"><h1>Plaintext Passwords II</h1>
+<form action="/login.php" method="GET">
+User: <input name="username" type="text" value="1337" />
+Password: <input name="password" type="password" value="haxxor"/>
+<input type="submit" value="Log in" />
+</form>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;form action="/login.php" method="GET"&gt;
+  User: &lt;input name="username" type="text" value="1337" /&gt;
+  Password: &lt;input name="password" type="password" value="haxxor"/&gt;
+  &lt;input type="submit" value="Log in" /&gt;
+&lt;/form&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/passwords_2.html">code/passwords_2.html</a></div>
+</div>
+<div class="slide"><h1>Plaintext Passwords II</h1>
+<form action="/login.php" method="GET">
+User: <input name="username" type="text" value="1337" />
+Password: <input name="password" type="password" value="haxxor"/>
+<input type="submit" value="Log in" />
+</form>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;form action="/login.php" method="GET"&gt;
+  User: &lt;input name="username" type="text" value="1337" /&gt;
+  Password: &lt;input name="password" type="password" value="haxxor"/&gt;
+  &lt;input type="submit" value="Log in" /&gt;
+&lt;/form&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/passwords_2.html">code/passwords_2.html</a></div>
+<ul>
+	<li>Password will be shown in address bar</li>
+	<li>Fix: never use <code>GET</code> in login forms</li>
+</ul>
+</div>
+<div class="slide"><h1>Plaintext Passwords <span class="caps">III</span></h1>
+<form action="/login.php" method="POST">
+User: <input name="username" type="text" value="1337" />
+Password: <input name="password" type="password" value="haxxor"/>
+<input type="submit" value="Log in" />
+</form>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;form action="/login.php" method="POST"&gt;
+  User: &lt;input name="username" type="text" value="1337" /&gt;
+  Password: &lt;input name="password" type="password" value="haxxor"/&gt;
+  &lt;input type="submit" value="Log in" /&gt;
+&lt;/form&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/passwords_3.html">code/passwords_3.html</a></div>
+</div>
+<div class="slide"><h1>Plaintext Passwords <span class="caps">III</span></h1>
+<form action="/login.php" method="POST">
+User: <input name="username" type="text" value="1337" />
+Password: <input name="password" type="password" value="haxxor"/>
+<input type="submit" value="Log in" />
+</form>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;form action="/login.php" method="POST"&gt;
+  User: &lt;input name="username" type="text" value="1337" /&gt;
+  Password: &lt;input name="password" type="password" value="haxxor"/&gt;
+  &lt;input type="submit" value="Log in" /&gt;
+&lt;/form&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/passwords_3.html">code/passwords_3.html</a></div>
+<ul>
+	<li>Mistyped password available in <span class="caps">HTML</span> source</li>
+</ul>
+<ul>
+	<li>Fix: <em>never</em> echo a user&#8217;s password</li>
+	<li>Never means <em>never</em>: <span class="caps">HTML</span>, e-mail, <span class="caps">SMS</span></li>
+</ul>
+</div>
+<div class="slide"><h1>Plaintext Passwords IV</h1>
+<p>Plaintext passwords in database</p>
+<ul>
+	<li>A database leak compromises user accounts on other sites</li>
+	<li>Any disgruntled admin or developer can lead to a massive PR disaster</li>
+</ul>
+<p>Hashed but unsalted passwords</p>
+<ul>
+	<li>Almost equivalent to plaintext passwords</li>
+	<li>Rainbow tables: huge databases (think <span class="caps">DVD</span>-BD) with hashes for probable passwords</li>
+</ul>
+</div>
+<div class="slide"><h1>Plaintext Passwords IV Fix</h1>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">	    $salt = substr(md5(rand()), 0, 4);
+	    $hashedpassword = md5($password.$salt);
+	    $sql = "INSERT INTO Users (Username, Password, Salt) " .
+	           "VALUES ('" . addslashes($username) . "', " .
+	           "'$hashedpassword', '$salt')";
+	    $db-&gt;executeQuery($sql);
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_fixed/svc-users.php">code/zoobar_fixed/svc-users.php</a></div>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">    $sql = "SELECT Salt FROM Users WHERE Username = '" .
+           addslashes($username) . "'";
+    $rs = $db-&gt;executeQuery($sql);
+    $salt = $rs-&gt;getValueByNr(0,0);
+    $hashedpassword = md5($password.$salt);
+    $sql = "SELECT * FROM Users WHERE " .
+           "Username = '" . addslashes($username) . "' AND " .
+           "Password = '$hashedpassword'";
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_fixed/svc-users.php">code/zoobar_fixed/svc-users.php</a></div>
+</div>
+<div class="slide"><h1>Plaintext Passwords V</h1>
+<ul>
+	<li>Some frameworks (e.g. Rails) have automatic logging.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="js:nogutter:nocontrols">Processing SessionsController#create to json (for 96.39.52.46 at 2010-01-06 01:03:52) [POST]
+  Parameters: {"name"=&gt;"365c1e0d07b783297355e30022ea901d1dff96333b34929eb3650632bea73304", "device"=&gt;{"hardware_model"=&gt;"iPod2,1", "unique_id"=&gt;"8186676124d4e588024ea29426f29d8aabb00858", "app_provisioning"=&gt;"H", "app_version"=&gt;"1.9", "app_id"=&gt;"us.costan.StockPlay", "user_id"=&gt;"0", "os_name"=&gt;"iPhone OS", "os_version"=&gt;"3.0", "model_id"=&gt;"0", "app_push_token"=&gt;"316e42e781d7cfb6f3de7ff2bab48e654c2d81da53d263476f8c66ca3253fc91"}, "format"=&gt;"json", "action"=&gt;"create", "controller"=&gt;"sessions", "app_sig"=&gt;"8f724fbfaf34772032412c5b638df009314c88bc6e6f245796cceb9c6db499f3", "password"=&gt;"[FILTERED]"}
+Completed in 45ms (View: 1, DB: 28) | 200 OK [http://istockplay.com/sessions.json]</pre></div>
+<ul>
+	<li>The password is <code>[FILTERTED]</code>. Are you flitering your logs?</li>
+</ul>
+</div>
+<div class="slide"><h1>No Access Control</h1>
+<p>Painfully obvious URLs.</p>
+<ul>
+	<li>Saw <code>/show_message.php?id=5</code>, let&#8217;s try <code>/show_message.php?id=6</code></li>
+	<li>Saw <code>/users/1</code> and <code>/users/1/edit</code>, let&#8217;s try <code>/users/1/delete</code> (<span class="caps">REST</span> URLs)</li>
+	<li>Let&#8217;s try <code>/admin.php</code>, <code>/info.php</code>, <code>/status.php</code>, <code>/root.php</code></li>
+</ul>
+<p>&#8220;Secret&#8221; URLs.</p>
+<ul>
+	<li>Used for administrative pages, poor man&#8217;s <span class="caps">ACL</span>.</li>
+	<li>Can (and will) be leaked during presentations</li>
+</ul>
+</div>
+<div class="slide"><h1>No Access Control: Fix</h1>
+<p>Autentication</p>
+<ul>
+	<li><span class="caps">HTTP</span> Basic is a quick way for protecting admin pages</li>
+	<li>Authentication: <a href="http://openid.net/">OpenID</a> gives you users, minus the hassles of an account system</li>
+</ul>
+<p>Authorization</p>
+<ul>
+	<li>Use <span class="caps">HTTP</span> <code>GET</code> <em>only</em> for idempotent requests. <code>GET</code> authorizes proxies to cache pages and leads to accidental refreshes.</li>
+	<li>For every <span class="caps">HTTP</span> request, think about who is authorized to see the response.</li>
+</ul>
+</div>
+<div class="slide"><h1>Trusting Hidden Fields</h1>
+<p>Your total is $530.</p>
+<form action="/checkout.php" method="POST">
+<p>Credit card number: <input type="text" name="cc_no" />	<br />
+  <input type="submit" value="Place Order" /><br />
+  <input type="hidden" name="products" value="225,5331,7794" /><br />
+  <input type="hidden" name="price" value="530" /></p>
+</form>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;p&gt;Your total is $530.&lt;/p&gt;
+&lt;form action="/checkout.php" method="POST"&gt;
+	Credit card number: &lt;input type="text" name="cc_no" /&gt;	
+  &lt;input type="submit" value="Place Order" /&gt;
+  &lt;input type="hidden" name="products" value="225,5331,7794" /&gt;
+  &lt;input type="hidden" name="price" value="530" /&gt;
+&lt;/form&gt;</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/hidden_input.html">code/hidden_input.html</a></div>
+<ul>
+	<li>Field editing is trivial &#8211; <a href="https://addons.mozilla.org/en-US/firefox/addon/1843">Firebug</a></li>
+</ul>
+</div>
+<div class="slide"><h1>Trusting Cookies</h1>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">    $result = $this-&gt;db-&gt;executeQuery($sql);
+    if ( $result-&gt;next() ) {
+    	$this-&gt;username = $username;
+      setcookie($this-&gt;cookieName, $this-&gt;username, time() + 31104000);
+      return true;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar/includes/auth.php">code/zoobar/includes/auth.php</a></div>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">    if ( isset($_COOKIE[$this-&gt;cookieName]) ) {
+	    $username = $_COOKIE[$this-&gt;cookieName];
+	    $sql = "SELECT * FROM Person WHERE " .
+      	     "(Username = '" . addslashes($username) . "') ";
+	    $rs = $this-&gt;db-&gt;executeQuery($sql);
+	    if ( $rs-&gt;next() ) {
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar/includes/auth.php">code/zoobar/includes/auth.php</a></div>
+<ul>
+	<li>Cookie editing is trivial &#8211; <a href="https://addons.mozilla.org/en-US/firefox/addon/6683">Firecookie</a> (Firebug plug-in)</li>
+</ul>
+</div>
+<div class="slide"><h1>Trusting Cookies: Fix I</h1>
+<ul>
+	<li>Create a random token on user logon.</li>
+	<li>Store the token in the database and in a cookie.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">      $token = md5($result-&gt;getCurrentValueByName("Password").mt_rand());
+      
+      $sql = "UPDATE Users SET Token = '$token' " .
+             "WHERE Username='" . addslashes($username) . "'";
+      $db-&gt;executeQuery($sql);
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_fixed/svc-users.php">code/zoobar_fixed/svc-users.php</a></div>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">      $arr = array($username, $token);
+      $cookieData = base64_encode(serialize($arr));
+      setcookie($this-&gt;cookieName, $cookieData, time() + 31104000);
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_fixed/includes/auth.php">code/zoobar_fixed/includes/auth.php</a></div>
+</div>
+<div class="slide"><h1>Trusting Cookies: Fix I</h1>
+<ul>
+	<li>Check the cookie against the token in the database.</li>
+	<li>Bonus: old cookies cannot be used.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">    if ( isset($_COOKIE[$this-&gt;cookieName]) ) {
+	    $arr = unserialize(base64_decode($_COOKIE[$this-&gt;cookieName]));
+	    list($username, $token) = $arr;
+	    if (!$username or !$token) {
+	      return;
+	    }
+      return $this-&gt;_checkToken($username, $token);
+    }
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_fixed/includes/auth.php">code/zoobar_fixed/includes/auth.php</a></div>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">    $sql = "SELECT * FROM Users WHERE " .
+           "(Username = '" . addslashes($username) . "') " .
+           "AND (Token = '" . addslashes($token) . "')";
+    $rs = $db-&gt;executeQuery($sql);
+    if ( $rs-&gt;next() ) {
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_fixed/svc-users.php">code/zoobar_fixed/svc-users.php</a></div>
+</div>
+<div class="slide"><h1>Trusting Cookies: Fix II</h1>
+<p>Use signed cookies.</p>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols"># Basic idea, not full implementation.
+set_cookie($cookie_name, md5($secret . $value) . $value, time() + 31104000);</pre></div>
+<ul>
+	<li>Scales better: no need to hit the database to check cookies.</li>
+	<li>Harder to secure: everyone depends on one secret.</li>
+	<li>Include an expiration date in the signature.</li>
+	<li>Rails, Django implement signed cookies by default.</li>
+</ul>
+</div>
+<div class="slide"><h1>Logic Flaws</h1>
+<p>What&#8217;s wrong here?</p>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">    $zoobars = (int) $_POST['zoobars'];
+    $sql = "SELECT Zoobars FROM Person WHERE Username='" .
+           addslashes($user-&gt;username) . "'";
+    $rs = $db-&gt;executeQuery($sql);
+    $sender_balance = $rs-&gt;getValueByNr(0,0) - $zoobars;
+
+    $sql = "SELECT Username, Zoobars FROM Person WHERE Username='" .
+	   addslashes($recipient) . "'";
+    $rs = $db-&gt;executeQuery($sql);
+    $recipient_exists = $rs-&gt;getValueByNr(0,0);
+    $recipient_balance = $rs-&gt;getValueByNr(0,1) + $zoobars;
+
+    if($sender_balance &gt;= 0 &amp;&amp; $recipient_balance &gt;= 0 &amp;&amp; $recipient_exists) {
+    	$sql = "UPDATE Person SET Zoobars = $sender_balance " .
+             "WHERE Username='" . addslashes($user-&gt;username) . "'";
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar/transfer.php">code/zoobar/transfer.php</a></div>
+</div>
+<div class="slide"><h1>Logic Flaws</h1>
+<ul>
+	<li>The code accepts a negative ammount of zoobars. Donating becomes stealing!</li>
+</ul>
+<p>Fix:</p>
+<ul>
+	<li>Double-check the code where mistakes are expensive</li>
+	<li>Good examples: economies, reputation systems (ratings), voting</li>
+</ul></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>

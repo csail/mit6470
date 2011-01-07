@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Security in Web Applications</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 06, 2010" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2010 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>Web 101 For Developers</h1>
+<p>1. <span class="caps">HTTP</span><br />
+2. Cookies<br />
+3. Content<br />
+4. Same-Origin Policy</p>
+</div>
+<div class="slide"><h1><span class="caps">HTTP</span> Protocol</h1>
+<p><span class="caps">HTTP</span> 1.0</p>
+<p>1. Client opens <span class="caps">TCP</span> connection to server<br />
+1. Client sends <span class="caps">HTTP</span> request<br />
+1. Server sends <span class="caps">HTTP</span> response<br />
+1. Server closes <span class="caps">TCP</span> connection<br />
+1. Client closes <span class="caps">TCP</span> connection</p>
+<p><span class="caps">HTTP</span> 1.1</p>
+<ul>
+	<li>Optimization: use the same <span class="caps">TCP</span> connection for subsequent requests-response pairs</li>
+	<li>Still stateless: response determined by last request</li>
+</ul>
+</div>
+<div class="slide"><h1><span class="caps">HTTP</span> Protocol: Simple Request Example</h1>
+<div class="code-normal"><pre name="code" class="ruby:nogutter:nocontrols">GET /zoobar/index.php HTTP/1.1
+Host: localhost
+User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2.3) Gecko/20100415 Ubuntu/10.04 (lucid) Firefox/3.6.3
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 115
+Connection: keep-alive
+Cache-Control: max-age=0
+
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/http_request.http">code/http_request.http</a></div>
+</div>
+<div class="slide"><h1><span class="caps">HTTP</span> Protocol: Request</h1>
+<ol>
+	<li>Verb (<span class="caps">GET</span>, <span class="caps">POST</span>, <span class="caps">PUT</span>, <span class="caps">DELETE</span>)</li>
+	<li>Address (part of the <span class="caps">URL</span>)</li>
+	<li>Request Headers</li>
+	<li>Data</li>
+</ol>
+</div>
+<div class="slide"><h1><span class="caps">HTTP</span> Protocol: Complex Request Example</h1>
+<div class="code-normal"><pre name="code" class="ruby:nogutter:nocontrols">POST /zoobar/index.php HTTP/1.1
+Host: localhost
+User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2.3) Gecko/20100415 Ubuntu/10.04 (lucid) Firefox/3.6.3
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 115
+Connection: keep-alive
+Referer: http://localhost/zoobar/index.php
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 59
+
+login_username=boom&amp;login_password=boom&amp;submit_login=Log+in
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/http_request_2.http">code/http_request_2.http</a></div>
+</div>
+<div class="slide"><h1><span class="caps">HTTP</span> Protocol: Response</h1>
+<ol>
+	<li>Status code and text (200 OK, 404 Not Found, &#8230;)</li>
+	<li>Response headers</li>
+	<li>Response data</li>
+</ol>
+</div>
+<div class="slide"><h1><span class="caps">HTTP</span> Protocol: Response Example</h1>
+<div class="code-normal"><pre name="code" class="ruby:nogutter:nocontrols">HTTP/1.1 200 OK
+Date: Wed, 21 Apr 2010 10:26:09 GMT
+Server: Apache/2.2.14 (Ubuntu)
+X-Powered-By: PHP/5.3.2-1ubuntu4
+Cache-Control: private
+Set-Cookie: ZoobarLogin=boom; expires=Sat, 16-Apr-2011 10:26:09 GMT
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 546
+Keep-Alive: timeout=15, max=100
+Connection: Keep-Alive
+Content-Type: text/html
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;link rel="stylesheet" type="text/css" href="zoobar.css"&gt;
+&lt;title&gt;Login - Zoobar Foundation&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- truncated --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/http_response.http">code/http_response.http</a></div>
+</div>
+<div class="slide"><h1>Cookies</h1>
+<p>Concepts</p>
+<ul>
+	<li>Add state to <span class="caps">HTTP</span>, which is stateless</li>
+	<li>Each <span class="caps">DNS</span> domain gets a cookie jar</li>
+	<li>Cookie jar: key-value pairs, max size 4kb</li>
+</ul>
+<p>Protocol</p>
+<ul>
+	<li><span class="caps">HTTP</span> response header sets cookies</li>
+	<li>Subsequent <span class="caps">HTTP</span> request headers include cookie jar</li>
+</ul>
+</div>
+<div class="slide"><h1>Content</h1>
+<ul>
+	<li>Web page = <span class="caps">HTML</span> file + references</li>
+	<li>References
+	<ul>
+		<li>Presentation (style): <span class="caps">CSS</span></li>
+		<li>Multimedia: image, video, audio</li>
+		<li>Behavior (scripts): JavaScript</li>
+		<li>Behavior (plug-ins): Flash etc.</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Content Example</h1>
+<div class="code-normal"><pre name="code" class="html:nogutter:nocontrols">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;link rel="stylesheet" type="text/css" href="zoobar.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;a href="/index.php?action=logout"&gt;Log out boom&lt;/a&gt;
+
+&lt;form method="POST" action="/zoobar/transfer.php"&gt;
+&lt;p&gt;Send &lt;input name="zoobars"&gt; zoobars&lt;/p&gt;
+&lt;p&gt;to &lt;input name="recipient"&gt;&lt;/p&gt;
+&lt;input type=submit name=submission value="Send"&gt;
+&lt;/form&gt;
+
+&lt;script type="text/javascript" src="zoobars.js.php"&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace370/security_in_webapps_slides/code/html_page.html">code/html_page.html</a></div></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>
