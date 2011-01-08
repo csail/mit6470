@@ -1,0 +1,342 @@
+<html>
+<head>
+<title> 6.470 PHP </title>
+<script type="text/javascript">
+
+//this sets the HTML of an example iframe.  The iframe will have id "id" and the src textarea will have 
+//id=id+"_src"
+function displayHTML(id){
+	src= document.getElementById(id+"_src").value;
+	
+	src= 'data:text/html;charset=utf-8,'+escape(src);
+	document.getElementById(id).src = src;
+}
+
+
+
+</script>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+}
+#container{
+	position:absolute;
+	width: 800px;
+	padding: 20px;
+}
+.header{
+	position: absolute;
+	left: 230px;
+	top: 30px;
+	font-size:26pt;
+	font-family: "Trebuchet MS", "Helvetica", "Arial", "monotype";
+}
+
+.big-picture{
+	width: 600px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px black;
+	background-color: ddd;
+}
+
+.topic{
+    margin-top: 10px;
+	font-size:18pt;
+	font-weight: bold;
+	font-family: "Trebuchet MS", "Helvetica", "Arial", "monotype";
+}
+.code-trial{
+	width: 800px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px black;
+	background-color: 33ccff;
+}
+.code_area{
+	width: 100%; 
+	border: 0;
+	cellpadding: 3px; 	
+	cellspacing: 3px;
+}
+.code_input, .result_output {
+	background-color:#FFFFFF;
+	border:1px solid gray;
+	height:300px;
+	width:100%;
+}
+
+.section{
+    margin-left: 30px
+}
+.tables, .actors, .movies, .table-example, .explanation{
+	display: inline-table;
+}
+
+.explanation{
+	margin-left: 30px;
+	color: red;
+}
+.actors, .movies{
+	margin: 10px;
+}
+
+.js{
+	background-color: #99ccff;
+	border: 1px solid black;
+	margin: 4px;
+	padding: 4px;
+	font-family: "courier", "monotype";
+}
+#getComments{
+	font-family: "courier", "monotype";
+	background-color: #ddd;
+	padding-left: 10px;
+	border: 1px solid black;
+	margin-top: 10px;
+
+}
+#includeJSON{
+	background-color: #99ff99;
+}
+#dbconnection{
+	background-color: #99ffff;
+}
+
+#while{
+	background-color: #ffff99;
+}
+</style>
+</head>
+<body>
+
+<div id="container">
+	
+
+<div class= "intro">Written by Lydia Chilton for 6.470, IAP 2009.
+</div>
+
+<div class="topic">PHP Essentials</div>
+<div  class="section">
+PHP will complain bitterly if you don't start every variable with a $ or don't end every line of execution with 
+a semicolon.
+
+<div class="js">
+$a= 25;<br>
+echo $a*2;<br>
+</div>
+
+<div class="js">
+$a= 1981;<br>
+echo "SELECT * FROM movies WHERE year = $a";<br>
+</div>
+
+<br>
+Arithmetic operators to be aware of: (exactly what you would expect)<br>
++,-,*,/,%,++ (increment), --(decrement)
+<div class="js">
+$a=0;<br>
+$a++;<br>
+++$a;<br>
+echo $a;<br>
+</div>
+<br>
+Assignment operators to be aware of: 
++=. -=, *=, /= %=
+<br><br>
+
+Strings can be encased in double or single quotes.
+<div class="js">
+//concatenate is done with a . <br>
+$a= '6.470';<br>
+echo $a." 2009";<br>
+</div>
+<br>
+Comparison operators
+<div class="js">
+// == means "equal to" <br>
+echo (5==5);<br>
+echo (5==5)==true;<br>
+echo (4==5)==false;<br>
+</div>
+
+</div>
+
+
+<div class="topic">Control Structures</div>
+<div class="section">
+If statements
+<div class="js">
+if("hi"=="h"."i"){<br>
+echo "== compares strings";<br>
+}<br>
+<br>
+if(false){<br>
+<br>
+}else{<br>
+echo "&lt;br&gt; here";<br>
+}<br>
+</div>
+<br>
+
+For loops
+<div class="js">
+for($i =0; $i&lt;5; $i++){<br>
+print $i;<br>
+}<br>
+</div>
+<br>
+
+While loops
+<div class="js">
+$i=0;<br>
+while($i&lt;5){<br>
+$i++;<br>
+}<br>
+echo $i;<br>
+</div>
+</div>
+
+<div class="topic">Arrays</div>
+<div class="section">
+There are two ways to instantiate an array: <b>a = new Array()</b> and <b>a=[]</b>
+<div class="js">
+$a = array();<br>
+$a[] = "foo";<br>
+$a[] = "bar";<br>
+$a[] = "baz";<br>
+<br>
+foreach ($a as $elt)<br>
+{<br>
+echo $elt." ";<br>
+}<br>
+</div>
+
+</div>
+
+<div class="topic">Functions</div>
+<div class="section">
+
+<div class="js">
+function foo($x){<br>
+    return $x*$x;<br>
+}<br>
+<br>
+echo foo(5);<br>
+</div>
+</div>
+
+<div class="topic">Objects</div>
+<div class="section">
+
+<div class="js">
+$entry = new stdclass();  <br>  
+<br>
+    $entry ->username = 'lydia';<br>
+     $entry ->time = '4:38 AM';<br>
+     $entry ->comment = 'sleepy';<br>
+<br>
+echo $entry->comment;<br>
+</div>
+<br>
+
+</div>
+
+
+<div class="topic">Example: getComments.php</div>
+<div id="getComments" class="section">
+
+<br>
+&lt;?php<br>
+<br>
+<div id="includeJSON">
+//<b>Include JSON for encoding and decoding</b><br>
+	require_once '../json/JSON.php';<br>
+	$json= new Services_JSON();
+</div>
+
+<br>
+<div id="dbconnection">
+//<b>start the database connection</b><br>
+	$dbhost='sql.mit.edu';<br>
+	$dbuser='6.470';<br>
+	$dbpass='password';<br>
+<br>
+	$conn=mysql_connect($dbhost, $dbuser, $dbpass) or die ('Error connecting to mysql');<br>
+<br>
+	$dbname='6470+babynames';<br>
+	mysql_select_db($dbname) or die ('Error, could not access database '.$dbname);<br>
+<br>
+</div>
+
+//<b>Create an array.  This will eventually be encoded and returned</b><br>
+$returnObject = array();<br>
+<br>
+//<b>Write a string for the SQL query you want to perform</b><br>
+$query1 = "SELECT * FROM comments ORDER BY time DESC LIMIT 10;";<br>
+<br>
+//<b>Execute that query</b><br>
+$result1= mysql_query($query1) or die('Error performing query1 on getComments.php');<br>
+<br>
+//<b>To examine the results, you have to call mysql_fetch_row($result1)</b><br>
+//<b>This will fetch one row at a time, and is iterable.</b><br>
+<br>
+<div id="while">
+while($row = mysql_fetch_row($result1)){<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;	//<b>For each row, we want to create an object to represent it and append it to the array</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;	<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//<b>create a new object</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;	$entry = new stdclass();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;	<br>
+&nbsp;&nbsp;&nbsp;&nbsp;	//<b>populate the fields of the object with it's column entries</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;	$entry ->username = $row[0];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;	$entry ->time = $row[1];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;	$entry ->comment = $row[2];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;	<br>
+&nbsp;&nbsp;&nbsp;&nbsp;	//<b>append the object to the array</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;	$returnObject[]= $entry;<br>
+}
+</div>
+<br>
+//<b>encode the array and echo it (or print it)</b><br>
+$output = $json->encode($returnObject);<br>
+echo $output;<br>
+?><br>
+
+</div>
+
+<div class="topic">Arrays</div>
+<div class="section">
+There are a few other special PHP entities to know about. First is $_GET and $_POST variables.<br>
+When you call a PHP script on the server, you often will send it variables along with the request.  There are two
+types of variables:
+<ul>
+<li>
+<b>$_GET['varname']</b> will fetch variables that are sent in the URL. Look at google queryies for an example
+</li>
+<li>
+<b>$_POST['varname']</b> will fetch variables that you sent with a post request (this will not appear in the URL)
+</li>
+</ul>
+
+AJAX queris always use $_POST requests, because you aren't going to a new page and so you won't see a new URL.
+We'll see examples of PHP files that use data from a post although getComments.php does not.
+
+<br><br>
+Another really important variable is $_SESSION['varname'].  If you want maintain user's data to across their session
+(while their browser is open) - as is often done with a username and perhaps the items they've put
+in their shopping cart, store that information in $_SESSION. For example,
+<br><br>
+$_SESSION['username'] = 'lydia'<br>
+$_SESSION['role'] = 'chairperson'<br>
+<br>
+if you are using sessions, you have to be careful to start every PHP page with a call to the PHP
+function <b>session_start()</b>.
+<br><br>
+</div>
+
+</div>
+</body>
+</html>

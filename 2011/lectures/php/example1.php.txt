@@ -1,0 +1,21 @@
+<?php
+$start_time = microtime();
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Time to Generate</title>
+</head>
+<body>
+<?php
+
+$end_time = microtime();
+$time = (int)(($end_time - $start_time)*1E6);
+echo "Page generated in $time microseconds.";
+?>
+</body>
+</html>
