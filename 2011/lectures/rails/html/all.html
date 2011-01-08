@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Ruby and Rails</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 06, 2010" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2010 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>Ruby and Rails</h1>
+<blockquote>
+<p>Victor Costan</p>
+</blockquote>
+</div>
+<div class="slide"><h1>Contents</h1>
+<div style="font-size: 70%">
+<ul>
+	<li>Introduction</li>
+</ul>
+<ul>
+	<li>Ruby: the Programming Language</li>
+</ul>
+<ul>
+	<li>Rails: the Web Application Framework</li>
+</ul>
+<ul>
+	<li>Wrap-Up</li>
+</ul>
+</div>
+</div>
+<div class="title slide">
+<h1>Introduction</h1>
+</div>
+<div class="slide"><h1>Your Instructors</h1>
+<ul>
+	<li>Victor Costan</li>
+</ul>
+</div>
+<div class="slide"><h1>Ruby on Rails Rocks</h1>
+</div>
+<div class="slide"><h1>Ruby on Rails Success Stories</h1>
+<ul>
+	<li>Twitter</li>
+	<li>Groupon</li>
+</ul>
+</div>
+<div class="title slide">
+<h1>Ruby: the Programming Language</h1>
+<p>Play along with the script at<br />
+<strong style="font-size: 3em; ;">http://bit.ly/eFs9wa</strong></p>
+</div>
+<div class="slide"><h1>Numbers</h1>
+<ul>
+	<li>Integers</li>
+	<li>Floating-point</li>
+	<li>Arithmetic: +, <strong>, *</strong></li>
+	<li>Division: integer division, floating-point division</li>
+</ul>
+</div>
+<div class="slide"><h1>Strings</h1>
+<ul>
+	<li>Literals</li>
+	<li>Interpolation</li>
+	<li>Operators: +, *</li>
+</ul>
+</div>
+<div class="slide"><h1>Booleans</h1>
+<ul>
+	<li>Results of Integer comparison: &lt;, &gt;</li>
+	<li>Literals: true, false</li>
+	<li>Operators: !, ||, &amp;&amp;</li>
+</ul>
+</div>
+<div class="slide"><h1>Local Variables</h1>
+<ul>
+	<li>Naming</li>
+	<li>Assignment, recall</li>
+</ul>
+</div>
+<div class="slide"><h1>Constants</h1>
+<ul>
+	<li>Naming</li>
+	<li>Assignment, recall</li>
+	<li>Redefining</li>
+</ul>
+</div>
+<div class="slide"><h1>Methods</h1>
+<ul>
+	<li>Definition: sum, using return</li>
+	<li>Calling: familiar syntax sum(3, 5)</li>
+	<li>Return value is last expression: shorter sum</li>
+	<li>Relaxed calling: sum 3, 5</li>
+</ul>
+</div>
+<div class="slide"><h1>Useful &#8220;built-ins&#8221;</h1>
+<ul>
+	<li>print: strings, integers</li>
+	<li>print with &#8220;\n&#8221;</li>
+	<li>p for debugging</li>
+</ul>
+</div>
+<div class="slide"><h1>Classes</h1>
+<ul>
+	<li>Syntax: Duck with quack</li>
+	<li>Instantiate duckie</li>
+	<li>Call method</li>
+</ul>
+</div>
+<div class="slide"><h1>Classes are Open</h1>
+<ul>
+	<li>Open Duck, define walk</li>
+	<li>Call walk on duckie</li>
+</ul>
+</div>
+<div class="slide"><h1>Constructors</h1>
+<ul>
+	<li>Method name: initialize</li>
+	<li>Define printing constructor in Duck</li>
+	<li>Reinstantiate duckie</li>
+</ul>
+</div>
+<div class="slide"><h1>Instance Vars</h1>
+<ul>
+	<li>Variable naming: @name, @age</li>
+	<li>Redefine Duck constructor</li>
+	<li>Call Duck constructor with arguments</li>
+	<li>Instance variables are not methods</li>
+	<li>Instance variables are not globally accessible</li>
+</ul>
+</div>
+<div class="slide"><h1>Everything Is an Object</h1>
+<ul>
+	<li>3.even?</li>
+	<li>3.odd?</li>
+	<li>&#8220;abcd&#8221;.length</li>
+	<li>3.class</li>
+</ul>
+</div>
+<div class="slide"><h1>Self</h1>
+<ul>
+	<li>Like this in JavaScript, C++, Java</li>
+	<li>Open Fixnum, define is_leet? as self == 1337</li>
+	<li>Demonstrate with 3.is_leet? and 1337.is_leet?</li>
+</ul>
+</div>
+<div class="slide"><h1>If</h1>
+<ul>
+	<li>Implement max inline</li>
+	<li>Operator form ? :</li>
+</ul>
+</div>
+<div class="slide"><h1>While</h1>
+<ul>
+	<li>Counting using local variable</li>
+</ul>
+</div>
+<div class="slide"><h1>Blocks</h1>
+<ul>
+	<li>No arguments: times</li>
+	<li>1 argument: upto</li>
+	<li>Break, do&#8230;end instead of braces: loop</li>
+	<li>yield: Duck.introduce</li>
+	<li>next, 2 arguments: call Duck.introduce</li>
+</ul>
+</div>
+<div class="slide"><h1>Symbols</h1>
+<ul>
+	<li>Like interned strings in Java</li>
+	<li>Literals</li>
+	<li>to_i, to_s on symbols</li>
+	<li>to_sym on Strings</li>
+	<li>Symbols are interned forever: &#8220;cool&#8221;.to_sym.to_i</li>
+</ul>
+</div>
+<div class="slide"><h1>Ranges</h1>
+<ul>
+	<li>Literals + to_a: .. and &#8230;</li>
+</ul>
+</div>
+<div class="slide"><h1>Strings II</h1>
+<ul>
+	<li>[]: index, range, regexp</li>
+	<li>[]= replaces</li>
+	<li>Useful: gsub, scan</li>
+</ul>
+</div>
+<div class="slide"><h1>Arrays</h1>
+<ul>
+	<li>Literals</li>
+	<li>[]: numbers, ranges</li>
+	<li>[]= replaces, expands array</li>
+	<li>.length</li>
+	<li>Functional staples: map, select, inject</li>
+</ul>
+</div>
+<div class="slide"><h1>Hashes</h1>
+<ul>
+	<li>Literals</li>
+	<li>[]</li>
+	<li>Methods: keys, values, values_at</li>
+	<li>Iteration: each</li>
+</ul>
+</div>
+<div class="slide"><h1>Inheritance</h1>
+<ul>
+	<li>Single inheritance: Duck.superclass</li>
+	<li>LeetDuck &lt; Duck, overrides constructor</li>
+	<li>Instantiate LeetDuck, show it has Duck methods</li>
+</ul>
+</div>
+<div class="slide"><h1>Modules</h1>
+<ul>
+	<li>Containers for functionality</li>
+	<li>Aging, defines age! and age</li>
+	<li>include Aging in Duck</li>
+	<li>Call age and age! in LeetDuck instance</li>
+</ul>
+</div>
+<div class="slide"><h1>Inheritance vs Modules</h1>
+<ul>
+	<li>Single inheritance</li>
+	<li>Many modules can be included</li>
+	<li>Modules cannot define constructors</li>
+</ul>
+</div>
+<div class="slide"><h1>Eigenclass</h1>
+<ul>
+	<li>Instantiate LeetDuck again</li>
+	<li>Override quack in an instance</li>
+	<li>Show that instance&#8217;s quack changed, class&#8217; quack didn&#8217;t change</li>
+</ul>
+</div>
+<div class="slide"><h1>Classes are Objects</h1>
+<ul>
+	<li>Inside &#8220;class&#8221;, self is the class object</li>
+	<li>So classes have instance variables, class methods</li>
+	<li>Add instance counting to Duck&#8217;s constructor</li>
+	<li>Reinstantiate duckie, demonstrate</li>
+</ul>
+</div>
+<div class="slide"><h1>Require</h1>
+<ul>
+	<li>Test for <span class="caps">CSV</span>, require &#8216;csv&#8217;, test again</li>
+	<li>Mention it works for own files as well</li>
+</ul>
+</div>
+<div class="title slide">
+<h1>Rails: the Web Application Framework</h1>
+</div>
+<div class="slide"><h1>Live Coding</h1>
+<ol>
+	<li>Scaffolds</li>
+	<li>Scrap from Monster.com (for demo purposes only!)</li>
+	<li><span class="caps">MVC</span> (Model-View-Controller)</li>
+	<li>Session</li>
+</ol>
+<p>Script (incomplete) at<br />
+<strong style="font-size: 3em; ;">http://bit.ly/gnTkOW</strong></p>
+</div>
+<div class="slide"><h1>Obligatory Show-Off</h1>
+<ul>
+	<li>This video is used by everyone to show Rails&#8217; awesomeness</li>
+	<li>How to build a blog, in 15 minutes</li>
+	<li>Uses Rails 2.2, this lecture shows Rails 3.0.</li>
+</ul>
+<p>http://media.rubyonrails.org/video/rails_blog_2.mov</p>
+</div>
+<div class="slide"><h1>Resources</h1>
+<ul>
+	<li>Ruby in 15 minutes: <a href="http://tryruby.org/">TryRuby</a></li>
+	<li>Quick Introduction to Ruby: <a href="http://www.google.com/search?q=why&#39;s+poignant+guide+to+ruby">Google why&#8217;s poignant guide to ruby</a></li>
+	<li>Rails Guides: <a href="http://guides.rubyonrails.org/">http://guides.rubyonrails.org/</a></li>
+	<li>Intro Screencasts: <a href="http://rubyonrails.org/screencasts/rails3">Rails 3 Screencasts</a></li>
+	<li>Advanced Screencasts: <a href="http://railscasts.com/">RailsCasts</a></li>
+</ul>
+</div>
+<div class="title slide">
+<h1>Wrap-Up</h1>
+</div>
+<div class="slide"><h1>Contact Information</h1>
+<p>Victor Costan</p>
+<ul>
+	<li>Facebook: <a href="http://www.facebook.com/pwnall">pwnall</a></li>
+	<li>Twitter: <a href="http://twitter.com/pwnall">@pwnall</a></li>
+	<li>E-mail: victor@costan.us</li>
+	<li>Blog: <a href="http://blog.costan.us">blog.costan.us</a></li>
+</ul>
+</div>
+<div class="slide"><h1>Presentation Resources</h1>
+<p>Slides and Code</p>
+<ul>
+	<li>Source code: http://github.com/costan/ruby_and_rails_slides/</li>
+	<li>Pull requests (patches) are welcome!</li>
+</ul></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>
