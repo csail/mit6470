@@ -1,0 +1,46 @@
+Cai
+    - use version control (e.g. github)
+    - graphically prototype site
+    - get people/friends to use a poor version of the site
+        - good to see people use it
+
+Joe
+    - used Flex
+    - planned what to do at the very beginning, and coded the rest
+    - split coding and design between two people
+
+Yafim
+    - decided what to makae at beginning
+    - one sketch on paper
+    - drew in photoshop
+    - made html and css from photoshop thing
+    
+    - choose a technology quickly
+    - make a quick prototype
+    - code a lot
+
+Victor
+    - started out with recommendation system
+        - decided it would be too much back end
+    - decided to use Facebook and let people plan events around movies
+
+    - good: split between front-end and back-end
+    - bad: waisted a week cleaning up data
+
+    - focus on UI
+    - focus on killer feature
+    
+    - take advantage of libraries
+    
+    - experimental vs stable? choose stable
+        (unless it ties to core feature, and you want the best possible)
+
+    - focus on one killer feature
+
+    - testing
+        - good to get feedback
+        - don't give URL to someone who's going to try and destroy it
+        - one of the testers noticed the error near the deadline,
+            so that was good
+
+    - try to come to an agreement early on about time commitments and team issues
