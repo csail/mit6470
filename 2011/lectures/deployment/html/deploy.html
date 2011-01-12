@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Server Admin and Deployment</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 11, 2011" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2011 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>Deploying Your App</h1>
+</div>
+<div class="slide"><h1>Review: Branch Discipline</h1>
+<p>There is no single solution. I like this one.</p>
+<p>Integration vs feature branches</p>
+<ul>
+	<li>Integration branches &#8220;collect&#8221; topic branches</li>
+	<li>No commits on integration branches</li>
+	<li>A feature branches off an integration branch</li>
+	<li>Feature branches are merged back into integration branches</li>
+	<li>No merging into integration branches</li>
+</ul>
+</div>
+<div class="slide"><h1>Review: Branch Discipline</h1>
+<p>Two special integration branches for Web development.</p>
+<ul>
+	<li><code>master</code>, a.k.a. <em>mainline</em>: all features are branched off and merged into it</li>
+	<li><code>prod</code>  is what&#8217;s running on production</li>
+</ul>
+</div>
+<div class="slide"><h1>Core Deployment Steps</h1>
+<ol>
+	<li><strong>provision</strong>: get your app running</li>
+	<li><strong>push</strong>: update your app to a new version</li>
+	<li><strong>rollback</strong>: revert a bad push</li>
+</ol>
+</div>
+<div class="slide"><h1>Core Deployment Steps</h1>
+<ol>
+	<li><strong>provision</strong>: get your app running</li>
+	<li><strong>push</strong>: update your app to a new version</li>
+	<li><strong>rollback</strong>: revert a bad push</li>
+</ol>
+<p>Same approach as for building VM</p>
+<ol>
+	<li>Google step-by-step tutorials</li>
+	<li>Document every <span class="caps">URL</span> and every command</li>
+	<li>Write a script with the commands</li>
+</ol>
+</div>
+<div class="slide"><h1>Provision</h1>
+<ol>
+	<li>Get source code</li>
+	<li>Set up database</li>
+	<li>Wire database to app</li>
+	<li>Wire app to load balancer</li>
+</ol>
+</div>
+<div class="slide"><h1>Push</h1>
+<ol>
+	<li>Bring down app server</li>
+	<li>Update source code</li>
+	<li>Update database</li>
+	<li>Bring up app server</li>
+</ol>
+</div>
+<div class="slide"><h1>Rollback</h1>
+<p>Won&#8217;t really happen in 6.470.</p>
+<ol>
+	<li>Bring down app server</li>
+	<li>Fix database damage</li>
+	<li>Revert source code to known good version</li>
+	<li>Bring up app server</li>
+	<li>Press release (blog)</li>
+</ol>
+</div>
+<div class="slide"><h1>Advanced Deployment</h1>
+<p>Do a cost-benefit analysis!</p>
+<ol>
+	<li><strong>backup</strong>: &#8220;checkpoint&#8221; database and source code</li>
+	<li><strong>staging</strong>: replica of production for testing</li>
+	<li><strong>monitoring</strong>: automated notifications if server goes down</li>
+</ol>
+</div>
+<div class="slide"><h1>Demo</h1>
+<p>Script at<br />
+<strong style="font-size: 3em; ;">http://bit.ly/gMgTZv</strong></p></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>

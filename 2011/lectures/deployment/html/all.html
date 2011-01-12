@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Server Admin and Deployment</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 11, 2011" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2011 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>Server Admin and Deployment</h1>
+<blockquote>
+<p>Victor Costan</p>
+</blockquote>
+</div>
+<div class="slide"><h1>Contents</h1>
+<div style="font-size: 70%">
+<ul>
+	<li>Server Side</li>
+</ul>
+<ul>
+	<li>Internet Plumbing 101</li>
+</ul>
+<ul>
+	<li>Building a Server</li>
+</ul>
+<ul>
+	<li>Deploying Your App</li>
+</ul>
+<ul>
+	<li>Wrap-Up</li>
+</ul>
+</div>
+</div>
+<div class="title slide">
+<h1>Server Side</h1>
+<ul>
+	<li>a.k.a. The Back-End</li>
+</ul>
+</div>
+<div class="slide"><h1>10,000 Foot View</h1>
+<ol>
+	<li>Read <span class="caps">HTTP</span> request</li>
+	<li>Write <span class="caps">HTTP</span> response</li>
+</ol>
+</div>
+<div class="slide"><h1>1,000 Foot View</h1>
+<ul>
+	<li>Many server programs, possibly running on different machines.
+	<ul>
+		<li>Google has &#8220;hundreds of thousands&#8221; of servers.</li>
+		<li>Each Google query is processed by &#8220;hundreds&#8221; of machines.</li>
+	</ul></li>
+	<li><span class="caps">HTTP</span> request generally goes through the following.
+	<ol>
+		<li>Load balancer</li>
+		<li>Application server</li>
+		<li>Database server</li>
+	</ol></li>
+</ul>
+</div>
+<div class="slide"><h1>Load Balancer</h1>
+<ul>
+	<li>Primary mission
+	<ol>
+		<li>Receive <span class="caps">HTTP</span> request</li>
+		<li>Relay request to one of many application servers</li>
+		<li>Relay <span class="caps">HTTP</span> response to client</li>
+	</ol></li>
+	<li>Overloaded with many tasks
+	<ul>
+		<li>Protocol management: security (<span class="caps">HTTPS</span>), compression</li>
+		<li>Security: clean up <span class="caps">HTTP</span> requests, prevent against DoS</li>
+		<li>Optimization: serve files in response to <span class="caps">HTTP</span> requests</li>
+	</ul></li>
+	<li>Implementations
+	<ul>
+		<li><code>apache</code>, <code>haproxy</code>, <code>nginx</code></li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Application Server</h1>
+<ul>
+	<li>Business logic
+	<ul>
+		<li>How does the homepage look like?</li>
+		<li>How do users sign in?</li>
+		<li>What happens when a user friends another user?</li>
+	</ul></li>
+	<li>Talks to other servers (e.g. Facebook) via APIs.</li>
+	<li>Usually in high-level languages
+	<ul>
+		<li><span class="caps">PHP</span>, Python, Ruby, Asp.Net</li>
+	</ul></li>
+	<li>Each <span class="caps">HTTP</span> request is its own world
+	<ul>
+		<li>Use database to remember things between <span class="caps">HTTP</span> requests</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Database Server</h1>
+<ul>
+	<li>Stores data
+	<ul>
+		<li>Standard format: tables (like Excel spreadsheets)</li>
+		<li>Standard protocol: <span class="caps">SQL</span></li>
+	</ul></li>
+</ul>
+<ul>
+	<li>Solution to some very difficult problems
+	<ul>
+		<li>Concurrent requests (transactions)</li>
+		<li>Resiliency to failures (power outages, broken hard disks, etc.)</li>
+	</ul></li>
+</ul>
+<ul>
+	<li>Implementations
+	<ul>
+		<li>Very hard to get right.</li>
+		<li>Used to be very expensive.</li>
+		<li>Free: MySQL, PostgreSQL, SQLite</li>
+		<li>Paid: Microsoft <span class="caps">SQL</span> Server, Oracle</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>1,000 Foot View Review</h1>
+<ul>
+	<li><span class="caps">HTTP</span> request generally goes through the following.
+	<ol>
+		<li>Load balancer</li>
+		<li>Application server</li>
+		<li>Database server</li>
+	</ol></li>
+</ul>
+</div>
+<div class="title slide">
+<h1>Internet Plumbing 101</h1>
+</div>
+<div class="slide"><h1>Moving Bits Across the Wire</h1>
+<ol>
+	<li>Browser finds server</li>
+	<li>Browser exchanges bits with server</li>
+</ol>
+</div>
+<div class="slide"><h1>Finding a Server</h1>
+<ol>
+	<li>Find computer on the Internet
+	<ul>
+		<li>Each computer has an <code>IP address</code> (phone number)</li>
+		<li><span class="caps">DNS</span> (phonebook) translates names like <code>www.google.com</code> to IP addresses like <code>74.125.226.148</code></li>
+	</ul></li>
+	<li>Find server program on computer
+	<ul>
+		<li>Each server gets a <code>port number</code> (mailbox)</li>
+		<li>Port numbers are standardized</li>
+		<li><code>HTTP</code> is 80, <code>SSH</code> is 22</li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Exchanging Bits</h1>
+<ul>
+	<li>Two protocols (methods)
+	<ol>
+		<li><code>TCP</code> is reliable but slow</li>
+		<li><code>UDP</code> is fast but unreliable (voice)</li>
+	</ol></li>
+	<li>Moving bits isn&#8217;t free
+	<ul>
+		<li>Speed: xxMb/s</li>
+		<li>Quantity: xxGb/month</li>
+		<li>Your dorm room beats any hosting package you can afford</li>
+	</ul></li>
+</ul>
+</div>
+<div class="title slide">
+<h1>Building a Server</h1>
+</div>
+<div class="slide"><h1>Why Virtual Machines</h1>
+<ol>
+	<li>Sandbox for experiments
+	<ul>
+		<li>Clone server by copying 2 files</li>
+	</ul></li>
+	<li>Replica of production
+	<ul>
+		<li>Best production environment is <strong>not</strong> best development environment</li>
+	</ul></li>
+	<li>Share setups
+	<ul>
+		<li>Copy 2 files instead of long list of instructions</li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Virtual Machine Software</h1>
+<p>Use to build a VM on your computer.</p>
+<ol>
+	<li><a href="http://www.virtualbox.org/">VirtualBox</a>
+	<ul>
+		<li>Open source, for now</li>
+		<li>Free</li>
+	</ul></li>
+	<li><a href="http://www.vmware.com/">VMWare</a>
+	<ul>
+		<li>Fast</li>
+		<li>Free for <span class="caps">MIT</span> students</li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>VM Hosting</h1>
+<ul>
+	<li><a href="http://xvm.mit.edu"><span class="caps">XVM</span> at <span class="caps">MIT</span></a>
+	<ul>
+		<li>Free for students</li>
+	</ul></li>
+	<li><a href="http://aws.amazon.com/ec2/">Amazon EC2</a>
+	<ul>
+		<li>Free tiny instance</li>
+	</ul></li>
+	<li><a href="http://www.rackspace.com/">Rackspace</a></li>
+	<li><a href="http://www.linode.com/">Linode</a></li>
+	<li>Lots more</li>
+</ul>
+</div>
+<div class="slide"><h1>Aside: App Hosting</h1>
+<ul>
+	<li>White-glove version of VM hosting
+	<ul>
+		<li>Pros: less setup and maintainance</li>
+		<li>Cons: flexibility, pricing</li>
+	</ul></li>
+	<li>Providers
+	<ul>
+		<li><a href="http://code.google.com/appengine/">Google App Engine</a> for all <span class="caps">JVM</span> languages</li>
+		<li><a href="http://heroku.com">Heroku</a> for Ruby on Rails</li>
+		<li><a href="http://www.engineyard.com/">Engine Yard</a> for Ruby</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Setting Up a VM</h1>
+<ol>
+	<li>Figure out specs
+	<ol>
+		<li>List of software you need</li>
+		<li>Specs from hosting provider</li>
+	</ol></li>
+	<li>Trial and error
+	<ol>
+		<li>Google step-by-step tutorials</li>
+		<li>Document every <span class="caps">URL</span> and every command</li>
+		<li>Bonus points: write a script with the commands</li>
+	</ol></li>
+</ol>
+</div>
+<div class="slide"><h1>Maintaining a VM</h1>
+<p><strong style="font-size: 4em; ;">Memorize the software update command</strong></p>
+</div>
+<div class="slide"><h1>Demo</h1>
+<p>Script at<br />
+<strong style="font-size: 3em; ;">http://bit.ly/hI5lNU</strong></p>
+</div>
+<div class="title slide">
+<h1>Deploying Your App</h1>
+</div>
+<div class="slide"><h1>Review: Branch Discipline</h1>
+<p>There is no single solution. I like this one.</p>
+<p>Integration vs feature branches</p>
+<ul>
+	<li>Integration branches &#8220;collect&#8221; topic branches</li>
+	<li>No commits on integration branches</li>
+	<li>A feature branches off an integration branch</li>
+	<li>Feature branches are merged back into integration branches</li>
+	<li>No merging into integration branches</li>
+</ul>
+</div>
+<div class="slide"><h1>Review: Branch Discipline</h1>
+<p>Two special integration branches for Web development.</p>
+<ul>
+	<li><code>master</code>, a.k.a. <em>mainline</em>: all features are branched off and merged into it</li>
+	<li><code>prod</code>  is what&#8217;s running on production</li>
+</ul>
+</div>
+<div class="slide"><h1>Core Deployment Steps</h1>
+<ol>
+	<li><strong>provision</strong>: get your app running</li>
+	<li><strong>push</strong>: update your app to a new version</li>
+	<li><strong>rollback</strong>: revert a bad push</li>
+</ol>
+</div>
+<div class="slide"><h1>Core Deployment Steps</h1>
+<ol>
+	<li><strong>provision</strong>: get your app running</li>
+	<li><strong>push</strong>: update your app to a new version</li>
+	<li><strong>rollback</strong>: revert a bad push</li>
+</ol>
+<p>Same approach as for building VM</p>
+<ol>
+	<li>Google step-by-step tutorials</li>
+	<li>Document every <span class="caps">URL</span> and every command</li>
+	<li>Write a script with the commands</li>
+</ol>
+</div>
+<div class="slide"><h1>Provision</h1>
+<ol>
+	<li>Get source code</li>
+	<li>Set up database</li>
+	<li>Wire database to app</li>
+	<li>Wire app to load balancer</li>
+</ol>
+</div>
+<div class="slide"><h1>Push</h1>
+<ol>
+	<li>Bring down app server</li>
+	<li>Update source code</li>
+	<li>Update database</li>
+	<li>Bring up app server</li>
+</ol>
+</div>
+<div class="slide"><h1>Rollback</h1>
+<p>Won&#8217;t really happen in 6.470.</p>
+<ol>
+	<li>Bring down app server</li>
+	<li>Fix database damage</li>
+	<li>Revert source code to known good version</li>
+	<li>Bring up app server</li>
+	<li>Press release (blog)</li>
+</ol>
+</div>
+<div class="slide"><h1>Advanced Deployment</h1>
+<p>Do a cost-benefit analysis!</p>
+<ol>
+	<li><strong>backup</strong>: &#8220;checkpoint&#8221; database and source code</li>
+	<li><strong>staging</strong>: replica of production for testing</li>
+	<li><strong>monitoring</strong>: automated notifications if server goes down</li>
+</ol>
+</div>
+<div class="slide"><h1>Demo</h1>
+<p>Script at<br />
+<strong style="font-size: 3em; ;">http://bit.ly/gMgTZv</strong></p>
+</div>
+<div class="title slide">
+<h1>Wrap-Up</h1>
+</div>
+<div class="slide"><h1>Contact Information</h1>
+<p>Victor Costan</p>
+<ul>
+	<li>Facebook: <a href="http://www.facebook.com/pwnall">pwnall</a></li>
+	<li>Twitter: <a href="http://twitter.com/pwnall">@pwnall</a></li>
+	<li>E-mail: victor@costan.us</li>
+	<li>Blog: <a href="http://blog.costan.us">blog.costan.us</a></li>
+</ul>
+</div>
+<div class="slide"><h1>Presentation Resources</h1>
+<p>Slides and Code</p>
+<ul>
+	<li>Source code: http://github.com/costan/rails_deploy_slides/</li>
+	<li>Pull requests (patches) are welcome!</li>
+</ul></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>

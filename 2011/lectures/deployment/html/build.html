@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Server Admin and Deployment</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 11, 2011" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2011 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>Building a Server</h1>
+</div>
+<div class="slide"><h1>Why Virtual Machines</h1>
+<ol>
+	<li>Sandbox for experiments
+	<ul>
+		<li>Clone server by copying 2 files</li>
+	</ul></li>
+	<li>Replica of production
+	<ul>
+		<li>Best production environment is <strong>not</strong> best development environment</li>
+	</ul></li>
+	<li>Share setups
+	<ul>
+		<li>Copy 2 files instead of long list of instructions</li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>Virtual Machine Software</h1>
+<p>Use to build a VM on your computer.</p>
+<ol>
+	<li><a href="http://www.virtualbox.org/">VirtualBox</a>
+	<ul>
+		<li>Open source, for now</li>
+		<li>Free</li>
+	</ul></li>
+	<li><a href="http://www.vmware.com/">VMWare</a>
+	<ul>
+		<li>Fast</li>
+		<li>Free for <span class="caps">MIT</span> students</li>
+	</ul></li>
+</ol>
+</div>
+<div class="slide"><h1>VM Hosting</h1>
+<ul>
+	<li><a href="http://xvm.mit.edu"><span class="caps">XVM</span> at <span class="caps">MIT</span></a>
+	<ul>
+		<li>Free for students</li>
+	</ul></li>
+	<li><a href="http://aws.amazon.com/ec2/">Amazon EC2</a>
+	<ul>
+		<li>Free tiny instance</li>
+	</ul></li>
+	<li><a href="http://www.rackspace.com/">Rackspace</a></li>
+	<li><a href="http://www.linode.com/">Linode</a></li>
+	<li>Lots more</li>
+</ul>
+</div>
+<div class="slide"><h1>Aside: App Hosting</h1>
+<ul>
+	<li>White-glove version of VM hosting
+	<ul>
+		<li>Pros: less setup and maintainance</li>
+		<li>Cons: flexibility, pricing</li>
+	</ul></li>
+	<li>Providers
+	<ul>
+		<li><a href="http://code.google.com/appengine/">Google App Engine</a> for all <span class="caps">JVM</span> languages</li>
+		<li><a href="http://heroku.com">Heroku</a> for Ruby on Rails</li>
+		<li><a href="http://www.engineyard.com/">Engine Yard</a> for Ruby</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Setting Up a VM</h1>
+<ol>
+	<li>Figure out specs
+	<ol>
+		<li>List of software you need</li>
+		<li>Specs from hosting provider</li>
+	</ol></li>
+	<li>Trial and error
+	<ol>
+		<li>Google step-by-step tutorials</li>
+		<li>Document every <span class="caps">URL</span> and every command</li>
+		<li>Bonus points: write a script with the commands</li>
+	</ol></li>
+</ol>
+</div>
+<div class="slide"><h1>Maintaining a VM</h1>
+<p><strong style="font-size: 4em; ;">Memorize the software update command</strong></p>
+</div>
+<div class="slide"><h1>Demo</h1>
+<p>Script at<br />
+<strong style="font-size: 3em; ;">http://bit.ly/hI5lNU</strong></p></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>
