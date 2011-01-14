@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Better UIs with HTML5 and CSS3</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="January 11, 2011" />
+<meta name="author" content="Victor Costan" />
+<meta name="company" content="Massachusetts Institute of Technology" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="../assets/ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../assets/ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../assets/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../assets/ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="../assets/stylesheets/pressie.css" type="text/css" />
+
+<!-- S5 JS -->
+<script src="../assets/ui/default/slides.js" type="text/javascript"></script>
+
+<!-- Syntax Highlighter -->
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shCore.css"></link>
+<link rel="stylesheet"  href="../assets/dp.SyntaxHighlighter/styles/shThemeEclipse.css"></link>
+
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h2>Copyright © 2011 Victor Costan</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+  
+<div class="slide"><h1>Better UIs with HTML5 and CSS3</h1>
+<blockquote>
+<p>Victor Costan</p>
+</blockquote>
+</div>
+<div class="slide"><h1>Contents</h1>
+<div style="font-size: 70%">
+<ul>
+	<li>Introduction</li>
+</ul>
+<ul>
+	<li>New Markup</li>
+</ul>
+<ul>
+	<li>APIs</li>
+</ul>
+<ul>
+	<li>CSS3</li>
+</ul>
+<ul>
+	<li>Wrap-Up</li>
+</ul>
+</div>
+</div>
+<div class="title slide">
+<h1>Introduction</h1>
+</div>
+<div class="slide"><h1>Your Instructors</h1>
+<ul>
+	<li>Victor Costan</li>
+</ul>
+</div>
+<div class="slide"><h1>What is HTML5?</h1>
+<p>Depending on who you ask, any of the following:</p>
+<ul>
+	<li><span class="caps">WHATWG</span> standard</li>
+	<li>W3C standard</li>
+	<li>All new standards related to Web applications
+	<ul>
+		<li>CSS3</li>
+		<li>Geolocation</li>
+		<li>Javascript 1.5</li>
+		<li>Indexed Database</li>
+		<li>Web <span class="caps">SQL</span> Database</li>
+		<li>WebGL</li>
+		<li>Web Sockets</li>
+		<li>Web Workers</li>
+	</ul></li>
+</ul>
+</div>
+<div class="slide"><h1>Why Care</h1>
+<ul>
+	<li>Short-term: <strong>easy</strong> methods for <strong>quick</strong> UI touch-ups</li>
+	<li>Long-term: beautiful and usable Web application that work everywhere</li>
+</ul>
+</div>
+<div class="title slide">
+<h1>New Markup</h1>
+<ul>
+	<li>Forms 2.0</li>
+	<li>Rich-text editors</li>
+	<li>Semantic tags</li>
+	<li>Custom attributes</li>
+</ul>
+</div>
+<div class="slide"><h1>Forms 2.0</h1>
+<p>Let&#8217;s improve this form.</p>
+<div class="code-normal">
+<pre name="code" class="html:nogutter:nocontrols">&lt;form action="/register"&gt;
+  &lt;dl&gt;
+    &lt;dt&gt;&lt;label for="email"&gt;Email&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="text" name="email" id="email" /&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;label for="password"&gt;Password&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="password" name="password" id="password" /&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;label for="confirm"&gt;Password Confirmation&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="password" name="confirm" id="confirm" /&gt;&lt;/dd&gt;
+  &lt;/dl&gt;
+  &lt;p&gt;&lt;input type="submit" value="Sign in" /&gt;&lt;/p&gt;
+&lt;/form&gt;
+</pre><p></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace470/html5_css3_slides/code/register_plain.html">code/register_plain.html</a></div></p>
+</div>
+<div class="slide"><h1>New Form Fields</h1>
+<p>What&#8217;s better about this version?</p>
+<div class="code-normal">
+<pre name="code" class="html:nogutter:nocontrols">&lt;form action="/register"&gt;
+  &lt;dl&gt;
+    &lt;dt&gt;&lt;label for="email"&gt;Email&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="email" name="email" id="email" /&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;label for="password"&gt;Password&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="password" name="password" id="password" /&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;label for="confirm"&gt;Password Confirmation&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="password" name="confirm" id="confirm" /&gt;&lt;/dd&gt;
+  &lt;/dl&gt;
+  &lt;p&gt;&lt;input type="submit" value="Sign in" /&gt;&lt;/p&gt;
+&lt;/form&gt;
+</pre><p></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace470/html5_css3_slides/code/input_email.html">code/input_email.html</a></div></p>
+<p>Hint: imagine using it on an iPhone.</p>
+</div>
+<div class="slide"><h1>New Form Fields</h1>
+<table>
+	<tr>
+		<td><code>type="search"</code></td>
+		<td><input type="search" /></td>
+	</tr>
+	<tr>
+		<td><code>type="number" min="0" max="10" step="2"</code></td>
+		<td><input type="number" min="0" max="10" step="2" value="6"/></td>
+	</tr>
+	<tr>
+		<td><code>type="range" min="0" max="10" step="2"</code></td>
+		<td><input type="range" /></td>
+	</tr>
+	<tr>
+		<td><code>type="tel"</code></td>
+		<td><input type="tel" /></td>
+	</tr>
+	<tr>
+		<td><code>type="url"</code></td>
+		<td><input type="url" /></td>
+	</tr>
+	<tr>
+		<td><code>type="email"</code></td>
+		<td><input type="email" /></td>
+	</tr>
+	<tr>
+		<td><code>type="date"</code></td>
+		<td><input type="date" value="2010-12-29" /></td>
+	</tr>
+	<tr>
+		<td><code>type="time"</code></td>
+		<td><input type="time" value="10:00" /></td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1>New Form Attributes: <code>placeholder</code></h1>
+<div class="code-normal">
+<pre name="code" class="html:nogutter:nocontrols">&lt;form action="/register"&gt;
+  &lt;dl&gt;
+    &lt;dt&gt;&lt;label for="email"&gt;Email&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="email" name="email" id="email"
+               placeholder="we won't spam you" /&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;label for="password"&gt;Password&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="password" name="password" id="password"
+               placeholder="be clever" /&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;label for="confirm"&gt;Password Confirmation&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="password" name="confirm" id="confirm"
+               placeholder="say that again?" /&gt;&lt;/dd&gt;
+  &lt;/dl&gt;
+  &lt;p&gt;&lt;input type="submit" value="Sign in" /&gt;&lt;/p&gt;
+&lt;/form&gt;
+</pre><p></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace470/html5_css3_slides/code/placeholder.html">code/placeholder.html</a></div></p>
+</div>
+<div class="slide"><h1>New Form Attributes: <code>placeholder</code></h1>
+<form action="/register">
+<dl>
+    <dt><label for="email">Email</label></dt>
+    <dd><input type="email" name="email" id="email"
+               placeholder="we won't spam you" /></dd>
+    <dt><label for="password">Password</label></dt>
+    <dd><input type="password" name="password" id="password"
+               placeholder="be clever" /></dd>
+    <dt><label for="confirm">Password Confirmation</label></dt>
+    <dd><input type="password" name="confirm" id="confirm"
+               placeholder="say that again?" /></dd>
+</dl>
+  <p><input type="submit" value="Sign in" /></p>
+</form>
+</div>
+<div class="slide"><h1>New Form Attributes: <code>autofocus</code></h1>
+<div class="code-normal">
+<pre name="code" class="html:nogutter:nocontrols">&lt;form action="/register"&gt;
+  &lt;dl&gt;
+    &lt;dt&gt;&lt;label for="email"&gt;Email&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="email" name="email" id="email"
+               placeholder="we won't spam you"
+               autofocus="autofocus" /&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;label for="password"&gt;Password&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="password" name="password" id="password"
+               placeholder="be clever" /&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;label for="confirm"&gt;Password Confirmation&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="password" name="confirm" id="confirm"
+               placeholder="say that again?" /&gt;&lt;/dd&gt;
+  &lt;/dl&gt;
+  &lt;p&gt;&lt;input type="submit" value="Sign in" /&gt;&lt;/p&gt;
+&lt;/form&gt;
+</pre><p></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace470/html5_css3_slides/code/autofocus.html">code/autofocus.html</a></div></p>
+</div>
+<div class="slide"><h1>Form Validation: <code>required</code></h1>
+<div class="code-normal">
+<pre name="code" class="html:nogutter:nocontrols">&lt;form action="/register"&gt;
+  &lt;dl&gt;
+    &lt;dt&gt;&lt;label for="email"&gt;Email&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="email" name="email" id="email"
+               placeholder="we won't spam you"
+               autofocus="autofocus" required="required"/&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;label for="password"&gt;Password&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="password" name="password" id="password"
+               placeholder="be clever" required="required" /&gt;
+    &lt;/dd&gt;
+    &lt;dt&gt;&lt;label for="confirm"&gt;Password Confirmation&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="password" name="confirm" id="confirm"
+               placeholder="say that again?" required="required" /&gt;
+    &lt;/dd&gt;
+  &lt;/dl&gt;
+  &lt;p&gt;&lt;input type="submit" value="Sign in" /&gt;&lt;/p&gt;
+&lt;/form&gt;
+</pre><p></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace470/html5_css3_slides/code/required.html">code/required.html</a></div></p>
+</div>
+<div class="slide"><h1>Form Validation: <code>pattern</code></h1>
+<div class="code-normal">
+<pre name="code" class="html:nogutter:nocontrols">&lt;form action="/register"&gt;
+  &lt;dl&gt;
+    &lt;dt&gt;&lt;label for="email"&gt;Email&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="email" name="email" id="email" pattern=".+@.+\..+"
+               placeholder="we won't spam you"
+               autofocus="autofocus" required="required"/&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;label for="password"&gt;Password&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="password" name="password" id="password"
+               placeholder="be clever" required="required"/&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;label for="confirm"&gt;Password Confirmation&lt;/label&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;input type="password" name="confirm" id="confirm"
+               placeholder="say that again?" required="required" /&gt;
+    &lt;/dd&gt;
+  &lt;/dl&gt;
+  &lt;p&gt;&lt;input type="submit" value="Sign in" /&gt;&lt;/p&gt;
+&lt;/form&gt;
+</pre><p></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace470/html5_css3_slides/code/pattern.html">code/pattern.html</a></div></p>
+<p><code>pattern</code> takes regular expressions.</p>
+</div>
+<div class="slide"><h1>Form Demos</h1>
+<ul>
+	<li><a href="../code/autofocus.html">autofocus</a></li>
+	<li><a href="../code/required.html">required</a> (Firefox 4)</li>
+	<li><a href="../code/pattern.html">pattern</a> (Firefox 4)</li>
+</ul>
+</div>
+<div class="slide"><h1>Rich Text Editor</h1>
+<div class="code-normal">
+<pre name="code" class="html:nogutter:nocontrols">&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;textarea name="email_body"&gt;
+This is a lame text editor.
+&lt;/textarea&gt;
+
+&lt;p contentEditable="true" id="email_body"&gt;
+  This is a rich text editor.
+&lt;/p&gt;
+</pre><p></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace470/html5_css3_slides/code/contenteditable.html">code/contenteditable.html</a></div></p>
+</div>
+<div class="slide"><h1>Rich Text Editor</h1>
+<p>Sadly, <code>contentEditable="true"</code> elements are <strong>not</strong> form fields.</p>
+<ul>
+	<li>not automatically submitted</li>
+	<li>no <code>value</code> property; use <span class="caps">DOM</span> properties like <code>innerHTML</code></li>
+	<li>no <code>onchange</code> events; use low-level events like <code>onkeypress</code> or <code>oninput</code></li>
+	<li>unnatural <span class="caps">API</span> for editing via <code>execCommand</code></li>
+</ul>
+<p>Full demo at <a href="http://www.quirksmode.org/dom/execCommand/">quirksmode</a></p>
+</div>
+<div class="slide"><h1>Semantic Tags</h1>
+<div class="code-normal">
+<pre name="code" class="html:nogutter:nocontrols">&lt;div id="header"&gt;
+  &lt;div id="navigation"&gt;
+     ...
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="footer"&gt;
+  ...
+&lt;/div&gt;</pre></div>
+</div>
+<div class="slide"><h1>Semantic Tags</h1>
+<div class="code-normal">
+<pre name="code" class="html:nogutter:nocontrols">&lt;header&gt;
+  &lt;nav&gt;
+     ...
+  &lt;/nav&gt;
+&lt;/header&gt;
+&lt;footer&gt;
+  ...
+&lt;/footer&gt;</pre></div>
+</div>
+<div class="slide"><h1>Semantic Tags</h1>
+<table>
+	<tr>
+		<td> <code>&lt;article&gt;</code> </td>
+		<td> <code>&lt;aside&gt;</code>   </td>
+		<td> <code>&lt;header&gt;</code>     </td>
+	</tr>
+	<tr>
+		<td> <code>&lt;hgroup&gt;</code>  </td>
+		<td> <code>&lt;footer&gt;</code>  </td>
+		<td> <code>&lt;section&gt;</code>    </td>
+	</tr>
+	<tr>
+		<td> <code>&lt;nav&gt;</code>     </td>
+		<td> <code>&lt;figure&gt;</code>  </td>
+		<td> <code>&lt;figcaption&gt;</code> </td>
+	</tr>
+	<tr>
+		<td> <code>&lt;mark&gt;</code>    </td>
+		<td> <code>&lt;summary&gt;</code> </td>
+		<td>                </td>
+	</tr>
+</table>
+</div>
+<div class="slide"><h1>Custom Attributes</h1>
+<div class="code-normal">
+<pre name="code" class="html:nogutter:nocontrols">&lt;form action="/register" id="register_form" data-method="put"&gt;
+&lt;!-- truncated --&gt;
+&lt;/form&gt;
+
+&lt;script type="text/javascript" src="data_attributes.js"&gt;
+&lt;/script&gt;
+</pre><p></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace470/html5_css3_slides/code/data_attributes.html">code/data_attributes.html</a></div></p>
+<ul>
+	<li><code>data-</code> prefix reserved for application-specific attributes</li>
+	<li>Documents with <code>data-</code> attributes pass HTML5 validators</li>
+	<li><code>data-</code> values wrapped in <code>dataset</code> <span class="caps">DOM</span> property</li>
+</ul>
+<div class="code-normal">
+<pre name="code" class="javascript:nogutter:nocontrols">var methodValue =
+    document.getElementById('register_form').dataset.method
+console.log(methodValue);
+</pre><p></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace470/html5_css3_slides/code/data_attributes.js">code/data_attributes.js</a></div></p>
+</div>
+<div class="title slide">
+<h1>APIs</h1>
+</div>
+<div class="slide"><h1>Better <span class="caps">DOM</span> APIs</h1>
+<ul>
+	<li><code>querySelectorAll</code> &#8211; all elements matching <span class="caps">CSS</span> selector</li>
+	<li><code>querySelector</code> &#8211; first element matching <span class="caps">CSS</span> selector</li>
+	<li><code>getComputedStyle</code> &#8211; computed <span class="caps">CSS</span> style properties, absolute metrics</li>
+</ul>
+<div class="code-normal">
+<pre name="code" class="javascript:nogutter:nocontrols">getComputedStyle(document.querySelector('body')).width</pre></div>
+<ul>
+	<li><code>getElementsByClassName</code> &#8211; self-explanatory; faster than <code>querySelector</code> and <code>querySelectorAll</code></li>
+</ul>
+</div>
+<div class="slide"><h1>Local Storage</h1>
+<div class="code-normal">
+<pre name="code" class="javascript:nogutter:nocontrols">(function() {
+  var counter = localStorage.getItem("visit-counter") || "0";
+  counter = parseInt(counter) + 1;
+  localStorage.setItem("visit-counter", counter);  
+  document.getElementById("counter").innerHTML = counter;
+})();
+</pre><p></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace470/html5_css3_slides/code/localstorage.js">code/localstorage.js</a></div></p>
+<ul>
+	<li><code>localStorage.getItem(key)</code> and <code>localStorage.setItem(key, value)</code></li>
+	<li>only stores strings, you need to parse other value types</li>
+</ul>
+<p><a href="../code/localstorage.html">Demo</a> (only Chrome has local storage for files)</p>
+</div>
+<div class="slide"><h1>Geolocation</h1>
+<div class="code-normal">
+<pre name="code" class="javascript:nogutter:nocontrols">var onSuccess = function (position) {
+  var coords = position.coords;
+  var positionString = "at " + coords.latitude + ", " + coords.longitude;
+  document.getElementById("location").innerHTML = positionString;   
+}
+var onError = function (error) { alert(error); }
+navigator.geolocation.getCurrentPosition(onSuccess, onError);
+</pre><p></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace470/html5_css3_slides/code/geolocation.js">code/geolocation.js</a></div></p>
+<p><a href="../code/geolocation.html">Demo</a>, or see a fancier one at <a href="http://html5demos.com/geo">HTML5demos</a></p>
+</div>
+<div class="slide"><h1>Offline Access</h1>
+<div class="code-normal">
+<pre name="code" class="html:nogutter:nocontrols">&lt;!DOCTYPE html&gt;
+&lt;html manifest="/cache.manifest"&gt;
+&lt;/html&gt;</pre></div>
+<p>Serve the manifest as <span class="caps">MIME</span> type <code>text/cache-manifest</code><br />
+<div class="code-normal"></p>
+<pre name="code" class="html:nogutter:nocontrols">CACHE MANIFEST
+# version 1295004505.312194
+NETWORK:
+/tracking
+FALLBACK:
+/ /offline.html
+CACHE:
+/stylesheets/all.css
+/javascripts/all.js
+</pre><p></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace470/html5_css3_slides/code/cache.manifest">code/cache.manifest</a></div></p>
+<p>Events on <code>window.applicationCache</code></p>
+</div>
+<div class="slide"><h1>Many More</h1>
+<ul>
+	<li><code>&lt;canvas&gt;</code> (next lecture)</li>
+	<li>Browser history (next lecture)</li>
+	<li>Drag and drop</li>
+	<li>File <span class="caps">API</span></li>
+	<li>Undo management</li>
+	<li>WebGL &#8211; OpenGL-like <span class="caps">API</span> for game graphics</li>
+	<li>WebSockets &#8211; realtime updates</li>
+	<li>Web Workers</li>
+</ul>
+</div>
+<div class="title slide">
+<h1>CSS3</h1>
+</div>
+<div class="slide"><h1>Remember: Progressive Enhancement</h1>
+<p style="font-size: 3em;">Think elevators vs. escalators.</p>
+</div>
+<div class="slide"><h1>Which One Looks Better?</h1>
+<p><img src="http://graph.facebook.com/pwnall/picture?type=large" style="border-radius: 0.5em; float:right; width: 40%; ;" alt="" /></p>
+<p><img src="http://graph.facebook.com/pwnall/picture?type=large" style="width: 40%; ;" alt="" /></p>
+<p style="text-align: center; ;"><code>border-radius</code></p>
+</div>
+<div class="slide"><h1>Demo: CSS3 Controls</h1>
+<p style="font-size: 2em;"><a href="https://alg.csail.mit.edu">submission site :)</a></p>
+</div>
+<div class="slide"><h1>Demo: CSS3 Controls</h1>
+<div class="code-normal">
+<pre name="code" class="css:nogutter:nocontrols">.css3forms input[type=submit] {
+	margin: 0;
+	padding: 1px 6px;	
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  box-shadow: 0px 1px 3px #EABA99;
+  -moz-box-shadow: 0px 1px 3px #EABA99;
+  -webkit-box-shadow: 0px 1px 3px #EABA99;  
+  background-color: #CA5200;
+  border: 1px solid #983E00;
+  color: #FFFFFF;
+  font-size: 11pt;
+  font-weight: bold;
+}
+.css3forms input[type=submit]:hover {
+  color: #F4DCCC;
+}
+.css3forms input[type=submit]:active {
+  background-color: #CA5200;
+  box-shadow: inset 0px 2px 2px #983E00;
+  -moz-box-shadow: inset 0px 2px 2px #983E00;
+  -webkit-box-shadow: inset 0px 2px 2px #983E00;
+}
+</pre><p></div><div class="codeurl"><a href="txmt://open?url=file:///Users/victor/workspace470/html5_css3_slides/code/controls.css">code/controls.css</a></div></p>
+</div>
+<div class="slide"><h1>Demo: CSS3 Generator</h1>
+<p style="font-size: 2em;"><a href="http://css3generator.com/">css3generator.com</a></p>
+</div>
+<div class="slide"><h1>Demo: CSS3 Transformations</h1>
+<p style="font-size: 2em;"><a href="http://westciv.com/tools/transforms/">westciv.com/tools/transforms</a></p>
+</div>
+<div class="title slide">
+<h1>Wrap-Up</h1>
+</div>
+<div class="slide"><h1>Contact Information</h1>
+<p>Victor Costan</p>
+<ul>
+	<li>Facebook: <a href="http://www.facebook.com/pwnall">pwnall</a></li>
+	<li>Twitter: <a href="http://twitter.com/pwnall">@pwnall</a></li>
+	<li>E-mail: victor@costan.us</li>
+	<li>Blog: <a href="http://blog.costan.us">blog.costan.us</a></li>
+</ul>
+</div>
+<div class="slide"><h1>Demos</h1>
+<ul>
+	<li><a href="http://www.apple.com/html5/">Safari HTML5 Demos</a></li>
+	<li><a href="http://ie.microsoft.com/testdrive/Views/SiteMap/Default.html">IE9 HTML5 Demos</a></li>
+	<li><a href="http://html5demos.com/">html5demos.com</a></li>
+</ul>
+</div>
+<div class="slide"><h1>Presentation Resources</h1>
+<p>Slides and Code</p>
+<ul>
+	<li>Source code: http://github.com/costan/html5_css3_slides/</li>
+	<li>Pull requests (patches) are welcome!</li>
+</ul>
+<p>References</p>
+<ul>
+	<li><a href="http://css3maker.com/">CSS3 Maker</a></li>
+	<li><a href="http://css3generator.com/">CSS3 Generator</a></li>
+	<li><a href="http://westciv.com/tools/">Other CSS3 Generators</a></li>
+	<li><a href="http://diveintohtml5.org/">Dive Into HTML5</a></li>
+	<li><a href="http://chrismaxwell.com/bookmarks/html5.html">Chris Maxwell&#8217;s HTML5 Links</a></li>
+</ul></div>
+</div>
+
+<!-- Syntax Highlighter -->
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shCore.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shLegacy.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCSharp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPhp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushJava.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushVb.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushSql.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushXml.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushDelphi.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPython.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushRuby.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCss.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<script class="javascript" src="../assets/dp.SyntaxHighlighter/scripts/shBrushPlain.js"></script>
+<script language="javascript">
+SyntaxHighlighter.all();
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+</body>
+</html>
