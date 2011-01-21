@@ -75,7 +75,6 @@ body {
 	background-image: url(../images/Footer_BG.jpg);
 	background-repeat: repeat-x;
 	background-position: left top;
-	background-color:#F00;
 	text-align: center;
 	vertical-align: top;
 	height: 106px;
@@ -105,3 +104,12 @@ body {
 	text-decoration:none;
 }
 /* Footer */
+
+
+#awards_text p {
+	font-size: 150;
+}
+
+#countdown_description_text p {
+	font-size: 16;
+}
