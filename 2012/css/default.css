@@ -492,7 +492,9 @@ a.slidePrev:hover, a.slideNext:hover { background-position: 0 -64px;}
 	
 /* showcase/spotlight */
 
-#Showcase 	{ padding: 10px 0 0; }
+#Showcase 	{ 
+	padding: 10px 0 0; 
+	text-align: center;}
 
 
 /* ribbon elements (wrap around) */
