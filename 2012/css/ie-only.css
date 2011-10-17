@@ -1,0 +1,47 @@
+
+/*** For Sucky Browsers (targets IE 6 and earlier) ***/
+
+/* png fix */
+
+/* layout sizing adjustments */
+.contentArea {
+	margin: 0;
+	padding-left: 26px;}
+.one-third, .two-thirds, .half-page, .full-page {
+	margin: 0;
+	padding: 0 10px 0 25px;}
+#Footer .one-third, #Footer .two-thirds, #Footer .half-page {
+	margin: 0;
+	padding: 0 25px 0 25px;}
+#Footer .contentArea {width: 964px;}
+
+.ribbon { position: relative; }
+
+/* fix spacing issues */
+.portfolio {margin-left: -31px;}
+.portfolio-item {margin-left: 0; padding: 0 0 0 31px;}
+.two-thirds .portfolio-item {padding-right: 10px;}
+
+.sideNav li a	{ zoom: 1; }
+.sideNavWrapper	{ margin: 0;}
+
+a.slidePrev 	{ margin: 0 0 0 6px; }
+a.slideNext		{ margin: 0 6px; }
+
+.hr	{margin-bottom: 0;}
+
+/* Slide show - Gallery View */
+/* TRANSPARENT BORDER FIX FOR IE6 */
+*html .pointer { filter: chroma(color=pink); }
+
+/* menu */
+li li a .sf-sub-indicator { top: 0.9em; }
+.sf-sub-indicator { background-image: url("../images/arrows-ffffff.gif"); }
+.sf-menu ul .sf-sub-indicator { background-position:  -10px 0; }
+
+/* login modal */
+#fancy_content .loginForm .hr { margin-bottom: 0;}
+#fancy_content .loginForm .signInButton { margin-top: -5px;}
+
+/* top reveal */
+#ContentPanel .closeBtn {background: transparent url("../images/fancybox/smallClose-dark-ie6.gif") repeat scroll 0 0;}

@@ -1,0 +1,49 @@
+#cluetip-close img{border:0}
+#cluetip-title{overflow:hidden}
+#cluetip-title #cluetip-close{float:right;position:relative}
+#cluetip-waitimage{background-image:url(../images/tooltip/wait.gif);height:11px;position:absolute;width:43px}
+.cluetip-arrows{background-position:0 0;background-repeat:no-repeat;display:none;height:22px;left:-11px;position:absolute;top:0;width:11px}
+#cluetip-extra{display:none}
+.cluetip-default{background-color:#d9d9c2}
+.cluetip-default #cluetip-outer{background-color:#d9d9c2;margin:0;position:relative}
+.cluetip-default h3#cluetip-title{background-color:#87876a;color:#fff;font-size:1.1em;font-weight:400;margin:0 0 5px;padding:8px 10px 4px}
+.cluetip-default #cluetip-title a{color:#d9d9c2;font-size:.95em}
+.cluetip-default #cluetip-inner{padding:10px}
+.clue-right-default .cluetip-arrows{background-image:url(../images/tooltip/darrowleft.gif)}
+.clue-left-default .cluetip-arrows{background-image:url(../images/tooltip/darrowright.gif);left:100%;margin-right:-11px}
+.clue-top-default .cluetip-arrows{background-image:url(../images/tooltip/darrowdown.gif);height:11px;left:50%;margin-left:-11px;top:100%;width:22px}
+.clue-bottom-default .cluetip-arrows{background-image:url(../images/tooltip/darrowup.gif);height:11px;left:50%;margin-left:-11px;top:-11px;width:22px}
+.cluetip-jtip{background-color:transparent}
+.cluetip-jtip #cluetip-outer{background-color:#fff;border:2px solid #ccc;position:relative}
+.cluetip-jtip h3#cluetip-title{background-color:#ccc;color:#333;font-size:16px;font-weight:400;margin:0 0 5px;padding:2px 5px}
+.cluetip-jtip #cluetip-inner{display:inline-block;padding:0 5px 5px}
+.clue-right-jtip .cluetip-arrows{background-image:url(../images/tooltip/arrowleft.gif)}
+.clue-left-jtip .cluetip-arrows{background-image:url(../images/tooltip/arrowright.gif);left:100%;margin-right:-11px}
+.clue-top-jtip .cluetip-arrows{background-image:url(../images/tooltip/arrowdown.gif);height:11px;left:50%;margin-left:-11px;top:100%;width:22px}
+.clue-bottom-jtip .cluetip-arrows{background-image:url(../images/tooltip/arrowup.gif);height:11px;left:50%;margin-left:-11px;top:-11px;width:22px}
+.cluetip-rounded{background:transparent url(images/bl.gif) no-repeat 0 100%;margin-left:12px;margin-top:10px}
+.cluetip-rounded #cluetip-outer{background:transparent url(images/tl.gif) no-repeat 0 0;margin-top:-12px}
+.cluetip-rounded #cluetip-title{background-color:transparent;margin:0 -12px 0 0;padding:12px 12px 0;position:relative}
+.cluetip-rounded #cluetip-extra{background:transparent url(images/tr.gif) no-repeat 100% 0;display:block;height:30px;margin:-12px -12px 0 0;position:absolute;right:0;top:0;width:12px}
+.cluetip-rounded #cluetip-inner{background:url(images/br.gif) no-repeat 100% 100%;margin:-18px -12px 0 0;padding:5px 12px 12px;position:relative}
+.cluetip-rounded div#cluetip-close{background:transparent;color:#009;margin:0 5px 5px;text-align:right}
+.cluetip-rounded div#cluetip-close a{color:#777}
+.clue-right-rounded .cluetip-arrows{background-image:url(images/rarrowleft.gif)}
+.clue-left-rounded .cluetip-arrows{background-image:url(images/rarrowright.gif);left:100%;margin-left:12px}
+.clue-top-rounded .cluetip-arrows{background-image:url(images/rarrowdown.gif);height:11px;left:50%;margin-left:-11px;top:100%;width:22px}
+.clue-bottom-rounded .cluetip-arrows{background-image:url(images/rarrowup.gif);height:11px;left:50%;margin-left:-11px;top:-23px;width:22px}
+.cluetip-skinned{background:transparent url(../images/tooltip/skinned-bl.png) no-repeat 0 100%;margin-top:12px}
+.cluetip-skinned #cluetip-outer{background:transparent url(../images/tooltip/skinned-tl.png) no-repeat 0 0;margin-top:-25px}
+.cluetip-skinned #cluetip-title{background-color:transparent;line-height:1.5;margin:0 0 0 10px;padding:15px 12px 6px;position:relative}
+.cluetip-skinned #cluetip-extra{background:transparent url(../images/tooltip/skinned-tr.png) no-repeat 100% 0;display:block;height:45px;margin:-25px -12px 0 0;position:absolute;right:0;top:0;width:12px}
+.cluetip-skinned #cluetip-inner{background:url(../images/tooltip/skinned-br.png) no-repeat 100% 100%;margin:0 -12px 0 0;padding:0 22px 1.5em;position:relative}
+.cluetip-skinned div#cluetip-close{background:transparent;position:absolute;right:-4px;top:-49px}
+.cluetip-skinned div#cluetip-close a{background-image:url(../images/tooltip/skinned-close.png);display:block;height:22px;overflow:hidden;text-indent:123px;width:23px}
+.clue-right-skinned .cluetip-arrows{background-image:url(../images/tooltip/skinned-arrowL.gif);left:-4px;margin-top:-7px}
+.clue-left-skinned .cluetip-arrows{background-image:url(../images/tooltip/skinned-arrowR.gif);left:100%;margin-left:5px}
+.clue-top-skinned .cluetip-arrows{background-image:url(../images/tooltip/skinned-arrowD.gif);height:11px;left:50%;margin-left:-11px;margin-top:-7px;top:100%;width:22px}
+.clue-bottom-skinned .cluetip-arrows{background-image:url(../images/tooltip/skinned-arrowU.gif);height:11px;left:50%;margin-left:-11px;top:-30px;width:22px}
+.mozFix #cluetip-extra,.ieFix #cluetip-extra{height:39px}
+.mozFix #cluetip-title{padding-bottom:0}
+.ieFix #cluetip-inner{margin-top:-5px;padding-bottom:0}
+.cluetip-default div#cluetip-close,.cluetip-jtip div#cluetip-close{color:#900;margin:0 5px 5px;text-align:right}

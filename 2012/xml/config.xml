@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cu3er>
+	<settings>
+		
+		<prev_button>
+			<defaults round_corners="0,25,0,25" />
+			<tweenIn x="20" tint="0x000000" alpha="0.2" />
+			<tweenOver tint="0xFFFFFF" scaleX="1.05" scaleY="1.05"/>
+			<tweenOut tint="0x000000" />
+		</prev_button>
+		
+		<prev_symbol>
+			<defaults type="2" />
+			<tweenIn x="18" alpha="0.8" />
+			<tweenOver tint="0x000000" />			
+		</prev_symbol>
+		
+    	<next_button>
+			<defaults round_corners="25,0,25,0" x="938" />			
+			<tweenIn x="918" tint="0x000000" alpha="0.2" />
+			<tweenOver tint="0xFFFFFF"  scaleX="1.05" scaleY="1.05"/>
+			<tweenOut tint="0x000000" />
+		</next_button>
+		
+		<next_symbol>
+			<defaults type="2" />
+			<tweenIn x="920" alpha="0.8" />
+			<tweenOver tint="0x000000" />
+		</next_symbol>
+		
+		<auto_play>
+			<defaults symbol="circular" time="3" />
+			<tweenIn x="900" y="38" width="18" height="18" tint="0xFFFFFF" />
+		</auto_play>
+		
+			
+	</settings>    
+
+	<slides>
+	
+        <slide>
+            <url>images/slideshow/slide-1.png</url>
+        </slide>
+		<!-- transition between slides -->
+        <transition num="3" slicing="vertical" direction="down" z_multiplier="2"/>
+        <slide>
+            <url>images/slideshow/slide-2.png</url>
+        </slide>		
+		<!-- transition between slides -->
+        <transition num="4" direction="right" shader="flat" z_multiplier="3" />
+		<slide>
+            <url>images/slideshow/slide-3.png</url>
+        </slide>
+		<!-- transition between slides -->
+        <transition num="3" direction="up" slicing="vertical" shader="flat" z_multiplier="3" />
+		<slide>
+            <url>images/slideshow/slide-4.png</url>
+        </slide>
+		<!-- transition between slides -->
+		<transition num="6" slicing="vertical" direction="left" shader="flat" delay="0.05" z_multiplier="4" />
+        <slide>
+            <url>images/slideshow/slide-5.png</url>
+        </slide>
+		<!-- transition between slides -->
+        <transition num="3" slicing="vertical" direction="down"/>
+        <slide>
+            <url>images/slideshow/slide-6.png</url>
+        </slide>
+		<!-- transition between slides -->
+        <transition num="3" slicing="horizontal" direction="right" delay="0.05" z_multiplier="4" />
+        <slide>
+            <url>images/slideshow/slide-1.png</url>
+        </slide>		
+		<!-- transition between slides -->
+        <transition num="3" slicing="vertical" direction="up" z_multiplier="3"/>
+		<slide>
+            <url>images/slideshow/slide-2.png</url>
+        </slide>
+				
+	</slides>
+</cu3er>
+
