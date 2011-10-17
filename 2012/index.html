@@ -93,8 +93,22 @@
 	<!-- Functions to initialize after page load -->
 	<script type="text/javascript" src="js/source/onLoad.js"></script>
 
-	
 </head>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=153513511366565";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
 <body>
 
 <!-- Top reveal (slides open, add class "topReveal" to links for open/close toggle ) -->
@@ -195,7 +209,7 @@
 								<a href="about.html">About</a>
 								<ul>
 									<li><a href="#">Overview</a></li>
-									<li><a href="#">Staff</a></li>
+									<li><a href="#">The Staff</a></li>
 								</ul>
 							</li>	
 						</ul>
@@ -260,36 +274,9 @@
 		
 			<!-- Showcase Content -->
 			<div id="Showcase">
-			
-				<div class="two-thirds">
-					<img src="images/icons/monitor-skins.png" width="85" height="75" alt="computer monitor" style="float:left; margin: -2px 30px 0 15px;" /> 
-					<h1 class="title">
-						5 Skins in 1 Theme
-						<span>Use a preset color or create your own custom skin in minutes</span>
-					</h1>
-					<p>
-						Choose from 
-						<a href="#" onclick="switchSkin('1');" class="tipInclude" rel="images/content/skin-changer/skin-1.jpg" title="Skin 1">skin 1</a>, 
-						<a href="#" onclick="switchSkin('2');" class="tipInclude" rel="images/content/skin-changer/skin-2.jpg" title="Skin 2">skin 2</a>, 
-						<a href="#" onclick="switchSkin('3');" class="tipInclude" rel="images/content/skin-changer/skin-3.jpg" title="Skin 3">skin 3</a>, 
-						<a href="#" onclick="switchSkin('4');" class="tipInclude" rel="images/content/skin-changer/skin-4.jpg" title="Skin 4">skin 4</a> or 
-						<a href="#" onclick="switchSkin('5');" class="tipInclude" rel="images/content/skin-changer/skin-5.jpg" title="Skin 5">skin 5</a>.
-					</p>
-				</div>
-				
-				<div class="one-third">
-					<img src="images/icons/projector.png" width="96" height="75" alt="digital projector" style="float:right; margin: 0 8px 0 0;" /> 
-					<h1 class="title">
-						3 Slide Shows
-						<span>A style for every layout</span>
-					</h1>
-					<p>
-						<a href="index.html">Cycle</a>, <a href="index-2.html">Cu3er</a> and <a href="index-3.html">Gallery</a>
-					</p>
-				</div>
-				
+				<div class="">
+					<img src="images/sponsors/Sponsors.png" />				
 				<div class="hr"></div>
-				
 			</div>
 			
 			<!-- Page Content -->
@@ -298,8 +285,8 @@
 				<div class="two-thirds">
 					
 					<!-- Welcome Message / Page Headline -->
-					<h1 class="headline">Welcome to <strong>Unite</strong>, merging <strong>crisp</strong> design, <strong>powerful</strong> communication and <strong>ease of use</strong>.</h1>
-					<p class="impact">Unite takes a clean, organized approach to presenting content so it’s easier to find what you want. The theme includes page layouts for: <a href="sample-layout.html#full_page">full page</a>, <a href="sample-layout.html#multi_column_page">multi-column</a>, <a href="sample-blog.html">blog</a>, <a href="sample-portfolio.html">portfolio</a>, <br /><a href="sample-contact.html">contact form</a> and an <a href="sample-login.html" class="login" title="Custom Login Page|This theme includes 2 different login forms. Apply either with your admin portal for a cohesive, stylish website. (click for preveiw)">administrative login</a> (<a href="#ContentPanel" class="topReveal" title="Alternate Admin Login|Preview the alternate login.">alternate</a>).</p>
+					<h1 class="headline">Welcome to the <strong>MIT 6.470</strong> website for <strong>2012</strong>.</h1>
+					<p class="impact">MIT's 6.470 is a web programming class and competition that takes place over IAP.  Beginners and experts alike are encouraged to sign up, learn, and compete for $30,000+ in total prizes!</p>
 	
 					<!-- Featured Content -->
 					<div class="ribbon">
@@ -315,8 +302,8 @@
 							<a href="images/content/demo-only/featured-1.jpg" class="featuredImg img zoom" rel="featured"><img src="images/content/demo-only/featured-1-thumb.jpg" alt="featured item" /></a>
 							<div class="featuredText">
 								<h1 class="title">
-									Dynamic Functionality
-									<span>jQuery integrated to provide high quality, dynamic design features.</span>
+									Comprehensive Curriculum
+									<span>Our curriculum covers all the essential topics needed to get one up and running building websites.  Much of the material will be available online.</span>
 								</h1>
 								<a href="#">More information...</a>
 							</div>
@@ -326,8 +313,8 @@
 							<a href="images/content/demo-only/featured-2.jpg" class="featuredImg img zoom" rel="featured"><img src="images/content/demo-only/featured-2-thumb.jpg" alt="featured item" /></a>
 							<div class="featuredText">
 								<h1 class="title">
-									Cross Browser Compatible
-									<span>Compatible with all major browsers. IE 6,7 and 8, Firefox 3.5+, Opera 10+, Google Chrome and Safari 4+.</span>
+									Insightful Guest Lectures
+									<span>In addition to our lectures on the bare fundamentals of web programming, we'll bring in experts from industry to lend insight on additional topics.</span>
 								</h1>
 								<a href="#">More information...</a>
 							</div>
@@ -337,8 +324,8 @@
 							<a href="images/content/demo-only/featured-3.jpg" class="featuredImg img zoom" rel="featured"><img src="images/content/demo-only/featured-3-thumb.jpg" alt="featured item" /></a>
 							<div class="featuredText">
 								<h1 class="title">
-									Various Text and Page Layouts
-									<span>A wide range of text styling and page layouts for corporate, portfolio and other uses.</span>
+									Interaction With Sponsors
+									<span>Looking for a summer internship or full-time job?  Want to meet experts from industry?  Our wonderful sponsors can help you with both of these.</span>
 								</h1>
 								<a href="#">More information...</a>
 							</div>
@@ -348,8 +335,8 @@
 							<a href="images/content/demo-only/featured-4.jpg" class="featuredImg img zoom" rel="featured"><img src="images/content/demo-only/featured-4-thumb.jpg" alt="featured item" /></a>
 							<div class="featuredText">
 								<h1 class="title">
-									5 Pre-made Skins
-									<span>Choose from an array of five unique style variations.</span>
+									$30,000+ in Total Prizes
+									<span>Think you've got what it takes to build a killer website?  You and up to two teammates can compete for a slice of our large pool of prize money.</span>
 								</h1>
 								<a href="#">More information...</a>
 							</div>
@@ -385,52 +372,9 @@
 					<div class="hr"></div>
 					
 					<!-- Side Navigation Menu -->
-					<h1 class="title" style="margin-bottom:0;">
-						Sub Navigation
-						<span>Links to other areas of the site</span>
-					</h1>
 					<div class="sideNavWrapper">
-						<div class="sideNavBox-1">
-							<div class="sideNavBox-2">
-								<ul class="sideNav">
-									<li><a href="#">Sample Navigation Link</a></li>
-									<li class="currentPage"><a href="#">Current Page Sample</a></li>
-									<li><a href="#">Sample Navigation Link</a></li>
-									<li><a href="#">Sample Navigation Link</a></li>
-									<li><a href="#">Sample Navigation Link</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Testimonial/Quote -->
-					<div class="quote">
-						<div class="quoteBox-1">
-							<div class="quoteBox-2">
-								<p>This is one amazing quote! I mean really, really amazing. Like super incredible and stuff.</p>
-							</div>
-						</div>
-					</div>
-					<div class="quoteAuthor">
-						<p class="name">Gary Philips</p>
-						<p class="details">President, Quotable Quotes, Inc.</p>
-					</div>
-					
-					<div class="hr"></div>
-					
-					<!-- Newsletter -->
-					<h1 class="title" style="margin-bottom:0;">
-						Newsletter
-						<span>We’ll keep you informed and updated</span>
-					</h1>
-					<form action="#" id="newsletter" method="post">
-						<p style="margin: 1em 0 1px;">
-							<label for="NewsletterEmail" class="overlabel">Email</label>
-							<input type="text" id="NewsletterEmail" class="textInput" style="width: 259px; margin:0;" />
-						</p>
-						<p style="margin:0;"><button type="submit" class="btn"><span>Sign me up!</span></button></p>
-					</form>
-	
+						<div class="fb-like-box" data-href="facebook.com/mit6470" data-width="286" data-show-faces="false" data-stream="true" data-header="true"></div>					</div>
+											
 				</div>
 				
 				<!-- End of Content -->
@@ -448,34 +392,28 @@
 				<div class="contentArea">
 				
 					<!-- Column 1 -->
-					<div class="one-third">
-						<h3></h3>
-						<p></p>
-					</div>
-
-					<!-- Column 2 -->
-					<div class="one-third">
-						<h3>Stay Connected</h3>
+					<div class="two-thirds">
+						<h3>Show Your Support</h3>
 						<ul class="horizList">
-							<li><a href="#"><img src="images/icons/social/delicious.png" width="40" height="40" alt="Delicious" /></a></li>
-							<li><a href="#"><img src="images/icons/social/flickr.png" width="40" height="40" alt="Flickr" /></a></li>
-							<li><a href="#"><img src="images/icons/social/linkedin.png" width="40" height="40" alt="LinkedIn" /></a></li>
-							<li><a href="#"><img src="images/icons/social/skype.png" width="40" height="40" alt="Skype" /></a></li>
-							<li><a href="#"><img src="images/icons/social/twitter.png" width="40" height="40" alt="Twitter" /></a></li>
-							<li><a href="#"><img src="images/icons/social/yahoo.png" width="40" height="40" alt="Yahoo!" /></a></li>
-						</ul>
-						<p>Keep track of MIT 6.470 on all your favorite social networks.</p>
-					</div>
+							<li><div class="fb-like" data-href="http://6.470.scripts.mit.edu/2012/index.html" data-send="true" data-width="450" data-show-faces="true" data-colorscheme="dark"></div></li>
+							
+							<li><g:plusone annotation="inline"></g:plusone></li>
 
-					<!-- Column 3 -->
+						</ul>
+					</div>
+					
+					<!-- Column 2 -->
+					
 					<div class="one-third last">
 						<h3>Contact Information</h3>
 						<div class="logoMark"></div>
 						<p>
 							6.470-staff@mit.edu<br />
 						</p>
+						
 					</div>
-					
+
+
 					<!-- End of Content -->
 					<div class="clear"></div>
 	
