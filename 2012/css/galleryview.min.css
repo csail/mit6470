@@ -1,0 +1,16 @@
+#GalleryView{visibility:hidden}
+#GalleryView ul li{list-style:none;margin:0;padding:0}
+#GalleryView .panel-overlay h1,#GalleryView .panel-overlay h2,#GalleryView .panel-overlay h3,#GalleryView .panel-overlay h4{color:#ccc;margin-bottom:.25em}
+.loader{background:url(loader.gif) center center no-repeat #ddd}
+.panel .panel-overlay,.panel .overlay-background{height:60px;padding:1em}
+.panel .panel-overlay p{margin:0}
+.panel .overlay-background{background:#222}
+.panel .panel-overlay{color:#fff}
+.panel .panel-overlay a{color:#fff;font-weight:700;text-decoration:underline}
+.filmstrip{margin:5px}
+.frame .img_wrap{border:1px solid #aaa}
+.frame img{border:none}
+.frame .caption{color:#888;font-size:11px;text-align:center}
+.frame.current .caption{color:#000}
+.frame.current .img_wrap,.pointer{border-color:#000}
+.pointer{border-color:#fff}

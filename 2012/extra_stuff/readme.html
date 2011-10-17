@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Unite by Parallelus - Theme Documentation</title>
+	<style type="text/css" media="screen">
+		body { font: 13px/1.4 Georgia, "Times New Roman", Times, serif; color: #333;}
+		#wrapper {width: 700px; margin: 0 auto;}
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+		code { font: 13px/1.3 "Courier New", Courier, monospace; background-color: #eee; border: 1px dotted #aaa; padding: 0px 3px;}
+	.style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+	</style>
+</head>
+
+
+<body>
+<div id="wrapper">
+	
+	<h1>Theme: <a href="www/index.html">Unite</a></h1>
+		
+	<div>
+		<div>
+		<p>
+			<strong>
+				Created: January 29, 2010<br />
+				By: Parallelus (Andy Wilkerson)<br />
+			</strong>
+		</p>
+		</div>	
+		<div>
+			<p>Thank you for purchasing my theme. I hope you find my work to your liking. I always welcome feedback and suggestions so don't hesitate to leave me comments. If you have  questions that are not answered by this help file, please feel free to email me via my user page contact form. You will find additional information and code samples in the example pages provided. Open them in your browser to view the information, or you can get the same information from the live preview of this theme available on ThemeForest. There are detailed comments within the code files to help you update and modify the theme. If you are happy with the theme, please take a moment to rate it on the ThemeForest website.</p>
+			<p>Thank you,<br>
+				Andy Wilkerson!</p>
+		</div>
+	</div>
+		
+	<hr>
+	<a name="toc" />	
+	<h2>Table of Contents</h2>
+		<ol>
+			<li><a href="#about">About The Theme</a></li>
+			<li><a href="#html">HTML Structure</a></li>
+			<li><a href="#css">CSS Files and Structure</a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#files">PSD Files</a></li>
+			<li><a href="#contact">Contact Form</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+			
+		</ol>
+		
+		<hr>
+		<a name="about" />
+		<h3><strong>A) About The Theme</strong> - <a href="#toc">top</a></h3>
+		<p>This theme is designed to be  easy to use for either static HTML pages, or to convert for a content management system (CMS). The design is broken down to allow each section to be separated into a self-contained content block. These blocks are marked with comment tags to make finding them easier:</p>
+		<pre>
+&lt;!-- Name of Section or Area --&gt;
+	&lt;div id="TheIdOfTheContainer" &gt;
+		&lt;some HTML content /&gt;
+	&lt;/div&gt;
+</pre>
+	<h4>Layouts - <a href="www/sample-layout.html">sample-layout.html</a></h4>
+	<p>There are examples of the different layouts and content configurations in the sample pages. Detailed information  can be found on the &quot;Layout&quot; page (<a href="www/sample-layout.html">sample-layout.html</a>) included in the sample files. </p>
+	<h4>Text - <a href="www/sample-text.html">sample-text.html</a></h4>
+	<p>Text formatting details are also available in the sample files. For this information view the &quot;Text Styles&quot; page (<a href="www/sample-text.html">sample-text.html</a>) included in the sample files. This contains example code and sample outputs of all the common HTML tags used for content editing.</p>
+	<h4>Cufon - font replacement</h4>
+	<p>This theme takes advantage of <a href="http://wiki.github.com/sorccu/cufon/">cufon font replacement</a> for headings and other title elements. The font used, &quot;Liberation Sans&quot;, is a free font available online. </p>
+	<p><a href="http://www.dafont.com/font.php?file=liberation_sans&page=1&nb_ppp_old=50&text=&nb_ppp=10&psize=m&classt=alpha">Download "Liberation Sans"</a></p>
+	<h4>Logo Fonts</h4>
+	<p>The logos in the included skins use &quot;Liberation Sans&quot; as the font. This is a free font available online. The dark theme uses an alternate logo font, &quot;Harabara&quot;, also a free font available online.</p>
+	<p><a href="http://www.dafont.com/font.php?file=liberation_sans&page=1&nb_ppp_old=50&text=&nb_ppp=10&psize=m&classt=alpha">Download "Liberation Sans"</a><br><a href="http://www.dafont.com/harabara.font?nb_ppp=50&af=on&l[]=10&l[]=1&text=unite">Download "Harabara"</a></p>
+	<p>If you need assistance  configuring the theme for a CMS or blog, I am happy to provide any help I can. </p>
+<hr>
+		
+		<a name="html" />		
+		<h3><strong>B) HTML Structure</strong> - <a href="#toc">top</a></h3>
+		<p>This theme is a fixed-width design with pre-configured styles for creating layouts with one, two or three columns. </p>
+		<p>The default content area is commented to make it easy to find. Look for the HTML comment with the text &quot;Page Content&quot;. </p>
+		<code>&lt;!-- Page Content --&gt;</code>
+	<p>If you would like to edit the color, font, or style of any elements in one of these columns, you would do the following:</p>
+
+<pre>	.contentArea a {
+		color: [color];
+	} 
+</pre>
+
+	<p>If you find that your new style is not overriding, it is most likely because of a specificity problem. Scroll down in your CSS file and make sure that there isn't a similar style that has more weight.</p>
+
+		<p>I.E.</p>
+
+<pre>	#Wrapper .contentArea a {
+		color: [color];
+	}
+</pre>
+
+	<p>To ensure that your new styles are applied, make sure that they carry enough "weight" and that there isn't a style lower in the CSS file that is being applied after yours.</p>
+		<p>The HTML code is  indented to make it easier to edit. There are also comment markers as a guides to find the beginning and end of major sections such as the top, header, slide show, page content and footer. Each of these sections is labeled with the appropriate tags and has a corresponding ID tag of the main container for that section.</p>
+		<p>You should  use the included sample files as templates for your own layouts. Be sure to backup a file before editing it, or create a copy and work from it.</p>
+<hr>
+
+		<a name="css" />		
+		<h3>C) CSS Files and Structure - <a href="#toc">top</a></h3>
+
+		<p>There are several CSS files included with this theme, but only a few will be necessary for customization. The CSS files are all located in the &quot;/www/css&quot; folder. Within that folder there are two sub-folders, &quot;source&quot; and &quot;skins&quot;. </p>
+		<p>The first folder, &quot;source&quot;, contains the original CSS files with formatted code and comments. Only a few files are in this folder, primarily these are the original CSS files for plugins being used in the design which establish the foundation styles allowing the plugging to function but do not control appearance. If you do find a CSS file that is uncommented and you need the original, check this folder.</p>
+		<p>The second folder, &quot;skins&quot;, houses the skin specific style sheet for each custom skin. If you create a custom skin, you will need to save the style sheet for it in this folder.</p>
+<ol>
+			<li><strong>default.css</strong> - This is the foundation of all the site design and all skin. It controls the layout and design structure of the theme. Making modifications to this file will usually effect all skins unless it is a color or image related change. The skin files extend default.css to apply custom styles. Before you edit this file you should consider making a custom skin style sheet or editing the one you are already using for your design.</li>
+		<li><strong>/skins/skin-#.css</strong> - These are the skin specific style sheets. For the purposes of the online demo, these files are named numerically in a format such as, &quot;skin-##.css&quot;. If you plan to continue using the dynamic style switching functions that are included in the demo, you will need to continue naming your files this way. If you are going to use a single skin you can name the file however you like, and even save it in a different folder if you choose. Once you have the skin CSS file for you custom skin, be sure to add a link to it in all your HTML files in the <code>&lt;HEAD&gt;</code> section of each page. you may also wish to edit this file if you choose to customize the main menu. <br>
+			<br>
+		Your link should look something like this:<br>
+		<code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/skins/skin-123.css&quot; /&gt;</code></li>
+		</ol>
+	
+		
+	<h4>Skinning the Theme</h4>
+		<p>Each  color style is controlled by a custom CSS  file. These are located in &quot;/www/css/skins&quot;. If you want to keep the ability to use different colors and change them on the fly you will want to maintain this structure. The images for each skin are saved in a folder under &quot;/www/images/skins/skin-123/&quot; where &quot;skin-123&quot; is the name of your CSS file. To create a custom skin, duplicate on of the existing skin CSS files and edit it to match the desired styles. You can easily output the custom graphics for you skin using one of the &quot;Theme Graphics - for skinning.PSD&quot; files located in the &quot;Design\Files for skinning&quot; folded included with the theme.</p>
+		<p>After creating the skin CSS file and a matching images folder, save your images to this folder. Use the &quot;Save for web...&quot; feature of Photoshop and select &quot;All user slices&quot; to get the desired graphics. You can create a custom skin in a few minutes by modifying the background colors of the main shape layers of the supplied files. If you want to get more detailed and tweak the output you can edit the individual highlights and shadow features of the layers above the backgrounds. Play with the different layers to see what effect they have. The file was designed to allow easy and fast skinning.</p>
+		<p>After you have the new skin created you will either need to add a link (see above) to the HEAD tag of each HTML page, or if you plane to use the included skin switcher you should be ready to go. You can add a thumbnail graphic to the slider and it will show your new skin in the animation.</p>
+		<p><span class="style1">IMPORTANT:</span> If you are going to create a custom skin or do any advanced editing of the HTML files, you will likely need to edit the JavaScript loading file, &quot;<strong>js/source/onLoad.js</strong>&quot; This file controls  loading and executing of many dynamic JavaScript functions used in the theme. A minified version of this file, &quot;<strong>onLoad.min.js</strong>&quot;, also exists in the main &quot;<strong>js/</strong>&quot; folder. To reduce file size you can replace all references in your HTML files pointing at, &quot;<strong>js/source/onLoad.js</strong>&quot;, with the minimized version of the file, &quot;<strong>js/onLoad.min.js</strong>&quot;. If you do edit the source file you can minimize it and update the &quot;<strong>.min</strong>&quot; version using an online <a href="http://javascriptcompressor.com/" title="free online compressor" target="_blank">JavaScript compressor</a>, or you can leave the HTML files  pointing to the source file, it will not effect the theme's functionality either way.</p>
+	<h4>To create a single skin for your site</h4>
+	<p>The best way to go about creating your own skin, is by starting from one of the pre-made styles that come with the theme. An easy way to do this would be as follows:</p>
+<ol>
+			<li>First, create a copy of an existing style sheet from &quot;/www/css/skins/skin-#.css&quot;, and increment the # to the next unused value. </li>
+			<li>Create a duplicate of the same skin's images folder located in &quot;/www/images/skins/skin-#&quot;</li>
+			<li>Give your new images folder the same name as the CSS file by incrementing the number to match.</li>
+		<li>Open the &quot;Theme Graphics - for skinning.psd&quot; file in the &quot;Design/Files for skinning&quot; folder and modify the colors to create your desired graphics.</li>
+			<li>Output the graphics using &quot;Save for web...&quot; to the new skin's images folder. Choose &quot;All user created slices&quot; as the option for output method when asked.</li>
+			<li>Open the new CSS file for your skin. Do a find and replace for the path to your images folder, this would be something like, Find: &quot;skin-5&quot;, Replace with: &quot;Skin-6&quot;, to update all occurrences of the image folder path in the file. Save when finished.</li>
+			<li>Add a link in your HTML files pointing to your new CSS skin file:<br>
+				<code>&lt;link rel="stylesheet" type="text/css" href="css/skins/skin-#.css" /&gt;</code><br>
+			</li>
+			<li>Save your HTML files and load the page to preview the new skin.</li>
+			<li>Open your skin CSS file and begin editing the individual style properties to match the graphics you have created for your new skin.</li>
+			<li>Save, upload and enjoy!<code></code></li>
+</ol>
+	<h4>More about skinning this design</h4>
+	<p>The sample pages included with this theme provide documentation relevant to each section. You can find more information about the CSS styles and skinning of the design by viewing the samples.</p>
+		<p><a href="www/index.html">Click here to open the sample pages</a></p>
+<hr>
+		
+		<a name="javascript" />		
+		<h3><strong>D) JavaScript</strong> - <a href="#toc">top</a></h3>
+		
+		<p>This theme imports several Javascript files. All located in the "js" folder.</p>
+		
+		<ol><li><a href="http://users.tpg.com.au/j_birch/plugins/superfish/">Superfish</a> - main menu </li>
+			<li><a href="http://malsup.com/jquery/cycle/">jQuery Cycle Plugin</a> - slide show (index.html)</li>
+			<li><a href="http://www.progressivered.com/cu3er/docs/">CU3ER</a> - Optional alternate slide show (index-2.html)</li>
+			<li><a href="http://spaceforaname.com/galleryview">GalleryView</a> - Optional alternate slide show (index-3.html)</li>
+			<li><a href="http://flesler.blogspot.com/2007/10/jqueryscrollto.html">jQuery.ScrollTo</a> - Scrolling effect for anchor tags  </li>
+			<li><a href="http://allinthehead.com/retro/338/supersleight-jquery-plugin">SuperSleight</a> (PNG fix)</li>
+			<li><a href="http://fancybox.net/">FancyBox</a> - lightbox effect for portfolio and login form</li>
+			<li><a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/">jQuery Validation</a> - form validation for contact page</li>
+			<li><a href="http://wiki.github.com/sorccu/cufon/">cufon Font Replacement</a> - for custom font replacement</li>
+			<li><a href="http://plugins.learningjquery.com/cluetip/">clueTips</a> - Mouse over tool tips</li>
+			<li><a href="http://scott.sauyet.com/thoughts/archives/2007/03/31/overlabel-with-jquery/">Overlabel</a> - form input labels</li>
+		</ol>
+		  
+<hr>
+
+		<a name="files" />		
+		<h3><strong>E) PSD Files</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Several design files are included with this theme:</p>
+		
+		<ol>
+			<li>Additional graphics - miscellaneous graphics used in design</li>
+			<li>Dialogs
+				<ol>
+					<li>Login.psd - Login pop-up window</li>
+					<li>Modal.psd - Modal for images and portfolio</li>
+				</ol>
+			</li>
+			<li>Files for skinning
+				<ol>
+					<li>&quot;Theme Graphics - default.psd&quot; - used to create default skin, not optimized</li>
+					<li>&quot;Theme Graphics - for skinning (dark).psd&quot; - used to skin dark theme</li>
+					<li>&quot;<strong>Theme Graphics - for skinning.psd</strong>&quot; - used for most skinning, start here.</li>
+					<li>&quot;Tooltip.psd&quot; - Tool tips skinning.</li>
+				</ol>
+			</li>
+			<li>Slideshow - custom files for creating graphics sized for slide show</li>
+			<li>Theme.psd - The main design (useful for mockups, but not sliced for output)</li>
+		</ol>
+	
+<hr>
+		
+		
+		<a name="contact" />				
+		<h3><strong>F) Contact form</strong> - <a href="#toc">top</a></h3>
+
+		<h4>Contact form setup</h4>
+			<p>The theme includes a working contact form. This form uses PHP and requires a server running PHP for it to work. </p>
+			<blockquote>
+				<p><strong>Adding Your Email Address</strong></p>
+				<p>To add your own email address to the form, open the file &quot;<strong>contact-send.ph</strong>p&quot; and at the very top of the file replace &quot;<strong>yourname@yourwebsite.com</strong>&quot; with your own email address. Be sure not to delete the quotes, semi-colon or other code when making this change.</p>
+				<p><code>$YourEmailAddress = &quot;<strong>yourname@yourwebsite.com</strong>&quot;;</code></p>
+				<p><strong>Problems Sending Emails</strong></p>
+				<p>If you experience trouble sending emails you should verify the following:</p>
+				<ol>
+					<li>Make sure the address entered in &quot;<strong>contact-send.php</strong>&quot; is correct.</li>
+					<li>Verify that PHP is installed on the server your site is running on.</li>
+					<li>If necessary contact your hosting provider to ensure they do not need to activate something.</li>
+				</ol>
+			</blockquote>
+		<h4>Pages with Contact Forms</h4>
+				<p>You must include the following code in the &lt;HEAD&gt; tag of any page with the contact form.</p>
+			<blockquote><pre>&lt;!-- form validation scripts (for contact page) --&gt;<br>&lt;script src=&quot;js/jquery.validate.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;<br>	<br>&lt;!-- Contact form triggers and AJAX submit --&gt;<br>&lt;script src=&quot;js/contactForm.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</pre></blockquote>
+		<p>For and example of this review the included contact form sample page.</p>
+
+
+<hr>
+		
+		
+		<a name="credits" />		
+		<h3><strong>G) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<p>The following images, icons or other files have been used in this theme.
+		
+		<ul>
+			<li><a href="http://narjisnaqvi.deviantart.com/art/Web-social-icons-117562335">Web social icons by ~NarjisNaqvi</a></li>
+			<li>Monitor, slide projector and lock icons from <a href="http://www.iconfinder.net/">Icon Finder</a></li>
+			<li><a href="http://users.tpg.com.au/j_birch/plugins/superfish/">Superfish</a></li>
+			<li><a href="http://malsup.com/jquery/cycle/">jQuery Cycle Plugin</a></li>
+			<li><a href="http://www.progressivered.com/cu3er/">CU3ER</a></li>
+			<li><a href="http://spaceforaname.com/galleryview">GalleryView</a></li>
+			<li><a href="http://flesler.blogspot.com/2007/10/jqueryscrollto.html">jQuery.ScrollTo</a></li>
+			<li><a href="http://allinthehead.com/retro/338/supersleight-jquery-plugin">SuperSleight</a> (PNG fix)</li>
+			<li><a href="http://fancybox.net/">FancyBox</a></li>
+			<li><a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/">jQuery Validation</a></li>
+			<li><a href="http://cufon.shoqolate.com/generate/">cufón</a></li>
+			<li><a href="http://plugins.learningjquery.com/cluetip/">clueTips</a></li>
+			<li><a href="http://scott.sauyet.com/thoughts/archives/2007/03/31/overlabel-with-jquery/">Overlabel</a></li>
+		</ul>
+		
+<hr>
+		
+		<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>Parallelus (Andy Wilkerson)</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+</div><!-- end div .container -->
+</body>
+</html>

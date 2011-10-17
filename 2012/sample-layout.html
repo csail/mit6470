@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Parallelus" />
+	<meta name="description" content="A brief description of this website or your business." />
+	<meta name="keywords" content="keywords, or phrases, associated, with each page, are best" />
+	<title>Unite - Together is Better (created by Parallelus)</title>
+	
+	<!-- Favorites icon -->
+	<link rel="shortcut icon" href="http://para.llel.us/favicon.ico" />
+	
+	<!-- Style sheets -->
+	<link rel="stylesheet" type="text/css" href="css/reset.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/menu.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="css/tooltip.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	
+	<!-- jQuery framework and utilities -->
+	<script type="text/javascript" src="js/jquery-1.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+	<script type="text/javascript" src="js/hoverIntent.min.js"></script>
+	<script type="text/javascript" src="js/jquery.bgiframe.min.js"></script>
+	<!-- Drop down menus -->
+	<script type="text/javascript" src="js/superfish.min.js"></script>
+	<script type="text/javascript" src="js/supersubs.min.js"></script>
+	<!-- Tooltips -->
+	<script type="text/javascript" src="js/jquery.cluetip.min.js"></script>
+	<!-- Input labels -->
+	<script type="text/javascript" src="js/jquery.overlabel.min.js"></script>
+	<!-- Anchor tag scrolling effects -->
+	<script type="text/javascript" src="js/jquery.scrollTo-min.js"></script>
+	<script type="text/javascript" src="js/jquery.localscroll-min.js"></script>
+	<!-- Inline popups/modal windows -->
+	<script type="text/javascript" src="js/jquery.fancybox-1.2.6.pack.js"></script>		
+	<!-- Font replacement (cufón) -->
+	<script src="js/cufon-yui.js" type="text/javascript"></script>
+	<script src="js/LiberationSans.font.js" type="text/javascript"></script>
+
+	<!-- IE only includes (PNG Fix and other things for sucky browsers -->
+	
+	<!--[if lt IE 7]>
+		<link rel="stylesheet" type="text/css" href="css/ie-only.css">
+		<script type="text/javascript" src="js/pngFix.min.js"></script>
+		<script type="text/javascript"> 
+			$(document).ready(function(){ 
+				$(document.body).supersleight();
+			}); 
+		</script> 
+	<![endif]-->
+	<!--[if IE]><link rel="stylesheet" type="text/css" href="css/ie-only-all-versions.css"><![endif]-->
+	
+	
+	<!-- BEGIN: For Demo Only -->
+		<!--			
+		These entries are only needed for demo features, such as the real-time skin changer.
+		They can be deleted for production installs without effecting the theme's design or 
+		any of the funcionality.
+		-->
+		<script type="text/javascript" src="js/demo.js"></script>	
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<!-- END: For Demo Only -->
+	
+
+	<!-- Functions to initialize after page load -->
+	<script type="text/javascript" src="js/source/onLoad.js"></script>
+	
+	<!-- form validation scripts (for contact page) -->
+	<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		// initialize form validation
+		$(document).ready(function() {
+			$("#CommentForm").validate();
+		});
+	</script>
+	
+	
+</head>
+<body>
+
+<!-- Top reveal (slides open, add class "topReveal" to links for open/close toggle ) -->
+<div id="ContentPanel">
+
+	<!-- close button -->
+	<a href="#" class="topReveal closeBtn">Close</a>
+	
+	<div class="contentArea">
+
+		<!-- New member registration -->
+		<div class="right" style="margin:10px 0 0;">
+			<h1>
+				Not a member yet?
+				<span>Register now and get started.</span>
+			</h1>
+			<button type="button">Register for an account</button>
+		</div>
+		
+		<!-- Alternate Login -->				
+		<div>
+			<form class="loginForm" method="post" action="" style="height:auto;">
+				<div id="loginBg"><img src="images/icons/lock-and-key-110.png" width="110" height="110" alt="lock and key" /></div>
+				<h2 style="margin-top: 20px;">Sign in to your account.</h2>
+				<fieldset>
+					<legend>Account Login</legend>
+					<p class="left" style="margin: 0 8px 0 0;">
+						<label for="RevealUsername" class="overlabel">Username</label>
+						<input id="RevealUsername" name="RevealUsername" type="text" class="loginInput textInput rounded" />
+					</p>
+					<p class="left" style="margin: 0 5px 0 0;">
+						<label for="RevealPassword" class="overlabel">Password</label>
+						<input id="RevealPassword" name="RevealPassword" type="password" class="loginInput textInput rounded" />
+					</p>
+					<p class="left" style="margin: -7px 0 0;">
+						<button type="submit" class="btn" style="margin:0;"><span>Sign in</span></button>
+					</p>
+				</fieldset>
+				<p class="left noMargin">
+					<a href="#">Forgot your password?</a>
+				</p>
+			</form>		
+		</div>
+		
+		<!-- End of Content -->
+		<div class="clear"></div>
+	
+	</div>
+</div>
+
+<!-- Site Container -->
+<div id="Wrapper">
+	<div id="PageWrapper">
+		<div class="pageTop"></div>
+		<div id="Header">
+		
+			<!-- Main Menu -->
+			<div id="MenuWrapper">
+				<div id="MainMenu">
+					<div id="MmLeft"></div>
+					<div id="MmBody">
+						
+						<!-- Main Menu Links -->
+						<ul class="sf-menu">
+							<li class="current"><a href="index.html">Home</a></li>
+							<li>
+								<a href="#">Features</a>
+								<ul>
+									<li><a href="#">Home page</a>
+										<ul>
+											<li><a href="index.html">Home 1 (default)</a></li>
+											<li><a href="index-2.html">Home 2 (CU3ER)</a></li>
+											<li><a href="index-3.html">Home 3 (GalleryView)</a></li>
+										</ul>
+									</li>
+									<li><a href="sample-portfolio.html">Portfolio</a></li>
+									<li><a href="sample-blog.html">Blog</a></li>
+									<li>
+										<a href="sample-login.html" class="login">Login</a>
+										<ul>
+											<li><a href="sample-login.html" class="login">Style 1 (popup)</a></li>
+											<li><a href="#ContentPanel" class="topReveal">Style 2 (slide)</a></li>
+										</ul>
+									</li>
+									<li><a href="sample-text.html">Text Styles</a></li>
+									<li><a href="theme-information.html">About the Theme</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Skins</a>
+								<ul>
+
+									<li>
+										<a href="#" onclick="switchSkin('1');">Skin 1</a>
+										<ul>
+											<li style="text-align:center;"><a href="#" onclick="switchSkin('1');"><img class="skin" src="images/content/skin-changer/skin-1.jpg" height="250" alt="Skin 1" /></a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#" onclick="switchSkin('2');">Skin 2</a>
+										<ul>
+											<li style="text-align:center;"><a href="#" onclick="switchSkin('2');"><img class="skin" src="images/content/skin-changer/skin-2.jpg" height="250" alt="Skin 2" /></a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#" onclick="switchSkin('3');">Skin 3</a>
+										<ul>
+											<li style="text-align:center;"><a href="#" onclick="switchSkin('3');"><img class="skin" src="images/content/skin-changer/skin-3.jpg" height="250" alt="Skin 3" /></a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#" onclick="switchSkin('4');">Skin 4</a>
+										<ul>
+											<li style="text-align:center;"><a href="#" onclick="switchSkin('4');"><img class="skin" src="images/content/skin-changer/skin-4.jpg" height="250" alt="Skin 4" /></a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#" onclick="switchSkin('5');">Skin 5</a>
+										<ul>
+											<li style="text-align:center;"><a href="#" onclick="switchSkin('5');"><img class="skin" src="images/content/skin-changer/skin-5.jpg" height="250" alt="Skin 5" /></a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="sample-layout.html">Layout</a>
+								<ul>
+									<li><a href="sample-layout.html">Default Page</a></li>
+									<li><a href="sample-layout.html#full_page">Full Page</a></li>
+									<li><a href="sample-layout.html#blog_page">Blog</a></li>
+									<li><a href="sample-layout.html#multi_column_page">2 &amp; 3 Column</a></li>
+								</ul>
+							</li>	
+							<li><a href="sample-contact.html">Contact</a></li>	
+						</ul>
+						
+						<div class="mmDivider"></div>				
+						
+						<!-- Extra Menu Links -->
+						<ul id="MmOtherLinks" class="sf-menu">
+							<li>
+								<a href="#"><span class="mmFeeds">Feeds</span></a>
+								<ul>
+									<li><a href="#"><span class="mmRSS">RSS</span></a></li>
+									<li><a href="#"><span class="mmFacebook">Facebook</span></a></li>
+									<li><a href="#"><span class="mmTwitter">Twitter</span></a></li>
+								</ul>
+							</li>
+							<li><a href="sample-login.html" class="login"><span class="mmLogin">Login</span></a></li>
+						</ul>
+						
+					</div>
+					<div id="MmRight"></div>
+				</div>
+			</div>
+			
+			<!-- Search -->
+			<div id="Search">
+				<form action="#" id="SearchForm" method="post">
+					<p style="margin:0;"><input type="text" name="SearchInput" id="SearchInput" value="" /></p>
+					<p style="margin:0;"><input type="submit" name="SearchSubmit" id="SearchSubmit" class="noStyle" value="" /></p>
+				</form>
+			</div>
+			
+			<!-- Logo -->
+			<div id="Logo">
+				<a href="index.html"></a>
+			</div>
+			
+			<!-- End of Content -->
+			<div class="clear"></div>
+		
+		</div>
+		
+		<div class="pageMain">
+
+			<div class="contentArea">
+			
+				<div class="two-thirds">
+					<!-- Title / Page Headline -->
+					<h1 class="headline"><strong>Page Layout</strong> &nbsp;//&nbsp; Content layout options</h1>
+					
+					<div class="hr"></div>
+	
+					<!-- Breadcrumbs -->
+					<p class="breadcrumbs">
+						<a href="index.html">Home</a> <span>&raquo;</span> <a href="#">Some Page</a> <span>&raquo;</span> <a href="#">Some Page</a> <span>&raquo;</span> This Page
+					</p>
+					
+					<!-- Content: Default Page -->
+					<a name="default_page"></a>
+					<div class="ribbon">
+						<div class="wrapAround"></div>
+						<div class="tab">
+							<span>Default Page</span>
+						</div>
+					</div>
+					
+					<h3>Standard Layout</h3>
+					<p>The default page is the standard layout used for content pages. It contains a content section and a sub-navigation. This layout can be reversed to display the content and sub-navigation on either side depending on your preference.</p>
+					<p class="center">
+						<img src="images/content/navigation-graphic.png" width="445" height="240" alt="Default Page Layout Options" />
+					</p>
+					<p>To achieve this layout create two <code>div</code> tags and add the class "two-thirds" to one and the class "one-third" to the other. The order the tags appear in the code will determine if you have a left or right sub-navigation layout.</p>
+					<h5>Layout with right navigation</h5>
+<pre>
+&lt;div class="<strong>two-thirds</strong>"&gt;Your content here.&lt;/div&gt;
+&lt;div class="<strong>one-third</strong>"&gt;Sub-navigation here&lt;/div&gt;
+</pre>
+					<p><a href="theme-information.html">View a sample page using this layout.</a></p>
+
+					<h5>Layout with left navigation</h5>
+<pre>
+&lt;div class="<strong>one-third</strong>"&gt;Sub-navigation here&lt;/div&gt;
+&lt;div class="<strong>two-thirds</strong>"&gt;Your content here.&lt;/div&gt;
+</pre>
+					<!--p><a href="features-page.html">View a sample page using this layout.</a></p-->
+					<br />
+
+					<!-- Content: Full Page -->
+					<a name="full_page"></a>
+					<div class="ribbon">
+						<div class="wrapAround"></div>
+						<div class="tab">
+							<span class="scrollTop"><a href="#Wrapper">Top</a></span>
+							<span>Full Page</span>
+						</div>
+					</div>
+
+					<h3>Full Width Layout</h3>
+					<p>The full page layout uses the full width of the content area. It does not have a sub-navigation or sidebar making it a good choice for portfolio pages.</p>
+					<p class="center">
+						<img src="images/content/fullpage-graphic.png" width="210" height="240" alt="Full Page Layout" />
+					</p>
+					<p>This layout only requires a single <code>div</code> tag with the class "full-page".</p>
+<pre>
+&lt;div class="<strong>full-page</strong>"&gt;Your content here.&lt;/div&gt;
+</pre>
+					<p><a href="sample-portfolio.html">View a sample page using this layout.</a></p>
+					<br />
+
+					<!-- Content: Blog Page -->
+					<a name="blog_page"></a>
+					<div class="ribbon">
+						<div class="wrapAround"></div>
+						<div class="tab">
+							<span class="scrollTop"><a href="#Wrapper">Top</a></span>
+							<span>Blog Page</span>
+						</div>
+					</div>
+
+					<h3>Blog Style Layout</h3>
+					<p>The blog layout offers a left or right menu depending on preference. Each entry has a summary layout and full article layout. This view can also be used for news articles or any categorized content structure needed.</p>
+					<p class="center">
+						<img src="images/content/blog-graphic.png" width="445" height="240" alt="Blog Layout" />
+					</p>
+					<p>Left and right layout options for the blog are achieved using the same markup as the default page.</p>
+					<p><a href="sample-blog.html">View a sample page using this layout.</a></p>
+					<br />
+
+					<!-- Content: Multi-column Page -->
+					<a name="multi_column_page"></a>
+					<div class="ribbon">
+						<div class="wrapAround"></div>
+						<div class="tab">
+							<span class="scrollTop"><a href="#Wrapper">Top</a></span>
+							<span>2 &amp; 3 Column Page</span>
+						</div>
+					</div>
+					
+					<h3>Multi-column Layouts</h3>
+					<p>The two column layout use the entire width of the page for content. It is not intended for a sub-navigation but can have one if desired. This layout is well suited for landing pages before a content section, about us and contact pages.</p>
+					<p>The three column design uses 3 equal width columns. These can all contain content or you can optionally adapt any of the three into a sub-navigation.</p>
+					<p class="center">
+						<img src="images/content/2and3column-graphic.png" width="445" height="240" alt="2 and 3 Column Layout " />
+					</p>
+					<h5>2 column layout</h5>
+					<p>Requires two <code>div</code> tags with the class "half-page".</p>
+<pre>
+&lt;div class="<strong>half-page</strong>"&gt;Your first content column.&lt;/div&gt;
+&lt;div class="<strong>half-page</strong>"&gt;Your second content column.&lt;/div&gt;
+</pre>
+					<p><a href="sample-contact.html">View a sample page using this layout.</a></p>
+
+					<h5>3 column layout</h5>
+					<p>Requires three <code>div</code> tags with the class "one-third". Like the default page, the order the tags are entered in the code determines the order of appearance on the page.</p>
+<pre>
+&lt;div class="<strong>one-third</strong>"&gt;Sub-navigation (optional)&lt;/div&gt;
+&lt;div class="<strong>one-third</strong>"&gt;Your first content column.&lt;/div&gt;
+&lt;div class="<strong>one-third</strong>"&gt;Your second content column.&lt;/div&gt;
+</pre>
+					<!--p><a href="index.html">View a sample page using this layout.</a></p-->
+
+				</div>			
+				
+				<div class="one-third">
+				
+					<!-- Side Navigation Menu -->
+					<h1 class="title" style="margin-bottom:0;">
+						Sub Navigation
+						<span>Links to other areas of the site</span>
+					</h1>
+					<div class="sideNavWrapper">
+						<div class="sideNavBox-1">
+							<div class="sideNavBox-2">
+								<ul class="sideNav">
+									<li><a href="#default_page">Default Page</a></li>
+									<li><a href="#full_page">Full Page</a></li>
+									<li><a href="#blog_page">Blog</a></li>
+									<li><a href="#multi_column_page">2 Column</a></li>
+									<li><a href="#multi_column_page">3 Column</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Testimonial/Quote -->
+					<div class="quote">
+						<div class="quoteBox-1">
+							<div class="quoteBox-2">
+								<p>This is one amazing quote! I mean really, really amazing. Like super incredible and stuff.</p>
+							</div>
+						</div>
+					</div>
+					<div class="quoteAuthor">
+						<p class="name">Gary Philips</p>
+						<p class="details">President, Quotable Quotes, Inc.</p>
+					</div>
+					
+					<div class="hr"></div>
+					
+					<!-- Newsletter -->
+					<h1 class="title" style="margin-bottom:0;">
+						Newsletter
+						<span>We’ll keep you informed and updated</span>
+					</h1>
+					<form action="#" id="newsletter" method="post">
+						<p style="margin: 1em 0 1px;">
+							<label for="NewsletterEmail" class="overlabel">Email</label>
+							<input type="text" id="NewsletterEmail" class="textInput" style="width: 259px; margin:0;" />
+						</p>
+						<p style="margin:0;"><button type="submit" class="btn"><span>Sign me up!</span></button></p>
+					</form>
+	
+				</div>
+				
+				<!-- End of Content -->
+				<div class="clear"></div>
+			</div>
+			
+		</div>
+		
+		<!-- Footer -->
+		<div id="Footer">
+			<div id="FooterTop"></div>
+			<div id="FooterContent">
+			
+				<div class="contentArea">
+				
+					<!-- Column 1 -->
+					<div class="one-third">
+						<h3>Design Details</h3>
+						<p>Ceated by <a href="http://para.llel.us">Parallelus</a> and available for purchase on <a href="http://themeforest.net/user/Parallelus/portfolio">ThemeForest</a>.</p>
+					</div>
+
+					<!-- Column 2 -->
+					<div class="one-third">
+						<h3>Stay Connected</h3>
+						<ul class="horizList">
+							<li><a href="#"><img src="images/icons/social/delicious.png" width="40" height="40" alt="Delicious" /></a></li>
+							<li><a href="#"><img src="images/icons/social/flickr.png" width="40" height="40" alt="Flickr" /></a></li>
+							<li><a href="#"><img src="images/icons/social/linkedin.png" width="40" height="40" alt="LinkedIn" /></a></li>
+							<li><a href="#"><img src="images/icons/social/skype.png" width="40" height="40" alt="Skype" /></a></li>
+							<li><a href="#"><img src="images/icons/social/twitter.png" width="40" height="40" alt="Twitter" /></a></li>
+							<li><a href="#"><img src="images/icons/social/yahoo.png" width="40" height="40" alt="Yahoo!" /></a></li>
+						</ul>
+						<p>Keep track of Unite on all your favorite social networks.</p>
+					</div>
+
+					<!-- Column 3 -->
+					<div class="one-third last">
+						<h3>Contact Information</h3>
+						<div class="logoMark"></div>
+						<p>
+							(555) 443.3221<br />
+							contact@unite-inc.com<br />
+							<a href="#">www.unite-inc.com</a><br />
+						</p>
+					</div>
+					
+					<!-- End of Content -->
+					<div class="clear"></div>
+	
+				</div>
+					
+			</div>
+			<div id="FooterBottom"></div>
+			
+		</div>
+		
+		<!-- Copyright/legal text -->
+		<div id="Copyright">
+			<p>
+				Copyright &copy; 2010 - <a href="http://para.llel.us" onclick="window.open(this.href); return false;">Parallelus</a> - All rights reserved. 
+				Conforms to W3C Standard 
+				<a href="http://validator.w3.org/check?uri=referer" onclick="window.open(this.href); return false;">XHTML</a> &amp; 
+				<a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" onclick="window.open(this.href); return false;">CSS</a>
+			</p>
+		</div>
+		
+	</div>
+</div>
+
+<!-- Activate Font Replacement (cufón) -->
+<script type="text/javascript"> Cufon.now(); </script>
+</body>
+</html>

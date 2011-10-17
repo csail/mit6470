@@ -1,0 +1,22 @@
+/*** 
+	Demo Styles
+
+	These do not need to be included if you are not using the demo features. These include
+	items like the skin slider for dynamic theme changing, etc. 
+***/
+
+/* skin slider */
+.ui-state-default, .ui-widget-content .ui-state-default { border:1px solid #4A4A4A; color:#4A4A4A; font-weight:bold; outline-style:none; outline-width:medium; }
+.ui-slider { position:relative; text-align:left; }
+.ui-widget-content { background:#eee; border:1px solid #ddd; color:#333; }
+.ui-slider-horizontal .ui-slider-handle { background: transparent url("../images/icons/slider-handle.gif") no-repeat 0 0; height:18px; margin-left: -13px; top: -6px; width:27px; }
+.ui-slider .ui-slider-handle { cursor:default; position:absolute; z-index:2; }
+.ui-slider-horizontal { height:8px; background: #343434; border-color: #4A4A4A; }
+#SkinSlider .ui-state-hover, #SkinSlider .ui-state-active, #SkinSlider .ui-state-focus	{ border-color: #8A8A8A; }
+#SkinPreviewWrapper { position: relative;  height:428px; margin: 0 0 1em; }
+#SkinPreview { width: 247px; height:298px; overflow:hidden;}
+#SkinPreviewOverlay { width: 273px; height:428px; position: absolute; top: 0; z-index:29; background: transparent url(../images/content/skin-changer/skin-changer-overlay.png) no-repeat 0 0;}
+#SkinScreenShots {position: absolute; top: 42px; left: 13px; }
+#SkinSlider { margin: 20px 0 0 35px; width:200px; z-index: 30; position:absolute; bottom: 50px; }
+#SkinPreviewWrapper h4 {position: relative; z-index: 30; text-align:center; top:19px; color: #ccc;}
+#SkinPreviewWrapper #SkinSliderHelpText { bottom:12px; color:#888; font-size:0.9em; position:absolute; text-align:center; width:273px; z-index:30;}
