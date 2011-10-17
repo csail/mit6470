@@ -1,5 +1,5 @@
 <IfModule mod_headers.c>
-  <FilesMatch "\.(html|htm)$">
+  <FilesMatch "\.(html|htm|ico|css)$">
     Header set Cache-Control "max-age=60, private, proxy-revalidate"
   </FilesMatch>
 </IfModule>

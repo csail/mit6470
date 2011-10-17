@@ -107,9 +107,21 @@ body {
 
 
 #awards_text p {
-	font-size: 150;
+    padding: 5px;
+	font-size: 20;
 }
 
-#countdown_description_text p {
-	font-size: 16;
+.awardstext2 {
+	font-size: 10;
+}
+
+.col1, .col2, .col3 {
+    font-size: 0.8em;
+    padding: 5px 27px;
+}
+.verysmall {
+    font-size: 1.0em;
+}
+.filler {
+    padding-top: 7px;
 }
