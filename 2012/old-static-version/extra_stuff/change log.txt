@@ -1,0 +1,12 @@
+
+2010-12-30 - Bug fixes (v1.2)
+----------------------------------------------
+
+Added working PHP contact form.
+	
+
+2010-06-09 - Updates (v1.1)
+----------------------------------------------
+
+Added code needed to link slides in Cycle (default) slide show
+	- Changed files "index.html"

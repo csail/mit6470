@@ -1,0 +1,31 @@
+html,div,span,applet,object,iframe,blockquote,a,abbr,acronym,address,big,cite,code,del,dfn,font,img,ins,kbd,q,s,samp,small,strike,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{background:transparent;border:0;font-size:100%;margin:0;outline:0;padding:0;vertical-align:baseline}
+body{font:normal 13px/1 Arial,Helvetica,Garuda,sans-serif;margin:0;padding:0}
+h1,h2,h3,h4,h5,h6,ul,li,p,em,strong,pre,code{font-size:100%;font-style:normal;font-weight:400;line-height:inherit;margin:0;padding:0}
+ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:''}
+table{border-collapse:collapse;border-spacing:0;font-size:inherit}
+form{display:block}
+xmp{padding:15px}
+cite,em,dfn{font-style:italic}
+strong,b{font-weight:700}
+sup{bottom:.3em;position:relative;vertical-align:super}
+sub{bottom:-.2em;position:relative;vertical-align:sub}
+li,dd,blockquote{margin-left:1em}
+code,kbd,samp,pre,tt,var,textarea{font-family:Consolas, "Lucida Console", "Courier New", Courier, mono-space;font-size:100%}
+del{text-decoration:line-through}
+ins,dfn{border-bottom:1px solid #ccc}
+small,sup,sub{font-size:85%}
+abbr,acronym{border-bottom-style:dotted;border-bottom-width:1px;text-transform:uppercase}
+a,a:link,a:visited,a:hover,a:active{text-decoration:none}
+label,button{cursor:pointer}
+.left{float:left}
+.right{float:right}
+.center{text-align:center}
+.clear{clear:both}
+.hidden{display:none!important;visibility:hidden}
+img.left{margin-bottom:5px;margin-right:8px}
+img.right{margin-bottom:5px;margin-left:8px}
+pre,blockquote,ul,ol,dl,address,p{margin:0 0 1em}
+a abbr,a acronym,fieldset{border:medium none}
+a img,img{border:0;text-decoration:none}

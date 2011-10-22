@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="MIT 6.470 Staff" />
+	<meta name="description" content="Homepage for the MIT 6.470 Web Programming Competition/Class." />
+	<meta name="keywords" content="web programming, competition, class, MIT" />
+	<title>MIT 6.470 - IAP Web Programming Competition</title>
+	
+	<!-- Favorites icon -->
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	
+	<!-- Style sheets -->
+	<link rel="stylesheet" type="text/css" href="css/reset.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/menu.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="css/tooltip.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	
+	<!-- jQuery framework and utilities -->
+	<script type="text/javascript" src="js/jquery-1.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+	<script type="text/javascript" src="js/hoverIntent.min.js"></script>
+	<script type="text/javascript" src="js/jquery.bgiframe.min.js"></script>
+	<!-- Drop down menus -->
+	<script type="text/javascript" src="js/superfish.min.js"></script>
+	<script type="text/javascript" src="js/supersubs.min.js"></script>
+	<!-- Tooltips -->
+	<script type="text/javascript" src="js/jquery.cluetip.min.js"></script>
+	<!-- Input labels -->
+	<script type="text/javascript" src="js/jquery.overlabel.min.js"></script>
+	<!-- Anchor tag scrolling effects -->
+	<script type="text/javascript" src="js/jquery.scrollTo-min.js"></script>
+	<script type="text/javascript" src="js/jquery.localscroll-min.js"></script>
+	<!-- Inline popups/modal windows -->
+	<script type="text/javascript" src="js/jquery.fancybox-1.2.6.pack.js"></script>
+	
+	<!-- Slide shows -->
+		<!-- Cycle 	(default) -->
+		<script type="text/javascript" src="js/jquery.cycle.all.min.js"></script>
+		<script type="text/javascript">
+			// initialize slideshow (Cycle)
+			var firstCycle = true;
+			$(document).ready(function($) {
+				if ($('#Slides').length > 0) {
+					$('#Slides').cycle({ 
+						fx: 'scrollHorz',
+						speed: 750,
+						timeout: 6000, 
+						randomizeEffects: false, 
+						easing: 'easeOutCubic',
+						next:   '.slideNext', 
+						prev:   '.slidePrev',
+						pager:  '#slidePager',
+						cleartypeNoBg: true,
+						after: function(curr, next, opts) {
+							// reset the overlay for the next slide
+							jQuery('#SlideRepeat').css('cursor','default').unbind('click');
+							// get the link and apply it to the overlay
+							toGet = (firstCycle) ?  $('#Slides').children(':eq(0)') : next;
+							var linkURL = jQuery(toGet).attr('href') || jQuery(toGet).children('a').attr('href') || false;
+							if (linkURL) {
+								jQuery('#SlideRepeat').css('cursor','pointer').click( function() {
+									document.location.href = linkURL;
+								});
+							} 
+							firstCycle = false;
+						}
+					});
+				}
+			});
+		</script>
+		
+	<!-- Font replacement (cufón) -->
+	<script src="js/cufon-yui.js" type="text/javascript"></script>
+	<script src="js/LiberationSans.font.js" type="text/javascript"></script>
+
+	<!-- IE only includes (PNG Fix and other things for sucky browsers -->
+	
+	<!--[if lt IE 7]>
+		<link rel="stylesheet" type="text/css" href="css/ie-only.css">
+		<script type="text/javascript" src="js/pngFix.min.js"></script>
+		<script type="text/javascript"> 
+			$(document).ready(function(){ 
+				$(document.body).supersleight();
+			}); 
+		</script> 
+	<![endif]-->
+	<!--[if IE]><link rel="stylesheet" type="text/css" href="css/ie-only-all-versions.css"><![endif]-->
+
+
+	<!-- Functions to initialize after page load -->
+	<script type="text/javascript" src="js/source/onLoad.js"></script>
+
+</head>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=153513511366565";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<body>
+
+<!-- Top reveal (slides open, add class "topReveal" to links for open/close toggle ) -->
+<div id="ContentPanel">
+
+	<!-- close button -->
+	<a href="#" class="topReveal closeBtn">Close</a>
+	
+	<div class="contentArea">
+
+		<!-- New member registration -->
+		<div class="right" style="margin:10px 0 0;">
+			<h1>
+				Not a member yet?
+				<span>Register now and get started.</span>
+			</h1>
+			<button type="button">Register for an account</button>
+		</div>
+		
+		<!-- Alternate Login -->				
+		<div>
+			<form class="loginForm" method="post" action="" style="height:auto;">
+				<div id="loginBg"><img src="images/icons/lock-and-key-110.png" width="110" height="110" alt="lock and key" /></div>
+				<h2 style="margin-top: 20px;">Sign in to your account.</h2>
+				<fieldset>
+					<legend>Account Login</legend>
+					<p class="left" style="margin: 0 8px 0 0;">
+						<label for="RevealUsername" class="overlabel">Username</label>
+						<input id="RevealUsername" name="RevealUsername" type="text" class="loginInput textInput rounded" />
+					</p>
+					<p class="left" style="margin: 0 5px 0 0;">
+						<label for="RevealPassword" class="overlabel">Password</label>
+						<input id="RevealPassword" name="RevealPassword" type="password" class="loginInput textInput rounded" />
+					</p>
+					<p class="left" style="margin: -7px 0 0;">
+						<button type="submit" class="btn" style="margin:0;"><span>Sign in</span></button>
+					</p>
+				</fieldset>
+				<p class="left noMargin">
+					<a href="#">Forgot your password?</a>
+				</p>
+			</form>		
+		</div>
+		
+		<!-- End of Content -->
+		<div class="clear"></div>
+	
+	</div>
+</div>
+
+<!-- Site Container -->
+<div id="Wrapper">
+	<div id="PageWrapper">
+		<div class="pageTop"></div>
+		<div id="Header">
+		
+			<!-- Main Menu -->
+			<div id="MenuWrapper">
+				<div id="MainMenu">
+					<div id="MmLeft"></div>
+					<div id="MmBody">
+						
+						<!-- Main Menu Links -->
+						<ul class="sf-menu">
+							<li class="current"><a href="index.html">Home</a></li>
+							<li>
+								<a href="#">Tutorials</a>
+								<ul>
+									<li><a href="#">Schedule</a></li>
+									<li><a href="sample-portfolio.html">Video Lectures</a></li>
+									<li><a href="sample-portfolio.html">Guest Lectures</a></li>
+									<li><a href="sample-blog.html">Assignments</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Competition</a>
+								<ul>
+									<li>
+										<a href="#" onclick="switchSkin('1');">Overview</a>
+									</li>
+									<li>
+										<a href="#" onclick="switchSkin('2');">Official Rules</a>
+									</li>
+									<li>
+										<a href="#" onclick="switchSkin('3');">Milestones</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="sample-layout.html">Past Years</a>
+								<ul>
+									<li><a href="http://6.470.scripts.mit.edu/2009/index.html">2009</a></li>
+									<li><a href="http://6.470.scripts.mit.edu/2010/index.html">2010</a></li>
+									<li><a href="http://6.470.scripts.mit.edu/2011/index.html">2011</a></li>
+								</ul>
+							</li>	
+							<li>
+								<a href="about.html">About</a>
+								<ul>
+									<li><a href="#">Overview</a></li>
+									<li><a href="staff.html">The Staff</a></li>
+								</ul>
+							</li>	
+						</ul>
+						
+						<div class="mmDivider"></div>				
+						
+						<!-- Extra Menu Links -->
+						<ul id="MmOtherLinks" class="sf-menu">
+							<!-- <li>
+								<a href="#"><span class="mmFeeds">Feeds</span></a>
+								<ul>
+									<li><a href="#"><span class="mmRSS">RSS</span></a></li>
+									<li><a href="http://www.facebook.com/mit6470"><span class="mmFacebook">Facebook</span></a></li>
+									<li><a href="http://twitter.com/#!/mit6470"><span class="mmTwitter">Twitter</span></a></li>
+								</ul>
+							</li> -->
+							<li><a href="sample-login.html" class="login"><span class="mmLogin">Login</span></a></li>
+						</ul>
+						
+					</div>
+					<div id="MmRight"></div>
+				</div>
+			</div>
+			
+			<!-- Search -->
+			<!-- <div id="Search">
+				<form action="#" id="SearchForm" method="post">
+					<p style="margin:0;"><input type="text" name="SearchInput" id="SearchInput" value="" /></p>
+					<p style="margin:0;"><input type="submit" name="SearchSubmit" id="SearchSubmit" class="noStyle" value="" /></p>
+				</form>
+			</div> -->
+			
+			<!-- Logo -->
+			<div id="Logo">
+				<a href="index.html"></a>
+			</div>
+			
+			<!-- End of Content -->
+			<div class="clear"></div>
+		
+		</div>
+
+		<!-- Slide show: jQuery Cycle (default) -->
+		<div id="Slideshow">
+			<div id="SlideTop"></div>
+			<div id="SlideRepeat"></div>
+			<div id="SlideBottom"></div>
+			<div id="Slides">
+				<a href="#"><img src="images/slideshow/slide-1.png" width="948" height="341" alt="Slide 1" /></a>
+				<img src="images/slideshow/slide-2.png" width="948" height="341" alt="Slide 2" />
+				<a href="#"><img src="images/slideshow/slide-3.png" width="948" height="341" alt="Slide 3" /></a>
+				<img src="images/slideshow/slide-4.png" width="948" height="341" alt="Slide 4" />
+				<a href="#"><img src="images/slideshow/slide-5.png" width="948" height="341" alt="Slide 5" /></a>
+				<img src="images/slideshow/slide-6.png" width="948" height="341" alt="Slide 6" />
+			</div>
+			<a href="#" class="slidePrev"></a>
+			<a href="#" class="slideNext"></a>
+			<div id="slidePager"></div>
+		</div>
+		
+		<div class="pageMain">
+		
+			<!-- Showcase Content -->
+			<div id="Showcase">
+				<div class="">
+					<img src="images/sponsors/Sponsors.png" />				
+				<div class="hr"></div>
+			</div>
+			
+			<!-- Page Content -->
+			<div class="contentArea">
+			
+				<div class="two-thirds">
+					
+					<!-- Welcome Message / Page Headline -->
+					<h1 class="headline">Welcome to the <strong>MIT 6.470</strong> website for <strong>2012</strong>.</h1>
+					<p class="impact">MIT's 6.470 is a web programming class and competition that takes place over IAP.  Beginners and experts alike are encouraged to sign up, learn, and compete for $30,000+ in total prizes!</p>
+	
+					<!-- Featured Content -->
+					<div class="ribbon">
+						<div class="wrapAround"></div>
+						<div class="tab">
+							<span>Featured Content</span>
+						</div>
+					</div>
+	
+					<div class="featuredContent">
+						<!-- Featured Item -->
+						<div class="featuredItem">
+							<a href="images/content/demo-only/featured-1.jpg" class="featuredImg img zoom" rel="featured"><img src="images/content/demo-only/featured-1-thumb.jpg" alt="featured item" /></a>
+							<div class="featuredText">
+								<h1 class="title">
+									Comprehensive Curriculum
+									<span>Our curriculum covers all the essential topics needed to get one up and running building websites.  Much of the material will be available online.</span>
+								</h1>
+								<a href="#">More information...</a>
+							</div>
+						</div>
+						<!-- Featured Item -->
+						<div class="featuredItem">
+							<a href="images/content/demo-only/featured-2.jpg" class="featuredImg img zoom" rel="featured"><img src="images/content/demo-only/featured-2-thumb.jpg" alt="featured item" /></a>
+							<div class="featuredText">
+								<h1 class="title">
+									Insightful Guest Lectures
+									<span>In addition to our lectures on the bare fundamentals of web programming, we'll bring in experts from industry to lend insight on additional topics.</span>
+								</h1>
+								<a href="#">More information...</a>
+							</div>
+						</div>
+						<!-- Featured Item -->
+						<div class="featuredItem">
+							<a href="images/content/demo-only/featured-3.jpg" class="featuredImg img zoom" rel="featured"><img src="images/content/demo-only/featured-3-thumb.jpg" alt="featured item" /></a>
+							<div class="featuredText">
+								<h1 class="title">
+									Interaction With Sponsors
+									<span>Looking for a summer internship or full-time job?  Want to meet experts from industry?  Our wonderful sponsors can help you with both of these.</span>
+								</h1>
+								<a href="#">More information...</a>
+							</div>
+						</div>
+						<!-- Featured Item -->
+						<div class="featuredItem">
+							<a href="images/content/demo-only/featured-4.jpg" class="featuredImg img zoom" rel="featured"><img src="images/content/demo-only/featured-4-thumb.jpg" alt="featured item" /></a>
+							<div class="featuredText">
+								<h1 class="title">
+									$30,000+ in Total Prizes
+									<span>Think you've got what it takes to build a killer website?  You and up to two teammates can compete for a slice of our large pool of prize money.</span>
+								</h1>
+								<a href="#">More information...</a>
+							</div>
+						</div>
+						
+						<!-- End of Content -->
+						<div class="clear"></div>
+	
+					</div>
+					
+					<!-- Blog Post -->
+					<!-- <div class="ribbon">
+						<div class="wrapAround"></div>
+						<div class="tab">
+							<span class="blogDate">5 Jan.</span>
+							<span class="blogPostInfo">Posted by <a href="#">J. Smith</a> in <a href="#">Advertising</a> | <a href="#">3 comments</a></span>
+						</div>
+					</div>
+					<div class="blogPostSummary">
+						<h1>How to Build a Better Mousetrap</h1>
+						<div class="blogPostImage">
+							<a href="#" class="img"><img src="images/content/demo-only/blog-post-1.jpg" width="566" height="133" alt="blog post image" /></a>
+						</div>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel leo vitae mi iaculis tincidunt. Sed ipsum diam, semper et adipiscing sit amet, gravida ac ipsum. Phasellus rutrum est non eros ultrices a molestie tellus suscipit. Nunc eleifend, nisl vel cursus hendrerit, arcu risus sagittis lorem, nec gravida massa lacus non nulla. Praesent urna diam, cursus ac eleifend mattis, euismod et nisi. Vestibulum id leo sit amet nisi. Aliquam erat volutpat. Nam egestas mollis ultrices. Praesent nec tellus est, et convallis mauris.
+						</p>
+						<p><a href="#">Read more...</a></p>
+					</div> -->
+					
+				</div>
+				
+				<div class="one-third">	
+					<div class="hr"></div>
+					
+					<!-- Side Navigation Menu -->
+					<div class="sideNavWrapper">
+						<div class="fb-like-box" data-href="facebook.com/mit6470" data-width="286" data-show-faces="true" data-stream="true" data-header="true"></div>					</div>
+											
+				</div>
+				
+				<!-- End of Content -->
+				<div class="clear"></div>
+			
+			</div>
+			
+		</div>
+		
+		<!-- Footer -->
+		<div id="Footer">
+			<div id="FooterTop"></div>
+			<div id="FooterContent">
+			
+				<div class="contentArea">
+				
+					<!-- Column 1 -->
+					<div class="two-thirds">
+						<h3>Show Your Support</h3>
+						<ul class="horizList">
+							<li><div class="fb-like" data-href="http://6.470.scripts.mit.edu/2012/index.html" data-send="true" data-width="450" data-show-faces="true" data-colorscheme="dark"></div></li>
+							
+							<li><g:plusone annotation="inline"></g:plusone></li>
+
+						</ul>
+					</div>
+					
+					<!-- Column 2 -->
+					
+					<div class="one-third last">
+						<h3>Contact Information</h3>
+						<div class="logoMark"></div>
+						<p>
+							6.470-staff@mit.edu<br />
+						</p>
+						
+					</div>
+
+
+					<!-- End of Content -->
+					<div class="clear"></div>
+	
+				</div>
+					
+			</div>
+			<div id="FooterBottom"></div>
+			
+		</div>
+		
+		<!-- Copyright/legal text -->
+		<div id="Copyright">
+			<p>
+				Copyright &copy; 2011 - <a href="http://6.470.scripts.mit.edu" onclick="window.open(this.href); return false;">MIT 6.470</a> - All rights reserved. 
+				Conforms to W3C Standard 
+				<a href="http://validator.w3.org/check?uri=referer" onclick="window.open(this.href); return false;">XHTML</a> &amp; 
+				<a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" onclick="window.open(this.href); return false;">CSS</a>
+			</p>
+		</div>
+		
+	</div>
+</div>
+
+<!-- Activate Font Replacement (cufón) -->
+<script type="text/javascript"> Cufon.now(); </script>
+</body>
+</html>
