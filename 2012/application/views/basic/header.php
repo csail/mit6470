@@ -73,8 +73,8 @@
 	
 	<!-- Logo -->
 	<div id="Logo">
-		<a href="index.html"></a>
-	</div>
+		<?php echo HTML::anchor('index/home', ''); ?>
+		</div>
 	
 	<!-- End of Content -->
 	<div class="clear"></div>
