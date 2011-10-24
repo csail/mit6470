@@ -99,7 +99,7 @@ sup			{ bottom: 0.1em; }
 	margin: 18px 28px 0 0; }
 .breadcrumbs span					{ font: bold 1.2em Arial, Helvetica, Garuda, sans-serif; }
 #Footer, #ContentPanel, #cluetip 	{ color: #8F8F8F; }
-#Copyright							{ font-size:0.9em; margin:0 0 0 11px;}
+#Copyright							{ font-size:0.9em; margin:0; text-align: center;}
 #Copyright p						{ margin: 0; padding: 0 0 1em;}
 
 

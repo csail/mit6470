@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 		<meta http-equiv="Content-Language" content="en-us" />
 		<title><?php echo $title;?></title>
-		<link rel="shortcut icon" href="assets/images/favicon.ico">
+		<link rel="shortcut icon" href="<?php echo URL::base() . 'assets/images/favicon.ico'; ?>">
 		<meta name="keywords" content="<?php echo $meta_keywords;?>" />
 		<meta name="description" content="<?php echo $meta_description;?>" />
 		<meta name="copyright" content="<?php echo $meta_copywrite;?>" />
@@ -106,7 +106,15 @@
 				<!-- Alternate Login -->				
 				<div>
 					<form class="loginForm" method="post" action="" style="height:auto;">
-						<div id="loginBg"><img src="assets/images/icons/lock-and-key-110.png" width="110" height="110" alt="lock and key" /></div>
+						<div id="loginBg">
+							<?php 
+								echo HTML::image('assets/images/icons/lock-and-key-110.png', 
+									array(
+										'alt' => 'login icon', 
+										'width' => 110, 
+										'height' => 110));
+							?>
+						</div>
 						<h2 style="margin-top: 20px;">Sign in to your account.</h2>
 						<fieldset>
 							<legend>Account Login</legend>
@@ -138,7 +146,22 @@
 			<div id="PageWrapper">
 				<div class="pageTop"></div>
 		 		<?php echo $header;?>
-		 		<?php echo $content;?>
+				
+				<div class="pageMain">
+
+					<!-- Page Content -->
+					<div class="contentArea">
+
+						<div class="full-page">
+
+					 		<?php echo $content;?>
+
+						</div>
+					</div>
+				</div>
+
+				<?php echo $footer; ?>
+				
 			</div>
 		</div>
 

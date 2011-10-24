@@ -81,7 +81,8 @@ if (isset($_SERVER['KOHANA_ENV']))
  */
 
 Kohana::init(array(
-	'base_url'   => BASEPATH,
+	'base_url'   => '/~Joe/6.470-2011/2012/',
+	'index_file' => FALSE,
 ));
 
 /**
@@ -98,7 +99,7 @@ Kohana::$config->attach(new Config_File);
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
-	// 'auth'       => MODPATH.'auth',       // Basic authentication
+	'auth'       => MODPATH.'auth',       // Basic authentication
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
 	// 'database'   => MODPATH.'database',   // Database access

@@ -24,9 +24,8 @@ public function before()
 		$this->template->meta_keywords = 'default';
 		$this->template->meta_description = 'meta desc';
 		$this->template->meta_copywrite = 'MIT 6.470';
-		$this->template->header           = View::factory('basic/header');
-		$this->template->footer           = View::factory('basic/footer');
-
+		$this->template->header = View::factory('basic/header');
+		$this->template->footer = View::factory('basic/footer');
 	}
 
 	$this->template->styles = array();

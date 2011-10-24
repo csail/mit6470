@@ -7,32 +7,27 @@
 				
 				<!-- Main Menu Links -->
 				<ul class="sf-menu">
-					<li class="current"><a href="index.html">Home</a></li>
+					<li class="current"><?php echo HTML::anchor('', 'Home'); ?></li>
 					<li>
-						<a href="#">Tutorials</a>
+						<a href="#">Course Materials</a>
 						<ul>
-							<li><a href="#">Schedule</a></li>
-							<li><a href="sample-portfolio.html">Video Lectures</a></li>
-							<li><a href="sample-portfolio.html">Guest Lectures</a></li>
-							<li><a href="sample-blog.html">Assignments</a></li>
+							<li><?php echo HTML::anchor('course/schedule', 'Schedule'); ?></li>
+							<li><?php echo HTML::anchor('course/video', 'Video Lectures'); ?></li>
+							<li><?php echo HTML::anchor('course/guest_lectures', 'Guest Lectures'); ?></li>
+							<li><?php echo HTML::anchor('course/assignments', 'Assignments'); ?></li>
 						</ul>
 					</li>
 					<li>
 						<a href="#">Competition</a>
 						<ul>
-							<li>
-								<a href="#" onclick="switchSkin('1');">Overview</a>
-							</li>
-							<li>
-								<a href="#" onclick="switchSkin('2');">Official Rules</a>
-							</li>
-							<li>
-								<a href="#" onclick="switchSkin('3');">Milestones</a>
-							</li>
+							<li><?php echo HTML::anchor('competition/challenge', 'Challenge'); ?></li>
+							<li><?php echo HTML::anchor('competition/rules', 'Official Rules'); ?></li>
+							<li><?php echo HTML::anchor('competition/milestones', 'Milestones'); ?></li>
+							<li><?php echo HTML::anchor('competition/prizes', 'Prizes'); ?></li>
 						</ul>
 					</li>
 					<li>
-						<a href="sample-layout.html">Past Years</a>
+						<a href="#">Past Years</a>
 						<ul>
 							<li><a href="http://6.470.scripts.mit.edu/2009/index.html">2009</a></li>
 							<li><a href="http://6.470.scripts.mit.edu/2010/index.html">2010</a></li>
@@ -40,10 +35,10 @@
 						</ul>
 					</li>	
 					<li>
-						<a href="about.html">About</a>
+						<a href="#">About</a>
 						<ul>
-							<li><a href="#">Overview</a></li>
-							<li><a href="staff.html">The Staff</a></li>
+							<li><?php echo HTML::anchor('about/overview', 'Overview'); ?></li>
+							<li><?php echo HTML::anchor('about/staff', 'The Staff'); ?></li>
 						</ul>
 					</li>	
 				</ul>
