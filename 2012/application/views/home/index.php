@@ -97,7 +97,17 @@
 				</div>
 				<!-- Featured Item -->
 				<div class="featuredItem">
-					<a href="assets/images/content/demo-only/featured-3.jpg" class="featuredImg img zoom" rel="featured"><img src="assets/images/content/demo-only/featured-3-thumb.jpg" alt="featured item" /></a>
+					<?php
+						$sponsors = array('microsoft', 'nextjump', 'palantir', 'tripadvisor');
+						$rand_int = rand(0, count($sponsors) - 1);
+						echo HTML::anchor('#', HTML::image('assets/images/sponsors/' . $sponsors[$rand_int] . '.png', array(
+							// 'height' => 78,
+							// 'width' => 162,
+							'alt' => 'Sponsors image'
+						)), array('class' => 'featuredImg img'));
+					?>
+					
+					<!-- <a href="assets/images/content/demo-only/featured-3.jpg" class="featuredImg img zoom" rel="featured"><img src="assets/images/content/demo-only/featured-3-thumb.jpg" alt="featured item" /></a> -->
 					<div class="featuredText">
 						<h1 class="title">
 							Interaction With Sponsors
