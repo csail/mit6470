@@ -18,10 +18,10 @@ return array
 			 *
 			 * Ports and sockets may be appended to the hostname.
 			 */
-			'hostname'   => 'localhost',
-			'database'   => 'kohana',
-			'username'   => FALSE,
-			'password'   => FALSE,
+			'hostname'   => 'sql.mit.edu',
+			'database'   => '6470+2012',
+			'username'   => '6.470',
+			'password'   => 'jop51bov',
 			'persistent' => FALSE,
 		),
 		'table_prefix' => '',
