@@ -15,7 +15,7 @@ class Controller_Home extends Controller_IndexTemplate {
 		
 		$data = array();
 		if($post->check()){
-			// Do stuff
+			Model_Emails::addEmail($post['email']);
 			$data['success'] = TRUE;
 		} else {
 			$data['success'] = FALSE;
