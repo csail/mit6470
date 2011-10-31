@@ -11,40 +11,30 @@
 					'height' => 341,
 					'alt' => 'Slide 1'
 				)));
-			echo HTML::image('assets/images/slideshow/slide-2.png', 
-				array(
-					'width' => 948,
-					'height' => 341,
-					'alt' => 'Slide 2'
-				)); 
-			echo HTML::anchor('#', HTML::image('assets/images/slideshow/slide-3.png', 
-				array(
-					'width' => 948,
-					'height' => 341,
-					'alt' => 'Slide 3'
-				)));
-			echo HTML::image('assets/images/slideshow/slide-4.png', 
-				array(
-					'width' => 948,
-					'height' => 341,
-					'alt' => 'Slide 4'
-				));
-			echo HTML::anchor('#', 'assets/images/slideshow/slide-5.png', 
-				array(
-					'width' => 948,
-					'height' => 341,
-					'alt' => 'Slide 5'
-				));
-			echo HTML::image('assets/images/slideshow/slide-6.png', 
-				array(
-					'width' => 948,
-					'height' => 341,
-					'alt' => 'Slide 6'
-				));
-		?>
+			echo HTML::anchor('#', HTML::image('assets/images/slideshow/slide-2.png',
+                                array(
+                                        'width' => 948,
+                                        'height' => 341,
+                                        'alt' => 'Slide 1'
+                                )));
+
+			echo HTML::anchor('#', HTML::image('assets/images/slideshow/slide-6.png',
+                                array(
+                                        'width' => 948,
+                                        'height' => 341,
+                                        'alt' => 'Slide 1'
+                                )));
+			echo HTML::anchor('#', HTML::image('assets/images/slideshow/slide-4.png',
+                                array(
+                                        'width' => 948,
+                                        'height' => 341,
+                                        'alt' => 'Slide 1'
+                                )));
+
+?>
 	</div>
-	<a href="#" class="slidePrev"></a>
-	<a href="#" class="slideNext"></a>
+	<a href = "#" class = "slidePrev"></a>
+	<a href = "#" class = "slideNext"></a>
 	<div id="slidePager"></div>
 </div>
 		
@@ -75,7 +65,7 @@
 			<div class="featuredContent">
 				<!-- Featured Item -->
 				<div class="featuredItem">
-					<a href="assets/images/content/demo-only/featured-1.jpg" class="featuredImg img zoom" rel="featured"><img src="assets/images/content/demo-only/featured-1-thumb.jpg" alt="featured item" /></a>
+					<a href="assets/images/content/demo-only/featured-1.jpg" class="featuredImg img zoom" rel="featured"><img src="assets/images/frontpage/curric.jpg" alt="featured item" /></a>
 					<div class="featuredText">
 						<h1 class="title">
 							Comprehensive Curriculum
@@ -86,7 +76,7 @@
 				</div>
 				<!-- Featured Item -->
 				<div class="featuredItem">
-					<a href="assets/images/content/demo-only/featured-2.jpg" class="featuredImg img zoom" rel="featured"><img src="assets/images/content/demo-only/featured-2-thumb.jpg" alt="featured item" /></a>
+					<a href="assets/images/content/demo-only/featured-2.jpg" class="featuredImg img zoom" rel="featured"><img src="assets/images/frontpage/guestlec.jpg" alt="featured item" /></a>
 					<div class="featuredText">
 						<h1 class="title">
 							Insightful Guest Lectures
@@ -108,7 +98,7 @@
 				</div>
 				<!-- Featured Item -->
 				<div class="featuredItem">
-					<a href="assets/images/content/demo-only/featured-4.jpg" class="featuredImg img zoom" rel="featured"><img src="assets/images/content/demo-only/featured-4-thumb.jpg" alt="featured item" /></a>
+					<a href="assets/images/content/demo-only/featured-4.jpg" class="featuredImg img zoom" rel="featured"><img src="assets/images/frontpage/prize.jpg" alt="featured item" /></a>
 					<div class="featuredText">
 						<h1 class="title">
 							$30,000+ in Total Prizes

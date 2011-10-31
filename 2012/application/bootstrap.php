@@ -81,7 +81,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  */
 
 Kohana::init(array(
-	'base_url'   => '/~Joe/6.470-2011/2012/',
+	'base_url'   => '/~charlesliu/mit6470/2012/',
 	'index_file' => FALSE,
 ));
 
