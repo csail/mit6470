@@ -81,7 +81,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  */
 
 Kohana::init(array(
-	'base_url'   => '/~charlesliu/mit6470/2012/',
+	'base_url'   => '/~Joe/6.470-2011/2012/',
 	'index_file' => FALSE,
 ));
 
@@ -102,7 +102,7 @@ Kohana::modules(array(
 	'auth'       => MODPATH.'auth',       // Basic authentication
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-	// 'database'   => MODPATH.'database',   // Database access
+	'database'   => MODPATH.'database',   // Database access
 	// 'image'      => MODPATH.'image',      // Image manipulation
 	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing

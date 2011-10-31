@@ -515,7 +515,7 @@ a.slidePrev:hover, a.slideNext:hover { background-position: 0 -64px;}
 
 /* side navigation menu */
 
-.sideNavWrapper	{ background: transparent url("../images/side-navigation-repeat.gif") repeat-y 0 0; margin: 0 0 0.5em; }
+.sideNavWrapper	{ /*background: transparent url("../images/side-navigation-repeat.gif") repeat-y 0 0;*/ margin: 0 0 0.5em; }
 .sideNavBox-1	{ background: transparent url("../images/side-navigation-top.gif") no-repeat 0 0; padding: 15px 0 0; }
 .sideNavBox-2	{ background: transparent url("../images/side-navigation-bottom.gif") no-repeat 0 100%; padding: 0 0 15px; min-height: 100px;}
 
