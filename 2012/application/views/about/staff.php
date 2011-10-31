@@ -8,7 +8,7 @@
 <div class="portfolio">
 
 	<div class="portfolio-item">
-		<a href="images/content/demo-only/portfolio/sample3.jpg" class="zoom img" title="This is the image description" rel="portfolio">
+		<a href="images/content/demo-only/portfolio/sample3.jpg" class="img" title="This is the image description" rel="portfolio">
 			<?php 
 				echo HTML::image('assets/images/staff/laurendi.jpg', array(
 					'class' => 'portfolio-image', 
@@ -23,7 +23,7 @@
 	</div>
 
 	<div class="portfolio-item">
-		<a href="images/content/demo-only/portfolio/sample7.jpg" class="zoom img" title="Enter any text here" rel="portfolio">
+		<a href="images/content/demo-only/portfolio/sample7.jpg" class="img" title="Enter any text here" rel="portfolio">
 			<img src="images/content/demo-only/portfolio/sample7-thumb.jpg" class="portfolio-image" alt="sample image" />
 		</a>
 		<div class="portfolio-description">
@@ -33,7 +33,7 @@
 	</div>
 	
 	<div class="portfolio-item">
-		<a href="images/content/demo-only/portfolio/sample1.jpg" class="zoom img" title="This is the image description" rel="portfolio">
+		<a href="images/content/demo-only/portfolio/sample1.jpg" class="img" title="This is the image description" rel="portfolio">
 			<img src="images/content/demo-only/portfolio/sample1-thumb.jpg" class="portfolio-image" alt="sample image" />
 		</a>
 		<div class="portfolio-description">
@@ -42,8 +42,11 @@
 		</div>
 	</div>
 	<div class="portfolio-item">
-		<a href="images/content/demo-only/portfolio/sample5.jpg" class="zoom img" title="Enter any text here" rel="portfolio">
-			<img src="images/content/demo-only/portfolio/sample5-thumb.jpg" class="portfolio-image" alt="sample image" />
+		<a href="#" class="img" rel="portfolio">
+			<?php echo HTML::image('assets/images/staff/mazhang.jpg', array(
+				'class' => 'portfolio-image', 
+				'alt' => 'Mark Zhang\'s picture')
+			); ?>
 		</a>
 		<div class="portfolio-description">
 			<h4>Mark Zhang</h4>
@@ -51,7 +54,7 @@
 		</div>
 	</div>				
 	<div class="portfolio-item">
-		<a href="http://people.csail.mit.edu/nickolai/" class="zoom img" rel="portfolio">
+		<a href="http://people.csail.mit.edu/nickolai/" class="img" rel="portfolio">
 			<?php echo HTML::image('assets/images/staff/zeldovich.jpg', array(
 				'class' => 'portfolio-image', 
 				'alt' => 'Prof. Zeldovich picture')
