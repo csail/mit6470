@@ -73,7 +73,7 @@
 	
 	<!-- Logo -->
 	<div id="Logo">
-		<?php echo HTML::anchor('index/home', ''); ?>
+		<?php echo HTML::anchor('home/index', ''); ?>
 		</div>
 	
 	<!-- End of Content -->
