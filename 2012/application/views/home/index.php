@@ -1,6 +1,7 @@
 <?php
-	if (isset($success) && $success) {
-		// TODO: add js to flash a success message.
+	if (isset($email)) {
+		$('#email_status').html($email_status_msg);
+		$('#email_status').show();
 	}
 
 ?>
@@ -18,26 +19,6 @@
 					'height' => 341,
 					'alt' => 'Main image'
 				)));
-			// echo HTML::anchor('#', HTML::image('assets/images/slideshow/slide-2.png',
-			//                                 array(
-			//                                         'width' => 948,
-			//                                         'height' => 341,
-			//                                         'alt' => 'Slide 1'
-			//                                 )));
-			// 
-			// echo HTML::anchor('#', HTML::image('assets/images/slideshow/slide-6.png',
-			//                                 array(
-			//                                         'width' => 948,
-			//                                         'height' => 341,
-			//                                         'alt' => 'Slide 1'
-			//                                 )));
-			// echo HTML::anchor('#', HTML::image('assets/images/slideshow/slide-4.png',
-			//                                 array(
-			//                                         'width' => 948,
-			//                                         'height' => 341,
-			//                                         'alt' => 'Slide 1'
-			//                                 )));
-
 ?>
 	</div>
 	<!-- <a href = "#" class = "slidePrev"></a>
@@ -111,7 +92,6 @@
 							Interaction With Sponsors
 							<span>Looking for a summer internship or full-time job?  Want to meet experts from industry?  Our wonderful sponsors can help you with both of these.</span>
 						</h1>
-						<a href="#">More information...</a>
 					</div>
 				</div>
 				<!-- Featured Item -->
@@ -151,6 +131,7 @@
 					echo Form::input('email', NULL, array('id' => 'NewsletterEmail', 'style' => 'width: 259px', 'margin' => 0, 'class' => 'textInput'));
 				?>
 			</p>
+			<span id="email_status" style="display:none; color: red;"></span>
 			<p style="margin:0;">
 				<?php echo Form::button('', 'Sign me up!', array('class' => 'btn')); ?>
 				<!-- <button type="submit" class="btn"><span>Sign me up!</span></button> -->
