@@ -1,11 +1,3 @@
-<?php
-	if (isset($email)) {
-		$('#email_status').html($email_status_msg);
-		$('#email_status').show();
-	}
-
-?>
-
 <!-- Slide show: jQuery Cycle (default) -->
 <div id="Slideshow">
 	<div id="SlideTop"></div>
@@ -130,8 +122,12 @@
 					echo Form::label('NewsletterEmail', 'Email', array('class' => 'overlabel'));
 					echo Form::input('email', NULL, array('id' => 'NewsletterEmail', 'style' => 'width: 259px', 'margin' => 0, 'class' => 'textInput'));
 				?>
-			</p>
-			<span id="email_status" style="display:none; color: red;"></span>
+            </p>
+            <?php   
+                if (isset($email)) {
+                    echo '<span id="email_status" style="color: red;">' . $email_status_msg . '</span>';
+                }
+            ?>
 			<p style="margin:0;">
 				<?php echo Form::button('', 'Sign me up!', array('class' => 'btn')); ?>
 				<!-- <button type="submit" class="btn"><span>Sign me up!</span></button> -->
