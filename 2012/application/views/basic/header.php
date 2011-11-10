@@ -23,6 +23,7 @@
 							<li><?php echo HTML::anchor('competition/challenge', 'Challenge'); ?></li>
 							<li><?php echo HTML::anchor('competition/rules', 'Official Rules'); ?></li>
 							<li><?php echo HTML::anchor('competition/milestones', 'Milestones'); ?></li>
+							<li><?php echo HTML::anchor('competition/hackathons', 'Hackathons'); ?></li>
 							<li><?php echo HTML::anchor('competition/prizes', 'Prizes'); ?></li>
 						</ul>
 					</li>

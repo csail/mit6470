@@ -84,6 +84,8 @@
 							Interaction With Sponsors
 							<span>Looking for a summer internship or full-time job?  Want to meet experts from industry?  Our wonderful sponsors can help you with both of these.</span>
 						</h1>
+						<?php echo HTML::anchor('#', 'More information'); ?>					
+						
 					</div>
 				</div>
 				<!-- Featured Item -->
