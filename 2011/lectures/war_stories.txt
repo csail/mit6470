@@ -10,12 +10,12 @@ Joe
     - split coding and design between two people
 
 Yafim
-    - decided what to makae at beginning
+    - decided what to make at the beginning
     - one sketch on paper
     - drew in photoshop
-    - made html and css from photoshop thing
+    - made html and css from the photoshop design
     
-    - choose a technology quickly
+    - choose a technology quickly (chose PHP+MySQL and PrototypeJS)
     - make a quick prototype
     - code a lot
 
@@ -25,7 +25,7 @@ Victor
     - decided to use Facebook and let people plan events around movies
 
     - good: split between front-end and back-end
-    - bad: waisted a week cleaning up data
+    - bad: wasted a week cleaning up data
 
     - focus on UI
     - focus on killer feature
