@@ -1,0 +1,37 @@
+h2 {
+}
+
+div.article-body {
+	text-align: left;
+}
+
+span.comment-annotation {
+	color: yellow;
+}
+
+div.comment-text {
+	color: blue;
+}
+
+#content {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#articles {
+/*	width: 800px;*/
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#header {
+/*	width: 50%;*/
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+div.collapsed {
+/*	display: none;*/
+}
