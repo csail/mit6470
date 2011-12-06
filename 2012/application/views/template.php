@@ -29,18 +29,6 @@
 <!--[if IE]><link rel="stylesheet" type="text/css" href="css/ie-only-all-versions.css"><![endif]-->
 			
 <script type="text/javascript">
-		account_id = 'UA-20981308-2';
-		var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', account_id]);
-	_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-</script>
-<script type="text/javascript">
 	// initialize slideshow (Cycle)
 	var firstCycle = true;
 	$(document).ready(function($) {
