@@ -8,9 +8,9 @@
 <div class="portfolio">
 
 	<div class="portfolio-item">
-		<a href="images/content/demo-only/portfolio/sample3.jpg" class="img" title="This is the image description" rel="portfolio">
+		<a href="#" class="img" title="Joe Laurendi Picture" rel="portfolio">
 			<?php 
-				echo HTML::image('assets/images/staff/laurendi.jpg', array(
+				echo HTML::image('assets/images/staff/jlaurend.jpg', array(
 					'class' => 'portfolio-image', 
 					'alt' => 'Joe Laurendi picture')
 				); 
@@ -18,27 +18,45 @@
 		</a>
 		<div class="portfolio-description">
 			<h4>Joe Laurendi</h4>
-			<p>Lead organizer -- Joe makes sure everything's taken care of.</p>
+			<p>Lead Organizer</p>
 		</div>
 	</div>
 
 	<div class="portfolio-item">
-		<a href="images/content/demo-only/portfolio/sample7.jpg" class="img" title="Enter any text here" rel="portfolio">
-			<img src="images/content/demo-only/portfolio/sample7-thumb.jpg" class="portfolio-image" alt="sample image" />
+		<a href="#" class="img" rel="portfolio">
+			<?php echo HTML::image('assets/images/staff/cliu.jpg', array(
+				'class' => 'portfolio-image', 
+				'alt' => 'Charles Liu\'s picture')
+			); ?>
 		</a>
 		<div class="portfolio-description">
 			<h4>Charles Liu</h4>
-			<p>Treasurer -- Charles pushes our money around to where it needs to go and makes sure we make sane decisions.</p>
+			<p>Treasurer</p>
+		</div>
+	</div>
+	<div class="portfolio-item">
+		<a href="#" class="img" rel="portfolio">
+			<?php echo HTML::image('assets/images/staff/atmiguel.jpg', array(
+				'class' => 'portfolio-image', 
+				'alt' => 'Adrian Miguel\'s picture')
+			); ?>
+		</a>
+		<div class="portfolio-description">
+			<h4>Adrian Miguel</h4>
+			<p>Academic Chair</p>
 		</div>
 	</div>
 	
 	<div class="portfolio-item">
-		<a href="images/content/demo-only/portfolio/sample1.jpg" class="img" title="This is the image description" rel="portfolio">
-			<img src="images/content/demo-only/portfolio/sample1-thumb.jpg" class="portfolio-image" alt="sample image" />
+		<a href="#" class="img" rel="portfolio">
+			<?php echo HTML::image('assets/images/staff/elena_11.jpg', array(
+				'class' => 'portfolio-image', 
+				'alt' => 'Elena Tatarchenko\'s picture')
+			); ?>
 		</a>
 		<div class="portfolio-description">
 			<h4>Elena Tatarchenko</h4>
-			<p>Marketing chief -- Elena is in charge of making sure everyone at MIT knows about the awesomeness that is 6.470 in addition to organizing the spectacular award ceremony.</p>
+			<p>Marketing Chief</p>
 		</div>
 	</div>
 	<div class="portfolio-item">
@@ -50,7 +68,7 @@
 		</a>
 		<div class="portfolio-description">
 			<h4>Mark Zhang</h4>
-			<p>Sponsors chair -- Mark makes sure we get awesome sponsors to make this competition possible.</p>
+			<p>Sponsor Chair</p>
 		</div>
 	</div>				
 	<div class="portfolio-item">
@@ -62,7 +80,7 @@
 		</a>
 		<div class="portfolio-description">
 			<h4>Prof. Nickolai Zeldovich</h4>
-			<p>Faculty sponsor -- Prof. Zeldovich provides support and assistance in both administrative and high-level aspects of 6.470.</p>
+			<p>Faculty Sponsor</p>
 		</div>
 	</div>
 </div>

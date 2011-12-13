@@ -16,21 +16,21 @@
 		<tr>
 			<td class="matrixItem">Monday 1/9/12</td>
 			<td class="matrixOdd">11:00am - 11:15am</td>
-			<td class="matrixEven">TBD</td>
+			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">Challenge Unveiling</td>
 			<td class="matrixEven">posted after class</td>
 		</tr>
 		<tr>
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">11:15am - 12:00pm</td>
-			<td class="matrixEven">TBD</td>
+			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">Web Programming Overview</td>
 			<td class="matrixEven"></td>
 		</tr>
 		<tr>
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">12:00pm - 1:00pm</td>
-			<td class="matrixEven">TBD</td>
+			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">HTML + CSS</td>
 			<td class="matrixEven"></td>
 		</tr>
@@ -44,14 +44,14 @@
 		<tr>
 			<td class="matrixItem">Wednesday 1/11/12</td>
 			<td class="matrixOdd">11:00am - 12:00pm</td>
-			<td class="matrixEven">TBD</td>
+			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">MySQL</td>
 			<td class="matrixEven"></td>			
 		</tr>
 		<tr>
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">12:00pm - 1:00pm</td>
-			<td class="matrixEven">TBD</td>
+			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">PHP</td>
 			<td class="matrixEven"></td>
 		</tr>
@@ -65,28 +65,28 @@
 		<tr>
 			<td class="matrixItem">Friday 1/13/12</td>
 			<td class="matrixOdd">11:00am - 11:30am</td>
-			<td class="matrixEven">TBD</td>
+			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">JavaScript</td>
 			<td class="matrixEven"></td>
 		</tr>
 		<tr>
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">11:30am - 12:00pm</td>
-			<td class="matrixEven">TBD</td>
+			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">jQuery</td>
 			<td class="matrixEven"></td>
 		</tr>			
 		<tr>
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">12:00pm - 1:00pm</td>
-			<td class="matrixEven">TBD</td>
+			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">AJAX</td>
 			<td class="matrixEven"></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">1/17/12 - 1/20/12</td>
 			<td class="matrixOdd">11:00am - 3:00pm</td>
-			<td class="matrixEven">TBD</td>
+			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">Guest Lectures TBD</td>
 			<td class="matrixEven">check back for exact schedule</td>
 		</tr>
