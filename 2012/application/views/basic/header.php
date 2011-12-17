@@ -43,11 +43,13 @@
 						</ul>
 					</li>	
 				</ul>
+
+
+<!--				<div class="mmDivider"></div>			-->	
 				
-				<div class="mmDivider"></div>				
-				
-				<!-- Extra Menu Links -->
-				<ul id="MmOtherLinks" class="sf-menu">
+                <!-- Extra Menu Links -->
+
+<!--				<ul id="MmOtherLinks" class="sf-menu"> -->
 					<!-- <li>
 						<a href="#"><span class="mmFeeds">Feeds</span></a>
 						<ul>
@@ -56,9 +58,10 @@
 							<li><a href="http://twitter.com/#!/mit6470"><span class="mmTwitter">Twitter</span></a></li>
 						</ul>
 					</li> -->
-					<li><a href="sample-login.html" class="login"><span class="mmLogin">Login</span></a></li>
+<!--					<li><a href="sample-login.html" class="login"><span class="mmLogin">Login</span></a></li>
 				</ul>
-				
+-->
+
 			</div>
 			<div id="MmRight"></div>
 		</div>

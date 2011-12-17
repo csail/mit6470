@@ -20,6 +20,10 @@ class Controller_Course extends Controller_MIT6470Template {
 
 	public function action_assignments() {
 		$this->template->content = View::factory('course/assignments');		
-	}
+    }
+
+    public function action_video_new() {
+        $this->template->content = View::Factory('course/video_new');
+    }
 
 }
