@@ -8,7 +8,27 @@ class Controller_Course extends Controller_MIT6470Template {
 
 	public function action_intro() {
 		$this->template->content = View::factory('course/intro');
+    }
+
+    public function action_html() {
+		$this->template->content = View::factory('course/html');
 	}
+
+    public function action_css() {
+		$this->template->content = View::factory('course/css');
+    }
+
+    public function action_js() {
+		$this->template->content = View::factory('course/js');
+    }
+
+    public function action_php() {
+		$this->template->content = View::factory('course/php');
+    }
+
+    public function action_mysql() {
+		$this->template->content = View::factory('course/mysql');
+    }
 
 	public function action_video() {
 		$this->template->scripts[] = 'assets/js/video.js';

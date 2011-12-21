@@ -1,19 +1,16 @@
 <!-- Title / Page Headline -->
-<h1 class="headline center"><strong>Web Programming Introduction</strong></h1>
+<h1 class="headline center"><strong>CSS Tutorial</strong></h1>
 
 <div class="hr"></div>
 
 <p class="flavor_text">
-New to web programming? This series of video lectures provides a gentle introduction to web programming. We first look at what happens behind the scenes when you access a website in your browser, then briefly survey core technologies in web programming.
+CSS Tutorial coming soon.
 </p>
 
 
 <?php
-//names of video files without extension (mp4)
-$VIDEO_LIST = array("01_Introduction","02_Accessing_Website","03_Accessing_Website_Internet_IP_Addresses","04_Accessing_Website_IPs_vs_URLs","05_Accessing_Website_DNS_Lookup","06_Accessing_Website_HTTP_Requests_Server_Side_Processing","07_Client_Side_Technologies","08_Server_Side_Technologies","09_Additional_Technologies", "10_Web_Hosting_and_Conclusion");
-//names of videos
-$VIDEO_NAMES = array("Introduction", "Accessing a Website", "The Internet and IP Addresses", "IPs versus URLs", "DNS Lookup","HTTP Requests and Server Side Processing","Client Side Technologies", "Server Side Technologies","Additional Technologies", "Web Hosting and Conclusion");
-
+$VIDEO_LIST = array();
+$VIDEO_NAMES = array();
 
 $VIDEO_NAME = "";
 if(isset($_GET["video"]))
@@ -74,4 +71,5 @@ for($i = 0; $i < count($VIDEO_NAMES); $i++)
 }
 
 ?>
+
 
