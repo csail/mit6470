@@ -10,16 +10,19 @@
 					<li class="current"><?php echo HTML::anchor('', 'Home'); ?></li>
 					<li>
 						<a href="#">Course Materials</a>
-						<ul>
-							<li><?php echo HTML::anchor('course/schedule', 'Schedule'); ?></li>
+                        <ul>
+
+							<li><?php echo HTML::anchor('course/intro', 'Start Here'); ?></li>
 							<li><?php echo HTML::anchor('course/video', 'Video Lectures'); ?></li>
 							<li><?php echo HTML::anchor('course/guest_lectures', 'Guest Lectures'); ?></li>
-							<li><?php echo HTML::anchor('course/assignments', 'Assignments'); ?></li>
+                            <li><?php echo HTML::anchor('course/assignments', 'Assignments'); ?></li>
+
 						</ul>
 					</li>
 					<li>
 						<a href="#">Competition</a>
 						<ul>
+							<li><?php echo HTML::anchor('competition/schedule', 'Schedule'); ?></li>
 							<li><?php echo HTML::anchor('competition/challenge', 'Challenge'); ?></li>
 							<li><?php echo HTML::anchor('competition/rules', 'Official Rules'); ?></li>
 							<li><?php echo HTML::anchor('competition/milestones', 'Milestones'); ?></li>

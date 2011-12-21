@@ -4,6 +4,11 @@ class Controller_Competition extends Controller_MIT6470Template {
 
 	public function action_index() {
 		
+    }
+
+    
+	public function action_schedule() {
+		$this->template->content = View::factory('competition/schedule');
 	}
 
 	public function action_challenge() {

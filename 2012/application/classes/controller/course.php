@@ -6,8 +6,8 @@ class Controller_Course extends Controller_MIT6470Template {
 		
 	}
 
-	public function action_schedule() {
-		$this->template->content = View::factory('course/schedule');
+	public function action_intro() {
+		$this->template->content = View::factory('course/intro');
 	}
 
 	public function action_video() {

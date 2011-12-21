@@ -1,0 +1,7 @@
+a .videolink{text-color:#FF0000;}
+a.videolink:link {text-decoration: none; color:black;}
+a.videolink:visited {text-decoration: none; color:black;}
+a.videolink:active {text-decoration: none; color:black;}
+a.videolink:hover {text-decoration: underline; color:black;}
+
+
