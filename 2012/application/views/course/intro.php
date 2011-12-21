@@ -70,7 +70,7 @@ if(isset($_GET["video"]))
 <?php
 for($i = 0; $i < count($VIDEO_NAMES); $i++)
 {
-    echo "<h3><a class='videolink' id='videolink_".$i."' href='/6470_web/2012/course/intro?video=".$i."'>".$VIDEO_NAMES[$i]."</a></h3>";
+    echo "<h3><a class='videolink' id='videolink_".$i."' href='/2012/course/intro?video=".$i."'>".$VIDEO_NAMES[$i]."</a></h3>";
 }
 
 ?>
