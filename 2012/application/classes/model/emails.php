@@ -30,7 +30,7 @@ class Model_Emails extends Kohana_Model
 		return DB::select(DB::expr('*'))
 			->from('emails')
 			->execute()
-			->as_array();
+			->as_array('email', 'email');
 	}
 
 }
