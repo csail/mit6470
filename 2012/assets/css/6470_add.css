@@ -1,7 +1,13 @@
-a .videolink{text-color:#FF0000;}
-a.videolink:link {text-decoration: none; color:black;}
-a.videolink:visited {text-decoration: none; color:black;}
-a.videolink:active {text-decoration: none; color:black;}
-a.videolink:hover {text-decoration: underline; color:black;}
-
-
+p.flavor_text{
+    font-size:16px;
+}
+video.video-js{
+    margin-left:124px;
+    margin-right:124px;
+}
+p.vjs-no-video{
+    text-align:center;
+}
+div.video-js-box{
+    margin: 50px 0px;
+}

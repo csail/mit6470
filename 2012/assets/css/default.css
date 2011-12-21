@@ -13,14 +13,16 @@ body {
 /* links */
 
 a, 
-a:link, a:visited	{ color: #2FA694; text-decoration: none; }
-a:hover, a:active	{ color: #d00044 ; text-decoration: none; }
+a:link	{ color: #3b3b3b; text-decoration: none; }
+a:visited	{ color: #3b3b3b; text-decoration: none; }
+a:hover, a:active	{ color: #993738; text-decoration: none; }
+a.videolink:hover, a.videolink:active { border-bottom: 1px #993738 solid;}
 
 #MainMenu a:link, #MainMenu a:visited	{ color: #CACACA; }	/* menu links - top level items */
-#MainMenu a:hover, #MainMenu a:active	{ color: #2FA694; }
+#MainMenu a:hover, #MainMenu a:active	{ color: #993738; }
 #MainMenu .sf-menu li li:hover, #MainMenu .sf-menu li li.sfHover, 
 #MainMenu .sf-menu li li a:focus, #MainMenu .sf-menu li li a:hover, #MainMenu .sf-menu li li a:active {
-	background: #278C7D;	/* menu links - sub-menu items */
+	background: #993738;	/* menu links - sub-menu items */
 	color: #fff;}
 
 #Footer a:hover, #Footer a:active,

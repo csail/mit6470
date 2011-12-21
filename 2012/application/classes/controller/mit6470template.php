@@ -33,7 +33,8 @@ public function before()
 	$this->template->styles['assets/css/menu.min.css'] = 'screen';
 	$this->template->styles['assets/css/default.css'] = 'screen';
 	$this->template->styles['assets/css/fancybox.css'] = 'screen';
-	$this->template->styles['assets/css/tooltip.min.css'] = 'screen';
+    $this->template->styles['assets/css/tooltip.min.css'] = 'screen';
+    $this->template->styles['assets/css/6470_add.css'] = 'screen';
 	$this->template->styles['assets/css/default.css'] = 'screen';
 
 	$this->template->scripts = array();
@@ -52,6 +53,7 @@ public function before()
 	$this->template->scripts[] = 'assets/js/jquery.cycle.all.min.js';
 	$this->template->scripts[] = 'assets/js/cufon-yui.js';
 	$this->template->scripts[] = 'assets/js/LiberationSans.font.js';
+	$this->template->scripts[] = 'assets/js/6470_add.js';
 	$this->template->scripts[] = 'assets/js/onLoad.min.js';
 
 	$this->template->content = '';
