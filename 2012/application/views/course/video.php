@@ -23,7 +23,7 @@
   </video>
   <!-- Download links provided for devices that can't play video in the browser. -->
   <p class="vjs-no-video"><strong>Download Video:</strong>
-    <a href="assets/web_overview/Introduction.mp4">MP4</a>,
+    <a href="assets/videos/web_overview/Introduction.mp4">MP4</a>,
     <a href="http://video-js.zencoder.com/oceans-clip.webm">WebM</a>,
     <a href="http://video-js.zencoder.com/oceans-clip.ogv">Ogg</a><br>
     <!-- Support VideoJS by keeping this link. -->

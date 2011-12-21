@@ -28,4 +28,7 @@ class Controller_Course extends Controller_MIT6470Template {
         $this->template->content = View::Factory('course/video_new');
     }
 
+    public function action_video_temp() {
+        $this->template->content = View::Factory('course/video_temp');
+    }
 }
