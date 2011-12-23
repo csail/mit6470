@@ -4,13 +4,13 @@
 <div class="hr"></div>
 
 <p class="flavor_text">
-HTML Tutorial coming soon.
+HTML allows you to describe the content of your webpage. The following videos describe the syntax of HTML and show you how to use many of the common HTML elements. 
 </p>
 
 
 <?php
-$VIDEO_LIST = array();
-$VIDEO_NAMES = array();
+$VIDEO_LIST = array("01_Intro","02_Attributes","03_Headings","04_Images and Links","05_Forms","06_Lists and Tables","07_Divs","08_Conclusion");
+$VIDEO_NAMES = array("Introduction, Basic Syntax, and Getting Started", "Elements and Attributes", "Headings, Paragraphs, and Text Formatting", "Images and Links", "Forms", "Lists and Tables", "Divs", "Viewing Source, Including JS and CSS, and Conclusion");
 
 $VIDEO_NAME = "";
 if(isset($_GET["video"]))
@@ -34,7 +34,7 @@ if(isset($_GET["video"]))
   <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
   <video id="video" class="video-js" width="640" height="360" controls="controls" preload="auto" poster="/2012/assets/images/6470_video_logo.png">
 	
-    <source src="<?php echo URL::site('assets/videos/web_overview/'.$VIDEO_FILE_NAME.'.mp4'); ?>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+    <source src="<?php echo URL::site('assets/videos/html/'.$VIDEO_FILE_NAME.'.mp4'); ?>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
     <!-- <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm; codecs="vp8, vorbis"' />
     <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg; codecs="theora, vorbis"' /> -->
     <!-- Flash Fallback. Use any flash video player here. Make sure to keep the vjs-flash-fallback class. -->
@@ -67,7 +67,7 @@ if(isset($_GET["video"]))
 <?php
 for($i = 0; $i < count($VIDEO_NAMES); $i++)
 {
-    echo "<h3><a class='videolink' id='videolink_".$i."' href='/2012/course/intro?video=".$i."'>".$VIDEO_NAMES[$i]."</a></h3>";
+    echo "<h3><a class='videolink' id='videolink_".$i."' href='/2012/course/html?video=".$i."'>".$VIDEO_NAMES[$i]."</a></h3>";
 }
 
 ?>
