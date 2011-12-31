@@ -1,7 +1,5 @@
 <!-- Title / Page Headline -->
-<h1 class="headline center"><strong>Web Programming Introduction</strong></h1>
-
-<div class="hr"></div>
+<h1 class="headline center "><strong>Web Programming Introduction</strong></h1>
 
 <p class="flavor_text">
 New to web programming? This series of video lectures provides a gentle introduction to web programming. We first look at what happens behind the scenes when you access a website in your browser, then briefly survey core technologies in web programming.
@@ -30,9 +28,9 @@ if(isset($_GET["video"]))
 
 
 <?php if($VIDEO_NAME!="") {?>
-<h2 class="headline center"><strong>Currently Viewing: <?php echo $VIDEO_NAME?></strong></h2>
+<div class="hr padded_hr"></div>
+<h2 class="headline center "><strong>Currently Viewing: <?php echo $VIDEO_NAME?></strong></h2>
 
-<div class="hr"></div>
 <div class="video-js-box">
   <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
   <video id="video" class="video-js" width="640" height="360" controls="controls" preload="auto" poster="/2012/assets/images/6470_video_logo.png">
@@ -62,9 +60,8 @@ if(isset($_GET["video"]))
 
 <?php } ?>
 
-<h2 class="headline center"><strong>Videos</strong></h2>
-
-<div class="hr"></div>
+<div class="hr padded_hr"></div>
+<h2 class="headline center "><strong>Videos</strong></h2>
 
 <!--write video links-->
 <?php

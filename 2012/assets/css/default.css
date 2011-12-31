@@ -16,7 +16,7 @@ a,
 a:link	{ color: #3b3b3b; text-decoration: none; }
 a:visited	{ color: #3b3b3b; text-decoration: none; }
 a:hover, a:active	{ color: #993738; text-decoration: none; }
-a.videolink:hover, a.videolink:active { border-bottom: 1px #993738 solid;}
+a.videolink:hover, a.videolink:active, .exerciselink a:hover { border-bottom: 1px #993738 solid;}
 
 #MainMenu a:link, #MainMenu a:visited	{ color: #CACACA; }	/* menu links - top level items */
 #MainMenu a:hover, #MainMenu a:active	{ color: #993738; }
