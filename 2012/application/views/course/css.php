@@ -4,13 +4,13 @@
 <div class="hr"></div>
 
 <p class="flavor_text">
-CSS Tutorial coming soon.
+CSS allows you to style the content of your webpage, for example by controlling the color and positioning of elements. The following videos describe the syntax of CSS and how to use many CSS properties, with a focus on page layout.
 </p>
 
 
 <?php
-$VIDEO_LIST = array();
-$VIDEO_NAMES = array();
+$VIDEO_LIST = array("01_Intro", "02_Selectors","03_Precedence","04_Box_Model", "05_Positioning", "06_Floating","07_Various_Properties","08_Conclusion");
+$VIDEO_NAMES = array("Introduction and Basic Syntax", "Selectors", "Inserting CSS and Precedence", "Page Layout and the Box Model", "Positioning","Display and Floating", "Other Common Properties", "Conclusion");
 
 $VIDEO_NAME = "";
 if(isset($_GET["video"]))
@@ -34,7 +34,7 @@ if(isset($_GET["video"]))
   <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
   <video id="video" class="video-js" width="640" height="360" controls="controls" preload="auto" poster="/2012/assets/images/6470_video_logo.png">
 	
-    <source src="<?php echo URL::site('assets/videos/web_overview/'.$VIDEO_FILE_NAME.'.mp4'); ?>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+    <source src="<?php echo URL::site('assets/videos/css/'.$VIDEO_FILE_NAME.'.mp4'); ?>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
     <!-- <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm; codecs="vp8, vorbis"' />
     <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg; codecs="theora, vorbis"' /> -->
     <!-- Flash Fallback. Use any flash video player here. Make sure to keep the vjs-flash-fallback class. -->
@@ -67,7 +67,7 @@ if(isset($_GET["video"]))
 <?php
 for($i = 0; $i < count($VIDEO_NAMES); $i++)
 {
-    echo "<h3><a class='videolink' id='videolink_".$i."' href='/2012/course/intro?video=".$i."'>".$VIDEO_NAMES[$i]."</a></h3>";
+    echo "<h3><a class='videolink' id='videolink_".$i."' href='/2012/course/css?video=".$i."'>".$VIDEO_NAMES[$i]."</a></h3>";
 }
 
 ?>
