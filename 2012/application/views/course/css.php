@@ -1,8 +1,6 @@
 <!-- Title / Page Headline -->
 <h1 class="headline center"><strong>CSS Tutorial</strong></h1>
 
-<div class="hr"></div>
-
 <p class="flavor_text">
 CSS allows you to style the content of your webpage, for example by controlling the color and positioning of elements. The following videos describe the syntax of CSS and how to use many CSS properties, with a focus on page layout.
 </p>
@@ -27,9 +25,9 @@ if(isset($_GET["video"]))
 
 
 <?php if($VIDEO_NAME!="") {?>
+<div class="hr"></div>
 <h2 class="headline center"><strong>Currently Viewing: <?php echo $VIDEO_NAME?></strong></h2>
 
-<div class="hr"></div>
 <div class="video-js-box">
   <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
   <video id="video" class="video-js" width="640" height="360" controls="controls" preload="auto" poster="/2012/assets/images/6470_video_logo.png">
@@ -59,9 +57,9 @@ if(isset($_GET["video"]))
 
 <?php } ?>
 
+<div class="hr"></div>
 <h2 class="headline center"><strong>Videos</strong></h2>
 
-<div class="hr"></div>
 
 <!--write video links-->
 <?php

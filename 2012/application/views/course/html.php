@@ -28,7 +28,6 @@ if(isset($_GET["video"]))
 <div class="hr padded_hr"></div>
 <h2 class="headline center "><strong>Currently Viewing: <?php echo $VIDEO_NAME?></strong></h2>
 
-<div class="hr padded_hr"></div>
 <div class="video-js-box">
   <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
   <video id="video" class="video-js" width="640" height="360" controls="controls" preload="auto" poster="/2012/assets/images/6470_video_logo.png">
