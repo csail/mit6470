@@ -1,0 +1,36 @@
+body
+{
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    background-color: #eeeeee;
+    text-align: center;
+}
+
+h1
+{
+    color: #993738;
+}
+div#sponsors
+{
+    margin:auto;
+    margin-top:50px;
+    overflow: hidden;
+	width: auto;
+    display: inline-block;
+    
+}
+div.img
+{
+  margin: 2px;
+  border: 1px solid #993738;
+  height: auto;
+  width: auto;
+  float: left;
+  text-align: center;
+}	
+div.img img
+{
+  display: inline;
+  margin: 3px;
+  border: 1px solid #ffffff;
+}
+div.img a:hover img {border: 1px solid #993738;}

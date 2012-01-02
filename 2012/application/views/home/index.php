@@ -46,7 +46,7 @@
 				<!-- Featured Item -->
 				<div class="featuredItem">
 					<?php
-						echo HTML::anchor('/course/schedule', HTML::image('assets/images/frontpage/curric.jpg', 
+						echo HTML::anchor('/competition/schedule', HTML::image('assets/images/frontpage/curric.jpg', 
 							array('alt' => 'Curriculum image', 'width' => 150, 'height' => 85)), array('class' => 'featuredImg img'));
 					?>					
 					<div class="featuredText">
@@ -54,7 +54,7 @@
 							Comprehensive Curriculum
 							<span>Our curriculum covers all the essential topics needed to get one up and running building websites.  Much of the material will be available online.</span>
 						</h1>
-						<?php echo HTML::anchor('/course/schedule', 'More information'); ?>
+						<?php echo HTML::anchor('/competition/schedule', 'More information'); ?>
 					</div>
 				</div>
 				<!-- Featured Item -->

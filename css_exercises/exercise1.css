@@ -1,0 +1,19 @@
+#content
+{
+    width: 400px;
+    margin: 20px auto 0px;
+    padding: 10px 20px;
+    border: 1px solid gray;
+}
+
+#heading
+{
+    color: gray;
+    text-decoration: underline;
+    text-align: center;
+}
+
+#paragraph
+{
+    color: blue;
+}

@@ -1,0 +1,44 @@
+body
+{
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+#heading
+{
+    text-align: center;
+    color: #993738;
+}
+
+#geography
+{
+    width:400px;
+    margin: 20px auto;
+    border-collapse:collapse;
+}
+#geography td, #geography th 
+{
+    font-size:1em;
+    border:1px solid #995050;
+    padding:3px 7px 2px 7px;
+}
+#geography th 
+{
+    font-size:1.1em;
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#993738;
+    color:#ffffff;
+}
+#geography tr.alt td 
+{
+    color:#000000;
+    background-color:#cccccc;
+}
+
+/*last-child is another pseudo-element
+ * td:last-child selects td only if is the last child in the parent*/
+#geography td:last-child, #geography th:last-child
+{
+    text-align:right;
+}

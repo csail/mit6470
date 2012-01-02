@@ -1,0 +1,29 @@
+#navigation_bar
+{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#navigation_bar li
+{
+    float:left;
+}
+#navigation_bar a:link, #navigation_bar a:visited
+{
+    display:block;
+    width:100px;
+    font-weight:bold;
+    color:#FFFFFF;
+    background-color:#993738;
+    text-align:center;
+    padding:4px;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+#navigation_bar a:hover,#navigation_bar a:active
+{
+    background-color:#672526;
+}
+

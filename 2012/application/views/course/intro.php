@@ -73,3 +73,12 @@ for($i = 0; $i < count($VIDEO_NAMES); $i++)
 
 ?>
 
+<div class="hr padded_hr"></div>
+<h2 class="headline center "><strong>Materials</strong></h2>
+
+<h3><a href='/2012/assets/resources/overview_ppt.zip'>Web Programming Intro Powerpoint (used in lectures)</a></h3>
+<div class="hr padded_hr"></div>
+<h2 class="headline center "><strong>Questions?</strong></h2>
+<p class="flavor_text"> Contact us at 6.470-staff@mit.edu or come to our <a href="/2012/competition/schedule">Office Hours</a></p>
+<div class="hr padded_hr"></div>
+<h4> Page and content by Mark Zhang </h4
