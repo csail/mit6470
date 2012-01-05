@@ -1,3 +1,4 @@
+<div id="top_pane">
 <!-- Title / Page Headline -->
 <h1 class="headline center "><strong>HTML Tutorial</strong></h1>
 
@@ -87,27 +88,28 @@ for($i = 0; $i < count($VIDEO_NAMES); $i++)
 </p>
 <p class="flavor_text">
         Solutions are under the Materials section. You can also view a solution to an exercise by right-clicking on the page and viewing the source.
-    </p>
+</p>
+<!-- <a style="cursor:pointer; color: #993738; font-size: 16px;" id="open_editor_link">Click here to open the online editor</a> -->
 
-<h3 class='exerciselink'><a id='exerciselink_1' href='/html_exercises/exercise1.html'>Exercise 1</a></h3>
+<h3 class='exerciselink'><a id='exerciselink_1' href='/html_exercises/exercise1.html' target="_blank">Exercise 1</a></h3>
 <p class='flavor_text'>Organization of HTML in a basic webpage. Note that webpage has a title, which is usually displayed on the tab, which you must include.</p>
 <p class='flavor_text' id="hintp1" onclick="show_hint(1)" style="color: #993738;">Hint</p>
-<h3 class='exerciselink'><a id='exerciselink_2' href='/html_exercises/exercise2.html'>Exercise 2</a></h3>
+<h3 class='exerciselink'><a id='exerciselink_2' href='/html_exercises/exercise2.html' target="_blank">Exercise 2</a></h3>
 <p class='flavor_text'>Modifying text and adding whitespace with HTML tags.</p>
 <p class='flavor_text' id="hintp2" onclick="show_hint(2)" style="color: #993738;">Hint</p>
-<h3 class='exerciselink'><a id='exerciselink_3' href='/html_exercises/exercise3.html'>Exercise 3</a></h3>
+<h3 class='exerciselink'><a id='exerciselink_3' href='/html_exercises/exercise3.html' target="_blank">Exercise 3</a></h3>
 <p class='flavor_text'>Ordered and unordered lists</p>
 <p class='flavor_text' id="hintp3" onclick="show_hint(3)" style="color: #993738;">Hint</p>
-<h3 class='exerciselink'><a id='exerciselink_4' href='/html_exercises/exercise4.html'>Exercise 4</a></h3>
+<h3 class='exerciselink'><a id='exerciselink_4' href='/html_exercises/exercise4.html' target="_blank">Exercise 4</a></h3>
 <p class='flavor_text'>Tables</p>
 <p class='flavor_text' id="hintp4" onclick="show_hint(4)" style="color: #993738;">Hint</p>
-<h3 class='exerciselink'><a id='exerciselink_5' href='/html_exercises/exercise5.html'>Exercise 5</a></h3>
+<h3 class='exerciselink'><a id='exerciselink_5' href='/html_exercises/exercise5.html' target="_blank">Exercise 5</a></h3>
 <p class='flavor_text'>Images and links. <a href='/2012/assets/resources/smiley_face.zip'>Download Image Here.</a></p>
 <p class='flavor_text' id="hintp5" onclick="show_hint(5)" style="color: #993738;">Hint</p>
-<h3 class='exerciselink'><a id='exerciselink_6' href='/html_exercises/exercise6.html'>Exercise 6</a></h3>
+<h3 class='exerciselink'><a id='exerciselink_6' href='/html_exercises/exercise6.html' target="_blank">Exercise 6</a></h3>
 <p class='flavor_text'>A form for sending e-mail. Remember that each input element should have a "name" attribute for server processing purposes. A "textarea" is included in this example. The button behavior is left unspecified.</p>
 <p class='flavor_text' id="hintp6" onclick="show_hint(6)" style="color: #993738;">Hint</p>
-<h3 class='exerciselink'><a id='exerciselink_7' href='/html_exercises/exercise7.html'>Exercise 7</a></h3>
+<h3 class='exerciselink'><a id='exerciselink_7' href='/html_exercises/exercise7.html' target="_blank">Exercise 7</a></h3>
 <p class='flavor_text'>A simple div for holding content. More complicated div exercises in the CSS tutorial</p>
 <p class='flavor_text' id="hintp7" onclick="show_hint(7)" style="color: #993738;">Hint</p>
 <div class="hr padded_hr"></div>
@@ -126,3 +128,7 @@ for($i = 0; $i < count($VIDEO_NAMES); $i++)
 <p class="flavor_text"> Contact us at 6.470-staff@mit.edu or come to our <a href="/2012/competition/schedule">Office Hours</a></p>
 <div class="hr padded_hr"></div>
 <h4> Page and content by Mark Zhang. </h4>
+</div>
+<div id="bottom_pane" style="width: 100%; position: fixed; bottom: 0; left: 0; background-color: white; height: 40%; display:none">
+	BOTTOM PANE
+</div>

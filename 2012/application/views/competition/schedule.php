@@ -2,7 +2,12 @@
 <h1 class="headline center"><strong>Course Schedule</strong></h1>
 
 <div class="hr"></div>
-
+<style>
+#FeatureMatrix tr td { vertical-align: middle; }
+div#fancy_bg { background-color: #f0eef9; }
+div#fancy_div { background-color: #f0eef9; color: black; }
+div.lecture_details_div h2 { text-align: center;}
+</style>
 <table cellspacing="0" cellpadding="0" id="FeatureMatrix" class="center" 
 	style="margin-left: auto; margin-right: auto;">
 	<tbody>
@@ -36,7 +41,7 @@
 		</tr>
 		<tr>
 			<td class="matrixItem">Tuesday 1/10/12</td>
-			<td class="matrixOdd">7:00pm - midnight</td>
+			<td class="matrixOdd">9:00pm - 11:00pm</td>
 			<td class="matrixEven">TBD</td>
 			<td class="matrixOdd">Office Hours</td>
 			<td class="matrixEven">none</td>
@@ -57,10 +62,41 @@
 		</tr>
 		<tr>
 			<td class="matrixItem">Thursday 1/12/12</td>
-			<td class="matrixOdd">7:00pm - midnight</td>
+			<td class="matrixOdd">11:00am - 12:00pm</td>
+			<td class="matrixEven">10-250</td>
+			<td class="matrixOdd">The Engineer, The Designer, and the Dictator (by <a href="http://www.randsinrepose.com/">Michael Lopp</a> from <a href="http://www.palantirtech.com/">Palantir</a>)</td>
+			<td class="matrixEven"><a class="lecture_details_link" href="#palantir_details">click for details</a>
+				<div style="display:none;" id="palantir_details" class="lecture_details_div">
+					<h2 style="text-align: center;">The Engineer, The Designer, and the Dictator</h2>
+					<h3>Bio</h3>
+					<p>Michael Lopp is a Silicon Valley-based engineering manager who builds both people and software. When he's not worrying about staying relevant, he writes about pens, bridges, people, poker, and werewolves at the popular weblog, Rands in Repose.</p> 
+					<p>Michael's second book "Being Geek" is a career handbook for geeks and nerds alike. His first book "Managing Humans" is a popular guide to the art of engineering management and clearly explains that while you might be rewarded for what you produce, you will only be successful because of your people.</p>
+					<p>Michael is currently responsible for Special Projects at Palantir.</p>
+					<h3>Talk Synopsis</h3>
+					<p>During the course of your career, it is likely you will have an undeniable urge to build a thing. It is equally likely that while you are well-intentioned and talented, you are horrifically bad at a skill that is essential to successful thing building. In this talk, Michael Lopp will discuss ideal team construction and product design based on his nine years of experience at Apple in a presentation called "The Engineer, The Designer, and The Dictator".</p>
+				</div>
+			</td>		
+		</tr>
+		<tr>
+			<td class="matrixItem"><br /></td>
+			<td class="matrixOdd">12:30pm - 1:30pm</td>
+			<td class="matrixEven">10-250</td>
+			<td class="matrixOdd">Engineering Good Design and Usability (by <a href="http://www.palantirtech.com/">Palantir</a>)</td>
+			<td class="matrixEven"></td>
+		</tr>
+		<tr>
+			<td class="matrixItem"><br /></td>
+			<td class="matrixOdd">1:30pm - 2:30pm</td>
+			<td class="matrixEven">10-250</td>
+			<td class="matrixOdd">Usability (by <a href="http://people.csail.mit.edu/rcm/">Rob Miller</a>)</td>
+			<td class="matrixEven"></td>
+		</tr>
+		<tr>
+			<td class="matrixItem"><br /></td>
+			<td class="matrixOdd">9:00pm - 11:00pm</td>
 			<td class="matrixEven">TBD</td>
 			<td class="matrixOdd">Office Hours</td>
-			<td class="matrixEven">none</td>			
+			<td class="matrixEven">None</td>
 		</tr>
 		<tr>
 			<td class="matrixItem">Friday 1/13/12</td>
@@ -113,7 +149,7 @@
 		</tr>
 		<tr>
 			<td class="matrixItem">Thursday 1/19/12</td>
-			<td class="matrixOdd">7:00pm - midnight</td>
+			<td class="matrixOdd">9:00pm - 11:00pm</td>
 			<td class="matrixEven">TBD</td>
 			<td class="matrixOdd">Office Hours</td>
 			<td class="matrixEven">none</td>
@@ -134,7 +170,7 @@
 		</tr>
 		<tr>
 			<td class="matrixItem">Thursday 1/26/12</td>
-			<td class="matrixOdd">7:00pm - midnight</td>
+			<td class="matrixOdd">9:00pm - 11:00pm</td>
 			<td class="matrixEven">TBD</td>
 			<td class="matrixOdd">Office Hours</td>
 			<td class="matrixEven">none</td>
@@ -148,7 +184,7 @@
 		</tr>
 		<tr>
 			<td class="matrixItem">Monday 1/30/12</td>
-			<td class="matrixOdd">7:00pm - midnight</td>
+			<td class="matrixOdd">9:00pm - 11:00pm</td>
 			<td class="matrixEven">TBD</td>
 			<td class="matrixOdd">Office Hours</td>
 			<td class="matrixEven">none</td>

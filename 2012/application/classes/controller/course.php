@@ -2,6 +2,11 @@
 
 class Controller_Course extends Controller_MIT6470Template {
 
+	public function before(){
+		parent::before();
+		$this->template->scripts[] = 'assets/js/course.js';
+	}
+
 	public function action_index() {
 		
 	}

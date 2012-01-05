@@ -51,7 +51,7 @@ public function before()
 	$this->template->scripts[] = 'assets/js/jquery.localscroll-min.js';
 	$this->template->scripts[] = 'assets/js/jquery.fancybox-1.2.6.pack.js';
 	$this->template->scripts[] = 'assets/js/jquery.cycle.all.min.js';
-	$this->template->scripts[] = 'assets/js/cufon-yui.js';
+	// $this->template->scripts[] = 'assets/js/cufon-yui.js';
 	$this->template->scripts[] = 'assets/js/LiberationSans.font.js';
 	$this->template->scripts[] = 'assets/js/6470_add.js';
 	$this->template->scripts[] = 'assets/js/onLoad.min.js';

@@ -8,6 +8,7 @@ class Controller_Competition extends Controller_MIT6470Template {
 
     
 	public function action_schedule() {
+		$this->template->scripts[] = 'assets/js/schedule.js';
 		$this->template->content = View::factory('competition/schedule');
 	}
 
