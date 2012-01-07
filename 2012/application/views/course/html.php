@@ -49,7 +49,7 @@ if(isset($_GET["video"]))
   </video>
   <!-- Download links provided for devices that cant play video in the browser. -->
   <p class="vjs-no-video"><strong>Download Video:</strong>
-    <a href="assets/videos/web_overview/Introduction.mp4">MP4</a>,
+    <a href="<?php echo URL::site('assets/videos/html/'.$VIDEO_FILE_NAME.'.mp4'); ?>">MP4</a>,
 
     <!-- Support VideoJS by keeping this link. -->
     <a href="http://videojs.com">HTML5 Video Player</a> by VideoJS
