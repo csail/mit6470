@@ -6,8 +6,8 @@ class Controller_Admin extends Controller_MIT6470Template {
 	{
 	}
 
-	public function action_importStudents() {
-		$handle = fopen(APPPATH.'../assets/class_list/roster-12_18_2011.csv', 'r');
+	public function action_newsletterMinusRegistered() {
+		$handle = fopen(APPPATH.'../assets/class_list/roster-2012_01_08.csv', 'r');
 		$i = 0;
         $signup_emails = Model_Emails::listEmails();
         $stellar_emails = array();
