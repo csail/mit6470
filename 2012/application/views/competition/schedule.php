@@ -120,25 +120,18 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixEven"></td>
 		</tr>
 		<tr>
+			<td class="matrixItem">Sunday 1/15/12</td>
+			<td class="matrixOdd">12:00pm - 4:00pm</td>
+			<td class="matrixEven">TBD</td>
+			<td class="matrixOdd">Milestone 1 + Office Hours</td>
+			<td class="matrixEven">none</td>
+		</tr>
+		<tr>
 			<td class="matrixItem">1/17/12 - 1/20/12</td>
 			<td class="matrixOdd">11:00am - 3:00pm</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">Guest Lectures TBD</td>
 			<td class="matrixEven">check back for exact schedule</td>
-		</tr>
-		<tr>
-			<td class="matrixItem">Sunday 1/15/12</td>
-			<td class="matrixOdd">12:00pm - 4:00pm</td>
-			<td class="matrixEven">TBD</td>
-			<td class="matrixOdd">Milestone 1 + Office Hours</td>
-			<td class="matrixEven">none</td>
-		</tr>
-		<tr>
-			<td class="matrixItem">Sunday 1/15/12</td>
-			<td class="matrixOdd">12:00pm - 4:00pm</td>
-			<td class="matrixEven">TBD</td>
-			<td class="matrixOdd">Milestone 1 + Office Hours</td>
-			<td class="matrixEven">none</td>
 		</tr>
 		<tr>
 			<td class="matrixItem">Tuesday 1/17/12</td>
