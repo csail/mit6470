@@ -44,7 +44,7 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixOdd">9:00pm - 11:00pm</td>
 			<td class="matrixEven">TBD</td>
 			<td class="matrixOdd">Office Hours</td>
-			<td class="matrixEven">none</td>
+			<td class="matrixEven">W20-575</td>
 		</tr>
 		<tr>
 			<td class="matrixItem">Wednesday 1/11/12</td>
@@ -90,13 +90,6 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">Usability (by <a href="http://people.csail.mit.edu/rcm/">Rob Miller</a>)</td>
 			<td class="matrixEven"></td>
-		</tr>
-		<tr>
-			<td class="matrixItem"><br /></td>
-			<td class="matrixOdd">9:00pm - 11:00pm</td>
-			<td class="matrixEven">TBD</td>
-			<td class="matrixOdd">Office Hours</td>
-			<td class="matrixEven">None</td>
 		</tr>
 		<tr>
 			<td class="matrixItem">Friday 1/13/12</td>
