@@ -20,6 +20,7 @@ class Controller_Admin extends Controller_MIT6470Template {
 			$last_name = $full_name_split[0];
             $email = $data[1];
             array_push($stellar_emails, $email);
+            echo $email . ',';
         }
 
         $remaining_emails = array();
