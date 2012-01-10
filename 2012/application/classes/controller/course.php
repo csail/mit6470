@@ -41,6 +41,11 @@ class Controller_Course extends Controller_MIT6470Template {
 		$this->template->content = View::factory('course/video');		
 	}
 
+	public function action_lectures() {
+		$topic = HTML::chars($_GET['topic']);
+		$this->template->content = View::factory('course/lectures/'.$topic);
+	}
+
 	public function action_guest_lectures() {
 		$this->template->content = View::factory('course/guest_lectures');		
 	}

@@ -23,21 +23,21 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixOdd">11:00am - 11:15am</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">Challenge Unveiling</td>
-			<td class="matrixEven">posted after class</td>
+			<td class="matrixEven"><?php echo HTML::anchor('competition/challenge', 'challenge statement'); ?></td>
 		</tr>
 		<tr>
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">11:15am - 12:00pm</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">Web Programming Overview</td>
-			<td class="matrixEven"></td>
+			<td class="matrixEven"><?php echo HTML::anchor('course/lectures?topic=day1', 'click here') ?></td>
 		</tr>
 		<tr>
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">12:00pm - 1:00pm</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">HTML + CSS</td>
-			<td class="matrixEven"></td>
+			<td class="matrixEven"><?php echo HTML::anchor('course/lectures?topic=day1', 'click here') ?></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">Tuesday 1/10/12</td>
