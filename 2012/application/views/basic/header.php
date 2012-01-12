@@ -18,6 +18,7 @@
                             <li><?php echo HTML::anchor('course/js', 'Javascript'); ?></li>
                             <li><?php echo HTML::anchor('course/php', 'PHP'); ?></li>
                             <li><?php echo HTML::anchor('course/mysql', 'MySQL'); ?></li>
+														<li><?php echo HTML::anchor('course/lectures', 'Lectures') ?></li>
 							<li><?php echo HTML::anchor('course/guest_lectures', 'Guest Lectures'); ?></li>
 
 						</ul>
