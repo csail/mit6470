@@ -3,6 +3,5 @@
 
 <div class="hr"></div>
 
-<p>
-	We'll post materials from guest lectures here once they've taken place.
-</p>
+<h2>Palantir 1/12/2012</h2>
+<h3><?php echo HTML::anchor('assets/resources/palantir_design.pdf', 'Engineering Good Design and Usability'); ?></h3>
