@@ -79,3 +79,36 @@ Examples</p>
 <ul>
 	<li>A fan-site or wiki for a specific show.</li>
 </ul>
+
+<h3>Technical Requirements</h3>
+
+<p>All teams’ sites must satisfy the following technical requirements to qualify for competition and gain academic credit. The requirements are intended to ensure entries entail a significant programming effort, and aim to expose students to users’ expectations for modern web sites.</p>
+
+<p>Your site must meet all the following basic requirements.</p>
+
+<ul>
+	<li>Dynamically-generated, database-backed pages. Your site must contain pages that are produced dynamically by a back-end (like PHP, Python or Ruby scripts) that uses the results of database queries.</li>
+	<li>Personalized experience based on user accounts. Your site must have a sign-in feature. The feature can use 3rd party authentication, such as OpenID or Facebook Connect. At a minimum, a personalized UI can be achieved by including the user’s name in the header. Signing off and account management (e.g., password change) are optional.</li>
+	<li>Original design and implementation. Your site’s high-level design and the implementation of key features must be original. Customizing a CMS (e.g., Alfresco, Drupal, Wordpress) will most likely result in a site that violates this requirement. You may use open-source or publicly-available closed-source components, as long as the top-level design is original. You may use Web application frameworks like Zend, Django, and Ruby on Rails.</li>
+</ul>
+		
+<p>Your site must help users access a non-trivial amount of content. You must achieve this goal by one of the following methods.</p>
+
+<ul>
+	<li>Large pre-loaded dataset. Your database contains a processed version of a publicly accessible dataset that has at least 1,000 items. You will have to show us the original dataset, as well as a principal (not purely used for joins) table in your database that has at least 1,000 entries.</li>
+	<li>Pre-generated dataset. You bootstrapped your site with fake data. You will have to briefly describe the method you used to generate the data. The size requirements above still apply. Be creative when generating your data! Judges will be bored by a site where the same three names show up everywhere!</li>
+	<li><em>3rd party data access</em>. Your back-end uses another application’s publicly accessible API to access and return data on the fly. Please keep in mind that the 3rd-party data must be received by your server,   You must show us the application, API description, and your implementation. If you go this route, you must use a database as a cache and fallback mechanism for API requests. You will fail milestone check-offs if your application malfunctions due to 3rd party API failures, and you may be disqualified if this happens when we test your application after the submission deadline.</li>
+</ul>
+
+<p>Your site must present its content in an efficient matter. You must achieve this goal by implementing one of the following.</p>
+•	Data visualization. Your application presents data in a visual manner that enhances the users’ understanding of the data. The visualization should highlight some feature of the data that isn’t obvious or trivial. The user must be able to influence which data gets displayed in the visualization’s. You are allowed to use a preexisting implementation for your visualization, like a jQueryUI widget, provided that it fits with your application. Original visualizations will be recognized with special awards.
+•	Dynamic filtering. Your application shows a small (< 10%) subset of data which is most relevant to the user at the moment, or ranks the data such that the most relevant items are shown first. The subset and/or the ordering of the data must change in response to the user’s actions. Three examples that would fulfill this requirement are full-text search, criteria-based search, and a “recommended for you” section. For the latter, you will have to convince us that the contents changes based on user actions.
+Your site must comply with U.S. law and M.I.T. academic policy. Here are the issues that are usually relevant.
+•	Intellectual property use. Make sure you only use publicly-available data for your site. This applies to both the data in your database, and the implementation. Pay particular attention to images, fonts, and CSS, as most cease-and-desist letters refer to these.
+•	Old or proprietary code. Asides from your code, all the 3rd-party software that your site uses, whether compiled binaries (e.g. DLLs) or source code (e.g. a PHP library), that you use must be publicly available, either for free or for a fee. Most importantly, you may not use any code that you wrote before January 3, 2011, unless it was publicly released.
+•	Plagiarism. We will ask you to name all your team members, and list all the 3rd party data, code, and media that you have used. Please keep careful track of your sources, just like you would for any other course. Plagiarism may result in disqualification, a failing grade, and referral to MIT’s Committee of Discipline.
+•	Straight-forward evil. Do not spam. Do not encourage or assist users in breaking non-disclosure agreements or infringing copyright. Do not abuse M.I.T.’s infrastructure or databases. Do not interfere with other contestants’ development process.
+Your site must work in one of the following browsers:
+•	Chrome, the latest stable version (most likely 9)
+•	Firefox 3.6, latest patch
+•	Firefox 4, latest beta
