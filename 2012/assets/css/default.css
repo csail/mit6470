@@ -13,9 +13,9 @@ body {
 /* links */
 
 a, 
-a:link	{ color: #3b3b3b; text-decoration: none; }
-a:visited	{ color: #3b3b3b; text-decoration: none; }
-a:hover, a:active	{ color: #993738; text-decoration: none; }
+a:link	{ color: #993738; text-decoration: none; }
+a:visited	{ /*color: #3b3b3b;*/ text-decoration: none; }
+a:hover, a:active	{ /*color: #3b3b3b;*/ text-decoration: underline; }
 a.videolink:hover, a.videolink:active, .exerciselink a:hover { border-bottom: 1px #993738 solid;}
 
 #MainMenu a:link, #MainMenu a:visited	{ color: #CACACA; }	/* menu links - top level items */
@@ -23,10 +23,11 @@ a.videolink:hover, a.videolink:active, .exerciselink a:hover { border-bottom: 1p
 #MainMenu .sf-menu li li:hover, #MainMenu .sf-menu li li.sfHover, 
 #MainMenu .sf-menu li li a:focus, #MainMenu .sf-menu li li a:hover, #MainMenu .sf-menu li li a:active {
 	background: #993738;	/* menu links - sub-menu items */
-	color: #fff;}
+	color: #fff;
+	text-decoration: none;}
 
 #Footer a:hover, #Footer a:active,
-#ContentPanel a:hover, #ContentPanel a:active	{ color: #f0f0f0; }
+#ContentPanel a:hover, #ContentPanel a:active	{ color: #f0f0f0; text-decoration: none;}
 
 .ribbon span a 	{ font-weight: bold; }
 .ribbon .scrollTop		{ float:right; margin: 19px 28px; font-weight: normal; font-size:0.8em; }	/* scroll to top ^ */
