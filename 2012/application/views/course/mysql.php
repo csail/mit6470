@@ -1,5 +1,56 @@
 <!-- Title / Page Headline -->
+<script>
+$(document).ready(function() {
+	$('#run_mysql_code_button').click(function() {
+
+		var code = $('#mysql_code_textarea').val();
+		$.ajax({
+			type: 'GET',
+			url: <?php echo "'".URL::site()."ajax/runMysqlCode'" ?>,
+			data: {'code': code},
+			success: function(data) {
+				$('#mysql_code_results').html('');
+				
+				data = JSON.parse(data);
+				
+				// Get header
+				var header_html = '<tr>';
+				for (var i = 0; i < data[0].length; i++) {
+					header_html += '<th class="matrixItem">'+data[0][i]+'</th>';
+				}
+				header_html += '</tr>';
+				$('#mysql_code_results').append(header_html);
+				
+				// Get the rest
+				for (var i = 1; i < data.length; i++) {
+					var row = data[i];
+					var row_html = '<tr>';
+					var td_class;
+					if (i % 2 == 0) {
+						td_class = "matrixEven";
+					} else {
+						td_class = "matrixOdd";
+					} 
+					var last_row = false;
+					if (i == data.length -1) {
+						last_row = true;
+					}
+					
+					for (var j = 0; j < row.length; j++) {
+						row_html += '<td class="matrixItem ' + td_class + (last_row ? ' last' : '') 
+							+ '">' + row[j] + '</td>';
+					}
+					row_html += '</tr>';
+					$('#mysql_code_results').append(row_html);
+				}
+				console.log(data);	
+			}
+		});
+	});
+});
+</script>
 <h1 class="headline center"><strong>MySQL Tutorial</strong></h1>
+
 
 <div class="hr"></div>
 
@@ -7,6 +58,10 @@
 MySQL Tutorial coming soon.
 </p>
 
+<textarea id="mysql_code_textarea" class="DefaultTableStyle" style="width:800px;"></textarea><br />
+<button id="run_mysql_code_button">Run</button>
+
+<table id="mysql_code_results" class="DefaultTableStyle"></table>
 
 <?php
 $VIDEO_LIST = array();

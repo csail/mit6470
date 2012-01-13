@@ -15,11 +15,11 @@ body {
 a, 
 a:link	{ color: #993738; text-decoration: none; }
 a:visited	{ /*color: #3b3b3b;*/ text-decoration: none; }
-a:hover, a:active	{ /*color: #3b3b3b;*/ text-decoration: underline; }
+a:hover, a:active	{ /*color: #3b3b3b;*/ text-decoration: underline; cursor: pointer;}
 a.videolink:hover, a.videolink:active, .exerciselink a:hover { border-bottom: 1px #993738 solid;}
 
-#MainMenu a:link, #MainMenu a:visited	{ color: #CACACA; }	/* menu links - top level items */
-#MainMenu a:hover, #MainMenu a:active	{ color: #993738; }
+#MainMenu a:link, #MainMenu a:visited	{ color: #CACACA; text-decoration: none;}	/* menu links - top level items */
+#MainMenu a:hover, #MainMenu a:active	{ color: #993738; text-decoration: none;}
 #MainMenu .sf-menu li li:hover, #MainMenu .sf-menu li li.sfHover, 
 #MainMenu .sf-menu li li a:focus, #MainMenu .sf-menu li li a:hover, #MainMenu .sf-menu li li a:active {
 	background: #993738;	/* menu links - sub-menu items */
@@ -720,33 +720,38 @@ a.loginClose:hover, a.loginClose:active { background-position: 0 -30px; }
 table {
 	border-collapse: collapse;
 	border-spacing: 0;}
-#FeatureMatrix {padding: 25px 0;}
-#FeatureMatrix {font-size: 12px;}
-#FeatureMatrix th#MatrixItems {}
+#FeatureMatrix, 
+.DefaultTableStyle {padding: 25px 0;}
+#FeatureMatrix, 
+.DefaultTableStyle {font-size: 12px;}
+#FeatureMatrix th#MatrixItems,
+.DefaultTableStyle th#MatrixItems{}
 #FeatureMatrix th.matrixColumn, #FeatureMatrix td.matrixItem,
-#FeatureMatrix td.matrixOdd, #FeatureMatrix td.matrixEven {
+#FeatureMatrix td.matrixOdd, #FeatureMatrix td.matrixEven,
+.DefaultTableStyle th.matrixColumn, .DefaultTableStyle td.matrixItem,
+.DefaultTableStyle td.matrixOdd, .DefaultTableStyle td.matrixEven {
 	background-color: #e4e4e4;
 	text-align: center;
 	border-width: 1px 1px 0 1px;
 	border-style: solid;
 	border-color: #C6C6C6;}
-#FeatureMatrix td.matrixItem { font-weight: bold; }
-#FeatureMatrix td.matrixEven { background-color: #F0EEF9; }
-#FeatureMatrix td.matrixOdd { background-color: #F9F9F9; }
-#FeatureMatrix th h6 {
+#FeatureMatrix td.matrixItem, .DefaultTableStyle td.matrixItem { font-weight: bold; }
+#FeatureMatrix td.matrixEven, .DefaultTableStyle td.matrixEven { background-color: #F0EEF9; }
+#FeatureMatrix td.matrixOdd, .DefaultTableStyle td.matrixOdd { background-color: #F9F9F9; }
+#FeatureMatrix th h6, .DefaultTableStyle th h6 {
 	font-size: 14px;
 	font-weight: bold;
 	margin-top: 11px;
 	padding-bottom: 3px;}
-#FeatureMatrix .matrixItem {
+#FeatureMatrix .matrixItem, .DefaultTableStyle .matrixItem {
 	width: 200px;
 	padding: 15px 0 15px;}
-#FeatureMatrix td {width: 150px;}
-#FeatureMatrix td.checkMark {
+#FeatureMatrix td, .DefaultTableStyle td {width: 150px;}
+#FeatureMatrix td.checkMark, .DefaultTableStyle td.checkMark {
 	background-image: url("../images/bullets/check.gif");
 	background-position: center center;
 	background-repeat: no-repeat;}
-#FeatureMatrix td.last {border-bottom: 1px solid #C6C6C6;}
+#FeatureMatrix td.last, .DefaultTableStyle td.last {border-bottom: 1px solid #C6C6C6;}
 	
 	
 /* other */
