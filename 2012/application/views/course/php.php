@@ -1,3 +1,4 @@
+<div id="top_pane">
 <!-- Title / Page Headline -->
 <h1 class="headline center"><strong>PHP Tutorial</strong></h1>
 
@@ -72,4 +73,21 @@ for($i = 0; $i < count($VIDEO_NAMES); $i++)
 
 ?>
 
+<h2 class="headline center "><strong>Materials</strong></h2>
+<h3><?php echo HTML::anchor('assets/resources/php_ppt.pdf', 'PHP Slides (used in lectures)'); ?></h3>
+<!-- <h3><?php echo HTML::anchor('assets/resources/html_exercises_sol.zip', 'Solutions to PHP Exercises'); ?></h3> -->
+<div class="hr padded_hr"></div>
+
+<h2 class="headline center "><strong>Additional Resources</strong></h2>
+<h3><?php echo HTML::anchor('http://www.php.net/manual/en/', 'PHP Manual'); ?></h3>
+<h3><?php echo HTML::anchor('http://www.w3schools.com/php/default.asp', 'PHP Tutorial (w3schools)'); ?></h3>
+<div class="hr padded_hr"></div>
+<h2 class="headline center "><strong>Questions?</strong></h2>
+<p class="flavor_text"> Contact us at 6.470-staff@mit.edu or come to our <a href="/2012/competition/schedule">Office Hours</a></p>
+<div class="hr padded_hr"></div>
+<h4> Page and content by Charles Liu.</h4>
+</div>
+<div id="bottom_pane" style="width: 100%; position: fixed; bottom: 0; left: 0; background-color: white; height: 40%; display:none">
+	BOTTOM PANE
+</div>
 
