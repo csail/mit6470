@@ -30,14 +30,14 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixOdd">11:15am - 12:00pm</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">Web Programming Overview</td>
-			<td class="matrixEven"><?php echo HTML::anchor('course/lectures?topic=day1', 'click here') ?></td>
+			<td class="matrixEven"><?php echo HTML::anchor('course/lectures?topic=day1', 'day 1 notes') ?></td>
 		</tr>
 		<tr>
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">12:00pm - 1:00pm</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">HTML + CSS</td>
-			<td class="matrixEven"><?php echo HTML::anchor('course/lectures?topic=day1', 'click here') ?></td>
+			<td class="matrixEven">^</td>
 		</tr>
 		<tr>
 			<td class="matrixItem">Tuesday 1/10/12</td>
@@ -51,21 +51,21 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixOdd">11:00am - 12:00pm</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">MySQL</td>
-			<td class="matrixEven"></td>			
+			<td class="matrixEven"><?php echo HTML::anchor('course/lectures?topic=day2', 'day 2 notes'); ?> </td>			
 		</tr>
 		<tr>
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">12:00pm - 1:00pm</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">PHP</td>
-			<td class="matrixEven"></td>
+			<td class="matrixEven">^</td>
 		</tr>
 		<tr>
 			<td class="matrixItem">Thursday 1/12/12</td>
 			<td class="matrixOdd">11:00am - 12:00pm</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">The Engineer, The Designer, and the Dictator (by <a href="http://www.randsinrepose.com/">Michael Lopp</a> from <a href="http://www.palantirtech.com/">Palantir</a>)</td>
-			<td class="matrixEven"><a class="lecture_details_link" href="#palantir_details">click for details</a>
+			<td class="matrixEven"><a class="lecture_details_link" href="#palantir_details">details</a>
 				<div style="display:none;" id="palantir_details" class="lecture_details_div">
 					<h2 style="text-align: center;">The Engineer, The Designer, and the Dictator</h2>
 					<h3>Bio</h3>
@@ -82,35 +82,35 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixOdd">12:30pm - 1:30pm</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">Engineering Good Design and Usability (by <a href="http://www.palantirtech.com/">Palantir</a>)</td>
-			<td class="matrixEven"></td>
+			<td class="matrixEven"><?php echo HTML::anchor('assets/resources/palantir_design.pdf', 'notes'); ?></td>
 		</tr>
 		<tr>
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">1:30pm - 2:30pm</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">Usability (by <a href="http://people.csail.mit.edu/rcm/">Rob Miller</a>)</td>
-			<td class="matrixEven"></td>
+			<td class="matrixEven"><?php echo HTML::anchor('assets/resources/6470-usability.pdf', 'Usability'); ?></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">Friday 1/13/12</td>
 			<td class="matrixOdd">11:00am - 11:30am</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">JavaScript</td>
-			<td class="matrixEven"></td>
+			<td class="matrixEven"><?php echo HTML::anchor('course/lectures?topic=day3', 'day 3 notes'); ?></td>
 		</tr>
 		<tr>
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">11:30am - 12:00pm</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">jQuery</td>
-			<td class="matrixEven"></td>
+			<td class="matrixEven">^</td>
 		</tr>			
 		<tr>
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">12:00pm - 1:00pm</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">AJAX</td>
-			<td class="matrixEven"></td>
+			<td class="matrixEven">^</td>
 		</tr>
 		<tr>
 			<td class="matrixItem">Sunday 1/15/12</td>
@@ -120,21 +120,49 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixEven">none</td>
 		</tr>
 		<tr>
-			<td class="matrixItem">1/17/12 - 1/20/12</td>
-			<td class="matrixOdd">11:00am - 3:00pm</td>
-			<td class="matrixEven">10-250</td>
-			<td class="matrixOdd">Guest Lectures TBD</td>
-			<td class="matrixEven">check back for exact schedule</td>
+			<td class="matrixItem">Tuesday 1/17/12</td>
+			<td class="matrixOdd">9:00pm - 11:00pm</td>
+			<td class="matrixEven">W20-575</td>
+			<td class="matrixOdd">Office Hours</td>
+			<td class="matrixEven"></td>
 		</tr>
 		<tr>
-			<td class="matrixItem">Tuesday 1/17/12</td>
-			<td class="matrixOdd">7:00pm - 2:00am</td>
-			<td class="matrixEven">TBD</td>
-			<td class="matrixOdd">Hackathon 1</td>
+			<td class="matrixItem">Wednesday 1/18/12</td>
+			<td class="matrixOdd">11:00am - 1:00pm</td>
+			<td class="matrixEven">10-250</td>
+			<td class="matrixOdd">node.js + socket.io (by John Hilliard from <a href="http://www.nextjump.com">NextJump</a>)</td>
+			<td class="matrixEven"></td>
+		</tr>
+		<tr>
+			<td class="matrixItem"></td>
+			<td class="matrixOdd">12:00pm - 1:00pm</td>
+			<td class="matrixEven">10-250</td>
+			<td class="matrixOdd">Personalization (by Sanjay from <a href="http://www.tripadvisor.com">TripAdvisor</a>)</td>
+			<td class="matrixEven"></td>
+		</tr>
+		<tr>
+			<td class="matrixItem"></td>
+			<td class="matrixOdd">1:00pm - 2:00pm</td>
+			<td class="matrixEven">10-250</td>
+			<td class="matrixOdd">Mobile (by Steve from <a href="http://www.tripadvisor.com">TripAdvisor</a>)</td>
 			<td class="matrixEven"></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">Thursday 1/19/12</td>
+			<td class="matrixOdd">11:00am - 12:00pm</td>
+			<td class="matrixEven">10-250</td>
+			<td class="matrixOdd">Ruby on Rails (by <a href="http://costan.us">Victor Costan</a>)</td>
+			<td class="matrixEven"></td>
+		</tr>
+		<tr>
+			<td class="matrixItem"></td>
+			<td class="matrixOdd">12:00pm - 1:00pm</td>
+			<td class="matrixEven">10-250</td>
+			<td class="matrixOdd"></td>
+			<td class="matrixEven"></td>
+		</tr>
+		<tr>
+			<td class="matrixItem"></td>
 			<td class="matrixOdd">9:00pm - 11:00pm</td>
 			<td class="matrixEven">TBD</td>
 			<td class="matrixOdd">Office Hours</td>
@@ -149,9 +177,9 @@ div.lecture_details_div h2 { text-align: center;}
 		</tr>
 		<tr>
 			<td class="matrixItem">Tuesday 1/24/12</td>
-			<td class="matrixOdd">7:00pm - 2:00am</td>
-			<td class="matrixEven">TBD</td>
-			<td class="matrixOdd">Hackathon 2</td>
+			<td class="matrixOdd">9:00pm - 11:00pm</td>
+			<td class="matrixEven">W20-575</td>
+			<td class="matrixOdd">Office Hours</td>
 			<td class="matrixEven"></td>
 		</tr>
 		<tr>

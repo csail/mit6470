@@ -23,7 +23,6 @@ if(isset($_GET["video"]))
         $VIDEO_NAME = $VIDEO_NAMES[$index];
     }
 }
-
 ?>
 
 

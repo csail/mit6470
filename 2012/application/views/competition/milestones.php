@@ -70,13 +70,42 @@
 <p>Submit a PDF (or a ZIP if you have multiple files) to <a href="http://stellar.mit.edu/S/course/6/ia12/6.s188/">Stellar</a> that addresses each of the bullet points and numbered questions above. Only one person from your group needs to submit this but make sure your teammates are listed.</p>
 
 <h3>Milestone 2 - Dynamic Database-backed Functionality</h3>
-<p>
-	For your website, we would like you to utilize a server-side programming language (e.g. PHP, Ruby, Python) along with a database system (e.g. MySQL) to be able to do two things, at a minimum:
-	<ul>
-		<li>User login - we would like you to implement the ability for users to signup and login to your website. Third party API's such as Facebook Connect or OpenID are allowed.</li>
-		<li>Dynamic Content - You must have at least one page whose content will change dynamically based on a button click, form selection, etc. The dynamic change must be due to server-side scripts and must utilize a database.</li>
-	</ul>
-</p>
+<p>For this milestone, we would like to see that you have made progress on using a server-side programming language (such as PHP, Ruby, Python), along with a database (such as MySQL), to be able to dynamically generate a page.</p>
+
+<p>Specifically, by this milestone, you should have:</p>
+
+<ul>
+	<li>A login system. You should be able to distinguish between the case where no one is logged in and the case where a specific user is logged in using a personal username/password combination or a third-party API such as Facebook</li>
+	<li>Dynamic content. The site should be able to display different content on the same page under different situations.</li>
+	<li>A database with a "significant" amount of data. We're not going to define number of lines or entries, as long as your database contains enough data to satisfy the two requirements above and be able to generate sufficiently different content given different situations.</li>
+</ul>
+
+<p>Answer the following questions:</p>
+
+<ol>
+	<li>Did any of your answers to Milestone 1 change? Write the numbers for the questions whose answers have changed, and their new answers.</li>
+	<li>What feature will you demonstrate to meet the dynamic page generation requirement? We highly encourage you to implement your killer feature first, and demo it.</li>
+	<li>Give us a link to the current version of your site that has this dynamic page generation. Alternatively, you may opt to come in to office hours on Sunday to show us the page.</li>
+	<li>What technology are you using for the back-end? Include any frameworks if relevant.</li>
+	<li>What technology do you plan to use for the front-end? Mention JavaScript frameworks like jQuery, advanced standards like WebGL, and Flash / Silverlight, if you plan to use them.</li>
+	<li>What is the main browser you are targeting? Must be one of our supported browsers.</li>
+	<li>What other features have you already built? Are they necessary for a minimum viable product? Briefly mention the features. Use at most one sentence per feature. Don’t feel the need to have a long laundry list.</li>
+	<li>What features do you still have to build for a minimum viable product? Briefly mention the features. This is intended to help you measure your progress.</li>
+	<li>What features would you like to build after finishing the core features? Briefly mention the features, in order of their importance to you. This is intended to help you focus your development efforts. Don’t feel the need to have a long laundry list.</li>
+	<li>What design decision (at any level) are you most proud of?</li>
+	<li>What design decision (at any level) are you least proud of?</li>
+	<li>What implementation unknown / risks are you still facing? Consider this an exercise of imagination, not a test of confidence.</li>
+</ol>
+
+<p>Take your page from question 2. Walk through your code. In particular, write down:</p>
+<ol>
+	<li>What are the inputs going into the page? How are they being passed to the server? (GET? POST? Cookies?)</li>
+	<li>What information from your database does this page require? Give the database schema of all tables that are used by this page.</li>
+	<li>What other information does your server use to piece together the response, if any?</li>
+	<li>Spec out or describe: how should the server respond in different situations? Make sure that your site actually behaves that way.</li>
+</ol>
+
+<p>Submit a PDF (or a ZIP if you have multiple files) to <a href="http://stellar.mit.edu/S/course/6/ia12/6.s188/">Stellar</a> that addresses each of the bullet points and numbered questions above. Only one person from your group needs to submit this but make sure your teammates are listed.</p>
 
 <h3>Milestone 3 - Dynamic Frontend Feature</h3>
 <p>
