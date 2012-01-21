@@ -21,7 +21,7 @@ return array
 			'hostname'   => 'sql.mit.edu',
 			'database'   => '6470+2012',
 			'username'   => '6.470',
-			'password'   => 'jop51bov',
+			'password'   => 'jop52bov',
 			'persistent' => FALSE,
 		),
 		'table_prefix' => '',

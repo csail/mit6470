@@ -5,13 +5,36 @@
 <div class="hr"></div>
 
 <p class="flavor_text">
-PHP Tutorial coming soon.
 </p>
 
 
 <?php
-$VIDEO_LIST = array();
-$VIDEO_NAMES = array();
+$VIDEO_LIST = array(
+	'intro_server_side_programming', 
+	'intro_php',
+	'variables_strings',
+	'conditional_and_loops',
+	'functions',
+	'arrays',
+	'arrays_pt2',
+	'forms',
+	'cookies_sessions',
+	'mysql',
+	'conclusion'
+);
+$VIDEO_NAMES = array(
+	'Introduction to Server Side Programming', 
+	'PHP Introduction and Basic Syntax',
+	'Variables and Strings',
+	'Conditional and Looping Statements',
+	'Functions',
+	'Arrays',
+	'More about Arrays and the for-each Loop',
+	'Dealing with Forms and HTTP Requests',
+	'Cookies and Sessions',
+	'Connecting to MySQL',
+	'Conclusion'
+);
 
 $VIDEO_NAME = "";
 if(isset($_GET["video"]))
@@ -34,9 +57,9 @@ if(isset($_GET["video"]))
   <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
   <video id="video" class="video-js" width="640" height="360" controls="controls" preload="auto" poster="/2012/assets/images/6470_video_logo.png">
 	
-    <source src="<?php echo URL::site('assets/videos/web_overview/'.$VIDEO_FILE_NAME.'.mp4'); ?>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-    <!-- <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm; codecs="vp8, vorbis"' />
-    <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg; codecs="theora, vorbis"' /> -->
+    <source src="<?php echo URL::site('assets/videos/php/'.$VIDEO_FILE_NAME.'.mp4'); ?>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+    <source src="<?php echo URL::site('assets/videos/php/'.$VIDEO_FILE_NAME.'.ogg'); ?>" type='video/webm; codecs="vp8, vorbis"' />
+    <!-- <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg; codecs="theora, vorbis"' /> -->
     <!-- Flash Fallback. Use any flash video player here. Make sure to keep the vjs-flash-fallback class. -->
     <object id="flash_fallback_1" class="vjs-flash-fallback" width="640" height="264" type="application/x-shockwave-flash"
       data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
@@ -67,7 +90,8 @@ if(isset($_GET["video"]))
 <?php
 for($i = 0; $i < count($VIDEO_NAMES); $i++)
 {
-    echo "<h3><a class='videolink' id='videolink_".$i."' href='/2012/course/intro?video=".$i."'>".$VIDEO_NAMES[$i]."</a></h3>";
+	echo "<h3>". HTML::anchor('course/php?video='.$i, $VIDEO_NAMES[$i], array('class' => 'videolink', 'id' => 'videolink_'.$i));
+	
 }
 
 ?>

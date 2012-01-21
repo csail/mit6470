@@ -4,7 +4,7 @@
 <div class="hr"></div>
 
 <h2>Judging Criteria</h2>
-<p>Sites will be judged by five criteria:</p>
+<p>Sites will be judged by four criteria:</p>
 
 <ul>
 	<li><b>Usability</b>: how well it is designed for users</li>
@@ -14,7 +14,7 @@
 </ul>
 
 <p>More details about each category are below.</p>
-<p>Judges will weight the five criteria roughly equally when assigning an overall score to a site.</p>
+<p>Judges will weight the four criteria roughly equally when assigning an overall score to a site.</p>
 
 <h3>Usability</h3>
 <p>Factors to consider in judging usability:</p>
@@ -27,7 +27,7 @@
 
 <p><b>Efficiency</b>: is the site efficient to operate? This generally does not refer to response time, but to speed of user input. Failures of efficiency include: tiny buttons that are hard to hit; use of cascading menus that create "steering tasks", which are much slower than pointing tasks.</p>
 
-<h3Functionality</h3>
+<h3>Functionality</h3>
 <p>Factors to consider in judging functionality:</p>
 
 <p><b>Broken links or buttons</b>: important features that are not implemented or that generate error messages.</p>

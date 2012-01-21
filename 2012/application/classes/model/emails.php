@@ -26,8 +26,8 @@ class Model_Emails extends Kohana_Model
 		}
 	}
 	
-	public static function listEmails() {
-		return DB::select(DB::expr('*'))
+    public static function listEmails() {
+        return DB::select(DB::expr('*'))
 			->from('emails')
 			->execute()
 			->as_array('email', 'email');
