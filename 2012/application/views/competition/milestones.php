@@ -117,3 +117,17 @@
 	<li>Use of drag and drop to improve the UI.</li>
 	<li>Usage of either CSS3 or JavaScript transitions, animations, or transformations.</li>
 </ul>
+
+<p>Answer the following questions:</p>
+
+<ol>
+	<li>Give us a link to the current version of your site that has this dynamic frontend feature. Alternatively, you may opt to come in to office hours on Sunday to show us the page.</li>
+	<li>Describe the feature you implemented at a high-level (i.e. a non-technical person should be able to understand this description).</li>
+	<li>How does this feature address your users' needs?</li>
+	<li>Were any tradeoffs made in the UI design of this feature, e.g. did you sacrifice power for easy-of-learning?</li>
+	<li>What technology did you use for this frontend feature? Cite any 3rd party libraries that you used.</li>
+	<li>Describe the feature you implemented at a lower level. Please go into as much (and only as as much) detail as is warranted by your implementation. Dive deep into the work <i>you</i> did and mention any 3rd party tools you used. You do not need to describe how these 3rd party tools work.</li>
+	<li>What is the main browser you are targeting? Must be one of our supported browsers.</li>
+</ol>
+
+<p>Submit a PDF (or a ZIP if you have multiple files) to <a href="http://stellar.mit.edu/S/course/6/ia12/6.s188/">Stellar</a> that addresses each of the bullet points and numbered questions above. Only one person from your group needs to submit this but make sure your teammates are listed.</p>
