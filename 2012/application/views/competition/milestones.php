@@ -35,7 +35,7 @@
 </table>
 <br />
 
-<h3>Milestone 1 - UI/UX Design Mockup</h3>
+<h3 id="milestone1">Milestone 1 - UI/UX Design Mockup</h3>
 <p>Think about your users. Who is likely to use your site? Come up with at least two different personas and one use case for your site.</p>
 
 <ul>
@@ -69,7 +69,7 @@
 
 <p>Submit a PDF (or a ZIP if you have multiple files) to <a href="http://stellar.mit.edu/S/course/6/ia12/6.s188/">Stellar</a> that addresses each of the bullet points and numbered questions above. Only one person from your group needs to submit this but make sure your teammates are listed.</p>
 
-<h3>Milestone 2 - Dynamic Database-backed Functionality</h3>
+<h3 id="milestone2">Milestone 2 - Dynamic Database-backed Functionality</h3>
 <p>For this milestone, we would like to see that you have made progress on using a server-side programming language (such as PHP, Ruby, Python), along with a database (such as MySQL), to be able to dynamically generate a page.</p>
 
 <p>Specifically, by this milestone, you should have:</p>
@@ -107,7 +107,7 @@
 
 <p>Submit a PDF (or a ZIP if you have multiple files) to <a href="http://stellar.mit.edu/S/course/6/ia12/6.s188/">Stellar</a> that addresses each of the bullet points and numbered questions above. Only one person from your group needs to submit this but make sure your teammates are listed.</p>
 
-<h3>Milestone 3 - Dynamic Frontend Feature</h3>
+<h3 id="milestone3">Milestone 3 - Dynamic Frontend Feature</h3>
 <p>
 	In addition to the dynamic backend capabilities we required in milestone 2, we would also like for you to create a dynamic frontend feature. The options for this are numerous. Here are some examples:
 </p>
