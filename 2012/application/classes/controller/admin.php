@@ -37,4 +37,8 @@ class Controller_Admin extends Controller_MIT6470Template {
 		$students = Model_Emails::listEmails();
 		echo Debug::vars($students);
 	}
+	
+	public function action_judging() {
+		$this->template->content = View::factory('admin/judging');
+	}
 }	
