@@ -9,6 +9,9 @@ div#fancy_bg { background-color: #f0eef9; }
 div#fancy_div { background-color: #f0eef9; color: black; }
 div.lecture_details_div h2 { text-align: center;}
 </style>
+<script>
+$('a').attr('target', '_blank');
+</script>
 <table cellspacing="0" cellpadding="0" id="FeatureMatrix" class="center" 
 	style="margin-left: auto; margin-right: auto;">
 	<tbody>
