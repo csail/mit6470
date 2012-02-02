@@ -8,6 +8,10 @@ div#fancy_bg { background-color: #f0eef9; }
 div#fancy_div { background-color: #f0eef9; color: black; }
 div.lecture_details_div h2 { text-align: center;}
 </style>
+<h2><?php echo HTML::anchor('https://docs.google.com/spreadsheet/ccc?key=0Agc4LKvOrmHwdEV1dXRZckRVRGNNbFpXNGhqN2d4WEE', 'Judging Google Doc'); ?></h2>
+
+
+
 <table cellspacing="0" cellpadding="0" id="FeatureMatrix" class="center" 
 	style="margin-left: auto; margin-right: auto;">
 	<tbody>
@@ -71,7 +75,7 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixItem">1:15 PM</td>
 			<td class="matrixOdd">In The Loop</td>
 			<td class="matrixEven">Zack Drach<br /> Pasha Muravyev</td>
-			<td class="matrixOdd"><a href="hogbait.kicks-ass.net">hogbait.kicks-ass.net</a></td>
+			<td class="matrixOdd"><a href="http://hogbait.kicks-ass.net">hogbait.kicks-ass.net</a></td>
 			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/intheloop.pdf', 'intheloop.pdf'); ?></td>
 		</tr>
 		<tr>
@@ -114,7 +118,7 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixOdd">Tango</td>
 			<td class="matrixEven">Jessica Lin<br />
 			Rui Luo</td>
-			<td class="matrixOdd"><a href="ray_li.scripts.mit.edu/tango">ray_li.scripts.mit.edu/tango</a></td>
+			<td class="matrixOdd"><a href="http://ray_li.scripts.mit.edu/tango">ray_li.scripts.mit.edu/tango</a></td>
 			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/tango.pdf', 'tango.pdf'); ?></td>
 		</tr>
 		<tr>
@@ -149,7 +153,7 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixOdd last">LessonDrop</td>
 			<td class="matrixEven last">Shri Ganeshram<br />
 			Mark Fayngersh</td>
-			<td class="matrixOdd last"><a href="www.lessondrop.com">www.lessondrop.com</a></td>
+			<td class="matrixOdd last"><a href="http://www.lessondrop.com">www.lessondrop.com</a></td>
 			<td class="matrixEven last"><?php echo HTML::anchor('assets/semi/lessondrop.pdf', 'lessondrop.pdf'); ?></td>
 		</tr>
 	</tbody>

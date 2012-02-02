@@ -197,13 +197,6 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixEven">none</td>
 		</tr>
 		<tr>
-			<td class="matrixItem">Monday 1/30/12</td>
-			<td class="matrixOdd">9:00pm - 11:00pm</td>
-			<td class="matrixEven">TBD</td>
-			<td class="matrixOdd">Office Hours</td>
-			<td class="matrixEven">none</td>
-		</tr>
-		<tr>
 			<td class="matrixItem">Tuesday 1/31/12</td>
 			<td class="matrixOdd">6:00pm</td>
 			<td class="matrixEven">N/A</td>
