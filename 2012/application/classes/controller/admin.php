@@ -39,6 +39,6 @@ class Controller_Admin extends Controller_MIT6470Template {
 	}
 	
 	public function action_judging() {
-		$this->template->content = View::factory('admin/judging');
+		//$this->template->content = View::factory('admin/judging');
 	}
 }	
