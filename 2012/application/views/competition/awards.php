@@ -65,7 +65,7 @@ div.lecture_details_div h2 { text-align: center;}
 		<tr>
 			<td class="matrixOdd">VoteNotes</td>
 			<td class="matrixEven">Andres Romero<br /> Vo Thanh Minh Tue<br /> Paul Hemberger</td>
-			<td class="matrixOdd"><a href=" http://minhtuev.scripts.mit.edu/">minhtuev.scripts.mit.edu</a></td>
+			<td class="matrixOdd"><a href="http://minhtuev.scripts.mit.edu/">minhtuev.scripts.mit.edu</a></td>
 		</tr>
 		<tr>
 			<td class="matrixOdd">LearnTo</td>
@@ -76,7 +76,7 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixOdd">Tango</td>
 			<td class="matrixEven">Jessica Lin<br />
 			Rui Luo</td>
-			<td class="matrixOdd"><a href="ray_li.scripts.mit.edu/tango">ray_li.scripts.mit.edu/tango</a></td>
+			<td class="matrixOdd"><a href="http://ray_li.scripts.mit.edu/tango">ray_li.scripts.mit.edu/tango</a></td>
 		</tr>
 		<tr>
 			<td class="matrixOdd">Choose Your Chief</td>
@@ -103,7 +103,7 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixOdd last">LessonDrop</td>
 			<td class="matrixEven last">Shri Ganeshram<br />
 			Mark Fayngersh</td>
-			<td class="matrixOdd last"><a href="www.lessondrop.com">www.lessondrop.com</a></td>
+			<td class="matrixOdd last"><a href="http://www.lessondrop.com">www.lessondrop.com</a></td>
 		</tr>
 	</tbody>
 </table>
