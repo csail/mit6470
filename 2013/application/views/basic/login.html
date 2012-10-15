@@ -1,0 +1,40 @@
+<a href="#" class="loginClose" onclick="$.fn.fancybox.close(); return false;">Close</a>
+<form class="loginForm" method="post" action="">
+	<div id="loginBg"><img src="images/icons/lock-and-key.png" width="128" height="128" alt="lock and key" /></div>
+	<div class="loginContainer">
+		<h1>
+			Administrative Portal
+			<span>Sign in to your account</span>
+		</h1>
+		<fieldset>
+			<legend>Account Login</legend>
+			<p>
+				<label for="ModalUsername" class="overlabel">Username</label>
+				<input id="ModalUsername" name="ModalUsername" type="text" class="loginInput textInput rounded" />
+			</p>
+			<p>
+				<label for="ModalPassword" class="overlabel">Password</label>
+				<input id="ModalPassword" name="ModalPassword" type="password" class="loginInput textInput rounded" />
+			</p>
+		</fieldset>
+	</div>
+	<div class="hr" style="margin-bottom: 3px;"></div>
+	<p class="right noMargin">
+		<button type="submit" class="btn signInButton"><span>Sign in</span></button>
+		<!--button type="button" class="btn" onclick="$.fn.fancybox.close(); return false;"><span>Cancel</span></button-->
+	</p>
+	<p class="left" style="margin: 14px 0 0 15px">
+		<a href="#">Forgot your password?</a>
+	</p>
+</form>
+<script type="text/javascript">
+	Cufon.replace('.loginContainer h1');
+	$("label.overlabel").overlabel();
+	buttonStyles();
+	roundCorners();
+</script>
+<!--[if lt IE 7]>
+	<script type="text/javascript"> 
+		$('#fancy_content').supersleight();
+	</script> 
+<![endif]-->

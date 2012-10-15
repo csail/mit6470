@@ -1,0 +1,22 @@
+p.flavor_text{
+    font-size:16px;
+}
+video.video-js{
+    margin-left:124px;
+    margin-right:124px;
+}
+p.vjs-no-video{
+    text-align:center;
+}
+div.video-js-box{
+    margin: 50px 0px;
+}
+
+h3.exerciselink{
+    margin-top:30px;
+    margin-bottom:0px;
+}
+.padded_hr{
+    margin-top:20px;
+    margin-bottom:20px;
+}

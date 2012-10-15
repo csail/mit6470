@@ -1,0 +1,6 @@
+
+/*** For Sucky Browsers (all versions of IE) ***/
+
+/* stupid IE6 HasLayout hack */
+#ContentPanel { zoom: 1; }
+.cluetip-skinned #cluetip-title, .cluetip-skinned #cluetip-inner { zoom: 1; }
