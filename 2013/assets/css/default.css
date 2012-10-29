@@ -340,7 +340,7 @@ body #Footer .last 	{ background: none; }	/* no right border on last */
 	z-index: 99;	/* allows menu to overlap slideshow*/}
 #MmLeft {
 	float:left;
-	width: 25px;
+	width: 24px;
 	height: 62px;
 	background: transparent url("../images/mainMenu-left.png") no-repeat 0 0;}
 #MmRight {

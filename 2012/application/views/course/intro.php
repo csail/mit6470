@@ -25,7 +25,7 @@ if(isset($_GET["video"]))
 }
 
 $video_url_base = URL::base();
-$video_url_base .= 'assets/videos/intro/';
+$video_url_base .= 'assets/videos/web_overview/';
 
 if($VIDEO_NAME!="") 
 {
