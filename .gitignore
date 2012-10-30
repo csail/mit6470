@@ -1,6 +1,6 @@
 # Other *
 .htaccess
-2012/application/logs/*/*/*
+*/application/logs/*/*/*
 
 # Compiled source #
 ###################

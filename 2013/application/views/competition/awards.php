@@ -1,5 +1,5 @@
 <!-- Title / Page Headline -->
-<h1 class="headline center"><strong>Final Awards</strong></h1>
+<h1 class="headline center"><strong>Final Awards 2012</strong></h1>
 
 <div class="hr"></div>
 <style>
