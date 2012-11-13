@@ -1,145 +1,226 @@
-<html>
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800' rel='stylesheet' type='text/css'>
-<style type="text/css">
+  <meta charset="utf-8" />
 
-html { 
-	font-family: 'Open Sans', sans-serif;
-	background: url(webbackground.png) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	margin: 0;
-	padding: 0;
-}
-#containingform{
-	background-color: rgba(0,0,0,0.6);
-	padding: 20px;
-	color: #ffffff;
-	position: absolute;
-	right: 0px;
-	top: 0px;
-	width: 320px;
-}
-h2{
-	font-weight: 400;
-	font-size: 16px;
-}
-h3{
-	font-weight: 400;
-	font-size: 14px;
-}
-body{
-	font-weight: 400;
-	font-size: 13px;
-}
-a{
-	color: #FFFF00;
-}
-#titlediv{
-	height: 300px;
-	width: 400px;
-	background-image: url(webbackground_title.png); 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	position: fixed;
-	top: 50%;
-	left: 8%;
-	margin-top: -170px;
-	z-index: -1;
-}
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
 
-</style>
+  <title>Welcome to Foundation</title>
+  
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+    
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  
+  <link rel="stylesheet" href="stylesheets/app.css">
+
+  <script src="javascripts/modernizr.foundation.js"></script>
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style>
+    #topbar{
+      height: 326px;
+      background-color: #2e6079;
+    }
+    .fixedheight{
+      height: 326px;
+      background-image: url("images/background_mountains.png");
+      background-repeat: none;
+      background-position: center;
+    }
+    .signupcol{
+      padding-top: 80px;
+      text-align: center;
+    }
+    .signup{
+      padding: 10px 70px !important;
+    }
+    .desctext{
+      opacity: 0.6;
+      margin-bottom: 10px;
+      padding: 0;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .desctexth3{
+      margin-bottom: 10px;
+      color: #222 !important;
+    }
+    .readymsg{
+      margin-top: 25px;
+      margin-bottom: 16px;
+      color: #ddd !important;
+    }
+    .threestages{
+      margin-bottom: 16px;
+      margin-top: 5px;
+    }
+    .mypanel{
+      background-color: #2a2a2a;
+      border: 1px solid #333333;
+      padding: 10px;
+      margin-top: 13px;
+      text-align: center;
+    }
+    .trybtn{
+      color: #333333 !important;
+    }
+    .footer{
+      text-align: center;
+      margin-top: 30px;
+      font-size: 12px;
+      color: #999999;
+    }
+    body{
+      background-color: #222;
+      padding-bottom: 10px;
+    }
+    strong{
+      color: #ffffff;
+    }
+  </style>
 </head>
 <body>
+  <div id="topbar">
+    <div class="fixedheight row">
+      <div class="eight columns">
+      </div>
+      <div class="four columns signupcol">
+          <p>
+            <h3 class='desctexth3'>Conquer the Web</h3>
+            <div class='desctext'>
+              Take home an IPad Mini<br />
+              <strong>November 17</strong>. Noon-3pm.
+            </div>
+            <a href="signup.html" class="large success button signup">Sign Up!</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="twelve columns">
+      <h3 class="readymsg">are you ready for the ultimate heist?</h3>
+      <p style="color: #aaaaaa">
+        You and your team of hackers will
+        attempt to infiltrate the secret Arctic lair of one of the
+        world's wealthiest crime lords. Are you skilled enough to make off with his treasure?
+        The Arctic Heist contest will take place in 3 rounds, each concerning
+        a different aspect of web programming. Each round will be approximately
+        40 minutes and contain a number of questions to be solved. Teams of 1-3
+        will compete. Each team will be allowed a single laptop to share during
+        the competition.
+      </p>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="twelve columns">
+      <h3 class="threestages">the three stages</h3>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="four columns">
+      <div class="mypanel">
+        <h4>HTML & CSS</h4>
+        <p>
+          Before you can even think of infiltrating the lair, you need to
+          have proper identification. Forge fake IDs with CSS.
+        </p>
+        <p>
+          <a href='#' class='trybtn button'>Sample CSS Question</a>
+        </p>
+      </div>
+    </div>
+    <div class="four columns">
+      <div class="mypanel">
+        <h4>JavaScript</h4>
+        <p>
+          Keep the guards from interfering with your plans.
+          Mess with the lair's security systems with Javascript!
+        </p>
+        <p>
+        <a href='#' class='trybtn button'>Sample JavaScript Question</a>
+        </p>
+      </div>
+    </div>
+    <div class="four columns">
+      <div class="mypanel">
+        <h4>MySQL</h4>
+        <p>
+          Crack the codes to the vault using clues from your
+          informants by querying a massive database with MySQL.
+        </p>
+        <p>
+        <a href='#' class='trybtn button'>Sample MySQL Question</a>
+        </p> 
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="footer twelve columns">
+      <p>
+        questions, concerns, and emergency heisting-related activities - contact <a href="mailto:arcticheist@mit.edu">arcticheist@mit.edu</a>
+      </p>
+    </div>
+  </div>
+  <!-- Included JS Files (Uncompressed) -->
+  <!--
+  
+  <script src="javascripts/jquery.js"></script>
+  
+  <script src="javascripts/jquery.foundation.mediaQueryToggle.js"></script>
+  
+  <script src="javascripts/jquery.foundation.forms.js"></script>
+  
+  <script src="javascripts/jquery.foundation.reveal.js"></script>
+  
+  <script src="javascripts/jquery.foundation.orbit.js"></script>
+  
+  <script src="javascripts/jquery.foundation.navigation.js"></script>
+  
+  <script src="javascripts/jquery.foundation.buttons.js"></script>
+  
+  <script src="javascripts/jquery.foundation.tabs.js"></script>
+  
+  <script src="javascripts/jquery.foundation.tooltips.js"></script>
+  
+  <script src="javascripts/jquery.foundation.accordion.js"></script>
+  
+  <script src="javascripts/jquery.placeholder.js"></script>
+  
+  <script src="javascripts/jquery.foundation.alerts.js"></script>
+  
+  <script src="javascripts/jquery.foundation.topbar.js"></script>
+  
+  <script src="javascripts/jquery.foundation.joyride.js"></script>
+  
+  <script src="javascripts/jquery.foundation.clearing.js"></script>
+  
+  <script src="javascripts/jquery.foundation.magellan.js"></script>
+  
+  -->
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="javascripts/app.js"></script>
 
-
-<div id='containingform'>
-<h2>Please sign up as teams of 1-3. Items marked with an asterisk (*) are required.</h2>
-<h3>Check out our <a href='https://www.facebook.com/events/161046887372291/?ref=ts&fref=ts'>Facebook event</a> for details and updates </h3>
-<div class="ss-form"><form action="https://docs.google.com/spreadsheet/formResponse?formkey=dHg3WEpXVllURnppMUlNMzk3Qmw5S0E6MQ&amp;theme=0AX42CRMsmRFbUy03NTAzM2Q4My03ODU1LTQ2NzItODI2YS1kZmU5YzdiMzZjOGQ&amp;embedded=true&amp;ifq" method="POST" id="ss-form">
-
-<br>
-<div class="errorbox-good">
-<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_0">Team Name
-<span class="ss-required-asterisk">*</span></label>
-<label class="ss-q-help" for="entry_0"></label>
-<input type="text" name="entry.0.single" value="" class="ss-q-short" id="entry_0"></div></div></div>
-<br> <div class="errorbox-good">
-<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_1">Team Member 1 Name
-<span class="ss-required-asterisk">*</span></label>
-<label class="ss-q-help" for="entry_1"></label>
-<input type="text" name="entry.1.single" value="" class="ss-q-short" id="entry_1"></div></div></div>
-<br> <div class="errorbox-good">
-<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_2">Team Member 1 E-mail
-<span class="ss-required-asterisk">*</span></label>
-<label class="ss-q-help" for="entry_2"></label>
-<input type="text" name="entry.2.single" value="" class="ss-q-short" id="entry_2"></div></div></div>
-<br> <div class="errorbox-good">
-<div class="ss-item ss-item-required ss-select"><div class="ss-form-entry"><label class="ss-q-title" for="entry_6">Team Member 1 T-shirt Size
-<span class="ss-required-asterisk">*</span></label>
-<label class="ss-q-help" for="entry_6"></label>
-<select name="entry.6.single" id="entry_6"><option value="S">S</option> <option value="M">M</option> <option value="L">L</option> <option value="XL">XL</option> <option value="XXL">XXL</option></select></div></div></div>
-<br> <div class="errorbox-good">
-<div class="ss-item  ss-section-header"><div class="ss-form-entry"><h2 class="ss-section-title"></h2>
-<div class="ss-section-description ss-no-ignore-whitespace"></div>
-</div></div></div>
-<hr size='1'/>
-<br />
-<div class="errorbox-good">
-<div class="ss-item  ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_8">Team Member 2 Name
-</label>
-<label class="ss-q-help" for="entry_8"></label>
-<input type="text" name="entry.8.single" value="" class="ss-q-short" id="entry_8"></div></div></div>
-<br> <div class="errorbox-good">
-<div class="ss-item  ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_4">Team Member 2 E-mail
-</label>
-<label class="ss-q-help" for="entry_4"></label>
-<input type="text" name="entry.4.single" value="" class="ss-q-short" id="entry_4"></div></div></div>
-<br> <div class="errorbox-good">
-<div class="ss-item  ss-select"><div class="ss-form-entry"><label class="ss-q-title" for="entry_17">Team Member 2 T-shirt Size
-</label>
-<label class="ss-q-help" for="entry_17"></label>
-<select name="entry.17.single" id="entry_17"><option value="S">S</option> <option value="M">M</option> <option value="L">L</option> <option value="XL">XL</option> <option value="XXL">XXL</option></select></div></div></div>
-<br> <div class="errorbox-good">
-<div class="ss-item  ss-section-header"><div class="ss-form-entry"><h2 class="ss-section-title"></h2>
-<div class="ss-section-description ss-no-ignore-whitespace"></div>
-</div></div></div>
-
-
-<hr size='1'/>
-<br />
-<div class="errorbox-good">
-
-<div class="ss-item  ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_10">Team Member 3 Name
-</label>
-<label class="ss-q-help" for="entry_10"></label>
-<input type="text" name="entry.10.single" value="" class="ss-q-short" id="entry_10"></div></div></div>
-<br> <div class="errorbox-good">
-<div class="ss-item  ss-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_16">Team Member 3 E-mail
-</label>
-<label class="ss-q-help" for="entry_16"></label>
-<input type="text" name="entry.16.single" value="" class="ss-q-short" id="entry_16"></div></div></div>
-<br> <div class="errorbox-good">
-<div class="ss-item  ss-select"><div class="ss-form-entry"><label class="ss-q-title" for="entry_19">Team Member 3 T-shirt Size
-</label>
-<label class="ss-q-help" for="entry_19"></label>
-<select name="entry.19.single" id="entry_19"><option value="S">S</option> <option value="M">M</option> <option value="L">L</option> <option value="XL">XL</option> <option value="XXL">XXL</option></select></div></div></div>
-<br>
-<input type="hidden" name="pageNumber" value="0">
-<input type="hidden" name="backupCache" value="">
-
-
-<div class="ss-item ss-navigate"><div class="ss-form-entry">
-<input type="submit" name="submit" value="Submit"></div></div></form>
-</div>
-
-</div>
-
-
-<div id='titlediv'></div>
+  
+  
 </body>
 </html>
