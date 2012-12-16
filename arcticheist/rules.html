@@ -92,6 +92,9 @@
       font-size: 12px;
       color: #999999;
     }
+    .official_rules{
+      margin-top: 15px;
+    }
     body{
       background-color: #222;
       padding-bottom: 10px;
@@ -99,6 +102,11 @@
     strong{
       color: #ffffff;
     }
+
+.official_rules p{
+	font-size: 14pt;
+	text-align: justify;
+}
   </style>
 </head>
 <body>
@@ -115,76 +123,56 @@
             </div>
             <a href="signup.html" class="large success button signup">Sign Up!</a></p>
       </div>
+    </div>
+  </div>
+  <div class="row official_rules">
+    <div class="twelve columns">
+	<h2>Official Rules</h2>
+	<hr />
+	<p><b> Note: The rules are subject to minor changes. We will go over the rules including any changes at the start of the competition. </b></p>
 
-    </div>
 
-  </div>
-  <div class="row">
-    <div class="twelve columns">
-      <h3 class="readymsg">are you ready for the ultimate heist?</h3>
-      <p style="color: #aaaaaa">
-        You and your team of hackers will
-        attempt to infiltrate the secret Arctic lair of one of the
-        world's wealthiest crime lords. Are you skilled enough to make off with his treasure?
-        The Arctic Heist contest will take place in 3 rounds, each concerning
-        a different aspect of web programming. Each round will be approximately
-        40 minutes and contain a number of questions to be solved. Teams of 1-3
-        will compete. Each team will be allowed a single laptop to share during
-        the competition. <a href="/arcticheist/rules.html">Read the official rules here!</a>
-      </p>
-    </div>
-  </div>
-  
-  
-  <div class="row">
-    <div class="twelve columns">
-      <h3 class="threestages">the three stages</h3>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="four columns">
-      <div class="mypanel">
-        <h4>HTML & CSS</h4>
-        <p>
-          Before you can even think of infiltrating the lair, you need to
-          have proper identification. Forge fake IDs with CSS.
-        </p>
-        <p>
-            <a href='sample/css.html' class='trybtn button'>Sample CSS Question</a>
-        </p>
-      </div>
-    </div>
-    <div class="four columns">
-      <div class="mypanel">
-        <h4>JavaScript</h4>
-        <p>
-          Keep the guards from interfering with your plans.
-          Mess with the lair's security systems with Javascript!
-        </p>
-        <p>
-            <a href='sample/js.html' class='trybtn button'>Sample JavaScript Question</a>
-        </p>
-      </div>
-    </div>
-    <div class="four columns">
-      <div class="mypanel">
-        <h4>MySQL</h4>
-        <p>
-          Crack the codes to the vault using clues from your
-          informants by querying a massive database with MySQL.
-        </p>
-        <p>
-          <a href='sample/mysql.html' class='trybtn button'>Sample MySQL Question</a>
-        </p> 
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="row">
-    <div class="twelve columns">
-      <h3 class="threestages">our sponsors</h3>
+	<p>Teams of 1-3 current MIT students will be eligible to compete for top prizes. A Casual Division exists for MIT alum or students from other schools if they wish to participate.</p>
+<p>Each team is permitted one laptop to share between the three team members. Teams must be on-site in order to compete. Teams may not use other electronic devices to aid them during the competition.</p>
+
+<p>During the competition, teams may access any website for reference purposes only. They may use Google as long as they are signed out.
+Teams may not access websites that require them to log in or websites that allow them to communicate with anyone outside their team (including but not limited to e-mail, Facebook, Twitter). 
+If a team is seen accessing any such website (even if their intent was not to cheat) or using another electronic device for reference or communication, they will immediately be disqualified.</p>
+
+<p>Each round will be 45 minutes in length and will consist of anywhere from 6 - 10 problems.
+The problems in a round are weighted and harder questions will be worth more points. There will be no partial credit on problems. 
+For each problem, a team will either receive full credit for completing the problem or no credit otherwise. The maximum score for each round is 1000 points.</p>
+
+<p>The rankings for each round will be determined by high score, with ties broken by first team to reach their final round score. </p>
+
+<p>The winner of the overall competition will be determined by adding up the rankings for all three rounds. For example, a team that gets 3rd, 2nd, and 4th in the three rounds will  have a ranking sum of 3 + 2 + 4 = 9. The team with the lowest ranking sum will be the winner. Ties will be broken by total number of points earned in the 3 rounds.</p>
+
+<p>Prizes will be awarded for the top 3 overall teams, as well as for the top team in each round that is not in the top 3 overall. A team cannot receive the top prize in more than one round. Ties will be broken by first team to reach their final point value for the round.</p>
+
+<p>Note: Our competition website is standardized on Chrome, so we encourage you to use Chrome during the competition for best results.</p>
+
+<pre>The testing framework does not include any JS library by default. 
+However, most contestants will probably want to use jQuery, prototype, etc.
+
+To use a library, include the following magic comment in your JavaScript:
+
+// js_library: jquery/1.8.3/jquery.min.js
+
+You have to use the "js_library:" magic keyword, followed by a path to a library on cdnjs.com. 
+Go to cdnjs.com, find your library on the list, 
+and remove the "//cdnjs.cloudflare.com/ajax/libs/" prefix from the path on the list.
+
+We currently only allow the use of JS libraries hosted on cdnjs.com.
+
+----
+
+The testing framework can compile LESS, SCSS, SASS, and CoffeeScript for you.
+ Make the first line of your code one of the following magic comments.
+
+# compiler: coffee
+// compiler: less
+// compiler: sass
+// compiler: scss</pre>
     </div>
   </div>
   

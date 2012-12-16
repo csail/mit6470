@@ -73,7 +73,7 @@
         <div class="eight columns">
           <h3>Background</h3>
         </div>
-        <div class="four columns"><p>Difficulty: <strong>Easy</strong><br />Recommended Time: <strong>5 minutes</strong></p></div>
+        <div class="four columns" style="text-align:right"><p>Difficulty: <strong>Easy</strong><br /><strong>50 points</strong></p></div>
       </div>  
 
       <!-- Grid Example -->
@@ -94,13 +94,13 @@
               You are to style a div element <span class='radius label'>#secret_message</span> with the secret message inside.
               You need to write CSS to make the contents of #secret_message invisible unless someone mouses
               over the div containing the message. The secret message should be displayed in <strong>black when moused over</strong>,
-              in <strong>10pt Courier New font</strong>, and <strong>centered horizontally</strong> on the screen.
+              in <strong>10pt Courier New font</strong>, and <strong>centered horizontally</strong> within its container element.
             </p>
             <p>The final product should only contain text when the area is moused over i.e. nothing shows even
-            if you highlighted the area where the text would be.The module on the right can help you test your code. Clicking the <em>update css</em> button will
-              apply the css to the secret message.
-              
-            </p><p><Strong>Note:</Strong> the submission button is disabled
+            if you highlighted the area where the text would be. The module on the right can help you test your code. Clicking the <em>update css</em> button will
+              apply the css to the secret message. Some CSS has been provided for you. When the text is moused over, it should match the <b>Answer Image</b>.
+		</p>
+		<p><Strong>Note:</Strong> the submission button is disabled
               as there is no grading for this question.
             </p>
           </div>
@@ -113,6 +113,9 @@
         <div class="eight columns">
           <div class="panel">
             <div id="editor">/** Your CSS Here **/
+#secret_message {
+   opacity: 0;
+}
 </div>
             <div class="centercontent">
               <p>
@@ -132,6 +135,10 @@
               Arctic Heist happening 11/17!
             </p>
           </div>
+		<div>
+			<h6>Answer image:</h6>
+			<img src="sample_pic_1.png" >
+		</div>
         </div>
       </div>
       
