@@ -3,8 +3,4 @@
 
 <div class="hr"></div>
 
-<h2>Palantir 1/12/2012</h2>
-<h3><?php echo HTML::anchor('assets/resources/palantir_design.pdf', 'Engineering Good Design and Usability'); ?></h3>
-
-<h2>Rob Miller 1/12/2012</h2>
-<h3><?php echo HTML::anchor('assets/resources/6470-usability.pdf', 'Usability'); ?></h3>
+<h2 style="color:#90292c; text-align:center;">Guest lecture materials will go here.</h2>

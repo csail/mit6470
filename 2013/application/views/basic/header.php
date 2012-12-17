@@ -10,17 +10,15 @@
 					<li class="current"><?php echo HTML::anchor('', 'Home'); ?></li>
 					<li>
 						<a href="#">Course Materials</a>
-                        <ul>
-
-                            <li><?php echo HTML::anchor('course/intro', 'Start Here'); ?></li>
-                            <li><?php echo HTML::anchor('course/html', 'HTML'); ?></li>
-                            <li><?php echo HTML::anchor('course/css', 'CSS'); ?></li>
-                            <li><?php echo HTML::anchor('course/js', 'Javascript'); ?></li>
-                            <li><?php echo HTML::anchor('course/php', 'PHP'); ?></li>
-                            <li><?php echo HTML::anchor('course/mysql', 'MySQL'); ?></li>
-														<li><?php echo HTML::anchor('course/lectures', 'Lectures') ?></li>
-							<li><?php echo HTML::anchor('course/guest_lectures', 'Guest Lectures'); ?></li>
-
+						<ul>
+							<li><?php echo HTML::anchor('course/intro', 'Start Here'); ?></li>
+							<li><?php echo HTML::anchor('course/html', 'HTML'); ?></li>
+							<li><?php echo HTML::anchor('course/css', 'CSS'); ?></li>
+							<li><?php echo HTML::anchor('course/js', 'Javascript'); ?></li>
+							<li><?php echo HTML::anchor('course/php', 'PHP'); ?></li>
+							<li><?php echo HTML::anchor('course/mysql', 'MySQL'); ?></li>
+							<!-- <li><?php echo HTML::anchor('course/lectures', 'Lectures') ?></li> -->
+							<!-- <li><?php echo HTML::anchor('course/guest_lectures', 'Guest Lectures'); ?></li> -->
 						</ul>
 					</li>
 					<li>
@@ -29,9 +27,8 @@
 							<li><?php echo HTML::anchor('competition/schedule', 'Schedule'); ?></li>
 							<li><?php echo HTML::anchor('competition/rules', 'Official Rules'); ?></li>
 							<li><?php echo HTML::anchor('competition/milestones', 'Milestones'); ?></li>
-							<li><?php echo HTML::anchor('competition/hackathons', 'Hackathons'); ?></li>
 							<li><?php echo HTML::anchor('competition/prizes', 'Prizes'); ?></li>
-							<li><?php echo HTML::anchor('competition/awards', 'Awards'); ?></li>
+							<!-- <li><?php echo HTML::anchor('competition/awards', 'Awards'); ?></li> -->
 						</ul>
 					</li>
 					<li>

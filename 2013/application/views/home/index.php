@@ -74,7 +74,7 @@
 				<!-- Featured Item -->
 				<div class="featuredItem">
 					<?php
-						$sponsors = array('nextjump', 'palantir', 'appian', 'dropbox', 'tripadvisor', 'quora', 'facebook');
+						$sponsors = array('nextjump', 'palantir', 'appian', 'dropbox', 'tripadvisor', 'quora', 'facebook', 'vecna');
 						$rand_int = rand(0, count($sponsors) - 1);
 						echo HTML::anchor('#', HTML::image('assets/images/sponsors/' . $sponsors[$rand_int] . '.png', array('width' => 150, 'height' => 85, 'alt' => 'Sponsors image'
 						)), array('class' => 'featuredImg img'));
