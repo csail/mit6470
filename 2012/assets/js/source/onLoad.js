@@ -81,11 +81,13 @@ $(document).ready(function() {
 	// image hover effects	
 	// -------------------------------------------------------------------
 	$("a.img").hover( function () {
-		if (jQuery.browser.msie && parseInt(jQuery.browser.version, 10) <= 8) {
-			$(this).stop(false, true).toggleClass('imgHover');
-		} else {
-			$(this).stop(false, true).toggleClass('imgHover', 200);
-		}
+		$(this).stop(false, true).toggleClass('imgHover');
+
+		// if (jQuery.browser.msie && parseInt(jQuery.browser.version, 10) <= 8) {
+		// 	$(this).stop(false, true).toggleClass('imgHover');
+		// } else {
+		// 	$(this).stop(false, true).toggleClass('imgHover', 200);
+		// }
 	});
 	
 	
