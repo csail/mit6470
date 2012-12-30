@@ -7,9 +7,21 @@
 				
 				<!-- Main Menu Links -->
 				<ul class="sf-menu">
-					<li class="current"><?php echo HTML::anchor('', 'Home'); ?></li>
+          <li class="current"><?php echo HTML::anchor('competition/schedule', 'Schedule'); ?></li>
+          <li>
+						<a href="competition/rules">Competition</a>
+						<ul>
+<!--
+              <li><?php echo HTML::anchor('competition/schedule', 'Schedule'); ?></li>
+-->
+              <li><?php echo HTML::anchor('competition/rules', 'Official Rules'); ?></li>
+							<li><?php echo HTML::anchor('competition/milestones', 'Milestones'); ?></li>
+							<li><?php echo HTML::anchor('competition/prizes', 'Prizes'); ?></li>
+							<!-- <li><?php echo HTML::anchor('competition/awards', 'Awards'); ?></li> -->
+						</ul>
+          </li>
 					<li>
-						<a href="#">Course Materials</a>
+						<a href="course/intro">Course Materials</a>
 						<ul>
 							<li><?php echo HTML::anchor('course/intro', 'Start Here'); ?></li>
 							<li><?php echo HTML::anchor('course/html', 'HTML'); ?></li>
@@ -21,19 +33,20 @@
 							<!-- <li><?php echo HTML::anchor('course/guest_lectures', 'Guest Lectures'); ?></li> -->
 						</ul>
 					</li>
-					<li>
-						<a href="#">Competition</a>
+					
+          <li>
+						<a href="#">Sponsors</a>
 						<ul>
-<!--
-                            <li><?php echo HTML::anchor('competition/schedule', 'Schedule'); ?></li>
--->
-                            <li><?php echo HTML::anchor('competition/rules', 'Official Rules'); ?></li>
-							<li><?php echo HTML::anchor('competition/milestones', 'Milestones'); ?></li>
-							<li><?php echo HTML::anchor('competition/prizes', 'Prizes'); ?></li>
-							<!-- <li><?php echo HTML::anchor('competition/awards', 'Awards'); ?></li> -->
+              <li><?php echo HTML::anchor('#', 'Sponsors'); ?></li>
 						</ul>
 					</li>
 					<li>
+						<a href="#">About</a>
+						<ul>
+							<li><?php echo HTML::anchor('about/overview', 'Overview'); ?></li>
+							<li><?php echo HTML::anchor('about/staff', 'The Staff'); ?></li>
+						</ul>
+	  			<li>
 						<a href="#">Past Years</a>
 						<ul>
 							<li><a href="http://6.470.scripts.mit.edu/2009/index.html">2009</a></li>
@@ -42,13 +55,7 @@
 							<li><a href="http://6.470.scripts.mit.edu/2012/">2012</a></li>
 						</ul>
 					</li>	
-					<li>
-						<a href="#">About</a>
-						<ul>
-							<li><?php echo HTML::anchor('about/overview', 'Overview'); ?></li>
-							<li><?php echo HTML::anchor('about/staff', 'The Staff'); ?></li>
-						</ul>
-					</li>	
+				</li>	
 				</ul>
 
 
