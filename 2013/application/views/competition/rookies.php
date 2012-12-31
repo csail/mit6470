@@ -2,7 +2,7 @@
 
 <div class="hr"></div>
 
-<p>This year, 6.470 will feature a rookie division in addition to the main competition. The rookie division will have separate rankings and prizes.</p>
+<p>This year, 6.470 will feature a rookie division in addition to the main competition. The rookie division will have separate rankings and <?php echo HTML::anchor('competition/prizes#rookies', 'prizes'); ?>.</p>
 
 <p>The purpose of the rookie division is to allow new web programmers a chance to compete in a less intense environment. <b>Only teams with little to no web programming experience should join the rookie division.</b> We reserve the right to move teams from the rookie division to the main competition or even disqualify teams from 6.470 altogether if we believe they intentionally attempted to violate the spirit of the rookie division.</p>
 
