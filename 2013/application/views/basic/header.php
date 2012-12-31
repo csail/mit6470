@@ -40,7 +40,6 @@
 						<ul>
 							<li><?php echo HTML::anchor('about/overview', 'Overview'); ?></li>
 							<li><?php echo HTML::anchor('about/staff', 'The Staff'); ?></li>
-							<li><?php echo HTML::anchor('#', 'Sponsors'); ?></li>
             </ul>
           </li>
           <li>

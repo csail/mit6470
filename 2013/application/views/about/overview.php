@@ -34,7 +34,7 @@
 
 <h2>Sponsor Involvement</h2>
 <p>
-	Our sponsors are an incredible and integral part of 6.470.  Not only do they provide
+  Our <?php echo HTML::anchor('sponsors/current', 'sponsors'); ?> are an incredible and integral part of 6.470.  Not only do they provide
 	the funding for this event to even take place at the scale that it does, but they offer
 	their time and expertise.
 	
