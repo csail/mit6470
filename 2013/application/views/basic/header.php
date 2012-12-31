@@ -15,6 +15,7 @@
               <li><?php echo HTML::anchor('competition/schedule', 'Schedule'); ?></li>
 -->
               <li><?php echo HTML::anchor('competition/rules', 'Official Rules'); ?></li>
+              <li><?php echo HTML::anchor('competition/rookies', 'Rookie Division'); ?></li>
 							<li><?php echo HTML::anchor('competition/milestones', 'Milestones'); ?></li>
 							<li><?php echo HTML::anchor('competition/judging', 'Judging'); ?></li>
 							<li><?php echo HTML::anchor('competition/prizes', 'Prizes'); ?></li>

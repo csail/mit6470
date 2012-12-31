@@ -71,7 +71,7 @@
 
 <ol>
   <li>Who is on your team? You may list at most 3 people. For each member list the full legal name, .edu e-mail, school, major(s), year, and graduate/undergraduate status.</li>
-  <li>Would your team like to participate in the Rookie Division?</li>
+  <li>Would your team like to participate in the <?php echo HTML::anchor('competition/rookies', 'Rookie Division'); ?>?</li>
 	<li>Which of the themes does your application match? Your answer should be one sentence if the match is reasonably obvious. Be as brief as you can. If your application matches both themes, list the one where the matching is more obvious.</li>
 	<li>What technology do you plan to use for your server-side programming (e.g. PHP, Ruby on Rails, etc)?</li>
 	<li>What risks do you envision preventing you from successfully implementing your idea? Consider this an exercise of imagination, not a test of confidence.</li>
@@ -114,6 +114,11 @@
 	<li>What information from your database does this page require? Give the database schema of all tables that are used by this page.</li>
 	<li>What other information does your server use to piece together the response, if any?</li>
 	<li>Briefly spec out or describe: how should the server respond in different situations? Are there any edge cases? Make sure that your site actually behaves as intended.</li>
+</ol>
+
+<p>Optional question:</p>
+<ol>
+<li>If you are currently in the <?php echo HTML::anchor('competition/rookies', 'Rookie Division'); ?> and would like to switch to the main competition, please let us know.</li>
 </ol>
 
 <p>Submit a PDF (or a ZIP if you have multiple files) to <a href="http://stellar.mit.edu/S/course/6/ia13/6.s188/">Stellar</a> that addresses each of the bullet points and numbered questions above. Only one person from your group needs to submit this but make sure your teammates are listed.</p>
