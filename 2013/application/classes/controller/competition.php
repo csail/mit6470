@@ -18,6 +18,10 @@ class Controller_Competition extends Controller_MIT6470Template {
 
 	public function action_rules() {
 		$this->template->content = View::factory('competition/rules');		
+  }
+
+	public function action_judging() {
+		$this->template->content = View::factory('competition/judging');		
 	}
 
 	public function action_milestones() {

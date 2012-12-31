@@ -16,6 +16,7 @@
 -->
               <li><?php echo HTML::anchor('competition/rules', 'Official Rules'); ?></li>
 							<li><?php echo HTML::anchor('competition/milestones', 'Milestones'); ?></li>
+							<li><?php echo HTML::anchor('competition/judging', 'Judging'); ?></li>
 							<li><?php echo HTML::anchor('competition/prizes', 'Prizes'); ?></li>
 							<!-- <li><?php echo HTML::anchor('competition/awards', 'Awards'); ?></li> -->
 						</ul>
