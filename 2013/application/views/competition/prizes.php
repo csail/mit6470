@@ -26,7 +26,7 @@
 		</tr>
 		<tr>
 			<td class="matrixItem matrixOdd last">HM's*</td>
-			<td class="matrixItem matrixOdd last">$1,000</td>
+			<td class="matrixItem matrixOdd last">$500 - $1,000</td>
 		</tr>
 	</tbody>
 </table>

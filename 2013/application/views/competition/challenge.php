@@ -3,7 +3,7 @@
 
 <div class="hr"></div>
 
-<p>The challenge for 2013 will be released on the first day of IAP!</p>
+<h2>The challenge for 2013 will be released on the first day of IAP!</h2>
 
 <!-- <p>The topics for this year's competition are:</p>
 <ul>
