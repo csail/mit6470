@@ -35,16 +35,16 @@
 			<p class="impact">MIT's 6.470 is a web programming class and competition that takes place over IAP.  Beginners and experts alike are encouraged to sign up, learn, and compete for $30,000+ in total prizes!</p>
 
 			<!-- Featured Content -->
-			<div class="ribbon">
+			<!--<div class="ribbon">
 				<div class="wrapAround"></div>
 				<div class="tab">
 					<span>Featured Content</span>
 				</div>
-			</div>
+			</div>-->
 
 			<div class="featuredContent">
 				<!-- Featured Item -->
-				<div class="featuredItem">
+				<!--<div class="featuredItem">
 					<?php
 						echo HTML::anchor('/competition/schedule', HTML::image('assets/images/frontpage/curric.jpg', 
 							array('alt' => 'Curriculum image', 'width' => 150, 'height' => 85)), array('class' => 'featuredImg img'));
@@ -56,9 +56,9 @@
 						</h1>
 						<?php echo HTML::anchor('/competition/schedule', 'More information'); ?>
 					</div>
-				</div>
+				</div>-->
 				<!-- Featured Item -->
-				<div class="featuredItem">
+				<!--<div class="featuredItem">
 					<?php
 						echo HTML::anchor('/course/guest_lectures', HTML::image('assets/images/frontpage/guestlec.jpg', 
 							array('alt' => 'Guest lecture image', 'width' => 150, 'height' => 85)), array('class' => 'featuredImg img'));
@@ -70,9 +70,9 @@
 						</h1>
 						<?php echo HTML::anchor('/course/guest_lectures', 'More information'); ?>						
 					</div>
-				</div>
+				</div>-->
 				<!-- Featured Item -->
-				<div class="featuredItem">
+				<!--<div class="featuredItem">
 					<?php
 						$sponsors = array('nextjump', 'palantir', 'appian', 'dropbox', 'tripadvisor', 'quora', 'facebook', 'vecna');
 						$rand_int = rand(0, count($sponsors) - 1);
@@ -87,9 +87,9 @@
 						<?php echo HTML::anchor('#', 'More information'); ?>					
 						
 					</div>
-				</div>
+				</div>-->
 				<!-- Featured Item -->
-				<div class="featuredItem">
+				<!--<div class="featuredItem">
 					<?php
 						echo HTML::anchor('/competition/prizes', HTML::image('assets/images/frontpage/prize.jpg', 
 							array('alt' => '30K in prizes image', 'width' => 150, 'height' => 85)), array('class' => 'featuredImg img'));
@@ -102,7 +102,7 @@
 						<?php echo HTML::anchor('/competition/prizes', 'More information'); ?>						
 					</div>
 				</div>
-			
+			  -->
 				<!-- End of Content -->
 				<div class="clear"></div>
 
@@ -140,10 +140,10 @@
 			?>			
 		
 			<!-- Side Navigation Menu -->
-			<div class="sideNavWrapper">
+			<!--<div class="sideNavWrapper">
 				
 				
-				<div class="fb-like-box" data-href="facebook.com/mit6470" data-width="270" data-show-faces="true" data-stream="true" data-header="true"></div>					</div>
+				<div class="fb-like-box" data-href="facebook.com/mit6470" data-width="270" data-show-faces="true" data-stream="true" data-header="true"></div>					</div>-->
 								
 		</div>
 	
