@@ -34,8 +34,8 @@ public function before()
 	$this->template->styles['assets/css/default.css'] = 'screen';
 	$this->template->styles['assets/css/fancybox.css'] = 'screen';
     $this->template->styles['assets/css/tooltip.min.css'] = 'screen';
-    $this->template->styles['assets/css/6470_add.css'] = 'screen';
 	$this->template->styles['assets/css/default.css'] = 'screen';
+    $this->template->styles['assets/css/6470_add.css'] = 'screen';
 
 	$this->template->scripts = array();
 	$this->template->scripts[] = 'assets/js/jquery-1.4.min.js';

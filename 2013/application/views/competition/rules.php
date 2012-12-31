@@ -11,11 +11,13 @@ h6 {text-transform: none;}
 <div class="hr"></div>
 
 <h3>Overview</h3>
-<p>To qualify for this year's Web Programming Competition, you must put together a team that is <b><a href="#eligibility">eligible</a></b> to participate. Your team must build a Web application that matches one of the <b>competition themes</b>, and meets our <b><a href="#techreq">technical requirements</a></b>. Your development schedule must align with our <b>milestones</b>. Your team may wish to enter the <b>rookie division</b>.</p>
+<p>To qualify for this year's Web Programming Competition and compete for <?php echo HTML::anchor('competition/prizes', 'cash prizes'); ?>, you must put together a team that is <b><a href="#eligibility">eligible</a></b> to participate. Your team must build a Web application that matches one of the <?php echo HTML::anchor('competition/challenge', 'competition themes'); ?>, and meets our <b><a href="#techreq">technical requirements</a></b>. Your development schedule must align with our <?php echo HTML::anchor('competition/milestones', 'milestones'); ?>. Your team may wish to enter the <?php echo HTML::anchor('competition/rookies', 'rookie division'); ?>.</p>
+
+<p><b>Anyone is permitted to listen in on our <?php echo HTML::anchor('competition/schedule', 'lectures and workshops'); ?> (although priority will be given to those enrolled in our course), and any team with 1-3 students that completes our milestones and submits a website that meets the technical requirements will get academic credit for the course. (see <b>Course Requirements</b>)</b></p>
 
 <a name="eligibility"></a>
 <h3>Eligibility Guildelines</h3>
-<p>The following rules regard eligibility to compete for cash prizes. <b>Anyone is permitted to listen in on our lectures, and any team with 1-3 students that completes our milestones and submits a website that meets the technical requirements will get academic credit for the course. (see <b>Course Requirements</b>)</b></p>
+<p>The following rules regard eligibility to compete for cash prizes. </p>
 
 <ul>
   <li><b>MIT students</b>: All "MIT students" are eligible to compete. "MIT students" include undergraduates, graduate students, and any students from other schools which have an official cross-registration program with MIT (Harvard, Wellesley, etc.)</li>
@@ -26,7 +28,7 @@ h6 {text-transform: none;}
   <li><b>Staff</b>:Current staff members and their immediate family members cannot compete.</li>
 </ul>
 
-<p>You do not have to officially register for the course (6.188) to compete, as long as you are eligible. We strongly encourage that you register for the course so we have a count on the number of competitors for logistics. However, you may compete in 6.470 even if you are taking another 12 unit class during IAP, by not registering officially for 6.470.</p>
+<p>You do not have to officially register for the course (6.s188) to compete, as long as you are eligible. We strongly encourage that you register for the course so we have a count on the number of competitors for logistics. However, you may compete in 6.470 even if you are taking another 12 unit class during IAP, by not registering officially for 6.470.</p>
 
 <a name="techreq"></a>
 <h3>Technical Requirements</h3>
@@ -65,7 +67,7 @@ h6 {text-transform: none;}
 	<li><b>Straight-forward evil</b>. Do not spam. Do not encourage or assist users in breaking non-disclosure agreements or infringing copyright. Do not abuse M.I.T.’s infrastructure or databases. Do not interfere with other contestants’ development process.</li>
 </ul>
 
-<p>Your site must work in one of the following browsers (you will have to specify which one). We will use the browser you specify to view your website for judging and grading purposes. The latest release of each of these browsers will be used.</p>
+<p>Your site must work in one of the following browsers (you will specify which one in the <?php echo HTML::anchor('competition/milestones', 'milestones'); ?>). We will use the browser you specify to view your website for judging and grading purposes. The latest release of each of these browsers will be used.</p>
 
 <ul>
 	<li>Chrome</li>

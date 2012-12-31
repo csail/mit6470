@@ -26,3 +26,21 @@ b {
 a {
     font-weight: bold;
 }
+
+body {
+  font-size: 16px;
+}
+
+#Header {
+  font-size: 12.4px;
+}
+
+#FeatureMatrix {
+  font-size: 16px;
+}
+
+#FeatureMatrix .matrixItem, .matrixOdd, .matrixEven{
+  padding: 20px 20px;
+  vertical-align: middle;
+
+}

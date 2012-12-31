@@ -6,8 +6,9 @@
 			<div id="MmBody">
 				
 				<!-- Main Menu Links -->
-				<ul class="sf-menu">
-          <li class="current"><?php echo HTML::anchor('competition/schedule', 'Schedule'); ?></li>
+        <ul class="sf-menu">
+          <li><?php echo HTML::anchor('competition/start', 'Getting Started'); ?></li>
+          <li><?php echo HTML::anchor('competition/schedule', 'Schedule'); ?></li>
           <li>
 						<a href="competition/rules">Competition</a>
 						<ul>
@@ -34,19 +35,25 @@
 						</ul>
 					</li>
 					
-          <li>
-						<a href="#">Sponsors</a>
-						<ul>
-              <li><?php echo HTML::anchor('#', 'Sponsors'); ?></li>
-						</ul>
-					</li>
 					<li>
-						<a href="#">About</a>
+						<a href="about/overview">About</a>
 						<ul>
 							<li><?php echo HTML::anchor('about/overview', 'Overview'); ?></li>
 							<li><?php echo HTML::anchor('about/staff', 'The Staff'); ?></li>
-						</ul>
-	  			<li>
+							<li><?php echo HTML::anchor('#', 'Sponsors'); ?></li>
+            </ul>
+          </li>
+          <li>
+            <a href="sponsors/current">Sponsors</a>
+						<ul>
+							<li><?php echo HTML::anchor('sponsors/current', 'Current Sponsors'); ?></li>
+							<li><?php echo HTML::anchor('sponsors/info', 'Sponsor Info'); ?></li>
+            </ul>
+
+
+          </li>
+<!--          <li>
+
 						<a href="#">Past Years</a>
 						<ul>
 							<li><a href="http://6.470.scripts.mit.edu/2009/index.html">2009</a></li>
@@ -55,7 +62,7 @@
 							<li><a href="http://6.470.scripts.mit.edu/2012/">2012</a></li>
 						</ul>
 					</li>	
-				</li>	
+				</li>	-->
 				</ul>
 
 

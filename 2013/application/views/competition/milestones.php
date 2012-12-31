@@ -12,12 +12,12 @@
 			<th><h6>Description</h6></th>
 		</tr>
 		<tr>
-			<td class="matrixItem"><a href="#milestone1">Milestone 1</a></td>
+			<td valign="center" class="matrixItem"><a href="#milestone1">Milestone 1</a></td>
 			<td class="matrixOdd">1/13/13</td>
 			<td class="matrixEven">UI/UX Design Mockup</td>
 		</tr>
 		<tr>
-			<td class="matrixItem"><a href="#milestone2">Milestone 2</a></td>
+			<td valign="center" class="matrixItem"><a href="#milestone2">Milestone 2</a></td>
 			<td class="matrixOdd">1/20/13</td>
 			<td class="matrixEven">Dynamic Database-backed Functionality</td>
 		</tr>

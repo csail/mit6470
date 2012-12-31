@@ -42,5 +42,10 @@ class Controller_Competition extends Controller_MIT6470Template {
 
 	public function action_rookies() {
 		$this->template->content = View::factory('competition/rookies');
-	}
+  }
+
+  public function action_start() {
+    $this->template->content = View::factory('competition/start');
+  }
+
 }
