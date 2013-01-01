@@ -21,19 +21,19 @@
 							<li><?php echo HTML::anchor('competition/winners', 'Winners'); ?></li>
 						</ul>
           </li>
-					<li>
-						<?php echo HTML::anchor('course/intro', 'Course Materials'); ?>
-						<ul>
+          <li>
+						<?php echo HTML::anchor('#', 'Course Materials'); ?>
+						<!--<ul>
 							<li><?php echo HTML::anchor('course/intro', 'Start Here'); ?></li>
 							<li><?php echo HTML::anchor('course/html', 'HTML'); ?></li>
 							<li><?php echo HTML::anchor('course/css', 'CSS'); ?></li>
 							<li><?php echo HTML::anchor('course/js', 'Javascript'); ?></li>
 							<li><?php echo HTML::anchor('course/php', 'PHP'); ?></li>
-							<li><?php echo HTML::anchor('course/mysql', 'MySQL'); ?></li>
+							<li><?php echo HTML::anchor('course/mysql', 'MySQL'); ?></li>-->
 							<!-- <li><?php echo HTML::anchor('course/lectures', 'Lectures') ?></li> -->
 							<!-- <li><?php echo HTML::anchor('course/guest_lectures', 'Guest Lectures'); ?></li> -->
-						</ul>
-					</li>
+	<!--					</ul>
+					</li>-->
 					
 					<li>
           <?php echo HTML::anchor('about/overview', 'About'); ?>

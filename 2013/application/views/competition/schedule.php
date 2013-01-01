@@ -8,6 +8,7 @@ div#fancy_bg { background-color: #f0eef9; }
 div#fancy_div { background-color: #f0eef9; color: black; }
 div.lecture_details_div h2 { text-align: center;}
 </style>
+The schedule is subject to small changes so please be on the lookout for announcements.
 <table cellspacing="0" cellpadding="0" id="FeatureMatrix" class="center" 
 	style="margin-left: auto; margin-right: auto; font-size: 14px">
 	<tbody>

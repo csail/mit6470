@@ -21,7 +21,7 @@
 
 <h1>Classes</h1>
 <ul>
-<li>This year, we are experimenting with <b>workshop-style learning</b> for the core technologies. Videos or notes will be posted along with a set of exercises. To get the most of these workshops, we encourage everyone to look ahead and do the readings or watch videos <b>before</b> coming into the workshops, so that you can use workshop time to work on the exercises and ask specific questions.</li>
+<li>This year, we are experimenting with <b>workshop-style learning</b> for the core technologies (HTML, CSS, PHP, etc.). Instead of a traditional lecture format, we will have exercises for you to work on during each workshop. Recommended readings, which provide a quick overview of each topic and a curated list of online resources, will be posted for each topic prior to the date of their workshop. To get the most of these workshops, we encourage everyone to look ahead and do the readings <b>before</b> coming into the workshops, so that you already have some familiarity with the topic. You should use workshop time to work on the exercises and ask specific questions about areas that you don't understand.</li>
 <li>We will also have the usual lecture-style sessions for some more advanced or interesting non-essential topics. In addition, we have a very nice set of guest lectures by our sponsors that connect the material in 6.470 with the real world. We encourage everyone to attend all of these as well.</li>
 <li>All of the workshop materials will be posted (with solutions to the exercises after the workshops). You can use Piazza for any specific questions that you have, and submit milestones via Stellar.</li>
 </ul>
