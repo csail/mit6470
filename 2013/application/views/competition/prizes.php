@@ -58,7 +58,7 @@
 	</tbody>
 </table>
 
-<div style="width: 402px; margin: 10px auto 50px;">	**6.470 reserves the right to modify the number of prizes in the Rookie Division depending on the circumstances.</div>
+<div style="width: 402px; margin: 10px auto 50px;">	**The Rookie division prize structure is subject to change based on enrollment and other factors. The first prize value will not change.</div>
 
 <h2>Special Prizes</h2>
 <p> There will also be several Special Prizes which will soon be announced.

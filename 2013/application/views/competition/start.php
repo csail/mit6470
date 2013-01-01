@@ -3,7 +3,7 @@
 
 <div class="hr"></div>
 
-<p>The 6.470 course/competition officially begins <b>Monday, 1/7/13 at 11 a.m. in 10-250</b> with the kickoff and challenge unveiling. The entire schedule can be found <a href="competition/schedule">here</a>. Be sure to note the room changes on different days.</p>
+<p>The 6.470 course/competition officially begins <b>Monday, 1/7/13 at 11 a.m. in 10-250</b> with the kickoff and challenge unveiling. The entire schedule can be found <?php echo HTML::anchor('competition/schedule', 'here'); ?>. Be sure to note the room changes on different days.</p>
 
 <p>Here are some useful things to know before 6.470 starts. Hopefully this will answer most of your questions; if you have any other questions, email us at <a href="mailto:6.470-staff@mit.edu">6.470-staff@mit.edu</a>.</p>
 
@@ -13,7 +13,7 @@
 <li>We strongly encourage that you register for the course, even if you are just listening in on the lectures, so we have a count on the number of students for logistics. </li>
 <li>You are <b>not required</b> to officially register for the course to compete, as long as you are <?php echo HTML::anchor('competition/rules#eligible', 'eligible'); ?>. Thus, you may compete in 6.470 even if you are taking another 12 unit class during IAP, by not registering officially for 6.470.</li>
 <li>You can also opt not to compete and just take the class for credit.</li>
-<li>If you are taking the class for credit, you must register. To pass the course, your team must complete our <a href="competition/milestones">milestones</a> and submit a website that meets the <?php echo HTML::anchor('competition/rules#techreq', 'technical requirements'); ?>. </li>
+<li>If you are taking the class for credit, you must register. To pass the course, your team must complete our <?php echo HTML::anchor('competition/milestones', 'milestones'); ?> and submit a website that meets the <?php echo HTML::anchor('competition/rules#techreq', 'technical requirements'); ?>. </li>
 <li>If you do not register, please <a href="mailto:6.470-staff@mit.edu">email us</a>, so that we can add you to the Stellar and Piazza sites and make sure you receive updates on 6.470.</li>
 <li>Anyone is permitted to listen in on our <?php echo HTML::anchor('competition/schedule', 'lectures and workshops'); ?> (although priority will be given to those enrolled in our course).</li>
 <li>You do not have to be on site to compete or receive academic credit, except during the last week if youare announced as a Semifinalist. You may submit your milestones and final product online at Stellar.</li>
