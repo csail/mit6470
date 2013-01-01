@@ -7,7 +7,7 @@
 <p>
 	MIT 6.470 is a web programming class and competition that takes place over the IAP
 	period at MIT.  We are student-run with generous support from professors, administrators,
-	and external sponsors. This is our 4th year running the competition.  We've made huge 
+	and external sponsors. This is our 5th year running the competition.  We've made huge 
 	strides from the first time that 6.470 was run and look to make it even bigger and 
 	better this year.
 </p>
