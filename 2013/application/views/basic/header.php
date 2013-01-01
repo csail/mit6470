@@ -10,7 +10,7 @@
           <li><?php echo HTML::anchor('competition/start', 'Getting Started'); ?></li>
           <li><?php echo HTML::anchor('competition/schedule', 'Schedule'); ?></li>
           <li>
-						<a href="competition/rules">Competition</a>
+						<?php echo HTML::anchor('competition/rules', 'Competition'); ?>
 						<ul>
               <li><?php echo HTML::anchor('competition/rules', 'Official Rules'); ?></li>
               <li><?php echo HTML::anchor('competition/rookies', 'Rookie Division'); ?></li>
@@ -22,7 +22,7 @@
 						</ul>
           </li>
 					<li>
-						<a href="course/intro">Course Materials</a>
+						<?php echo HTML::anchor('course/intro', 'Course Materials'); ?>
 						<ul>
 							<li><?php echo HTML::anchor('course/intro', 'Start Here'); ?></li>
 							<li><?php echo HTML::anchor('course/html', 'HTML'); ?></li>
@@ -36,14 +36,14 @@
 					</li>
 					
 					<li>
-						<a href="about/overview">About</a>
+          <?php echo HTML::anchor('about/overview', 'About'); ?>
 						<ul>
 							<li><?php echo HTML::anchor('about/overview', 'Overview'); ?></li>
 							<li><?php echo HTML::anchor('about/staff', 'The Staff'); ?></li>
             </ul>
           </li>
           <li>
-            <a href="sponsors/current">Sponsors</a>
+            <?php echo HTML::anchor('sponsors/current', 'Sponsors'); ?>
 						<ul>
 							<li><?php echo HTML::anchor('sponsors/current', 'Current Sponsors'); ?></li>
 							<li><?php echo HTML::anchor('sponsors/info', 'Sponsor Info'); ?></li>
