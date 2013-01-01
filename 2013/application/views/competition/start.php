@@ -5,7 +5,7 @@
 
 <p>The 6.470 course/competition officially begins <b>Monday, 1/7/13 at 11 a.m. in 10-250</b> with the kickoff and challenge unveiling. The entire schedule can be found <a href="competition/schedule">here</a>. Be sure to note the room changes on different days.</p>
 
-<p>Here are some useful things to know before 6.470 starts. Hopefully this will answer most of your questions; if you have any other questions, email us at <a href="mailto:6.470-staff@mit.edu">6.470-staff@mit.edu</a></p>
+<p>Here are some useful things to know before 6.470 starts. Hopefully this will answer most of your questions; if you have any other questions, email us at <a href="mailto:6.470-staff@mit.edu">6.470-staff@mit.edu</a>.</p>
 
 <h1>Registration</h1>
 <ul>
@@ -21,7 +21,7 @@
 
 <h1>Classes</h1>
 <ul>
-<li>This year, we are experimenting with <b>workshop-style learning</b> for the core technologies. Videos or notes will be posted along with a set of exercises. To get the most of these workshops, we encourage everyone to look ahead and do the readings or watch videos <b>before</b> coming into the workshops, so that you can use workshop time to work on the exercises and ask specific questions</li>
+<li>This year, we are experimenting with <b>workshop-style learning</b> for the core technologies. Videos or notes will be posted along with a set of exercises. To get the most of these workshops, we encourage everyone to look ahead and do the readings or watch videos <b>before</b> coming into the workshops, so that you can use workshop time to work on the exercises and ask specific questions.</li>
 <li>We will also have the usual lecture-style sessions for some more advanced or interesting non-essential topics. In addition, we have a very nice set of guest lectures by our sponsors that connect the material in 6.470 with the real world. We encourage everyone to attend all of these as well.</li>
 <li>All of the workshop materials will be posted (with solutions to the exercises after the workshops). You can use Piazza for any specific questions that you have, and submit milestones via Stellar.</li>
 </ul>
@@ -29,5 +29,5 @@
 <h1>Other Announcements</h1>
 <ul>
 <li>Please be aware that there is a <?php echo HTML::anchor('competition/rookies', 'Rookie Division'); ?> this year for those new to web programming.</li>
-<li>Please read the updated <?php echo HTML::anchor('competition/rules', 'Official Rules'); ?> and  <?php echo HTML::anchor('competition/judging', 'Judging Criteria'); ?></li>
+<li>Please read the updated <?php echo HTML::anchor('competition/rules', 'Official Rules'); ?> and  <?php echo HTML::anchor('competition/judging', 'Judging Criteria'); ?>.</li>
 

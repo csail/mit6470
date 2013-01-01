@@ -25,10 +25,10 @@ h6 {text-transform: none;}
   <li><b>Team size</b>: The contest is open to teams of 1-3 students.</li>
   <li><b>Outside help</b>: Non-team members may not contribute to a site's implementation or design (including graphic design). However, team members may use publicly available components (see <b><a href="#techreq">Original Design and Implementation</a></b>)
   <li><b>Past winners</b>: Past competitors who have won more than $2000 total in their 6.470 career are not eligible to compete. As an example, if a team of 3 wins $6470, each team member is considered to have won $6470/3 and is not eligible to compete again. However, members of a team of 3 that won $5000 can compete again. Special prizes do not count towards this restriction. If in doubt, please <b><a href="mailto:6.470-staff@mit.edu">contact the staff</a></b>.</li>
-  <li><b>Staff</b>:Current staff members and their immediate family members cannot compete.</li>
+  <li><b>Staff</b>: Current staff members and their immediate family members cannot compete.</li>
 </ul>
 
-<p>You do not have to officially register for the course (6.s188) to compete, as long as you are eligible. We strongly encourage that you register for the course so we have a count on the number of competitors for logistics. However, you may compete in 6.470 even if you are taking another 12 unit class during IAP, by not registering officially for 6.470.</p>
+<p>You do not have to officially register for the course (6.S188) to compete, as long as you are eligible. We strongly encourage that you register for the course so we have a count on the number of competitors for logistics. However, you may compete in 6.470 even if you are taking another 12 unit class during IAP, by not registering officially for 6.470.</p>
 
 <a name="techreq"></a>
 <h3>Technical Requirements</h3>

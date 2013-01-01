@@ -8,5 +8,5 @@
 
 <p>Teams with a majority (more than 50%) of Course 6 juniors, seniors, and grad students are prohibited from the rookie division unless you receive permission from the 6.470 staff. We believe that most of these students have sufficient general programming experience that they should not be considered rookies in a programming competition. Please e-mail us at <a href="mailto:6.470-staff@mit.edu">6.470-staff@mit.edu</a> before Milestone 1 (1/13/13) if your team would like permission.</p>
 
-Teams will specify whether they'd like to participate in the rookie division in <?php echo HTML::anchor('competition/milestones#milestone1', 'Milestone 1'); ?>.(Additional Question 2) Teams will be allowed to switch from the rookie division to the main competition until <?php echo HTML::anchor('competition/milestones#milestone2', 'Milestone 2'); ?>. (Optional Question 1) Teams cannot switch from the main competition into the rookie division after Milestone 1.
+Teams will specify whether they'd like to participate in the rookie division in <?php echo HTML::anchor('competition/milestones#milestone1', 'Milestone 1'); ?>. Teams will be allowed to switch from the rookie division to the main competition until <?php echo HTML::anchor('competition/milestones#milestone2', 'Milestone 2'); ?>.  Teams cannot switch from the main competition into the rookie division after Milestone 1.
 

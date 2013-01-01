@@ -58,7 +58,7 @@
 	</tbody>
 </table>
 
-<div style="width: 402px; margin: 10px auto 50px;">	**6.470 reserves the right to modify the prize pool depending on the number of participants in the rookie division. </div>
+<div style="width: 402px; margin: 10px auto 50px;">	**6.470 reserves the right to modify the number of prizes in the Rookie Division depending on the circumstances.</div>
 
 <h2>Special Prizes</h2>
 <p> There will also be several Special Prizes which will soon be announced.
