@@ -65,13 +65,6 @@ The schedule is subject to small changes so please be on the lookout for announc
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">1:00pm - 2:00pm</td>
 			<td class="matrixEven">10-250</td>
-			<td class="matrixOdd">Backend Overview</td>
-			<td class="matrixEven">Lecture</td>
-		</tr>
-		<tr>
-			<td class="matrixItem"><br /></td>
-			<td class="matrixOdd">2:00pm - 3:00pm</td>
-			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">Chrome Debugger + JS Debugging Tips</td>
 			<td class="matrixEven">Advanced Topic Lecture</td>
 		</tr>
@@ -100,7 +93,7 @@ The schedule is subject to small changes so please be on the lookout for announc
 		</tr>
 		<tr>
 			<td class="matrixItem"><br /></td>
-			<td class="matrixOdd">1:00pm - 2:00pm</td>
+			<td class="matrixOdd">12:00pm - 2:00pm</td>
 			<td class="matrixEven">56-154</td>
 			<td class="matrixOdd">PHP + MySQL</td>
 			<td class="matrixEven">Workshop</td>
