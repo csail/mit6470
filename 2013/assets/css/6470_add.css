@@ -44,3 +44,12 @@ body {
   vertical-align: middle;
 
 }
+
+#Showcase {
+  background-color: white;
+}
+
+#Showcase .sponsor-logos a {
+  padding-left: 30px;
+  padding-right: 30px;
+}

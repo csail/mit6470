@@ -21,9 +21,18 @@
 <div class="pageMain">
 	<!-- Showcase Content -->
 	<div id="Showcase">
-		<div class="">
-			<?php echo HTML::image('assets/images/sponsors/Sponsors.png?v=2013-1', array('width' => 940, 'alt' => 'Sponsor logos '))?>
-		<div class="hr"></div>
+		<div class="sponsor-logos">
+			<?php 
+				echo HTML::anchor('http://appianjobs.com', HTML::image('assets/images/sponsors/appian.png', array('alt' => 'Appian logo')));
+				echo HTML::anchor('https://www.dropbox.com', HTML::image('assets/images/sponsors/dropbox.png', array('alt' => 'Dropbox logo')));
+				echo HTML::anchor('http://www.facebook.com', HTML::image('assets/images/sponsors/facebook.png', array('alt' => 'Facebook logo')));
+				echo HTML::anchor('http://www.nextjump.com', HTML::image('assets/images/sponsors/nextjump.png', array('alt' => 'NextJump logo')));
+				echo HTML::anchor('http://www.palantir.com', HTML::image('assets/images/sponsors/palantir.png', array('alt' => 'Palantir logo')));
+				echo HTML::anchor('http://www.quora.com', HTML::image('assets/images/sponsors/quora.png', array('alt' => 'Quora logo')));
+				echo HTML::anchor('http://www.tripadvisor.com', HTML::image('assets/images/sponsors/tripadvisor.png', array('alt' => 'TripAdvisor logo')));
+				echo HTML::anchor('http://www.vecna.com', HTML::image('assets/images/sponsors/vecna.png', array('alt' => 'Vecna logo')));
+//echo HTML::image('assets/images/sponsors/Sponsors.png?v=2013-1', array('width' => 940, 'alt' => 'Sponsor logos '))?>
+			</div>
 	</div>
 
 	<!-- Page Content -->
@@ -125,7 +134,7 @@
 					echo Form::input('email', NULL, array('id' => 'NewsletterEmail', 'style' => 'width: 259px', 'margin' => 0, 'class' => 'textInput'));
 				?>
             </p>
-            <?php   
+            <?php
                 if (isset($email)) {
                     echo '<span id="email_status" style="color: red;">' . $email_status_msg . '</span>';
                 }
