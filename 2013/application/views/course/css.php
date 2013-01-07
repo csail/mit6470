@@ -5,6 +5,11 @@
 CSS allows you to style the content of your webpage, for example by controlling the color and positioning of elements. The following videos describe the syntax of CSS and how to use many CSS properties, with a focus on page layout.
 </p>
 
+<h2 class="headline center "><strong>Reading List</strong></h2>
+<p class="flavor_text">
+Click here to download the <?php echo HTML::anchor('assets/resources/HTMLandCSSReadingList.pdf', 'HTML and CSS Reading List'); ?>
+</p>
+
 
 <?php
 $VIDEO_LIST = array("01_Intro", "02_Selectors","03_Precedence","04_Box_Model", "05_Positioning", "06_Floating","07_Various_Properties","08_Conclusion");
@@ -31,9 +36,9 @@ if($VIDEO_NAME!="")
 ?>
 
 
-<div class="hr"></div>
+<div class="hr padded_hr"></div>
 <h2 class="headline center"><strong>Videos</strong></h2>
-
+<h6 class="headline center ">By Mark Zhang<h6>
 
 <!--write video links-->
 <?php
@@ -48,7 +53,7 @@ for($i = 0; $i < count($VIDEO_NAMES); $i++)
 <br/>
 <br/>
 <div class="hr padded_hr"></div>
-<h2 class="headline center "><strong>Exercises</strong></h2>
+<!--<h2 class="headline center "><strong>Exercises</strong></h2>
 
 <script type="text/javascript">
 var hints = ["You'll need the following properties for this one: width, margin, padding, border, color, text-decoration, text-align, color. If you want to set the top, left, right, and bottom margins, there's an abbreviated way to it with only the margin property. Same with many other properties like border, padding, background, etc. Look it up.", "Think carefully about which properties should apply to table, to tr, to td, and to th. To get the alternate row colors, you'll need to apply a class to every alternate row, then set a background-color for this class. To text-align the second column, I used the 'last-child' pseudo-element; it's easier than setting a new class for every one of those td element. Look it up.", "This one is tricky; it's not immediately apparent what properties should be applied to each of ul, li, and a. This should get you started: change the list-style-type on ul to make the item-markers disappear. Set the display mode of the 'a' elements to block and give them a width. Float the li elements.", "Getting an element to center can be tricky. One way is to set the width of the element and then set its left and right margins to 'auto'. Another way is to set the element's display mode to inline or inline block and set its parent's text-align to center. This second one works better if you want to keep the element's width 'auto' or are too lazy to figure out a width.", "Your CSS file will probably be longer than your HTML. Definitely reuse code from the previous exercises."];
@@ -97,8 +102,6 @@ You should set the id and class attributes of HTML elements however you wish, bu
 <h3><a href='http://w3schools.com/cssref/default.asp'>CSS Reference (w3schools)</a></h3>
 <h3><a href='http://w3schools.com/css3/default.asp'>CCS3 Tutorials (w3schools)</a></h3>
 <h3><a href='http://sass-lang.com/'>SASS Website</a></h3>
-<div class="hr padded_hr"></div>
+<div class="hr padded_hr"></div>-->
 <h2 class="headline center "><strong>Questions?</strong></h2>
-<p class="flavor_text"> Contact us at 6.470-staff@mit.edu or come to our <a href="/2012/competition/schedule">Office Hours</a></p>
-<div class="hr padded_hr"></div>
-<h4> Page and content by Mark Zhang.</h4>
+<p class="flavor_text"> Ask a question on <a href="https://piazza.com/class#winter2013/6470">Piazza</a> or come to our <?php echo HTML::anchor('/competition/schedule', 'Office Hours'); ?></p>

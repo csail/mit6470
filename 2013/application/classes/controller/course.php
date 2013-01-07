@@ -13,6 +13,10 @@ class Controller_Course extends Controller_MIT6470Template {
 
 	public function action_intro() {
 		$this->template->content = View::factory('course/intro');
+  }
+
+	public function action_html_css() {
+		$this->template->content = View::factory('course/html_css');
     }
 
     public function action_html() {
