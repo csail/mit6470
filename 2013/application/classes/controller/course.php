@@ -15,16 +15,16 @@ class Controller_Course extends Controller_MIT6470Template {
 		$this->template->content = View::factory('course/intro');
   }
 
-	public function action_html_css() {
-		$this->template->content = View::factory('course/html_css');
-    }
-
     public function action_html() {
-		$this->template->content = View::factory('course/html');
-	}
+      $this->template->content = View::factory('course/html');
+    }
 
     public function action_css() {
 		$this->template->content = View::factory('course/css');
+    }
+
+    public function action_design() {
+		$this->template->content = View::factory('course/design');
     }
 
     public function action_js() {
