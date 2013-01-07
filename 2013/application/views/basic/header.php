@@ -22,9 +22,9 @@
 						</ul>
           </li>
           <li>
-						<?php echo HTML::anchor('#', 'Course Materials'); ?>
+						<?php echo HTML::anchor('course/intro', 'Course Materials'); ?>
 						<ul>
-							<!--<li><?php echo HTML::anchor('course/intro', 'Start Here'); ?></li>-->
+							<li><?php echo HTML::anchor('course/intro', 'Intro'); ?></li>
 							<li><?php echo HTML::anchor('course/html', 'HTML'); ?></li>
 							<li><?php echo HTML::anchor('course/css', 'CSS'); ?></li>
 							<li><?php echo HTML::anchor('course/design', 'Design'); ?></li>

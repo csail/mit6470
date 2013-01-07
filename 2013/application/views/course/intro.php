@@ -1,9 +1,10 @@
 <!-- Title / Page Headline -->
-<h1 class="headline center "><strong>Web Programming Introduction</strong></h1>
+<h1 class="headline center "><strong>Intro to Making a Website</strong></h1>
 
 <p class="flavor_text">
-New to web programming? This series of video lectures provides a gentle introduction to web programming. We first look at what happens behind the scenes when you access a website in your browser, then briefly survey core technologies in web programming.
-</p>
+Download the lecture slides <?php echo HTML::anchor('assets/resources/02_web_programming_overview.pptx', 'here') ?> and the demo code from lecture <?php echo HTML::anchor('assets/resources/intro_demos.zip', 'here') ?> </p>
+
+
 
 
 <?php
@@ -36,7 +37,13 @@ if($VIDEO_NAME!="")
 
 <div class="hr padded_hr"></div>
 <h2 class="headline center "><strong>Videos</strong></h2>
-
+<h6 class="headline center ">By Mark Zhang</h6>
+<p>
+New to web programming? This series of video lectures provides a gentle introduction to web programming. We first look at what happens behind the scenes when you access a website in your browser, then briefly survey core technologies in web programming.
+</p>
+<p>
+For those following the 6.470 lectures, the videos provide more detail on some topics we glossed during lecture, particularly on URLs, IP addresses, and DNS lookup.
+</p>
 <!--write video links-->
 <?php
 for($i = 0; $i < count($VIDEO_NAMES); $i++)
@@ -46,13 +53,6 @@ for($i = 0; $i < count($VIDEO_NAMES); $i++)
 }
 
 ?>
-
-<div class="hr padded_hr"></div>
-<h2 class="headline center "><strong>Materials</strong></h2>
-
-<h3><a href='/2012/assets/resources/overview_ppt.zip'>Web Programming Intro Powerpoint (used in lectures)</a></h3>
 <div class="hr padded_hr"></div>
 <h2 class="headline center "><strong>Questions?</strong></h2>
-<p class="flavor_text"> Contact us at 6.470-staff@mit.edu or come to our <a href="/2012/competition/schedule">Office Hours</a></p>
-<div class="hr padded_hr"></div>
-<h4> Page and content by Mark Zhang </h4
+<p class="flavor_text"> Ask a question on <a href="https://piazza.com/class#winter2013/6470">Piazza</a> or come to our <?php echo HTML::anchor('/competition/schedule', 'Office Hours'); ?></p>

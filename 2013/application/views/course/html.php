@@ -38,7 +38,7 @@ if($VIDEO_NAME!="")
 
 <div class="hr padded_hr"></div>
 <h2 class="headline center "><strong>Videos</strong></h2>
-<h6 class="headline center ">By Mark Zhang<h6>
+<h6 class="headline center ">By Mark Zhang</h6>
 
 
 <!--write video links-->
