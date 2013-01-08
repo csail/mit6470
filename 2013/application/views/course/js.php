@@ -3,10 +3,13 @@
 
 <div class="hr"></div>
 
-<p class="flavor_text">
-Javascript Tutorial coming soon.
-</p>
+<p class="flavor_text">Javascript is a scripting language that works on the client-side and allows you to add various interactive behaviors to your website.</p>
 
+
+<h2 class="headline center "><strong>Reading List</strong></h2>
+<p class="flavor_text">
+Click here to download the <?php echo HTML::anchor('assets/resources/javascript_ppt.pptx', 'Javascript Intro Slides'); ?> and the <?php echo HTML::anchor('assets/resources/JavascriptReadingList.pdf', 'Javascript Reading List'); ?>
+</p>
 
 <?php
 $VIDEO_LIST = array();
@@ -59,17 +62,17 @@ if(isset($_GET["video"]))
 
 <?php } ?>
 
-<h2 class="headline center"><strong>Videos</strong></h2>
+<!--<h2 class="headline center"><strong>Videos</strong></h2>
 
-<div class="hr"></div>
+<div class="hr"></div>-->
 
 <!--write video links-->
-<?php
+<!--<?php
 for($i = 0; $i < count($VIDEO_NAMES); $i++)
 {
     echo "<h3><a class='videolink' id='videolink_".$i."' href='/2012/course/intro?video=".$i."'>".$VIDEO_NAMES[$i]."</a></h3>";
 }
 
-?>
+?>-->
 
 

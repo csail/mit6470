@@ -8,7 +8,7 @@ div#fancy_bg { background-color: #f0eef9; }
 div#fancy_div { background-color: #f0eef9; color: black; }
 div.lecture_details_div h2 { text-align: center;}
 </style>
-The schedule is subject to small changes so please be on the lookout for announcements. Additional Office Hours during the week will be announced soon.
+The schedule is subject to small changes so please be on the lookout for announcements. 
 <table cellspacing="0" cellpadding="0" id="FeatureMatrix" class="center" 
 	style="margin-left: auto; margin-right: auto; font-size: 14px">
 	<tbody>
@@ -53,6 +53,13 @@ The schedule is subject to small changes so please be on the lookout for announc
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">Git</td>
 			<td class="matrixEven">Advanced Topic Lecture</td>
+    </tr>
+    <tr>
+			<td class="matrixItem"><br /></td>
+			<td class="matrixOdd">7:00pm - 9:00pm</td>
+			<td class="matrixEven">W20-500</td>
+			<td class="matrixOdd">Office Hours</td>
+			<td class="matrixEven"></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">Wednesday 1/9/13</td>
@@ -61,14 +68,6 @@ The schedule is subject to small changes so please be on the lookout for announc
 			<td class="matrixOdd">JavaScript + jQuery + AJAX</td>
 			<td class="matrixEven">Workshop</td>
 		</tr>
-		<tr>
-			<td class="matrixItem"><br /></td>
-			<td class="matrixOdd">1:00pm - 2:00pm</td>
-			<td class="matrixEven">10-250</td>
-			<td class="matrixOdd">Chrome Debugger + JS Debugging Tips</td>
-			<td class="matrixEven">Advanced Topic Lecture</td>
-		</tr>
-
 		<tr>
 			<td class="matrixItem">Thursday 1/10/13</td>
 			<td class="matrixOdd">10:00am - 11:00am</td>
@@ -83,6 +82,13 @@ The schedule is subject to small changes so please be on the lookout for announc
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">Engineering Good Design and Usability</td>
 			<td class="matrixEven">Palantir Guest Lecture</td>
+		</tr>
+    <tr>
+			<td class="matrixItem"><br /></td>
+			<td class="matrixOdd">7:00pm - 9:00pm</td>
+			<td class="matrixEven">W20-500</td>
+			<td class="matrixOdd">Office Hours</td>
+			<td class="matrixEven"></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">Friday 1/11/13</td>
@@ -100,9 +106,9 @@ The schedule is subject to small changes so please be on the lookout for announc
 		</tr>
 		<tr>
 			<td class="matrixItem">Sunday 1/13/13</td>
-			<td class="matrixOdd">12:00pm - 4:00pm</td>
+			<td class="matrixOdd">1:00pm - 5:00pm</td>
 			<td class="matrixEven">W20-500</td>
-			<td class="matrixOdd">Milestone 1 Checkoffs + Office Hours</td>
+			<td class="matrixOdd">Office Hours</td>
 			<td class="matrixEven"></td>
     </tr>
 		<tr>
@@ -110,6 +116,13 @@ The schedule is subject to small changes so please be on the lookout for announc
 			<td class="matrixOdd">5:00pm</td>
 			<td class="matrixEven"></td>
 			<td class="matrixOdd"><?php echo HTML::anchor('competition/milestones#milestone1', 'Milestone 1 Due'); ?></td>
+			<td class="matrixEven"></td>
+		</tr>
+    <tr>
+			<td class="matrixItem">Tuesday 1/15/13</td>
+			<td class="matrixOdd">7:00pm - 9:00pm</td>
+			<td class="matrixEven">W20-500</td>
+			<td class="matrixOdd">Office Hours</td>
 			<td class="matrixEven"></td>
 		</tr>
 		<tr>
@@ -147,11 +160,18 @@ The schedule is subject to small changes so please be on the lookout for announc
 			<td class="matrixOdd">TBD</td>
       <td class="matrixEven">Quora Guest Lecture</td>
     </tr>
+    <tr>
+			<td class="matrixItem"><br /></td>
+			<td class="matrixOdd">7:00pm - 9:00pm</td>
+			<td class="matrixEven">W20-500</td>
+			<td class="matrixOdd">Office Hours</td>
+			<td class="matrixEven"></td>
+		</tr>
 		<tr>
 			<td class="matrixItem">Sunday 1/20/13</td>
-			<td class="matrixOdd">12:00pm - 4:00pm</td>
+			<td class="matrixOdd">1:00pm - 5:00pm</td>
 			<td class="matrixEven">W20-500</td>
-			<td class="matrixOdd">Milestone 2 Checkoffs + Office Hours</td>
+			<td class="matrixOdd">Office Hours</td>
 			<td class="matrixEven"></td>
     </tr>
 		<tr>
@@ -161,11 +181,25 @@ The schedule is subject to small changes so please be on the lookout for announc
 			<td class="matrixOdd"><?php echo HTML::anchor('competition/milestones#milestone2', 'Milestone 2 Due'); ?></td>
 			<td class="matrixEven"></td>
 		</tr>
+    <tr>
+			<td class="matrixItem">Tuesday 1/22/13</td>
+			<td class="matrixOdd">7:00pm - 9:00pm</td>
+			<td class="matrixEven">W20-500</td>
+			<td class="matrixOdd">Office Hours</td>
+			<td class="matrixEven"></td>
+    </tr>
+    <tr>
+			<td class="matrixItem">Thursday 1/24/13</td>
+			<td class="matrixOdd">7:00pm - 9:00pm</td>
+			<td class="matrixEven">W20-500</td>
+			<td class="matrixOdd">Office Hours</td>
+			<td class="matrixEven"></td>
+		</tr>
 		<tr>
 			<td class="matrixItem">Sunday 1/27/13</td>
-			<td class="matrixOdd">12:00pm - 4:00pm</td>
+			<td class="matrixOdd">1:00pm - 5:00pm</td>
 			<td class="matrixEven">W20-500</td>
-			<td class="matrixOdd">Milestone 3 Checkoffs + Office Hours</td>
+			<td class="matrixOdd">Office Hours</td>
 			<td class="matrixEven"></td>
     </tr>
 		<tr>
