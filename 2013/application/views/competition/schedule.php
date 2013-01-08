@@ -138,11 +138,18 @@ The schedule is subject to small changes so please be on the lookout for announc
 		</tr>
 		<tr>
 			<tr>
+				<td class="matrixItem">Monday 1/14/13</td>
+				<td class="matrixOdd">12:00pm - 1:00pm</td>
+				<td class="matrixEven">10-250</td>
+				<td class="matrixOdd">TBA</td>
+				<td class="matrixEven">Facebook Guest Lecture</td>
+			</tr>
+			<tr>
 				<td class="matrixItem">Tuesday 1/15/13</td>
 				<td class="matrixOdd">11:00am - 1:00pm</td>
 				<td class="matrixEven">10-250</td>
 				<td class="matrixOdd">Security</td>
-				<td class="matrixEven"></td>
+				<td class="matrixEven">Advanced Topic Lecture</td>
 			</tr>
 			<td class="matrixItem">Tuesday 1/15/13</td>
 			<td class="matrixOdd">7:00pm - 9:00pm</td>
