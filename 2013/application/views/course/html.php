@@ -11,6 +11,11 @@ HTML allows you to describe the content of your webpage. The following videos de
 Click here to download the <?php echo HTML::anchor('assets/resources/HTMLandCSSReadingList.pdf', 'HTML and CSS Reading List'); ?>
 </p>
 
+<h2 class="headline center "><strong>Workshop Exercises</strong></h2>
+<p class="flavor_text">
+Click here to download the <?php echo HTML::anchor('assets/resources/HTMLandCSSWorkshopExercises.pdf', 'HTML and CSS Workshop Exercises'); ?>
+</p>
+
 <?php
 $VIDEO_LIST = array("01_Intro","02_Attributes","03_Headings","04_Images and Links","05_Forms","06_Lists and Tables","07_Divs","08_Conclusion");
 $VIDEO_NAMES = array("Introduction, Basic Syntax, and Getting Started", "Elements and Attributes", "Headings, Paragraphs, and Text Formatting", "Images and Links", "Forms", "Lists and Tables", "Divs", "Viewing Source, Including JS and CSS, and Conclusion");

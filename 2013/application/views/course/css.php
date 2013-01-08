@@ -10,6 +10,10 @@ CSS allows you to style the content of your webpage, for example by controlling 
 Click here to download the <?php echo HTML::anchor('assets/resources/HTMLandCSSReadingList.pdf', 'HTML and CSS Reading List'); ?>
 </p>
 
+<h2 class="headline center "><strong>Workshop Exercises</strong></h2>
+<p class="flavor_text">
+Click here to download the <?php echo HTML::anchor('assets/resources/HTMLandCSSWorkshopExercises.pdf', 'HTML and CSS Workshop Exercises'); ?>
+</p>
 
 <?php
 $VIDEO_LIST = array("01_Intro", "02_Selectors","03_Precedence","04_Box_Model", "05_Positioning", "06_Floating","07_Various_Properties","08_Conclusion");

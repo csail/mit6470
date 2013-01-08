@@ -88,7 +88,7 @@ You should set the id and class attributes of HTML elements however you wish, bu
 <div class="hr padded_hr"></div>
 <h2 class="headline center "><strong>Materials</strong></h2>
 <h3><a href='/2012/assets/resources/css_ppt.zip'>CSS Powerpoint (used in lectures)</a></h3>
-<h3><a href='/2012/assets/resources/css_exercises_sol.zip'>Solutions to CSS Exercises</a></h3>
+<!--<h3><a href='/2012/assets/resources/css_exercises_sol.zip'>Solutions to CSS Exercises</a></h3>-->
 <div class="hr padded_hr"></div>
 <h2 class="headline center "><strong>Additional Resources</strong></h2>
 
