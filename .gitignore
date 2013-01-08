@@ -1,6 +1,8 @@
 # Other *
 .htaccess
 */application/logs/*/*/*
+*.ogg
+*.mp4
 
 # Compiled source #
 ###################
