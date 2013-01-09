@@ -74,6 +74,10 @@ class Controller_Course extends Controller_MIT6470Template {
         $this->template->content = View::Factory('course/git');
     }
 
+    public function action_sass() {
+        $this->template->content = View::Factory('course/sass');
+    }
+
     public function action_resources() {
         $this->template->content = View::Factory('course/resources');
     }

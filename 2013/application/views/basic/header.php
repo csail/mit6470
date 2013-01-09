@@ -27,6 +27,7 @@
 							<li><?php echo HTML::anchor('course/intro', 'Intro'); ?></li>
 							<li><?php echo HTML::anchor('course/html', 'HTML'); ?></li>
 							<li><?php echo HTML::anchor('course/css', 'CSS'); ?></li>
+							<li><?php echo HTML::anchor('course/sass', 'SASS'); ?></li>
 							<li><?php echo HTML::anchor('course/git', 'git'); ?></li>
 							<li><?php echo HTML::anchor('course/design', 'Design'); ?></li>
 							<li><?php echo HTML::anchor('course/js', 'Javascript'); ?></li>
