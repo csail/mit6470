@@ -69,4 +69,13 @@ class Controller_Course extends Controller_MIT6470Template {
     public function action_video_temp() {
         $this->template->content = View::Factory('course/video_temp');
     }
+
+    public function action_git() {
+        $this->template->content = View::Factory('course/git');
+    }
+
+    public function action_resources() {
+        $this->template->content = View::Factory('course/resources');
+    }
+
 }
