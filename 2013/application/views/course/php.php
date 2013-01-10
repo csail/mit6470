@@ -7,6 +7,16 @@
 <p class="flavor_text">
 </p>
 
+<h2 class="headline center "><strong>Reading List</strong></h2>
+<p class="flavor_text">
+Click here to download the <?php echo HTML::anchor('assets/resources/PHP_workshop_2013.pdf', 'PHP Reading List'); ?>
+</p>
+
+<h2 class="headline center "><strong>Workshop Exercises</strong></h2>
+<p class="flavor_text">
+Click here to download the <?php echo HTML::anchor('assets/resources/PHP_exercises_2013.pdf', 'PHP Workshop Exercises'); ?>
+</p>
+
 
 <?php
 $VIDEO_LIST = array(
@@ -82,7 +92,7 @@ for($i = 0; $i < count($VIDEO_NAMES); $i++)
 <h3><?php echo HTML::anchor('http://www.w3schools.com/php/default.asp', 'PHP Tutorial (w3schools)'); ?></h3>
 <div class="hr padded_hr"></div>
 <h2 class="headline center "><strong>Questions?</strong></h2>
-<p class="flavor_text"> Contact us at 6.470-staff@mit.edu or come to our <a href="/2012/competition/schedule">Office Hours</a></p>
+<p class="flavor_text"> Contact us at 6.470-staff@mit.edu or come to our <?php echo HTML::anchor('competition/schedule', 'Office Hours'); ?></p>
 <div class="hr padded_hr"></div>
 <h4> Page and content by Charles Liu.</h4>
 </div>
