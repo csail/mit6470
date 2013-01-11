@@ -11,11 +11,11 @@
 	Click here to download the <?php echo HTML::anchor('assets/resources/MySQL Reading.pdf', 'MySQL Reading List'); ?>
 	</p>
 
-	<!-- <h2 class="headline center "><strong>Workshop Exercises</strong></h2>
+	<h2 class="headline center "><strong>Workshop Exercises</strong></h2>
 	<p class="flavor_text">
 	
-	Click here to download the <?php echo HTML::anchor('assets/resources/PHP_exercises_2013.pdf', 'PHP Workshop Exercises'); ?>
-	</p> -->
+	Click here to download the <?php echo HTML::anchor('assets/resources/MySQL Exercises.pdf', 'MySQL Workshop Exercises'); ?>
+	</p>
 
 	<h2 class="headline center "><strong>Additional Resources</strong></h2>
 	<h3><?php echo HTML::anchor('http://coursera.com/db', 'Coursera DB Class'); ?></h3>
