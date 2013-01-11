@@ -11,6 +11,15 @@
 Click here to download the <?php echo HTML::anchor('assets/resources/javascript_ppt.pptx', 'Javascript Intro Slides'); ?> and the <?php echo HTML::anchor('assets/resources/JavascriptReadingList.pdf', 'Javascript Reading List'); ?>
 </p>
 
+<p>
+The Javascript exercises with starter HTML code and solutions can be found <a href="http://web.mit.edu/kennylam/Public/6470-javascript/">here</a>.
+</p>
+
+<h2 class="headline center "><strong>jQuery/AJAX Materials</strong></h2>
+<p class="flavor_text">
+Click here to download the <?php echo HTML::anchor('assets/resources/jQueryAJAXReadingList.pdf', 'jQuery/AJAX Notes'); ?> and the <?php echo HTML::anchor('assets/resources/jQueryAJAXExercises.pdf', 'jQuery/AJAX Exercises'); ?>
+</p>
+
 <?php
 $VIDEO_LIST = array();
 $VIDEO_NAMES = array();
