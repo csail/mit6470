@@ -27,12 +27,13 @@
 							<li><?php echo HTML::anchor('course/intro', 'Intro'); ?></li>
 							<li><?php echo HTML::anchor('course/html', 'HTML'); ?></li>
 							<li><?php echo HTML::anchor('course/css', 'CSS'); ?></li>
-							<li><?php echo HTML::anchor('course/sass', 'SASS'); ?></li>
-							<li><?php echo HTML::anchor('course/git', 'git'); ?></li>
-							<li><?php echo HTML::anchor('course/design', 'Design'); ?></li>
 							<li><?php echo HTML::anchor('course/js', 'Javascript'); ?></li>
 							<li><?php echo HTML::anchor('course/mysql', 'MySQL'); ?></li>
 							<li><?php echo HTML::anchor('course/php', 'PHP'); ?></li>
+							<li><?php echo HTML::anchor('course/design', 'Design'); ?></li>
+							<li><?php echo HTML::anchor('course/sass', 'SASS'); ?></li>
+							<li><?php echo HTML::anchor('course/git', 'Git'); ?></li>
+							<li><?php echo HTML::anchor('course/rails', 'Ruby on Rails'); ?></li>
 							<!-- <li><?php echo HTML::anchor('course/lectures', 'Lectures') ?></li> -->
 							<!-- <li><?php echo HTML::anchor('course/guest_lectures', 'Guest Lectures'); ?></li> -->
 							<!-- <li><?php echo HTML::anchor('course/resources', 'Resources'); ?></li> -->

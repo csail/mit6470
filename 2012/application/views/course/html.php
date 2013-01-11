@@ -90,7 +90,7 @@ for($i = 0; $i < count($VIDEO_NAMES); $i++)
 <div class="hr padded_hr"></div>
 <h2 class="headline center "><strong>Materials</strong></h2>
 <h3><a href='/2012/assets/resources/html_ppt.zip'>HTML Powerpoint (used in lectures)</a></h3>
-<!--<h3><a href='/2012/assets/resources/html_exercises_sol.zip'>Solutions to HTML Exercises</a></h3>-->
+<h3><a href='/2012/assets/resources/html_exercises_sol.zip'>Solutions to HTML Exercises</a></h3>
 <div class="hr padded_hr"></div>
 <h2 class="headline center "><strong>Additional Resources</strong></h2>
 
