@@ -118,7 +118,7 @@ The schedule is subject to small changes so please be on the lookout for announc
 		<tr>
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">12:00pm - 2:00pm</td>
-			<td class="matrixEven">56-154</td>
+			<td class="matrixEven">35-225</td>
 			<td class="matrixOdd">PHP + MySQL</td>
 			<td class="matrixEven">Workshop</td>
 		</tr>
