@@ -164,7 +164,7 @@ The schedule is subject to small changes so please be on the lookout for announc
 			<td class="matrixOdd">
 				<a class="lecture_details_link" href="#appian_details">Build it Bigger/Faster/Better with Modular Software Architecture</a>
 				<div style="display:none;" id="appian_details" class="lecture_details_div">
-					<h2 style="text-align: center;">Build it Bigger/Faster/Better with Modular Software Architecture</h2>
+					<h2 style="text-align: center;">Writing User Interfaces for 4 Platforms at Once</h2>
 					<h3>Bio</h3>
 					<p>Dan Mascenik is Appian's Vice President of Engineering. Dan oversees the design and development of the Appian platform, and is responsible for the day-to-day operations of the Technology department. He has over 12 years of experience with cloud-based enterprise software platforms. Dan holds a bachelor’s degree in engineering from the University of Michigan, Ann Arbor, and a master’s degree from Johns Hopkins University in Baltimore.</p> 
 				</div>
