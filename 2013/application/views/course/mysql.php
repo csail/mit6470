@@ -13,8 +13,7 @@
 
 	<h2 class="headline center "><strong>Workshop Exercises</strong></h2>
 	<p class="flavor_text">
-	
-	Click here to download the <?php echo HTML::anchor('assets/resources/MySQL Exercises.pdf', 'MySQL Workshop Exercises'); ?>
+	Click here to download the <?php echo HTML::anchor('assets/resources/MySQL Exercises.pdf', 'MySQL Workshop Exercises'); ?> (<?php echo HTML::anchor('assets/resources/MySQL Solutions.pdf', 'solutions'); ?>).
 	</p>
 
 	<h2 class="headline center "><strong>Additional Resources</strong></h2>

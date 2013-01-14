@@ -14,7 +14,7 @@ Click here to download the <?php echo HTML::anchor('assets/resources/PHP_worksho
 
 <h2 class="headline center "><strong>Workshop Exercises</strong></h2>
 <p class="flavor_text">
-Click here to download the <?php echo HTML::anchor('assets/resources/PHP_exercises_2013.pdf', 'PHP Workshop Exercises'); ?>
+Click here to download the <?php echo HTML::anchor('assets/resources/PHP_exercises_2013.pdf', 'PHP Workshop Exercises'); ?> (<?php echo HTML::anchor('https://github.com/kongming92/6470_php_solns', 'solutions'); ?>).
 </p>
 
 
