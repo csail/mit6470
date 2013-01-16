@@ -141,7 +141,14 @@ The schedule is subject to small changes so please be on the lookout for announc
 				<td class="matrixItem">Monday 1/14/13</td>
 				<td class="matrixOdd">12:00pm - 1:00pm</td>
 				<td class="matrixEven">10-250</td>
-				<td class="matrixOdd">TBA</td>
+				<td class="matrixOdd">
+					<a class="lecture_details_link" href="#facebook_details">Visualizing and Experimenting with Data</a>
+					<div style="display:none;" id="facebook_details" class="lecture_details_div">
+						<h2 style="text-align: center;">Visualizing and Experimenting with Data</h2>
+						<h3>Bio</h3>
+						<p>Abhinav studied Computer Science and Human-Computer Interaction at Carnegie Mellon. He currently works on the Entities team at Facebook New York.  The Entities team maintains the quality of all non-people objects in the social graph.  His present focus is on maintaining and improving the quality of Facebook's Places dataset.  Prior to joining Facebook, Abhinav worked at Yelp and Mozilla.</p> 
+					</div>
+				</td>
 				<td class="matrixEven">Facebook Guest Lecture</td>
 			</tr>
 			<tr>
@@ -188,16 +195,16 @@ The schedule is subject to small changes so please be on the lookout for announc
     </tr>
 		<tr>
 			<td class="matrixItem">Thursday 1/17/13</td>
-			<td class="matrixOdd">11:00am - 12:00pm</td>
+			<td class="matrixOdd">11:00am - 1:00pm</td>
 			<td class="matrixEven">10-250</td>
-			<td class="matrixOdd">TBD</td>
+			<td class="matrixOdd">From Web to Web-App</td>
 			<td class="matrixEven">Vecna Guest Lecture</td>
     </tr>
 		<tr>
 			<td class="matrixItem"><br /></td>
 			<td class="matrixOdd">12:00pm - 1:00pm</td>
 			<td class="matrixEven">10-250</td>
-			<td class="matrixOdd">TBD</td>
+			<td class="matrixOdd">Vecna Q & A</td>
 			<td class="matrixEven">Vecna Guest Lecture</td>
     </tr>
     <tr>
