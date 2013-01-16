@@ -34,8 +34,8 @@
 							<li><?php echo HTML::anchor('course/sass', 'SASS'); ?></li>
 							<li><?php echo HTML::anchor('course/git', 'Git'); ?></li>
 							<li><?php echo HTML::anchor('course/rails', 'Ruby on Rails'); ?></li>
+							<li><?php echo HTML::anchor('course/guest_lectures', 'Guest Lectures'); ?></li>
 							<!-- <li><?php echo HTML::anchor('course/lectures', 'Lectures') ?></li> -->
-							<!-- <li><?php echo HTML::anchor('course/guest_lectures', 'Guest Lectures'); ?></li> -->
 							<!-- <li><?php echo HTML::anchor('course/resources', 'Resources'); ?></li> -->
   	        </ul>
 					</li>

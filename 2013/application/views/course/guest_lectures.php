@@ -3,4 +3,5 @@
 
 <div class="hr"></div>
 
-<h2 style="color:#90292c; text-align:center;">Guest lecture materials will go here.</h2>
+<p><?php echo HTML::anchor('assets/resources/designforeng_01_12.pdf', "Palantir -  Design for Engineeers"); ?></p>
+<p><?php echo HTML::anchor('assets/resources/Writing User Interfaces for 4 Platforms at Once.pptx', "Appian -  Writing User Interfaces for 4 Platforms at Once"); ?></p>
