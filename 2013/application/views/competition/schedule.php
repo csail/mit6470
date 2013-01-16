@@ -162,7 +162,7 @@ The schedule is subject to small changes so please be on the lookout for announc
 			<td class="matrixOdd">11:00am - 1:00pm</td>
 			<td class="matrixEven">10-250</td>
 			<td class="matrixOdd">
-				<a class="lecture_details_link" href="#appian_details">Build it Bigger/Faster/Better with Modular Software Architecture</a>
+				<a class="lecture_details_link" href="#appian_details">Writing User Interfaces for 4 Platforms at Once</a>
 				<div style="display:none;" id="appian_details" class="lecture_details_div">
 					<h2 style="text-align: center;">Writing User Interfaces for 4 Platforms at Once</h2>
 					<h3>Bio</h3>
