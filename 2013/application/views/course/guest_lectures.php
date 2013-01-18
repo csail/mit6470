@@ -5,3 +5,4 @@
 
 <p><?php echo HTML::anchor('assets/resources/designforeng_01_12.pdf', "Palantir -  Design for Engineeers"); ?></p>
 <p><?php echo HTML::anchor('assets/resources/Writing User Interfaces for 4 Platforms at Once.pptx', "Appian -  Writing User Interfaces for 4 Platforms at Once"); ?></p>
+<p><?php echo HTML::anchor('assets/resources/Vecna.pptx', "Vecna -  From Web to Web-App"); ?></p>
