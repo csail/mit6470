@@ -61,4 +61,29 @@
 <div style="width: 402px; margin: 10px auto 50px;">	**The Rookie division prize structure is subject to change based on enrollment and other factors. The first prize value will not change.</div>
 
 <h2>Special Prizes</h2>
-<p> There will also be several Special Prizes which will soon be announced.
+
+<p> The following special prizes will be given at the Award Ceremony.</p>
+
+<h3>Audience Choice Award</h3>
+
+<h5>Prize: an iPad Mini for each team member</h5>
+
+<p>Awarded to the semifinalist team (rookie or general division) that gets the most audience support (cheering/applause) during the award ceremony.</p>
+
+<h3>MIT Utility Award</h3>
+
+<h5>Prize: $1000</h5>
+
+<p>Awarded to the website(s) that we deem the most useful to the MIT community. All sites will be considered for this award.</p>
+
+<h3>Webby Award</h3>
+
+<h5>Prize: $1000</h5>
+
+<p>Awarded to the semifinalist team (rookie or general division) that gets the most votes online. A voting page will be put up at the time of semifinalist announcements. Voting will be open to the general public.</p>
+
+<h3>Staff Choice Award</h3>
+
+<h5>Prize: TBD</h5>
+
+<p>Awarded to teams that the staff wishes to recognize.</p>
