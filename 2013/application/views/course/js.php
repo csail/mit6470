@@ -20,6 +20,11 @@ The Javascript exercises with starter HTML code and solutions can be found <a hr
 Click here to download the <?php echo HTML::anchor('assets/resources/jQueryAJAXReadingList.pdf', 'jQuery/AJAX Notes'); ?> and the <?php echo HTML::anchor('assets/resources/jQueryAJAXExercises.pdf', 'jQuery/AJAX Exercises'); ?>
 </p>
 
+<p>The jQuery/AJAX solutions can be found <a href="https://www.dropbox.com/s/tlo3mjemrqzpnxc/jq_ajax_solutions.js">here</a>.</p>
+
+<h2 class="headline center "><strong>Additional Resources</strong></h2>
+<p class="flavor_text"><a href="http://www.codecademy.com/tracks/javascript-original">CodeAcademy Javascript exercises</a></p>
+
 <?php
 $VIDEO_LIST = array();
 $VIDEO_NAMES = array();

@@ -14,6 +14,7 @@ Click here to download the <?php echo HTML::anchor('assets/resources/ruby_on_rai
 </p>
 
 <h2 class="headline center "><strong>Additional Resources</strong></h2>
+<p><a href="http://guides.rubyonrails.org/">Rails Guides</a> - good beginner tutorial, but also lots of thorough documentation</p>
 <p><a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book">Ruby on Rails Tutorial</a> - the sample app from the lecture came from this tutorial. Excellent comprehensive intro, reputably one of the best resources, but quite lengthy and with a focus on test driven development.</p>
 <p><a href="http://railsforzombies.org/">Rails for Zombies</a> - short, fast intro to Rails with hands-on in-browser exercises.</p>
 
