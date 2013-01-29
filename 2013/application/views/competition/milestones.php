@@ -149,6 +149,25 @@
 
 <p>Submit a PDF (or a ZIP if you have multiple files) to <a href="http://stellar.mit.edu/S/course/6/ia13/6.s188/">Stellar</a> that addresses each of the bullet points and numbered questions above. Only one person from your group needs to submit this but make sure your teammates are listed.</p>
 
-<h3 id="finalsub" style="margin-top:50px">Final Submission</h3>
+<h3 id="finalsub" style="margin-top:50px">Final Competition Submission</h3>
 <a name="finalsub"></a>
-<p> You will submit a link to your final site via Stellar. More instructions will be given closer to this date. </p>
+<p> This only applies to competitors. For your final submission (due Tuesday at 5pm), please submit a link to your final site. In addition, answer the following questions: </p>
+
+<ol>
+<li>Briefly list the core technologies that you ended up using to build your site (for example, Ruby on Rails, Node.js).</li>
+<li>Please list all 3rd party libraries that are used in your website. This includes all code, apart from core technologies, that powers your website but was not written by your team. (including Twitter Bootstrap, jQuery, Pusher API) If in doubt, please include it. For each 3rd party library, please explain how you use it in your website.</li>
+<li>Please specify (for our convenience) which browser your site was developed for.</li>
+</ol>
+
+Additionally, please be aware of the following if you are chosen for a semifinalist:
+
+<ul>
+<li>We will announce semifinalists for both the Rookie and General divisions by midnight Tuesday.</li>
+<li>Semifinalists will have a 15 minute time slot on Wednesday from approximately 11am to 4pm to give a 5 minute presentation to the judges and answer questions about their site. We recommend that your presentation explain what problem your site aims to solve, why there is a need for this problem to be solved, and why your site solves this problem well. We also recommend that you use slides or a video instead of a live demo. More information about the presentation will be included in the semifinalist announcement.</li> 
+<li>Sign-ups for the presentations will be sent out 30 minutes after the semifinalist announcement and will be first-come first-served.</li>
+<li>Semifinalists will be required to give us access to the source code for their website. The best way to do this is through a Github repo. Providing us access to the web_scripts folder on scripts.mit.edu or emailing us a copy of the source code (including 3rd party libraries) would also work. We must receive this before presentations start on Wednesday or your team will not be eligible.</li>
+<li>Your team is allowed to make changes to your site after the final submission deadline. However, if your site is broken when we look at it, you will not have a second chance, so make updates at your own risk.</li>
+<li>Semifinalists will also give a short presentation at the Award Ceremony and must attend a mandatory Winner's Luncheon from 12pm - 2pm on Friday. Additionally, all Semifinalists will be eligible for the Webby Award, which involves online voting for the most popular website.</li>
+</ul>
+
+
