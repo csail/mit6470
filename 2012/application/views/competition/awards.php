@@ -41,7 +41,7 @@ $('a.team_site').attr('target', '_blank');
 			<td class="matrixOdd">3rd</td>
 			<td class="matrixEven">CollegeChef</td>
 			<td class="matrixOdd">Stephanie Chang<br /> Stephanie Yu<br /> Victor Hung</td>
-			<td class="matrixEven"><a href="http://collegechef.herokuapp.com/" class="team_site">niwen.scripts.mit.edu/collegechef/tutorials</a></td>
+			<td class="matrixEven"><a href="http://collegechef.herokuapp.com/" class="team_site">http://collegechef.herokuapp.com/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixOdd last">4th</td>
