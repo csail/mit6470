@@ -55,8 +55,7 @@ div.lecture_details_div h2 { text-align: center;}
 	</tbody>
 </table>
 
-
-<!-- <h2>Main Division</h2>
+<h2>Main Division</h2>
 <table cellspacing="0" cellpadding="0" id="FeatureMatrix" class="center" 
 	style="margin-left: auto; margin-right: auto;">
 	<tbody>
@@ -65,141 +64,85 @@ div.lecture_details_div h2 { text-align: center;}
 			<th><h6>Team Name</h6></th>
 			<th><h6>Team Members</h6></th>
 			<th><h6>Website</h6></th>
-			<th><h6>Writeup</h6></th>
-		</tr>
-		<tr>
-			<td class="matrixItem">11:15 AM</td>				
-			<td class="matrixOdd">Asler</td>
-			<td class="matrixEven">Stephan Boyer<br /> Rachel Fong <br/> Mark Wittels</td>
-			<td class="matrixOdd"><a href="http://asler.org/">www.asler.org</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/asler.pdf', 'asler.pdf'); ?></td>
-		</tr>
-		<tr>
-			<td class="matrixItem">11:30 AM</td>
-			<td class="matrixOdd"></td>
-			<td class="matrixEven"></td>
-			<td class="matrixOdd"><a href=""></a></td>
-			<td class="matrixEven"></td>
-		</tr>
-		<tr>
-			<td class="matrixItem">11:45 AM</td>			
-			<td class="matrixOdd">PolyToons</td>
-			<td class="matrixEven">Wesam Manassra<br /> Saher Ahwal</td>
-			<td class="matrixOdd"><a href="http://manassra.scripts.mit.edu/">manassra.scripts.mit.edu</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/polytoons.pdf', 'polytoons.pdf'); ?></td>
-		</tr>
-		<tr>
-			<td class="matrixItem">12:00 PM</td>
-			<td class="matrixOdd">LucCo</td>
-			<td class="matrixEven">Michelle Fung<br /> Quanquan Liu</td>
-			<td class="matrixOdd"><a href="http://mfung.scripts.mit.edu/LucCo/">mfung.scripts.mit.edu/LucCo</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/lucco.pdf', 'lucco.pdf'); ?></td>
-		</tr>
-		<tr>
-			<td class="matrixItem">12:15 PM</td>				
-			<td class="matrixOdd">Art Zone</td>
-			<td class="matrixEven">Cristina Lozano<br /> Sara Brockmueller</td>
-			<td class="matrixOdd"><a href="http://sarab609.scripts.mit.edu/">sarab609.scripts.mit.edu</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/artzone.pdf', 'artzone.pdf'); ?></td>
-		</tr>
-		<tr id="LUNCH">
-			<td class="matrixItem">12:30 PM</td>
-			<td class="matrixOdd">LUNCH</td>
-			<td class="matrixEven">LUNCH</td>
-			<td class="matrixOdd"><a href="#LUNCH">LUNCH</a></td>
-			<td class="matrixEven">LUNCH</td>
 		</tr>
 		<tr>
 			<td class="matrixItem">1:00 PM</td>
-			<td class="matrixOdd">Scholar Sheep</td>
-			<td class="matrixEven">Felix Sung<br /> Alexander Jinhoon Lin</td>
-			<td class="matrixOdd"><a href="http://scholarsheep.herokuapp.com/">scholarsheep.herokuapp.com</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/scholarsheep.pdf', 'scholarsheep.pdf'); ?></td>
+			<td class="matrixOdd">Jellify</td>
+			<td class="matrixEven">Alexander Lin <br /> Felix Sung <br/> Kimberly Toy </td>
+			<td class="matrixOdd"><a href="http://jellify.herokuapp.com/">http://jellify.herokuapp.com/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">1:15 PM</td>
-			<td class="matrixOdd">In The Loop</td>
-			<td class="matrixEven">Zack Drach<br /> Pasha Muravyev</td>
-			<td class="matrixOdd"><a href="http://hogbait.kicks-ass.net">hogbait.kicks-ass.net</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/intheloop.pdf', 'intheloop.pdf'); ?></td>
+			<td class="matrixOdd">PsetParty</td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href="http://psetparty.xvm.mit.edu:3333/login.html">http://psetparty.xvm.mit.edu:3333/login.html</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">1:30 PM</td>
-			<td class="matrixOdd">College Chef</td>
-			<td class="matrixEven">Stephanie Chang<br /> Stephanie Yu<br /> Victor Hung</td>
-			<td class="matrixOdd"><a href="http://niwen.scripts.mit.edu/collegechef/tutorials">niwen.scripts.mit.edu/collegechef/tutorials</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/collegechef.pdf', 'collegechef.pdf'); ?></td>
+			<td class="matrixOdd">Notability</td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href="http://www.notability.org/">http://www.notability.org/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">1:45 PM</td>
-			<td class="matrixOdd">Hippol</td>
-			<td class="matrixEven">Andi Wang<br /> Xunjie Li<br /> Ruwen Liu</td>
-			<td class="matrixOdd"><a href="http://ruwenliu.scripts.mit.edu/">ruwenliu.scripts.mit.edu</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/hippol.pdf', 'hippol.pdf'); ?></td>
+			<td class="matrixOdd">Trippr</td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href="trippr.info">trippr.info</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">2:00 PM</td>
-			<td class="matrixOdd">ProtoM</td>
-			<td class="matrixEven">Andrew Correa<br /> Jeremy Scott<br /> Ying Yin</td>
-			<td class="matrixOdd"><a href="http://miscoe.csail.mit.edu/">miscoe.csail.mit.edu</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/protom.pdf', 'protom.pdf'); ?></td>
+			<td class="matrixOdd">Happenline</td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href="http://ckbaum.scripts.mit.edu/happenline/">http://ckbaum.scripts.mit.edu/happenline/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">2:15 PM</td>
-			<td class="matrixOdd">VoteNotes</td>
-			<td class="matrixEven">Andres Romero<br /> Vo Thanh Minh Tue<br /> Paul Hemberger</td>
-			<td class="matrixOdd"><a href=" http://minhtuev.scripts.mit.edu/">minhtuev.scripts.mit.edu</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/votenotes.pdf', 'votenotes.pdf'); ?></td>
-		</tr>
-		<tr>
-			<td class="matrixItem">2:30 PM</td>
-			<td class="matrixOdd">LearnTo</td>
-			<td class="matrixEven">Brodrick Dunlap Childs<br /> Oleksandr Stubailo<br /> Jeffrey Tyler Warren</td>
-			<td class="matrixOdd"><a href="http://learnto.herokuapp.com/">learnto.herokuapp.com</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/learnto.pdf', 'learnto.pdf'); ?></td>
+			<td class="matrixOdd">Lapine</td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href="http://edu.xvm.mit.edu/">http://edu.xvm.mit.edu/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">2:45 PM</td>
-			<td class="matrixOdd">Tango</td>
-			<td class="matrixEven">Jessica Lin<br />
-			Rui Luo</td>
-			<td class="matrixOdd"><a href="http://ray_li.scripts.mit.edu/tango">ray_li.scripts.mit.edu/tango</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/tango.pdf', 'tango.pdf'); ?></td>
+			<td class="matrixOdd">YourTale</td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href="http://yourtale.herokuapp.com/">http://yourtale.herokuapp.com/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">3:00 PM</td>
-			<td class="matrixOdd">Choose Your Chief</td>
-			<td class="matrixEven">Sharon Hao<br />
-			Britt Cyr<br />
-			Tim Donegan</td>
-			<td class="matrixOdd"><a href="http://chooseyourchief.com/home.php">www.chooseyourchief.com/home.php</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/chooseyourchief.pdf', 'chooseyourchief.pdf'); ?></td>
+			<td class="matrixOdd">liveClass</td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href="http://18.95.6.81:3000/main">http://18.95.6.81:3000/main</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">3:15 PM</td>
-			<td class="matrixOdd">re:search</td>
-			<td class="matrixEven">Leah Alpert<br />
-			Russell Cohen<br />
-			Ram Bhaskaramurthi</td>
-			<td class="matrixOdd"><a href="http://rcoh.scripts.mit.edu/gradsearch/website/">rcoh.scripts.mit.edu/gradsearch/website</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/research.pdf', 'research.pdf'); ?></td>
+			<td class="matrixOdd">Atlas</td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href="http://agile-sands-2491.herokuapp.com/">http://agile-sands-2491.herokuapp.com/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">3:30 PM</td>
-			<td class="matrixOdd">ViewerVerse</td>
-			<td class="matrixEven">Elisabeth Morant<br />
-			Ruby Tamberino<br />
-			Bridger Maxwell</td>
-			<td class="matrixOdd"><a href="http://www.viewerverse.com">www.viewerverse.com</a></td>
-			<td class="matrixEven"><?php echo HTML::anchor('assets/semi/viewerverse.pdf', 'viewerverse.pdf'); ?></td>	
+			<td class="matrixOdd">Set-up</td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href="Set-up">Set-up</a></td>
 		</tr>
 		<tr>
-			<td class="matrixItem last">3:45 PM</td>
-			<td class="matrixOdd last">LessonDrop</td>
-			<td class="matrixEven last">Shri Ganeshram<br />
-			Mark Fayngersh</td>
-			<td class="matrixOdd last"><a href="http://www.lessondrop.com">www.lessondrop.com</a></td>
-			<td class="matrixEven last"><?php echo HTML::anchor('assets/semi/lessondrop.pdf', 'lessondrop.pdf'); ?></td>
+			<td class="matrixItem">3:45 PM</td>
+			<td class="matrixOdd">TrippedUp</td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href="http://trippedup.herokuapp.com/">http://trippedup.herokuapp.com/</a></td>
 		</tr>
+		<tr>
+			<td class="matrixItem">4:00 PM</td>
+			<td class="matrixOdd">Carbonate</td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href="felixsun.scripts.mit.edu/orgo">felixsun.scripts.mit.edu/orgo</a></td>
+		</tr>
+		<tr>
+			<td class="matrixItem">4:15 PM</td>
+			<td class="matrixOdd">Ultramarine</td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href="http://ultramarine.herokuapp.com/">http://ultramarine.herokuapp.com/</a></td>
+		</tr>
+
 	</tbody>
-</table> -->
+</table>
