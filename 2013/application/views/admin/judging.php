@@ -72,73 +72,73 @@ div.lecture_details_div h2 { text-align: center;}
 		<tr>
 			<td class="matrixItem">1:15 PM</td>
 			<td class="matrixOdd">PsetParty</td>
-			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixEven">Yinong Liu <br /> Staphany Park <br/> Geza Kovacs </td>
 			<td class="matrixOdd"><a href="http://psetparty.xvm.mit.edu:3333/login.html">http://psetparty.xvm.mit.edu:3333/login.html</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">1:30 PM</td>
 			<td class="matrixOdd">Notability</td>
-			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixEven"> Oliver R. Song </td>
 			<td class="matrixOdd"><a href="http://www.notability.org/">http://www.notability.org/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">1:45 PM</td>
 			<td class="matrixOdd">Trippr</td>
-			<td class="matrixEven"> <br />  <br/>  </td>
-			<td class="matrixOdd"><a href="trippr.info">trippr.info</a></td>
+			<td class="matrixEven"> "Benjamin Frank <br /> Jonathan Wang <br/> Ariel Wexler </td>
+			<td class="matrixOdd"><a href="http://trippr.info">trippr.info</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">2:00 PM</td>
 			<td class="matrixOdd">Happenline</td>
-			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixEven"> Connor Kirschbaum </td>
 			<td class="matrixOdd"><a href="http://ckbaum.scripts.mit.edu/happenline/">http://ckbaum.scripts.mit.edu/happenline/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">2:15 PM</td>
 			<td class="matrixOdd">Lapine</td>
-			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixEven"> Ming Yang Ong <br /> Aidan Bevacqua <br/> Leon Lin </td>
 			<td class="matrixOdd"><a href="http://edu.xvm.mit.edu/">http://edu.xvm.mit.edu/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">2:45 PM</td>
 			<td class="matrixOdd">YourTale</td>
-			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixEven"> Dalton Hubble <br/> Thomas Garver </td>
 			<td class="matrixOdd"><a href="http://yourtale.herokuapp.com/">http://yourtale.herokuapp.com/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">3:00 PM</td>
 			<td class="matrixOdd">liveClass</td>
-			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixEven"> Tahin Fahmid Syed </td>
 			<td class="matrixOdd"><a href="http://18.95.6.81:3000/main">http://18.95.6.81:3000/main</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">3:15 PM</td>
 			<td class="matrixOdd">Atlas</td>
-			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixEven"> Jorge Jay-Jay Amaya <br/> Alexander M. Dixon </td>
 			<td class="matrixOdd"><a href="http://agile-sands-2491.herokuapp.com/">http://agile-sands-2491.herokuapp.com/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">3:30 PM</td>
 			<td class="matrixOdd">Set-up</td>
-			<td class="matrixEven"> <br />  <br/>  </td>
-			<td class="matrixOdd"><a href="Set-up">Set-up</a></td>
+			<td class="matrixEven"> Sean Karson <br /> Cosmos Darwin </td>
+			<td class="matrixOdd"><a href="http://set-up.mit.edu/">http://set-up.mit.edu/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">3:45 PM</td>
 			<td class="matrixOdd">TrippedUp</td>
-			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixEven">Danny Chiao <br /> Kuljot Anand <br/> David Byrne </td>
 			<td class="matrixOdd"><a href="http://trippedup.herokuapp.com/">http://trippedup.herokuapp.com/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">4:00 PM</td>
 			<td class="matrixOdd">Carbonate</td>
-			<td class="matrixEven"> <br />  <br/>  </td>
-			<td class="matrixOdd"><a href="felixsun.scripts.mit.edu/orgo">felixsun.scripts.mit.edu/orgo</a></td>
+			<td class="matrixEven"> Felix Sun <br /> Chelsea Voss </td>
+			<td class="matrixOdd"><a href="http://felixsun.scripts.mit.edu/orgo">felixsun.scripts.mit.edu/orgo</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem last">4:15 PM</td>
 			<td class="matrixOdd last">Ultramarine</td>
-			<td class="matrixEven last"> <br />  <br/>  </td>
+			<td class="matrixEven last"> Sashko Stubailo <br /> Brodrick Childs <br/> Carolyn Zhang </td>
 			<td class="matrixOdd last"><a href="http://ultramarine.herokuapp.com/">http://ultramarine.herokuapp.com/</a></td>
 		</tr>
 	</tbody>
