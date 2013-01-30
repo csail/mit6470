@@ -8,9 +8,6 @@ div#fancy_bg { background-color: #f0eef9; }
 div#fancy_div { background-color: #f0eef9; color: black; }
 div.lecture_details_div h2 { text-align: center;}
 </style>
-<!-- <h2><?php echo HTML::anchor('https://docs.google.com/spreadsheet/ccc?key=0Agc4LKvOrmHwdEV1dXRZckRVRGNNbFpXNGhqN2d4WEE', 'Judging Google Doc'); ?></h2> -->
-
-<p>First, look over the <?php echo HTML::anchor('/competition/judging', 'Judging Criteria'); ?>.</p>
 
 <h2>Rookie Division</h2>
 <table cellspacing="0" cellpadding="0" id="FeatureMatrix" class="center" 
@@ -47,15 +44,16 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixOdd"><a href="http://liyihua.scripts.mit.edu/">http://liyihua.scripts.mit.edu/</a></td>
 		</tr>
 		<tr>
-			<td class="matrixItem">12:15 PM</td>
-			<td class="matrixOdd">Travelog</td>
-			<td class="matrixEven"> "Lucy Yu <br /> Deniz Oktay <br/> William Qian </td>
-			<td class="matrixOdd"><a href="http://wqian94.scripts.mit.edu/DWL/">http://wqian94.scripts.mit.edu/DWL/</a></td>
+			<td class="matrixItem last">12:15 PM</td>
+			<td class="matrixOdd last">Travelog</td>
+			<td class="matrixEven last"> "Lucy Yu <br /> Deniz Oktay <br/> William Qian </td>
+			<td class="matrixOdd last"><a href="http://wqian94.scripts.mit.edu/DWL/">http://wqian94.scripts.mit.edu/DWL/</a></td>
 		</tr>
 	</tbody>
 </table>
+<br />
 
-<h2>Main Division</h2>
+<h1>Main Division</h1>
 <table cellspacing="0" cellpadding="0" id="FeatureMatrix" class="center" 
 	style="margin-left: auto; margin-right: auto;">
 	<tbody>
@@ -138,11 +136,10 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixOdd"><a href="felixsun.scripts.mit.edu/orgo">felixsun.scripts.mit.edu/orgo</a></td>
 		</tr>
 		<tr>
-			<td class="matrixItem">4:15 PM</td>
-			<td class="matrixOdd">Ultramarine</td>
-			<td class="matrixEven"> <br />  <br/>  </td>
-			<td class="matrixOdd"><a href="http://ultramarine.herokuapp.com/">http://ultramarine.herokuapp.com/</a></td>
+			<td class="matrixItem last">4:15 PM</td>
+			<td class="matrixOdd last">Ultramarine</td>
+			<td class="matrixEven last"> <br />  <br/>  </td>
+			<td class="matrixOdd last"><a href="http://ultramarine.herokuapp.com/">http://ultramarine.herokuapp.com/</a></td>
 		</tr>
-
 	</tbody>
 </table>
