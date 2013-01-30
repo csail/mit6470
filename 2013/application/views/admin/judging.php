@@ -46,7 +46,7 @@ div.lecture_details_div h2 { text-align: center;}
 		<tr>
 			<td class="matrixItem last">12:15 PM</td>
 			<td class="matrixOdd last">Travelog</td>
-			<td class="matrixEven last"> "Lucy Yu <br /> Deniz Oktay <br/> William Qian </td>
+			<td class="matrixEven last"> Lucy Yu <br /> Deniz Oktay <br/> William Qian </td>
 			<td class="matrixOdd last"><a href="http://wqian94.scripts.mit.edu/DWL/">http://wqian94.scripts.mit.edu/DWL/</a></td>
 		</tr>
 	</tbody>
@@ -84,7 +84,7 @@ div.lecture_details_div h2 { text-align: center;}
 		<tr>
 			<td class="matrixItem">1:45 PM</td>
 			<td class="matrixOdd">Trippr</td>
-			<td class="matrixEven"> "Benjamin Frank <br /> Jonathan Wang <br/> Ariel Wexler </td>
+			<td class="matrixEven"> Benjamin Frank <br /> Jonathan Wang <br/> Ariel Wexler </td>
 			<td class="matrixOdd"><a href="http://trippr.info">trippr.info</a></td>
 		</tr>
 		<tr>
