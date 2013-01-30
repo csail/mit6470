@@ -39,6 +39,7 @@ class Controller_Admin extends Controller_MIT6470Template {
 	}
 	
 	public function action_judging() {
-		//$this->template->content = View::factory('admin/judging');
+		if (isset($_GET['p']) && $_GET['p'] == '6470-2013')
+		$this->template->content = View::factory('admin/judging');
 	}
 }	

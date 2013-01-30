@@ -8,10 +8,57 @@ div#fancy_bg { background-color: #f0eef9; }
 div#fancy_div { background-color: #f0eef9; color: black; }
 div.lecture_details_div h2 { text-align: center;}
 </style>
-<h2><?php echo HTML::anchor('https://docs.google.com/spreadsheet/ccc?key=0Agc4LKvOrmHwdEV1dXRZckRVRGNNbFpXNGhqN2d4WEE', 'Judging Google Doc'); ?></h2>
+<!-- <h2><?php echo HTML::anchor('https://docs.google.com/spreadsheet/ccc?key=0Agc4LKvOrmHwdEV1dXRZckRVRGNNbFpXNGhqN2d4WEE', 'Judging Google Doc'); ?></h2> -->
+
+<p>First, look over the <?php echo HTML::anchor('/competition/judging', 'Judging Criteria'); ?>.</p>
+
+<h2>Rookie Division</h2>
+<table cellspacing="0" cellpadding="0" id="FeatureMatrix" class="center" 
+	style="margin-left: auto; margin-right: auto;">
+	<tbody>
+		<tr>
+			<th><h6>Time</h6></th>
+			<th><h6>Team Name</h6></th>
+			<th><h6>Team Members</h6></th>
+			<th><h6>Website</h6></th>
+		</tr>
+		<tr>
+			<td class="matrixItem">11:15 AM</td>
+			<td class="matrixOdd">Test#Code</td>
+			<td class="matrixEven">Shantanu Jain<br /> Andrei Ivanov <br/> Dumitru Savva</td>
+			<td class="matrixOdd"><a href="http://jains.scripts.mit.edu/testcode/">http://jains.scripts.mit.edu/testcode/</a></td>
+		</tr>
+		<tr>
+			<td class="matrixItem">11:30 AM</td>
+			<td class="matrixOdd">SubmitQ</td>
+			<td class="matrixEven">Dong Hyug Lim <br /> Harlin Lee <br/> Clare Liu </td>
+			<td class="matrixOdd"><a href="http://harlin.scripts.mit.edu/submitq/">http://harlin.scripts.mit.edu/submitq/</a></td>
+		</tr>
+		<tr>
+			<td class="matrixItem">11:45 AM</td>
+			<td class="matrixOdd"></td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href=""></a></td>
+		</tr>
+		<tr>
+			<td class="matrixItem">12:00 PM</td>
+			<td class="matrixOdd"></td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href=""></a></td>
+		</tr>
+		<tr>
+			<td class="matrixItem">12:15 PM</td>
+			<td class="matrixOdd"></td>
+			<td class="matrixEven"> <br />  <br/>  </td>
+			<td class="matrixOdd"><a href=""></a></td>
+		</tr>
 
 
+	</tbody>
+</table>
 
+
+<!-- <h2>Main Division</h2>
 <table cellspacing="0" cellpadding="0" id="FeatureMatrix" class="center" 
 	style="margin-left: auto; margin-right: auto;">
 	<tbody>
@@ -157,4 +204,4 @@ div.lecture_details_div h2 { text-align: center;}
 			<td class="matrixEven last"><?php echo HTML::anchor('assets/semi/lessondrop.pdf', 'lessondrop.pdf'); ?></td>
 		</tr>
 	</tbody>
-</table>
+</table> -->
