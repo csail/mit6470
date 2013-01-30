@@ -36,24 +36,22 @@ div.lecture_details_div h2 { text-align: center;}
 		</tr>
 		<tr>
 			<td class="matrixItem">11:45 AM</td>
-			<td class="matrixOdd"></td>
-			<td class="matrixEven"> <br />  <br/>  </td>
-			<td class="matrixOdd"><a href=""></a></td>
+			<td class="matrixOdd">DreamTrip</td>
+			<td class="matrixEven">Srinidhi Viswanathan <br /> Jeevana Inala </td>
+			<td class="matrixOdd"><a href="http://jinala.scripts.mit.edu/tripideas.php">http://jinala.scripts.mit.edu/tripideas.php</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">12:00 PM</td>
-			<td class="matrixOdd"></td>
-			<td class="matrixEven"> <br />  <br/>  </td>
-			<td class="matrixOdd"><a href=""></a></td>
+			<td class="matrixOdd">Apparate</td>
+			<td class="matrixEven">Yunzhi Gao <br /> Yihua Li <br/> Yixin Li </td>
+			<td class="matrixOdd"><a href="http://liyihua.scripts.mit.edu/">http://liyihua.scripts.mit.edu/</a></td>
 		</tr>
 		<tr>
 			<td class="matrixItem">12:15 PM</td>
-			<td class="matrixOdd"></td>
-			<td class="matrixEven"> <br />  <br/>  </td>
-			<td class="matrixOdd"><a href=""></a></td>
+			<td class="matrixOdd">Travelog</td>
+			<td class="matrixEven"> "Lucy Yu <br /> Deniz Oktay <br/> William Qian </td>
+			<td class="matrixOdd"><a href="http://wqian94.scripts.mit.edu/DWL/">http://wqian94.scripts.mit.edu/DWL/</a></td>
 		</tr>
-
-
 	</tbody>
 </table>
 
