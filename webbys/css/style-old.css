@@ -1,0 +1,26 @@
+.jcarousel {
+  width: 300px;
+  border: 1px solid #666666;
+  margin: 10px 10px; }
+  .jcarousel li {
+    margin: 10px 10px;
+    height: 200px;
+    width: 200px;
+    text-align: center; }
+
+.prev, .next, .jcarousel {
+  float: left; }
+
+.prev, .next {
+  width: 95px;
+  height: 95px;
+  margin-top: 35px; }
+
+.prev {
+  background-image: url(images/left_arrow.png); }
+
+.next {
+  background-image: url(images/right_arrow.png); }
+
+.clear {
+  clear: both; }
