@@ -10,7 +10,7 @@ $(document).ready(function(){
         {name: 'Happenline',  url: 'http://ckbaum.scripts.mit.edu/happenline/', image: 'site_images/happenline.png'},
         {name: 'Lapine',      url: 'http://edu.xvm.mit.edu/', image: 'site_images/lapine.png'},
         {name: 'YourTale',    url: 'http://yourtale.herokuapp.com/', image: 'site_images/yourtale.png'},
-        {name: 'liveClass',   url: 'http://18.95.6.81:3000/main', image: 'site_images/liveclass.png'},
+        {name: 'liveClass',   url: 'http://18.95.7.152:3000/', image: 'site_images/liveclass.png'},
         {name: 'Atlas',       url: 'http://agile-sands-2491.herokuapp.com/', image: 'site_images/atlas.png'},
         {name: 'Set-up',      url: 'http://set-up.mit.edu/', image: 'site_images/setup.png'},
         {name: 'TrippedUp',   url: 'http://trippedup.herokuapp.com/', image: 'site_images/trippedup.png'},
@@ -47,7 +47,8 @@ $(document).ready(function(){
 
   _.each(categories, function(c){
     var html = '<div class="category">'
-      + '<h1>' + c.category + '</h1>';
+      + '<h1>' + c.category + '</h1>'
+      + '<h4>vote for your favourite(s) by <em>liking</em> a website</h2>';
 
     _.each(c.sites, function(o){
       html += '<div class="site">'
