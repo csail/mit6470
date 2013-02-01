@@ -66,7 +66,7 @@ if (isset($_SERVER['KOHANA_ENV']))
 	Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
 }
 
-if (strpos($_SERVER['HTTP_HOST'], '6.470.scripts.mit.edu' !== FALSE)) {
+if (strpos($_SERVER['HTTP_HOST'], '6.470.scripts.mit.edu') !== FALSE) {
     Kohana::$environment = Kohana::PRODUCTION;
     error_reporting(E_ALL ^ E_NOTICE ^ E_STRICT);
 }
@@ -90,6 +90,7 @@ Kohana::init(array(
     'index_file' => FALSE,
     'caching' => Kohana::$environment === Kohana::PRODUCTION,
     'profile' => Kohana::$environment !== Kohana::PRODUCTION,
+    'errors' => Kohana::$environment !== Kohana::PRODUCTION,
 ));
 
 /**
