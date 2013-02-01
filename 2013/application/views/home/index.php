@@ -1,3 +1,5 @@
+<h2 class="pageMain" style="margin: 0 auto 0 auto; padding-bottom: 20px; text-align: center;"><?php echo HTML::anchor('/competition/winners', 'Check out the winners of the competition!'); ?></h2>
+
 <!-- Slide show: jQuery Cycle (default) -->
 <div id="Slideshow">
 	<div id="SlideTop"></div>
