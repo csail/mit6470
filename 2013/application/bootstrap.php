@@ -86,7 +86,7 @@ if (strpos($_SERVER['HTTP_HOST'], '6.470.scripts.mit.edu' !== FALSE)) {
  */
 
 Kohana::init(array(
-	'base_url'   => '/2013/',
+	'base_url'   => '/~Joe/6.470-2011/2013/',
     'index_file' => FALSE,
     'caching' => Kohana::$environment === Kohana::PRODUCTION,
     'profile' => Kohana::$environment !== Kohana::PRODUCTION,
