@@ -111,7 +111,7 @@ $(function() {
 		</tr>
 		<tr>
 			<td class="matrixOdd last">Ultramarine</td>
-			<td class="matrixEven last"> Sashko Stubailo <br /> Brodrick Childs <br/> Carolyn Zhang </td>
+			<td class="matrixEven last"> Sashko Stubailo <br /> Brodrick Childs </td>
 			<td class="matrixOdd last"><a class="team-site"  href="http://ultramarine.herokuapp.com/">http://ultramarine.herokuapp.com/</a></td>
 		</tr>
 	</tbody>
